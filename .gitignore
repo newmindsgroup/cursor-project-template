@@ -1,0 +1,47 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs
+*.log
+logs/
+
+# Temp
+/tmp/
+/.cache/
+
+# Env / secrets
+.env
+.env.*
+*.pem
+*.key
+*.p12
+
+# Build outputs (generic)
+dist/
+build/
+.next/
+.out/
+coverage/
+
+# Dependencies (generic)
+node_modules/
+vendor/
+
+# Python artifacts
+.venv/
+__pycache__/
+
+# Reference folders (local-only)
+/business-context/*
+!/business-context/.gitkeep
+!/business-context/README.md
+/resource-library/*
+!/resource-library/.gitkeep
+!/resource-library/README.md

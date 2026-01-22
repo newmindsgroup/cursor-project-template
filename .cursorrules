@@ -1,0 +1,7 @@
+Always consult /docs before major recommendations.
+Treat business-context/ and resource-library/ as read-only reference inputs.
+If guidance is derived from those references, state it is "informed by the reference library" without naming files.
+Never invent product requirements; ask or log an open question in QUESTIONS.md.
+Maintain DECISIONS.md, ASSUMPTIONS.md, QUESTIONS.md continuously.
+Prefer small, reviewable changes over large rewrites.
+Keep scope changes reflected in SCOPE.md and DECISIONS.md.

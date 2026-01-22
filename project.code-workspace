@@ -1,0 +1,24 @@
+{
+  "folders": [
+    {
+      "path": "."
+    },
+    {
+      "path": "business-context"
+    },
+    {
+      "path": "resource-library"
+    }
+  ],
+  "settings": {
+    "search.exclude": {
+      "tmp": true
+    },
+    "files.watcherExclude": {
+      "tmp": true
+    },
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.formatOnSave": false
+  }
+}
