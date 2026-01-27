@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Client Review Portal</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="description" content="Review and approve website prototype pages" />
+    <link rel="stylesheet" href="../../styles/base.css" />
+    <link rel="stylesheet" href="../../styles/client-portal.css" />
+    <script type="module" src="../../scripts/client-portal.ts"></script>
+  </head>
+  <body class="bg-neutral-50">
+    <!-- Password Gate -->
+    <div id="password-gate" class="fixed inset-0 bg-white z-50 flex items-center justify-center">
+      <div class="max-w-md w-full mx-4 p-8 bg-white rounded-2xl shadow-large text-center">
+        <div class="w-16 h-16 mx-auto mb-6 bg-primary-100 rounded-2xl flex items-center justify-center">
+          <svg class="w-8 h-8 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+          </svg>
+        </div>
+        <h1 class="text-2xl font-bold text-neutral-900 mb-2">Client Review Portal</h1>
+        <p class="text-neutral-600 mb-6">Enter the access code to view your project.</p>
+        <form id="password-form" class="space-y-4">
+          <input
+            type="password"
+            id="access-code"
+            placeholder="Enter access code"
+            class="w-full px-4 py-3 border border-neutral-300 rounded-lg text-center text-lg tracking-widest focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+            autocomplete="off"
+          />
+          <button type="submit" class="w-full py-3 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-colors">
+            Access Portal
+          </button>
+          <p id="password-error" class="text-red-600 text-sm hidden">Invalid access code. Please try again.</p>
+        </form>
+      </div>
+    </div>
+
+    <!-- Main Portal -->
+    <div id="portal-content" class="hidden">
+      <!-- Header -->
+      <header class="sticky top-0 z-40 bg-white border-b border-neutral-200 shadow-soft">
+        <div class="container-custom">
+          <div class="flex items-center justify-between h-16">
+            <div class="flex items-center gap-4">
+              <div class="w-10 h-10 bg-green-600 rounded-lg flex items-center justify-center" aria-hidden="true">
+                <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div>
+                <h1 class="text-lg font-bold text-neutral-900">Client Review Portal</h1>
+                <p class="text-neutral-500 text-sm" id="project-name">Website Prototype</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-4">
+              <span id="review-status" class="px-3 py-1 bg-yellow-100 text-yellow-700 text-sm font-medium rounded-full">
+                In Review
+              </span>
+              <button id="logout-btn" class="text-neutral-500 hover:text-neutral-700 text-sm">
+                Logout
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="py-8">
+        <div class="container-custom">
+          <!-- Progress Overview -->
+          <section class="mb-8 p-6 bg-white rounded-2xl border border-neutral-200 shadow-soft">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+              <div>
+                <h2 class="text-xl font-bold text-neutral-900 mb-1">Review Progress</h2>
+                <p class="text-neutral-600">Review each page and provide your feedback.</p>
+              </div>
+              <div class="flex items-center gap-4">
+                <div class="text-center">
+                  <span id="approved-count" class="text-2xl font-bold text-green-600">0</span>
+                  <p class="text-xs text-neutral-500">Approved</p>
+                </div>
+                <div class="text-center">
+                  <span id="pending-count" class="text-2xl font-bold text-yellow-600">0</span>
+                  <p class="text-xs text-neutral-500">Pending</p>
+                </div>
+                <div class="text-center">
+                  <span id="changes-count" class="text-2xl font-bold text-red-600">0</span>
+                  <p class="text-xs text-neutral-500">Changes</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Pages Grid -->
+          <section class="mb-8">
+            <h2 class="text-lg font-semibold text-neutral-900 mb-4">Pages to Review</h2>
+            <div id="pages-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <!-- Page cards will be inserted here -->
+            </div>
+          </section>
+
+          <!-- Feedback Section -->
+          <section class="mb-8 p-6 bg-white rounded-2xl border border-neutral-200 shadow-soft">
+            <h2 class="text-lg font-semibold text-neutral-900 mb-4">Submit Overall Feedback</h2>
+            <form id="feedback-form">
+              <textarea
+                id="feedback-text"
+                rows="4"
+                placeholder="Share any additional comments or feedback about the prototype..."
+                class="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 resize-none"
+              ></textarea>
+              <div class="flex justify-between items-center mt-4">
+                <p class="text-sm text-neutral-500">Your feedback helps us deliver a better result.</p>
+                <button type="submit" class="px-6 py-2 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-colors">
+                  Submit Feedback
+                </button>
+              </div>
+            </form>
+          </section>
+
+          <!-- Quick Links -->
+          <section class="grid md:grid-cols-3 gap-4">
+            <a href="../index.html" target="_blank" class="p-4 bg-white rounded-xl border border-neutral-200 hover:border-primary-300 hover:shadow-soft transition-all text-center">
+              <svg class="w-8 h-8 mx-auto mb-2 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+              </svg>
+              <span class="font-medium text-neutral-700">View Full Prototype</span>
+            </a>
+            <a href="../styleguide/" target="_blank" class="p-4 bg-white rounded-xl border border-neutral-200 hover:border-primary-300 hover:shadow-soft transition-all text-center">
+              <svg class="w-8 h-8 mx-auto mb-2 text-secondary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+              </svg>
+              <span class="font-medium text-neutral-700">Design System</span>
+            </a>
+            <a href="../content/" target="_blank" class="p-4 bg-white rounded-xl border border-neutral-200 hover:border-primary-300 hover:shadow-soft transition-all text-center">
+              <svg class="w-8 h-8 mx-auto mb-2 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+              <span class="font-medium text-neutral-700">Review Content</span>
+            </a>
+          </section>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="bg-neutral-900 text-neutral-400 py-6 mt-8">
+        <div class="container-custom text-center">
+          <p class="text-sm">Client Review Portal - For authorized reviewers only</p>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Feedback Modal -->
+    <div id="page-feedback-modal" class="fixed inset-0 bg-black/50 z-50 hidden flex items-center justify-center p-4">
+      <div class="bg-white rounded-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto">
+        <div class="p-6">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="text-xl font-bold text-neutral-900" id="modal-page-title">Page Feedback</h3>
+            <button id="close-modal" class="text-neutral-400 hover:text-neutral-600">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          
+          <form id="page-feedback-form">
+            <input type="hidden" id="modal-page-id" />
+            
+            <div class="mb-4">
+              <label class="block text-sm font-medium text-neutral-700 mb-2">Your Decision</label>
+              <div class="grid grid-cols-3 gap-2">
+                <label class="cursor-pointer">
+                  <input type="radio" name="status" value="approved" class="sr-only peer" />
+                  <div class="p-3 border-2 border-neutral-200 rounded-lg text-center peer-checked:border-green-500 peer-checked:bg-green-50 transition-all">
+                    <svg class="w-6 h-6 mx-auto text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span class="text-sm font-medium text-neutral-700">Approve</span>
+                  </div>
+                </label>
+                <label class="cursor-pointer">
+                  <input type="radio" name="status" value="changes" class="sr-only peer" />
+                  <div class="p-3 border-2 border-neutral-200 rounded-lg text-center peer-checked:border-red-500 peer-checked:bg-red-50 transition-all">
+                    <svg class="w-6 h-6 mx-auto text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                    </svg>
+                    <span class="text-sm font-medium text-neutral-700">Changes</span>
+                  </div>
+                </label>
+                <label class="cursor-pointer">
+                  <input type="radio" name="status" value="pending" class="sr-only peer" checked />
+                  <div class="p-3 border-2 border-neutral-200 rounded-lg text-center peer-checked:border-yellow-500 peer-checked:bg-yellow-50 transition-all">
+                    <svg class="w-6 h-6 mx-auto text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span class="text-sm font-medium text-neutral-700">Pending</span>
+                  </div>
+                </label>
+              </div>
+            </div>
+            
+            <div class="mb-4">
+              <label class="block text-sm font-medium text-neutral-700 mb-2">Comments (optional)</label>
+              <textarea
+                id="modal-comments"
+                rows="4"
+                placeholder="Any specific feedback or requested changes..."
+                class="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 resize-none"
+              ></textarea>
+            </div>
+            
+            <button type="submit" class="w-full py-3 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-colors">
+              Save Feedback
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Preview Modal -->
+    <div id="preview-modal" class="fixed inset-0 bg-black/80 z-50 hidden flex flex-col">
+      <!-- Header -->
+      <div class="flex items-center justify-between p-4 bg-neutral-900 border-b border-neutral-700">
+        <div class="flex items-center gap-4">
+          <h3 class="text-lg font-semibold text-white" id="preview-modal-title">Page Preview</h3>
+          <span id="preview-size-indicator" class="text-sm text-neutral-400 font-mono">1920 × 1080</span>
+        </div>
+        
+        <!-- Breakpoint Toggle -->
+        <div class="flex items-center gap-2 bg-neutral-800 rounded-lg p-1">
+          <button class="breakpoint-btn active" data-breakpoint="desktop" title="Desktop (1920px)">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+          </button>
+          <button class="breakpoint-btn" data-breakpoint="tablet" title="Tablet (768px)">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+            </svg>
+          </button>
+          <button class="breakpoint-btn" data-breakpoint="mobile" title="Mobile (375px)">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+            </svg>
+          </button>
+        </div>
+
+        <button id="close-preview-modal" class="p-2 text-neutral-400 hover:text-white transition-colors rounded-lg hover:bg-neutral-700">
+          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      
+      <!-- Preview Container -->
+      <div class="flex-1 overflow-auto flex items-center justify-center p-8 preview-modal-bg">
+        <div id="preview-iframe-container" class="preview-frame-container">
+          <!-- Iframe will be injected here -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Toast -->
+    <div id="toast" class="fixed bottom-4 right-4 bg-neutral-900 text-white px-4 py-2 rounded-lg shadow-large transform translate-y-full opacity-0 transition-all duration-300 z-50">
+      Action completed
+    </div>
+  </body>
+</html>

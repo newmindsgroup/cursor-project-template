@@ -1,0 +1,40 @@
+{
+  "$schema": "../schema/page-content.schema.json",
+  "_usage": "Este archivo contiene contenido para la página de Servicios. Ejecute 'npm run wizard' para generar contenido usando IA con la metodología StoryBrand.",
+  "meta": {
+    "title": "",
+    "description": "",
+    "language": "es",
+    "status": "draft",
+    "lastUpdated": ""
+  },
+  "hero": {
+    "headline": "",
+    "subheadline": ""
+  },
+  "services": {
+    "sectionTitle": "",
+    "sectionSubtitle": "",
+    "items": []
+  },
+  "process": {
+    "sectionTitle": "",
+    "sectionSubtitle": "",
+    "steps": []
+  },
+  "pricing": {
+    "sectionTitle": "",
+    "sectionSubtitle": "",
+    "plans": []
+  },
+  "faq": {
+    "sectionTitle": "",
+    "items": []
+  },
+  "cta": {
+    "headline": "",
+    "subheadline": "",
+    "buttonText": "",
+    "buttonUrl": ""
+  }
+}

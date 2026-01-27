@@ -1,0 +1,80 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "theme-config.schema.json",
+  "title": "Theme Configuration",
+  "description": "Schema for theme configuration and presets",
+  "type": "object",
+  "required": ["version", "activeTheme"],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "activeTheme": {
+      "type": "string",
+      "minLength": 1
+    },
+    "customOverrides": {
+      "type": "object",
+      "properties": {
+        "colors": {
+          "type": "object",
+          "additionalProperties": { "type": "string" }
+        },
+        "typography": {
+          "type": "object",
+          "properties": {
+            "fontFamily": {
+              "type": "object",
+              "properties": {
+                "heading": { "type": "string" },
+                "body": { "type": "string" }
+              }
+            },
+            "fontSize": {
+              "type": "object",
+              "additionalProperties": { "type": "string" }
+            }
+          }
+        },
+        "spacing": {
+          "type": "object",
+          "additionalProperties": { "type": "string" }
+        },
+        "borderRadius": {
+          "type": "object",
+          "additionalProperties": { "type": "string" }
+        }
+      }
+    },
+    "presets": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/presetRef"
+      }
+    }
+  },
+  "definitions": {
+    "presetRef": {
+      "type": "object",
+      "required": ["id", "name"],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "file": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

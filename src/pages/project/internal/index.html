@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Progress - Internal Dashboard</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="description" content="Internal project tracking and management" />
+    <link rel="stylesheet" href="../../../styles/tokens.css" />
+    <link rel="stylesheet" href="../../../styles/base.css" />
+    <link rel="stylesheet" href="../../../styles/project-portal.css" />
+  </head>
+  <body class="bg-neutral-50">
+    <!-- Header -->
+    <header class="bg-neutral-900 text-white py-6 border-b-4 border-orange-500">
+      <div class="container-custom">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-4">
+            <div class="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center">
+              <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+            </div>
+            <div>
+              <div class="flex items-center gap-3">
+                <h1 class="text-2xl font-bold">Internal Dashboard</h1>
+                <span class="internal-badge">Internal Only</span>
+              </div>
+              <p class="text-neutral-400 text-sm">Project management and status tracking</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-4">
+            <a href="../" class="text-orange-400 hover:text-orange-300 text-sm font-medium">
+              View Client Dashboard →
+            </a>
+            <a href="../../index.html" class="text-neutral-400 hover:text-white text-sm">
+              View Site
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="portal-container">
+      <!-- Warning Banner -->
+      <div class="mb-8 p-4 bg-orange-50 border border-orange-200 rounded-xl">
+        <div class="flex items-start gap-3">
+          <svg class="w-5 h-5 text-orange-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+          </svg>
+          <div>
+            <p class="font-semibold text-orange-800">Internal Dashboard</p>
+            <p class="text-orange-700 text-sm">This page contains internal project details and should not be shared with clients. Use the <a href="../" class="underline">client dashboard</a> for external sharing.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation Tabs -->
+      <nav class="portal-tabs">
+        <a href="../" class="portal-tab">Client View</a>
+        <a href="./" class="portal-tab active">Internal View</a>
+        <a href="../ux/" class="portal-tab">UX Assets</a>
+        <a href="../wireframes/" class="portal-tab">Wireframes</a>
+      </nav>
+
+      <!-- Progress Overview -->
+      <section class="portal-section">
+        <h3 class="portal-section-title">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+          </svg>
+          Progress Overview
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+          <div class="md:col-span-1">
+            <div id="progress-ring" class="progress-ring-container bg-white rounded-2xl border border-neutral-200">
+              <div class="skeleton skeleton-avatar"></div>
+            </div>
+          </div>
+          <div class="md:col-span-3">
+            <div id="progress-overview" class="progress-overview">
+              <div class="progress-stat-card skeleton"><div class="skeleton-title"></div></div>
+              <div class="progress-stat-card skeleton"><div class="skeleton-title"></div></div>
+              <div class="progress-stat-card skeleton"><div class="skeleton-title"></div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Phase Timeline -->
+      <section class="portal-section">
+        <h3 class="portal-section-title">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+          Project Phases
+        </h3>
+        <div class="bg-white rounded-2xl border border-neutral-200 p-8">
+          <div id="phase-timeline">
+            <div class="flex justify-between">
+              <div class="skeleton w-20 h-20"></div>
+              <div class="skeleton w-20 h-20"></div>
+              <div class="skeleton w-20 h-20"></div>
+              <div class="skeleton w-20 h-20"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Risks and Blockers -->
+      <section class="portal-section">
+        <h3 class="portal-section-title">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+          </svg>
+          Risks & Blockers
+        </h3>
+        <div id="risks-blockers" class="bg-white rounded-2xl border border-neutral-200 p-6">
+          <p class="text-neutral-500 text-sm">No risks or blockers identified.</p>
+        </div>
+      </section>
+
+      <!-- All Deliverables (including internal) -->
+      <section class="portal-section">
+        <h3 class="portal-section-title">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+          </svg>
+          All Deliverables
+        </h3>
+        <div id="deliverables-grid" class="deliverables-grid">
+          <div class="deliverable-card skeleton"><div class="h-24"></div></div>
+          <div class="deliverable-card skeleton"><div class="h-24"></div></div>
+          <div class="deliverable-card skeleton"><div class="h-24"></div></div>
+        </div>
+      </section>
+
+      <!-- Status Overrides -->
+      <section class="portal-section">
+        <h3 class="portal-section-title">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+          </svg>
+          Manual Status Overrides
+        </h3>
+        <div class="bg-white rounded-2xl border border-neutral-200 p-6">
+          <p class="text-neutral-600 text-sm mb-4">
+            Override auto-detected status for deliverables. Changes are saved locally and will be applied on the next progress scan.
+          </p>
+          <div id="override-controls">
+            <!-- Override controls rendered by JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Quick Links -->
+      <section class="portal-section">
+        <h3 class="portal-section-title">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+          </svg>
+          Quick Access
+        </h3>
+        <div id="quick-links" class="quick-links">
+          <!-- Quick links rendered by JS -->
+        </div>
+      </section>
+
+      <!-- Scan Instructions -->
+      <section class="portal-section">
+        <div class="bg-neutral-800 rounded-2xl p-8 text-white">
+          <h3 class="text-xl font-bold mb-4 flex items-center gap-3">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+            Update Progress
+          </h3>
+          <p class="text-neutral-300 mb-4">
+            Run the progress scanner to automatically update deliverable status based on document completion:
+          </p>
+          <code class="block p-4 bg-neutral-900 rounded-lg text-green-400 font-mono text-sm mb-4">
+            npm run progress:scan
+          </code>
+          <p class="text-neutral-400 text-sm">
+            The scanner checks markdown files for completion markers (checkboxes, status comments) and updates project-status.json.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-900 text-neutral-400 py-8 mt-12">
+      <div class="container-custom text-center">
+        <p class="text-sm">Internal Project Dashboard - For team use only</p>
+        <p class="text-xs mt-2" id="last-updated">Last scanned: Loading...</p>
+      </div>
+    </footer>
+
+    <script type="application/json" id="project-status-data">
+      {}
+    </script>
+
+    <script type="module" src="../../../scripts/project-portal.ts"></script>
+  </body>
+</html>

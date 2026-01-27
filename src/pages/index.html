@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home - Prototype Starter Kit</title>
+    <meta
+      name="description"
+      content="Modern frontend prototype system with automated Elementor handoff"
+    />
+    <link rel="stylesheet" href="../styles/tokens.css" />
+    <link rel="stylesheet" href="../styles/base.css" />
+    <link rel="stylesheet" href="../styles/wireframe.css" />
+    <!-- Critical wireframe overrides - must come last to override Tailwind -->
+    <style>
+      body.wireframe-mode h1,
+      body.wireframe-mode h2,
+      body.wireframe-mode h3,
+      body.wireframe-mode h4,
+      body.wireframe-mode h5,
+      body.wireframe-mode h6,
+      body.wireframe-mode .text-white,
+      body.wireframe-mode [class*="text-white"],
+      body.wireframe-mode [class*="text-primary"] {
+        color: #171717 !important;
+        -webkit-text-fill-color: #171717 !important;
+      }
+      body.wireframe-mode p,
+      body.wireframe-mode span,
+      body.wireframe-mode a,
+      body.wireframe-mode li {
+        color: #404040 !important;
+        -webkit-text-fill-color: #404040 !important;
+      }
+      body.wireframe-mode section,
+      body.wireframe-mode [data-section] {
+        background: white !important;
+        background-image: none !important;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="#main-content" class="skip-to-main">Skip to main content</a>
+
+    <!-- Header -->
+    <div id="header-section"></div>
+
+    <!-- Main Content -->
+    <main id="main-content">
+      <!-- Hero -->
+      <div id="hero-section"></div>
+
+      <!-- Features -->
+      <div id="features-section"></div>
+
+      <!-- Stats -->
+      <div id="stats-section"></div>
+
+      <!-- Testimonials -->
+      <div id="testimonials-section"></div>
+
+      <!-- FAQ -->
+      <div id="faq-section"></div>
+
+      <!-- CTA -->
+      <div id="cta-section"></div>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-section"></div>
+
+    <!-- Handoff Overlay Toggle -->
+    <div id="handoff-overlay-root"></div>
+
+    <script type="module" src="../scripts/main.ts"></script>
+    <script type="module" src="../scripts/animations.ts"></script>
+    <script type="module" src="../scripts/overlay.ts"></script>
+    <script type="module" src="../scripts/wireframe.ts"></script>
+    <script type="module">
+      // Load sections
+      async function loadSection(sectionId, sectionFile) {
+        const response = await fetch(`../sections/${sectionFile}.html`);
+        const html = await response.text();
+        document.getElementById(sectionId).innerHTML = html;
+      }
+
+      Promise.all([
+        loadSection('header-section', 'Header'),
+        loadSection('hero-section', 'Hero'),
+        loadSection('features-section', 'Features'),
+        loadSection('stats-section', 'Stats'),
+        loadSection('testimonials-section', 'Testimonials'),
+        loadSection('faq-section', 'FAQ'),
+        loadSection('cta-section', 'CTA'),
+        loadSection('footer-section', 'Footer'),
+      ]).then(() => {
+        // Trigger animations init after sections loaded
+        window.dispatchEvent(new Event('sections-loaded'));
+      });
+    </script>
+  </body>
+</html>

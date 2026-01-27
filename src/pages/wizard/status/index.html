@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Status - Validation Dashboard</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="description" content="Track project completion and identify gaps" />
+    <link rel="stylesheet" href="../../../styles/tokens.css" />
+    <link rel="stylesheet" href="../../../styles/base.css" />
+    <link rel="stylesheet" href="../../../styles/wizard.css" />
+    <link rel="stylesheet" href="../../../styles/project-portal.css" />
+  </head>
+  <body class="bg-neutral-50 min-h-screen">
+    <!-- Header -->
+    <header class="bg-white border-b border-neutral-200 py-4">
+      <div class="container-custom">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <a href="../" class="text-neutral-400 hover:text-neutral-600">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+              </svg>
+            </a>
+            <div class="w-10 h-10 bg-gradient-to-br from-green-600 to-emerald-600 rounded-xl flex items-center justify-center">
+              <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+              </svg>
+            </div>
+            <div>
+              <h1 class="text-xl font-bold text-neutral-900">Project Status</h1>
+              <p class="text-sm text-neutral-500">Validation and progress tracking</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-4">
+            <a href="../context/" class="text-sm text-neutral-600 hover:text-neutral-900">Add Context</a>
+            <a href="../pages/" class="text-sm text-neutral-600 hover:text-neutral-900">Design Pages</a>
+            <button type="button" id="refresh-btn" class="wizard-btn wizard-btn-secondary wizard-btn-sm">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+              </svg>
+              Refresh
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="py-8">
+      <div class="container-custom max-w-6xl">
+        <!-- Overall Progress -->
+        <section class="mb-12">
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div class="md:col-span-1">
+              <div class="progress-ring-container bg-white rounded-2xl border border-neutral-200">
+                <div class="progress-ring" id="overall-progress-ring">
+                  <svg viewBox="0 0 120 120" width="160" height="160">
+                    <circle class="progress-ring-bg" cx="60" cy="60" r="52" />
+                    <circle class="progress-ring-fill" cx="60" cy="60" r="52" 
+                            stroke-dasharray="326.73" stroke-dashoffset="326.73" />
+                  </svg>
+                  <div class="progress-ring-text">
+                    <span class="progress-ring-percentage" id="overall-percentage">0%</span>
+                    <span class="progress-ring-label">Complete</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="md:col-span-3">
+              <div class="progress-overview">
+                <div class="progress-stat-card">
+                  <div class="progress-stat-value" id="stat-pages">0/0</div>
+                  <div class="progress-stat-label">Pages Complete</div>
+                </div>
+                <div class="progress-stat-card">
+                  <div class="progress-stat-value" id="stat-content">0/0</div>
+                  <div class="progress-stat-label">Content Files</div>
+                </div>
+                <div class="progress-stat-card">
+                  <div class="progress-stat-value" id="stat-images">0/0</div>
+                  <div class="progress-stat-label">Images Generated</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Navigation Tabs -->
+        <nav class="wizard-tabs mb-8">
+          <button class="wizard-tab active" data-tab="overview">Overview</button>
+          <button class="wizard-tab" data-tab="pages">Pages</button>
+          <button class="wizard-tab" data-tab="gaps">Gap Report</button>
+          <button class="wizard-tab" data-tab="validation">Validation</button>
+        </nav>
+
+        <!-- Tab: Overview -->
+        <section class="wizard-tab-panel active" data-panel="overview">
+          <div class="space-y-8">
+            <!-- Per-Page Status Grid -->
+            <div class="wizard-container">
+              <div class="wizard-panel-header">
+                <h2 class="wizard-panel-title">Page Status</h2>
+              </div>
+              <div class="wizard-panel-content">
+                <div class="wizard-status-grid" id="page-status-grid">
+                  <!-- Status cards will be populated by JS -->
+                  <div class="animate-pulse space-y-4">
+                    <div class="h-32 bg-neutral-200 rounded-xl"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="wizard-container">
+              <div class="wizard-panel-header">
+                <h2 class="wizard-panel-title">Quick Actions</h2>
+              </div>
+              <div class="wizard-panel-content">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  <button type="button" class="wizard-action-card" data-action="fix-gaps">
+                    <div class="wizard-action-card-icon bg-red-100">
+                      <svg class="w-6 h-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                      </svg>
+                    </div>
+                    <span class="wizard-action-card-title">Fix All Gaps</span>
+                    <span class="wizard-action-card-desc">Auto-generate missing content</span>
+                  </button>
+                  <button type="button" class="wizard-action-card" data-action="regen-images">
+                    <div class="wizard-action-card-icon bg-orange-100">
+                      <svg class="w-6 h-6 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                      </svg>
+                    </div>
+                    <span class="wizard-action-card-title">Regenerate Images</span>
+                    <span class="wizard-action-card-desc">Regenerate failed images</span>
+                  </button>
+                  <button type="button" class="wizard-action-card" data-action="run-validation">
+                    <div class="wizard-action-card-icon bg-blue-100">
+                      <svg class="w-6 h-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </div>
+                    <span class="wizard-action-card-title">Run Validation</span>
+                    <span class="wizard-action-card-desc">Check for errors</span>
+                  </button>
+                  <button type="button" class="wizard-action-card" data-action="export-report">
+                    <div class="wizard-action-card-icon bg-green-100">
+                      <svg class="w-6 h-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                      </svg>
+                    </div>
+                    <span class="wizard-action-card-title">Export Report</span>
+                    <span class="wizard-action-card-desc">Download status CSV</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Tab: Pages -->
+        <section class="wizard-tab-panel" data-panel="pages">
+          <div class="wizard-container">
+            <div class="wizard-panel-header">
+              <h2 class="wizard-panel-title">All Pages</h2>
+            </div>
+            <div class="wizard-panel-content">
+              <table class="wizard-status-table">
+                <thead>
+                  <tr>
+                    <th>Page</th>
+                    <th>Content</th>
+                    <th>Images</th>
+                    <th>HTML</th>
+                    <th>Validation</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="pages-table-body">
+                  <!-- Table rows will be populated by JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- Tab: Gap Report -->
+        <section class="wizard-tab-panel" data-panel="gaps">
+          <div class="wizard-container">
+            <div class="wizard-panel-header">
+              <h2 class="wizard-panel-title">Gap Report</h2>
+              <button type="button" id="scan-gaps-btn" class="wizard-btn wizard-btn-secondary wizard-btn-sm">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+                Scan for Gaps
+              </button>
+            </div>
+            <div class="wizard-panel-content">
+              <div id="gap-report" class="space-y-6">
+                <!-- Gap categories -->
+                <div class="wizard-gap-category" id="gaps-content">
+                  <div class="wizard-gap-category-header">
+                    <svg class="w-5 h-5 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                    <h3 class="wizard-gap-category-title">Missing Content</h3>
+                    <span class="wizard-gap-count" id="gaps-content-count">0</span>
+                  </div>
+                  <div class="wizard-gap-list" id="gaps-content-list">
+                    <p class="text-neutral-500 text-sm py-4">No missing content detected</p>
+                  </div>
+                </div>
+
+                <div class="wizard-gap-category" id="gaps-images">
+                  <div class="wizard-gap-category-header">
+                    <svg class="w-5 h-5 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                    <h3 class="wizard-gap-category-title">Missing Images</h3>
+                    <span class="wizard-gap-count" id="gaps-images-count">0</span>
+                  </div>
+                  <div class="wizard-gap-list" id="gaps-images-list">
+                    <p class="text-neutral-500 text-sm py-4">No missing images detected</p>
+                  </div>
+                </div>
+
+                <div class="wizard-gap-category" id="gaps-placeholders">
+                  <div class="wizard-gap-category-header">
+                    <svg class="w-5 h-5 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                    </svg>
+                    <h3 class="wizard-gap-category-title">Placeholder Content</h3>
+                    <span class="wizard-gap-count" id="gaps-placeholders-count">0</span>
+                  </div>
+                  <div class="wizard-gap-list" id="gaps-placeholders-list">
+                    <p class="text-neutral-500 text-sm py-4">No placeholder content detected</p>
+                  </div>
+                </div>
+
+                <div class="wizard-gap-category" id="gaps-errors">
+                  <div class="wizard-gap-category-header">
+                    <svg class="w-5 h-5 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <h3 class="wizard-gap-category-title">Errors</h3>
+                    <span class="wizard-gap-count" id="gaps-errors-count">0</span>
+                  </div>
+                  <div class="wizard-gap-list" id="gaps-errors-list">
+                    <p class="text-neutral-500 text-sm py-4">No errors detected</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Tab: Validation -->
+        <section class="wizard-tab-panel" data-panel="validation">
+          <div class="wizard-container">
+            <div class="wizard-panel-header">
+              <h2 class="wizard-panel-title">Validation Results</h2>
+              <button type="button" id="run-full-validation-btn" class="wizard-btn wizard-btn-primary wizard-btn-sm">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                Run Full Validation
+              </button>
+            </div>
+            <div class="wizard-panel-content">
+              <!-- Validation Summary -->
+              <div class="wizard-validation-summary" id="validation-summary">
+                <div class="wizard-validation-stat passed">
+                  <span class="wizard-validation-stat-value" id="val-passed">0</span>
+                  <span class="wizard-validation-stat-label">Passed</span>
+                </div>
+                <div class="wizard-validation-stat warnings">
+                  <span class="wizard-validation-stat-value" id="val-warnings">0</span>
+                  <span class="wizard-validation-stat-label">Warnings</span>
+                </div>
+                <div class="wizard-validation-stat errors">
+                  <span class="wizard-validation-stat-value" id="val-errors">0</span>
+                  <span class="wizard-validation-stat-label">Errors</span>
+                </div>
+              </div>
+
+              <!-- Validation Details -->
+              <div class="wizard-validation-details mt-8" id="validation-details">
+                <div class="wizard-validation-category">
+                  <h3 class="wizard-validation-category-title">
+                    <svg class="w-5 h-5 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                    Content Validation
+                  </h3>
+                  <div id="val-content-results" class="wizard-validation-results">
+                    <p class="text-neutral-500 text-sm">Run validation to see results</p>
+                  </div>
+                </div>
+                <div class="wizard-validation-category">
+                  <h3 class="wizard-validation-category-title">
+                    <svg class="w-5 h-5 text-purple-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                    Asset Validation
+                  </h3>
+                  <div id="val-asset-results" class="wizard-validation-results">
+                    <p class="text-neutral-500 text-sm">Run validation to see results</p>
+                  </div>
+                </div>
+                <div class="wizard-validation-category">
+                  <h3 class="wizard-validation-category-title">
+                    <svg class="w-5 h-5 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                    </svg>
+                    HTML Validation
+                  </h3>
+                  <div id="val-html-results" class="wizard-validation-results">
+                    <p class="text-neutral-500 text-sm">Run validation to see results</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Progress Modal -->
+        <div id="progress-modal" class="wizard-modal hidden">
+          <div class="wizard-modal-backdrop"></div>
+          <div class="wizard-modal-content">
+            <h3 class="wizard-modal-title" id="progress-modal-title">Processing...</h3>
+            <div class="wizard-generation-progress mt-4">
+              <div class="wizard-generation-progress-bar">
+                <div class="wizard-generation-progress-fill" id="modal-progress-fill"></div>
+              </div>
+              <p class="wizard-generation-status" id="modal-progress-status">Initializing...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script type="module" src="../../../scripts/wizard-status.ts"></script>
+  </body>
+</html>

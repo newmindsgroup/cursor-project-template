@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Services - Prototype Starter Kit</title>
+    <meta name="description" content="Explore our prototyping and handoff services" />
+    <link rel="stylesheet" href="../styles/tokens.css" />
+    <link rel="stylesheet" href="../styles/base.css" />
+    <link rel="stylesheet" href="../styles/wireframe.css" />
+  </head>
+  <body>
+    <a href="#main-content" class="skip-to-main">Skip to main content</a>
+
+    <!-- Header -->
+    <div id="header-section"></div>
+
+    <!-- Main Content -->
+    <main id="main-content">
+      <!-- Hero Section -->
+      <section
+        class="relative min-h-[60vh] flex items-center justify-center bg-gradient-to-br from-secondary-600 to-secondary-800"
+        data-section="HeroServices"
+        data-elementor-widget-suggestion="Container, Heading, Text Editor"
+      >
+        <div class="container-custom">
+          <div class="max-w-3xl mx-auto text-center text-white" data-animate="fade-up">
+            <h1 class="mb-6 text-5xl md:text-6xl font-bold">Our Services</h1>
+            <p class="text-xl md:text-2xl text-secondary-100 leading-relaxed">
+              Everything you need to prototype, test, and deliver professional web experiences
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services Grid -->
+      <section
+        class="section bg-white"
+        data-section="ServicesGrid"
+        data-elementor-widget-suggestion="Container, Icon Box"
+        data-notes="Elementor: Container > 2-column grid, gap-8"
+      >
+        <div class="container-custom">
+          <div class="grid md:grid-cols-2 gap-8">
+            <!-- Service 1 -->
+            <div
+              class="p-8 bg-white rounded-2xl border-2 border-primary-200 hover:border-primary-500 transition-colors"
+              data-animate="fade-up"
+            >
+              <div class="w-14 h-14 bg-primary-100 rounded-xl flex items-center justify-center mb-6">
+                <svg class="w-7 h-7 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  />
+                </svg>
+              </div>
+              <h3 class="mb-4 text-2xl font-bold text-neutral-900">Rapid Prototyping</h3>
+              <p class="mb-6 text-neutral-600 leading-relaxed">
+                Build interactive, high-fidelity prototypes with modern tooling. Vite-powered dev
+                environment with instant hot reload, Tailwind CSS for utility-first styling, and GSAP
+                for smooth animations.
+              </p>
+              <ul class="space-y-2 text-neutral-600">
+                <li class="flex items-start gap-2">
+                  <svg class="w-5 h-5 text-primary-600 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  Component-based architecture
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg class="w-5 h-5 text-primary-600 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  Responsive breakpoints
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg class="w-5 h-5 text-primary-600 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  Interactive animations
+                </li>
+              </ul>
+            </div>
+
+            <!-- Service 2 -->
+            <div
+              class="p-8 bg-white rounded-2xl border-2 border-secondary-200 hover:border-secondary-500 transition-colors"
+              data-animate="fade-up"
+              data-animate-delay="100"
+            >
+              <div class="w-14 h-14 bg-secondary-100 rounded-xl flex items-center justify-center mb-6">
+                <svg class="w-7 h-7 text-secondary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                  />
+                </svg>
+              </div>
+              <h3 class="mb-4 text-2xl font-bold text-neutral-900">Automated Handoff</h3>
+              <p class="mb-6 text-neutral-600 leading-relaxed">
+                Generate comprehensive handoff documentation with one command. Export includes
+                step-by-step Elementor rebuild instructions, computed styles at all breakpoints, and
+                all assets organized for implementation.
+              </p>
+              <ul class="space-y-2 text-neutral-600">
+                <li class="flex items-start gap-2">
+                  <svg class="w-5 h-5 text-secondary-600 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  Markdown guide generation
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg class="w-5 h-5 text-secondary-600 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  JSON data export
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg class="w-5 h-5 text-secondary-600 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  Asset extraction
+                </li>
+              </ul>
+            </div>
+
+            <!-- Service 3 -->
+            <div
+              class="p-8 bg-white rounded-2xl border-2 border-primary-200 hover:border-primary-500 transition-colors"
+              data-animate="fade-up"
+              data-animate-delay="200"
+            >
+              <div class="w-14 h-14 bg-primary-100 rounded-xl flex items-center justify-center mb-6">
+                <svg class="w-7 h-7 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                  />
+                </svg>
+              </div>
+              <h3 class="mb-4 text-2xl font-bold text-neutral-900">Handoff Overlay</h3>
+              <p class="mb-6 text-neutral-600 leading-relaxed">
+                Visual overlay system that displays section boundaries, spacing tokens, typography
+                specs, and layout properties. Toggle on/off to verify implementations match the design
+                exactly.
+              </p>
+              <ul class="space-y-2 text-neutral-600">
+                <li class="flex items-start gap-2">
+                  <svg class="w-5 h-5 text-primary-600 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  Section outlines
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg class="w-5 h-5 text-primary-600 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  Token display
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg class="w-5 h-5 text-primary-600 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  Copy to clipboard
+                </li>
+              </ul>
+            </div>
+
+            <!-- Service 4 -->
+            <div
+              class="p-8 bg-white rounded-2xl border-2 border-secondary-200 hover:border-secondary-500 transition-colors"
+              data-animate="fade-up"
+              data-animate-delay="300"
+            >
+              <div class="w-14 h-14 bg-secondary-100 rounded-xl flex items-center justify-center mb-6">
+                <svg class="w-7 h-7 text-secondary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"
+                  />
+                </svg>
+              </div>
+              <h3 class="mb-4 text-2xl font-bold text-neutral-900">Design Tokens</h3>
+              <p class="mb-6 text-neutral-600 leading-relaxed">
+                Centralized design system with colors, typography, spacing, and effects. Define once in
+                Tailwind config and they propagate throughout the prototype and export automatically.
+              </p>
+              <ul class="space-y-2 text-neutral-600">
+                <li class="flex items-start gap-2">
+                  <svg class="w-5 h-5 text-secondary-600 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  Color palettes
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg class="w-5 h-5 text-secondary-600 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  Typography scales
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg class="w-5 h-5 text-secondary-600 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  Spacing system
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <div id="faq-section"></div>
+
+      <!-- CTA -->
+      <div id="cta-section"></div>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-section"></div>
+
+    <!-- Handoff Overlay Toggle -->
+    <div id="handoff-overlay-root"></div>
+
+    <script type="module" src="../scripts/main.ts"></script>
+    <script type="module" src="../scripts/animations.ts"></script>
+    <script type="module" src="../scripts/overlay.ts"></script>
+    <script type="module" src="../scripts/wireframe.ts"></script>
+    <script type="module">
+      async function loadSection(sectionId, sectionFile) {
+        const response = await fetch(`../sections/${sectionFile}.html`);
+        const html = await response.text();
+        document.getElementById(sectionId).innerHTML = html;
+      }
+
+      Promise.all([
+        loadSection('header-section', 'Header'),
+        loadSection('faq-section', 'FAQ'),
+        loadSection('cta-section', 'CTA'),
+        loadSection('footer-section', 'Footer'),
+      ]).then(() => {
+        window.dispatchEvent(new Event('sections-loaded'));
+      });
+    </script>
+  </body>
+</html>

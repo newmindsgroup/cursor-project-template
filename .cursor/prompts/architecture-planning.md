@@ -5,7 +5,7 @@ Propose a stack-agnostic architecture aligned to requirements and constraints.
 
 ## Inputs to review
 - `/docs/03-requirements/REQUIREMENTS.md`
-- `/docs/04-ux/UX_FLOWS.md`
+- `/docs/04-ux/ux-flows.md`
 - `/docs/05-architecture/ARCHITECTURE.md` (if exists)
 - `business-context/` and `resource-library/` (read-only)
 

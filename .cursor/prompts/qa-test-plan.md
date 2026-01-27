@@ -5,8 +5,8 @@ Create a test plan aligned to requirements and flows.
 
 ## Inputs to review
 - `/docs/03-requirements/REQUIREMENTS.md`
-- `/docs/04-ux/UX_FLOWS.md`
-- `/docs/07-qa/QA_PLAN.md`
+- `/docs/04-ux/ux-flows.md`
+- `/docs/07-qa/qa-plan.md`
 
 ## Prompt
 Define test scope, critical paths, environments, and exit criteria.

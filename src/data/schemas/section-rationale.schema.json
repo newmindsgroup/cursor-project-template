@@ -1,0 +1,239 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "section-rationale.schema.json",
+  "title": "Section Rationale Schema",
+  "description": "Schema for documenting design rationale per section for the handoff overlay",
+  "type": "object",
+  "required": ["version", "sections"],
+  "properties": {
+    "version": {
+      "type": "string",
+      "description": "Schema version",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "lastUpdated": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of last update"
+    },
+    "sections": {
+      "type": "array",
+      "description": "Array of section rationale objects",
+      "items": {
+        "$ref": "#/definitions/sectionRationale"
+      }
+    }
+  },
+  "definitions": {
+    "sectionRationale": {
+      "type": "object",
+      "required": ["sectionId", "sectionName", "sectionPurpose", "storybrandElement", "designDecisions"],
+      "properties": {
+        "sectionId": {
+          "type": "string",
+          "description": "Unique identifier matching the section's HTML id or data-section attribute",
+          "pattern": "^[a-z0-9-]+$"
+        },
+        "sectionName": {
+          "type": "string",
+          "description": "Human-readable section name"
+        },
+        "sectionPurpose": {
+          "type": "string",
+          "description": "Clear statement of what this section accomplishes for users"
+        },
+        "storybrandElement": {
+          "type": "string",
+          "description": "Which of the 7 StoryBrand elements this section serves",
+          "enum": [
+            "Character",
+            "Problem",
+            "Guide",
+            "Plan",
+            "Call to Action",
+            "Failure",
+            "Success",
+            "Character + Problem",
+            "Character + Call to Action",
+            "Guide + Authority",
+            "Plan + Call to Action",
+            "Failure + Call to Action",
+            "Success + Call to Action",
+            "Multiple"
+          ]
+        },
+        "generatedDate": {
+          "type": "string",
+          "format": "date",
+          "description": "Date this rationale was generated"
+        },
+        "designDecisions": {
+          "type": "array",
+          "description": "Array of individual design decisions for elements in this section",
+          "items": {
+            "$ref": "#/definitions/designDecision"
+          },
+          "minItems": 1
+        },
+        "layoutRationale": {
+          "$ref": "#/definitions/rationaleItem",
+          "description": "Rationale for the overall layout structure"
+        },
+        "spacingRationale": {
+          "$ref": "#/definitions/rationaleItem",
+          "description": "Rationale for spacing and padding choices"
+        },
+        "colorRationale": {
+          "$ref": "#/definitions/rationaleItem",
+          "description": "Rationale for color choices"
+        },
+        "typographyRationale": {
+          "$ref": "#/definitions/rationaleItem",
+          "description": "Rationale for typography choices"
+        },
+        "animationRationale": {
+          "$ref": "#/definitions/rationaleItem",
+          "description": "Rationale for any animations or interactions"
+        },
+        "mobileConsiderations": {
+          "type": "object",
+          "properties": {
+            "changes": {
+              "type": "string",
+              "description": "What changes on mobile"
+            },
+            "rationale": {
+              "type": "string",
+              "description": "Why these changes are made"
+            }
+          }
+        },
+        "accessibilityNotes": {
+          "type": "string",
+          "description": "Key accessibility considerations for this section"
+        },
+        "elementorImplementation": {
+          "type": "object",
+          "properties": {
+            "widgets": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Elementor widgets needed for this section"
+            },
+            "notes": {
+              "type": "string",
+              "description": "Implementation notes for Elementor developer"
+            },
+            "customCss": {
+              "type": "string",
+              "description": "Any custom CSS needed"
+            },
+            "customJs": {
+              "type": "string",
+              "description": "Any custom JavaScript needed"
+            }
+          }
+        },
+        "persuasionPrinciples": {
+          "type": "array",
+          "description": "Which persuasion principles are applied",
+          "items": {
+            "type": "string",
+            "enum": [
+              "Reciprocity",
+              "Commitment",
+              "Social Proof",
+              "Authority",
+              "Liking",
+              "Scarcity"
+            ]
+          }
+        },
+        "trendSources": {
+          "type": "array",
+          "description": "Reference URLs that inspired this design",
+          "items": {
+            "type": "string",
+            "format": "uri"
+          }
+        }
+      }
+    },
+    "designDecision": {
+      "type": "object",
+      "required": ["element", "decision", "rationale"],
+      "properties": {
+        "element": {
+          "type": "string",
+          "description": "Name of the design element (e.g., 'Headline', 'Primary CTA', 'Background')"
+        },
+        "decision": {
+          "type": "string",
+          "description": "The specific design choice made"
+        },
+        "rationale": {
+          "type": "string",
+          "description": "Why this decision was made"
+        },
+        "uxPrinciple": {
+          "type": "string",
+          "description": "UX law or principle that supports this decision"
+        },
+        "storybrandAlignment": {
+          "type": "string",
+          "description": "How this aligns with StoryBrand framework"
+        },
+        "evidenceSource": {
+          "type": "string",
+          "description": "Research, book, or best practice source"
+        },
+        "accessibilityNote": {
+          "type": "string",
+          "description": "Accessibility considerations for this element"
+        },
+        "alternatives": {
+          "type": "array",
+          "description": "Alternative approaches that were considered but not chosen",
+          "items": {
+            "type": "object",
+            "properties": {
+              "option": {
+                "type": "string"
+              },
+              "rejectionReason": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "rationaleItem": {
+      "type": "object",
+      "properties": {
+        "decision": {
+          "type": "string",
+          "description": "The design decision"
+        },
+        "rationale": {
+          "type": "string",
+          "description": "Why this decision was made"
+        },
+        "uxPrinciple": {
+          "type": "string",
+          "description": "Supporting UX principle"
+        },
+        "source": {
+          "type": "string",
+          "description": "Evidence or reference source"
+        },
+        "accessibilityNote": {
+          "type": "string",
+          "description": "Accessibility considerations"
+        }
+      }
+    }
+  }
+}

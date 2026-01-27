@@ -5,3 +5,4 @@ Never invent product requirements; ask or log an open question in QUESTIONS.md.
 Maintain DECISIONS.md, ASSUMPTIONS.md, QUESTIONS.md continuously.
 Prefer small, reviewable changes over large rewrites.
 Keep scope changes reflected in SCOPE.md and DECISIONS.md.
+Non-negotiables: consult /docs first; never name filenames from reference folders; log ambiguity to QUESTIONS.md; require PROJECT.md + SCOPE.md + docs/03-requirements/REQUIREMENTS.md before product code.

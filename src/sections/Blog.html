@@ -1,0 +1,127 @@
+<section
+  class="section bg-neutral-50"
+  data-section="Blog"
+  data-elementor-widget-suggestion="Container, Heading, Posts, Button"
+  data-notes="Elementor: Container > Heading + Posts widget (grid layout) or custom cards"
+  data-tokens='{"padding": "96px 24px", "gap": "2rem", "columns": "3"}'
+>
+  <div class="container-custom">
+    <!-- Header -->
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-12" data-animate="fade-up">
+      <div>
+        <h2 class="mb-4 text-4xl md:text-5xl font-bold text-neutral-900">Latest Insights</h2>
+        <p class="text-xl text-neutral-600 max-w-2xl">
+          Thoughts, tips, and trends from our team of experts.
+        </p>
+      </div>
+      <a href="#" class="mt-4 md:mt-0 inline-flex items-center gap-2 text-primary-600 font-semibold hover:text-primary-700 transition-colors">
+        View all posts
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+        </svg>
+      </a>
+    </div>
+
+    <!-- Blog Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Post 1 -->
+      <article
+        class="group bg-white rounded-2xl overflow-hidden shadow-soft transition-all duration-300 hover:shadow-large"
+        data-animate="fade-up"
+        data-animate-delay="100"
+      >
+        <a href="#" class="block">
+          <div class="aspect-[16/10] bg-gradient-to-br from-primary-400 to-primary-600 flex items-center justify-center">
+            <svg class="w-12 h-12 text-white/50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+          </div>
+        </a>
+        <div class="p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="px-3 py-1 bg-primary-100 text-primary-600 text-xs font-semibold rounded-full">Design</span>
+            <span class="text-neutral-400 text-sm">Jan 15, 2024</span>
+          </div>
+          <a href="#">
+            <h3 class="text-xl font-bold text-neutral-900 mb-3 group-hover:text-primary-600 transition-colors">
+              10 Web Design Trends to Watch in 2024
+            </h3>
+          </a>
+          <p class="text-neutral-600 mb-4 line-clamp-2">
+            Explore the latest design trends shaping the digital landscape this year, from AI-generated graphics to immersive experiences.
+          </p>
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 bg-neutral-200 rounded-full"></div>
+            <span class="text-sm text-neutral-700 font-medium">Sarah Johnson</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Post 2 -->
+      <article
+        class="group bg-white rounded-2xl overflow-hidden shadow-soft transition-all duration-300 hover:shadow-large"
+        data-animate="fade-up"
+        data-animate-delay="200"
+      >
+        <a href="#" class="block">
+          <div class="aspect-[16/10] bg-gradient-to-br from-secondary-400 to-secondary-600 flex items-center justify-center">
+            <svg class="w-12 h-12 text-white/50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+          </div>
+        </a>
+        <div class="p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="px-3 py-1 bg-secondary-100 text-secondary-600 text-xs font-semibold rounded-full">Development</span>
+            <span class="text-neutral-400 text-sm">Jan 12, 2024</span>
+          </div>
+          <a href="#">
+            <h3 class="text-xl font-bold text-neutral-900 mb-3 group-hover:text-primary-600 transition-colors">
+              Building Faster: Performance Tips for Modern Websites
+            </h3>
+          </a>
+          <p class="text-neutral-600 mb-4 line-clamp-2">
+            Speed matters. Learn how to optimize your website for lightning-fast load times and better user experience.
+          </p>
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 bg-neutral-200 rounded-full"></div>
+            <span class="text-sm text-neutral-700 font-medium">Michael Chen</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Post 3 -->
+      <article
+        class="group bg-white rounded-2xl overflow-hidden shadow-soft transition-all duration-300 hover:shadow-large"
+        data-animate="fade-up"
+        data-animate-delay="300"
+      >
+        <a href="#" class="block">
+          <div class="aspect-[16/10] bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center">
+            <svg class="w-12 h-12 text-white/50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+          </div>
+        </a>
+        <div class="p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="px-3 py-1 bg-green-100 text-green-600 text-xs font-semibold rounded-full">Strategy</span>
+            <span class="text-neutral-400 text-sm">Jan 10, 2024</span>
+          </div>
+          <a href="#">
+            <h3 class="text-xl font-bold text-neutral-900 mb-3 group-hover:text-primary-600 transition-colors">
+              Content Strategy: From Planning to Execution
+            </h3>
+          </a>
+          <p class="text-neutral-600 mb-4 line-clamp-2">
+            A comprehensive guide to creating content that resonates with your audience and drives real business results.
+          </p>
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 bg-neutral-200 rounded-full"></div>
+            <span class="text-sm text-neutral-700 font-medium">Emily Rodriguez</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

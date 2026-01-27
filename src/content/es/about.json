@@ -1,0 +1,42 @@
+{
+  "$schema": "../schema/page-content.schema.json",
+  "_usage": "Este archivo contiene contenido para la página Acerca de. Ejecute 'npm run wizard' para generar contenido usando IA con la metodología StoryBrand.",
+  "meta": {
+    "title": "",
+    "description": "",
+    "language": "es",
+    "status": "draft",
+    "lastUpdated": ""
+  },
+  "hero": {
+    "headline": "",
+    "subheadline": ""
+  },
+  "story": {
+    "sectionTitle": "",
+    "content": ""
+  },
+  "mission": {
+    "sectionTitle": "",
+    "statement": ""
+  },
+  "values": {
+    "sectionTitle": "",
+    "items": []
+  },
+  "team": {
+    "sectionTitle": "",
+    "sectionSubtitle": "",
+    "members": []
+  },
+  "timeline": {
+    "sectionTitle": "",
+    "milestones": []
+  },
+  "cta": {
+    "headline": "",
+    "subheadline": "",
+    "buttonText": "",
+    "buttonUrl": ""
+  }
+}

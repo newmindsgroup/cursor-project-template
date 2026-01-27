@@ -1,0 +1,194 @@
+{
+  "meta": {
+    "title": "Spa Services & Treatments | Serenity Wellness Center",
+    "description": "Explore our full menu of massage therapy, facial treatments, body wraps, and yoga classes. Find the perfect treatment for your wellness journey.",
+    "keywords": "spa services, massage menu, facial treatments, body wraps, yoga classes scottsdale"
+  },
+  "hero": {
+    "headline": "Our Services",
+    "subheadline": "Comprehensive treatments designed to restore, rejuvenate, and renew",
+    "image": {
+      "src": "/assets/services-hero.jpg",
+      "alt": "Spa treatment in progress"
+    }
+  },
+  "intro": {
+    "headline": "Wellness Tailored to You",
+    "content": "Every body is different, every stress pattern unique. That's why we offer a diverse menu of treatments that can be customized to your specific needs. Whether you're seeking deep relaxation, pain relief, skin rejuvenation, or mindfulness training, our expert team will craft the perfect experience."
+  },
+  "categories": [
+    {
+      "id": "massage",
+      "title": "Massage Therapy",
+      "description": "Therapeutic touch to release tension, ease pain, and promote deep relaxation",
+      "icon": "massage",
+      "services": [
+        {
+          "name": "Serenity Signature Massage",
+          "duration": "80 minutes",
+          "price": "$165",
+          "description": "Our signature full-body experience combining Swedish, deep tissue, and hot stone techniques customized to your needs.",
+          "benefits": ["Full body relaxation", "Tension release", "Improved circulation"]
+        },
+        {
+          "name": "Deep Tissue Therapy",
+          "duration": "60 minutes",
+          "price": "$120",
+          "description": "Focused pressure targeting chronic muscle tension and knots for lasting relief.",
+          "benefits": ["Pain relief", "Muscle recovery", "Postural improvement"]
+        },
+        {
+          "name": "Hot Stone Massage",
+          "duration": "75 minutes",
+          "price": "$145",
+          "description": "Heated basalt stones melt away tension while enhancing circulation and calm.",
+          "benefits": ["Deep warmth", "Stress reduction", "Enhanced relaxation"]
+        },
+        {
+          "name": "Aromatherapy Massage",
+          "duration": "60 minutes",
+          "price": "$110",
+          "description": "Essential oil-infused massage targeting your specific wellness goals.",
+          "benefits": ["Mood enhancement", "Gentle relaxation", "Sensory healing"]
+        },
+        {
+          "name": "Prenatal Massage",
+          "duration": "60 minutes",
+          "price": "$115",
+          "description": "Safe, nurturing massage designed for mothers-to-be with specialized positioning.",
+          "benefits": ["Comfort relief", "Reduced swelling", "Better sleep"]
+        }
+      ]
+    },
+    {
+      "id": "facials",
+      "title": "Facial Treatments",
+      "description": "Advanced skincare to reveal your natural radiance and address specific concerns",
+      "icon": "face",
+      "services": [
+        {
+          "name": "Signature Glow Facial",
+          "duration": "60 minutes",
+          "price": "$125",
+          "description": "Complete facial experience with cleansing, exfoliation, extractions, mask, and facial massage.",
+          "benefits": ["Deep cleansing", "Radiant glow", "Skin renewal"]
+        },
+        {
+          "name": "Anti-Aging Luxury Facial",
+          "duration": "75 minutes",
+          "price": "$165",
+          "description": "Advanced treatment with peptides, vitamin C, and LED light therapy to combat signs of aging.",
+          "benefits": ["Fine line reduction", "Firming", "Brightening"]
+        },
+        {
+          "name": "Hydrating Rescue Facial",
+          "duration": "50 minutes",
+          "price": "$95",
+          "description": "Intensive moisture treatment for dry, dehydrated, or weather-stressed skin.",
+          "benefits": ["Deep hydration", "Plumping", "Barrier repair"]
+        },
+        {
+          "name": "Gentleman's Facial",
+          "duration": "45 minutes",
+          "price": "$85",
+          "description": "Targeted treatment addressing men's specific skincare needs including razor irritation.",
+          "benefits": ["Deep cleansing", "Soothing", "Pore refinement"]
+        }
+      ]
+    },
+    {
+      "id": "body",
+      "title": "Body Treatments",
+      "description": "Full-body rituals for detoxification, nourishment, and skin renewal",
+      "icon": "body",
+      "services": [
+        {
+          "name": "Desert Detox Body Wrap",
+          "duration": "60 minutes",
+          "price": "$130",
+          "description": "Local clay and desert botanicals draw out impurities while nourishing skin.",
+          "benefits": ["Detoxification", "Skin softening", "Mineral infusion"]
+        },
+        {
+          "name": "Sugar Glow Body Polish",
+          "duration": "45 minutes",
+          "price": "$85",
+          "description": "Full-body exfoliation with organic sugar and essential oils for silky smooth skin.",
+          "benefits": ["Exfoliation", "Soft skin", "Improved texture"]
+        },
+        {
+          "name": "Serenity Soak Experience",
+          "duration": "30 minutes",
+          "price": "$55",
+          "description": "Private soaking tub with therapeutic minerals, essential oils, and chromotherapy.",
+          "benefits": ["Muscle relaxation", "Mental calm", "Skin nourishment"]
+        }
+      ]
+    },
+    {
+      "id": "yoga",
+      "title": "Yoga & Meditation",
+      "description": "Mindful movement and stillness practices for inner peace and flexibility",
+      "icon": "yoga",
+      "services": [
+        {
+          "name": "Private Yoga Session",
+          "duration": "60 minutes",
+          "price": "$95",
+          "description": "One-on-one instruction tailored to your experience level and goals.",
+          "benefits": ["Personalized guidance", "Proper alignment", "Goal focus"]
+        },
+        {
+          "name": "Restorative Yoga Class",
+          "duration": "75 minutes",
+          "price": "$25",
+          "description": "Gentle supported poses held for extended time to release deep tension.",
+          "benefits": ["Deep relaxation", "Nervous system reset", "Flexibility"]
+        },
+        {
+          "name": "Guided Meditation",
+          "duration": "30 minutes",
+          "price": "$35",
+          "description": "Private session learning meditation techniques you can use anywhere.",
+          "benefits": ["Mental clarity", "Stress tools", "Inner peace"]
+        }
+      ]
+    }
+  ],
+  "packages": {
+    "headline": "Wellness Packages",
+    "subheadline": "Curated experiences for complete rejuvenation",
+    "items": [
+      {
+        "name": "Half-Day Retreat",
+        "duration": "3 hours",
+        "price": "$325",
+        "includes": ["Signature Massage (60 min)", "Signature Facial (60 min)", "Light refreshments"],
+        "savings": "Save $40"
+      },
+      {
+        "name": "Full-Day Escape",
+        "duration": "5 hours",
+        "price": "$495",
+        "includes": ["Body Polish", "Hot Stone Massage", "Luxury Facial", "Healthy lunch", "Spa amenities"],
+        "savings": "Save $75"
+      },
+      {
+        "name": "Couples Retreat",
+        "duration": "2.5 hours",
+        "price": "$450",
+        "includes": ["Side-by-side massage", "Private relaxation suite", "Champagne toast"],
+        "savings": "Perfect for special occasions"
+      }
+    ]
+  },
+  "cta": {
+    "headline": "Ready to Begin Your Wellness Journey?",
+    "subheadline": "Our team is here to help you choose the perfect treatment",
+    "button": {
+      "text": "Book Now",
+      "href": "/contact"
+    },
+    "phone": "(480) 555-7890"
+  }
+}

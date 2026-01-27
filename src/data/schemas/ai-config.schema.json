@@ -1,0 +1,133 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "ai-config.schema.json",
+  "title": "AI Configuration",
+  "description": "Schema for AI provider and model configuration",
+  "type": "object",
+  "required": ["version"],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "description": {
+      "type": "string"
+    },
+    "providers": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/definitions/provider"
+      }
+    },
+    "defaultProvider": {
+      "type": "string"
+    },
+    "defaultTier": {
+      "type": "string",
+      "enum": ["fast", "standard", "advanced"]
+    },
+    "tiers": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/definitions/tier"
+      }
+    },
+    "scripts": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/definitions/scriptConfig"
+      }
+    },
+    "settings": {
+      "type": "object",
+      "properties": {
+        "maxRetries": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 10
+        },
+        "retryDelay": {
+          "type": "integer",
+          "minimum": 100
+        },
+        "timeout": {
+          "type": "integer",
+          "minimum": 1000
+        },
+        "temperature": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 2
+        },
+        "maxTokens": {
+          "type": "integer",
+          "minimum": 100
+        }
+      }
+    },
+    "pipelines": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/definitions/pipeline"
+      }
+    }
+  },
+  "definitions": {
+    "provider": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "strengths": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "bestFor": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "tier": {
+      "type": "object",
+      "properties": {
+        "description": { "type": "string" },
+        "useCases": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "models": {
+          "type": "object",
+          "additionalProperties": { "type": "string" }
+        }
+      }
+    },
+    "scriptConfig": {
+      "type": "object",
+      "properties": {
+        "description": { "type": "string" },
+        "recommendedTier": {
+          "type": "string",
+          "enum": ["fast", "standard", "advanced"]
+        },
+        "recommendedProvider": { "type": "string" }
+      }
+    },
+    "pipeline": {
+      "type": "object",
+      "properties": {
+        "description": { "type": "string" },
+        "steps": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "order": {
+          "type": "string",
+          "enum": ["sequential", "parallel"]
+        }
+      }
+    }
+  }
+}

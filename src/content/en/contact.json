@@ -1,0 +1,38 @@
+{
+  "$schema": "../schema/page-content.schema.json",
+  "_usage": "This file contains content for the Contact page. Run 'npm run wizard' to generate content using AI with StoryBrand methodology.",
+  "meta": {
+    "title": "",
+    "description": "",
+    "language": "en",
+    "status": "draft",
+    "lastUpdated": ""
+  },
+  "hero": {
+    "headline": "",
+    "subheadline": ""
+  },
+  "form": {
+    "sectionTitle": "",
+    "sectionSubtitle": "",
+    "fields": {
+      "name": { "label": "", "placeholder": "" },
+      "email": { "label": "", "placeholder": "" },
+      "phone": { "label": "", "placeholder": "" },
+      "message": { "label": "", "placeholder": "" },
+      "submit": { "text": "" }
+    }
+  },
+  "contactInfo": {
+    "sectionTitle": "",
+    "items": []
+  },
+  "hours": {
+    "sectionTitle": "",
+    "schedule": []
+  },
+  "map": {
+    "enabled": false,
+    "embedUrl": ""
+  }
+}

@@ -1,0 +1,138 @@
+{
+  "meta": {
+    "version": "1.0.0",
+    "demoName": "Serenity Wellness Center",
+    "description": "Complete demo data for wizard demonstration"
+  },
+  "project": {
+    "projectName": "Serenity Wellness Center Website",
+    "clientName": "Serenity Wellness Center",
+    "industry": "healthcare",
+    "contactEmail": "info@serenitywellness.com",
+    "projectDescription": "A complete website redesign for Serenity Wellness Center, a premier spa and wellness facility offering massage therapy, facials, body treatments, and holistic wellness programs. The site should convey calm, professionalism, and luxury while driving online bookings.",
+    "budgetRange": "10k-25k",
+    "targetLaunchDays": 60
+  },
+  "aiConfig": {
+    "textProvider": "cursor",
+    "imageProvider": "google",
+    "textModel": "cursor-fallback",
+    "imageModel": "imagen-3"
+  },
+  "uploadedFiles": [
+    {
+      "name": "company-brief.pdf",
+      "size": "245 KB",
+      "sizeBytes": 250880,
+      "type": "application/pdf",
+      "uploadedAt": "2024-01-15T10:30:00Z"
+    },
+    {
+      "name": "brand-guidelines.docx",
+      "size": "1.2 MB",
+      "sizeBytes": 1258291,
+      "type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "uploadedAt": "2024-01-15T10:31:00Z"
+    },
+    {
+      "name": "services-pricing.xlsx",
+      "size": "89 KB",
+      "sizeBytes": 91136,
+      "type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "uploadedAt": "2024-01-15T10:32:00Z"
+    }
+  ],
+  "extractedContent": {
+    "businessName": "Serenity Wellness Center",
+    "tagline": "Your Journey to Inner Peace Begins Here",
+    "industry": "Health & Wellness, Spa Services",
+    "yearFounded": "2015",
+    "location": {
+      "address": "456 Tranquil Lane",
+      "city": "Santa Monica",
+      "state": "CA",
+      "zip": "90401",
+      "country": "USA"
+    },
+    "contact": {
+      "phone": "(310) 555-CALM",
+      "email": "info@serenitywellness.com",
+      "website": "www.serenitywellness.com"
+    },
+    "services": [
+      "Swedish Massage",
+      "Deep Tissue Massage",
+      "Hot Stone Therapy",
+      "Aromatherapy Facials",
+      "Anti-Aging Treatments",
+      "Body Wraps",
+      "Salt Scrubs",
+      "Yoga Classes",
+      "Meditation Sessions",
+      "Wellness Coaching"
+    ],
+    "targetAudience": [
+      "Stressed professionals seeking relaxation",
+      "Self-care enthusiasts looking for premium treatments",
+      "Athletes needing recovery and sports massage",
+      "Couples seeking romantic spa experiences",
+      "Health-conscious individuals pursuing holistic wellness"
+    ],
+    "brandVoice": {
+      "tone": "Calming, professional, nurturing, aspirational",
+      "personality": "Warm, knowledgeable, trustworthy, luxurious",
+      "keywords": ["serenity", "wellness", "rejuvenate", "transform", "balance", "harmony"]
+    },
+    "uniqueValueProposition": "Combining ancient healing traditions with modern wellness science to create personalized journeys to total wellbeing",
+    "competitors": [
+      "Burke Williams Spa",
+      "Exhale Spa",
+      "The NOW Massage"
+    ],
+    "goals": [
+      "Increase online booking conversions by 40%",
+      "Build email list for wellness newsletter",
+      "Showcase expertise through blog content",
+      "Highlight team credentials and experience"
+    ]
+  },
+  "selectedPages": [
+    {
+      "id": "homepage",
+      "name": "Homepage",
+      "blueprint": "homepage",
+      "sections": ["hero", "problem", "solution", "features", "testimonials", "cta"]
+    },
+    {
+      "id": "about",
+      "name": "About",
+      "blueprint": "about",
+      "sections": ["hero", "story", "team", "values", "certifications"]
+    },
+    {
+      "id": "services",
+      "name": "Services",
+      "blueprint": "services",
+      "sections": ["hero", "service-grid", "process", "pricing-preview", "cta"]
+    },
+    {
+      "id": "contact",
+      "name": "Contact",
+      "blueprint": "contact",
+      "sections": ["hero", "form", "map", "hours", "faq"]
+    },
+    {
+      "id": "pricing",
+      "name": "Pricing",
+      "blueprint": "pricing",
+      "sections": ["hero", "pricing-table", "packages", "membership", "cta"]
+    }
+  ],
+  "generationResults": {
+    "personas": 3,
+    "pages": 5,
+    "sections": 26,
+    "images": 12,
+    "wordCount": 4500
+  }
+}

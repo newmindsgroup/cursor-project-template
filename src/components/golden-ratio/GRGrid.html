@@ -1,0 +1,156 @@
+<!--
+  GRGrid - Golden Ratio Grid Templates
+  
+  Pre-built RESPONSIVE grid layouts using Golden Ratio proportions (61.8% / 38.2%).
+  ALL grids use MOBILE-FIRST approach: single column base that expands on larger screens.
+  
+  RESPONSIVE BEHAVIOR:
+  - Mobile (< 768px):  Single column (grid-cols-1) - content stacks vertically
+  - Tablet (768px+):   Two columns for most grids (md:grid-cols-2)
+  - Desktop (1024px+): Full layout including Golden Ratio splits (lg:grid-cols-*)
+  
+  GRID GAP SCALING:
+  | Breakpoint | Class     | Value |
+  |------------|-----------|-------|
+  | Mobile     | gap-8     | 32px  |
+  | Desktop    | lg:gap-12 | 48px  |
+  
+  GOLDEN RATIO SPLITS:
+  - Minor: 38.2% (1 / 1.618)
+  - Major: 61.8% (1.618 / 2.618)
+-->
+
+<!-- ============================================================================
+     GOLDEN RATIO SPLIT - Major content on right (61.8%)
+     Content stacks on mobile, splits on desktop
+     ============================================================================ -->
+<div class="grid grid-cols-1 lg:grid-cols-[38.2%_61.8%] gap-8 lg:gap-12 items-center">
+  <div>
+    <!-- Minor content (38.2%) - Image, sidebar, secondary info -->
+    <!-- Shows FIRST on mobile (stacked on top) -->
+    <div class="aspect-[1/1.618] lg:aspect-[1.618/1] overflow-hidden rounded-2xl bg-neutral-100">
+      <img src="..." alt="..." class="w-full h-full object-cover">
+    </div>
+  </div>
+  <div>
+    <!-- Major content (61.8%) - Main text, primary info -->
+    <!-- Shows SECOND on mobile -->
+    <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4 md:mb-6">
+      {Major Content Headline}
+    </h2>
+    <p class="text-lg md:text-xl text-neutral-600 leading-relaxed mb-6 md:mb-8">
+      {Description text that provides context and detail}
+    </p>
+    <a href="#" class="inline-flex px-6 py-3 bg-primary-600 text-white font-semibold rounded-lg">
+      {CTA Button}
+    </a>
+  </div>
+</div>
+
+<!-- ============================================================================
+     GOLDEN RATIO SPLIT REVERSE - Major content on left (61.8%)
+     ============================================================================ -->
+<!--
+<div class="grid grid-cols-1 lg:grid-cols-[61.8%_38.2%] gap-8 lg:gap-12 items-center">
+  <div>
+    {Major content (61.8%) - Shows FIRST on mobile}
+  </div>
+  <div>
+    {Minor content (38.2%)}
+  </div>
+</div>
+-->
+
+<!-- ============================================================================
+     EQUAL 2-COLUMN GRID
+     Stacks on mobile, 2 columns on tablet+
+     ============================================================================ -->
+<!--
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+  <div>{Column 1}</div>
+  <div>{Column 2}</div>
+</div>
+-->
+
+<!-- ============================================================================
+     3-COLUMN GRID
+     Stacks on mobile, 2 columns on tablet, 3 columns on desktop
+     ============================================================================ -->
+<!--
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+  <div>{Column 1}</div>
+  <div>{Column 2}</div>
+  <div>{Column 3}</div>
+</div>
+-->
+
+<!-- ============================================================================
+     4-COLUMN GRID
+     2 columns on mobile, 2 on tablet, 4 on desktop
+     ============================================================================ -->
+<!--
+<div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+  <div>{Column 1}</div>
+  <div>{Column 2}</div>
+  <div>{Column 3}</div>
+  <div>{Column 4}</div>
+</div>
+-->
+
+<!-- ============================================================================
+     ASYMMETRIC 3-COLUMN (1:2:1 ratio)
+     Stacks on mobile, full layout on desktop
+     ============================================================================ -->
+<!--
+<div class="grid grid-cols-1 lg:grid-cols-[1fr_2fr_1fr] gap-8 lg:gap-12">
+  <div>{Side content}</div>
+  <div>{Main content - 2x width}</div>
+  <div>{Side content}</div>
+</div>
+-->
+
+<!-- ============================================================================
+     FEATURE GRID WITH GOLDEN RATIO CARDS
+     Cards stack on mobile, grid on larger screens
+     ============================================================================ -->
+<!--
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+  
+  <div class="p-8 bg-white rounded-2xl border border-neutral-200 shadow-soft">
+    <div class="w-14 h-14 mb-6 bg-primary-100 rounded-xl flex items-center justify-center">
+      <svg class="w-7 h-7 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">...</svg>
+    </div>
+    <h3 class="text-xl font-bold text-neutral-900 mb-3">{Feature Title}</h3>
+    <p class="text-neutral-600 leading-relaxed">{Feature description}</p>
+  </div>
+  
+  <div class="p-8 bg-white rounded-2xl border border-neutral-200 shadow-soft">
+    {Feature 2}
+  </div>
+  
+  <div class="p-8 bg-white rounded-2xl border border-neutral-200 shadow-soft">
+    {Feature 3}
+  </div>
+  
+</div>
+-->
+
+<!-- ============================================================================
+     ALTERNATING CONTENT BLOCKS
+     Image/text alternating, responsive stacking
+     ============================================================================ -->
+<!--
+<div class="space-y-16 md:space-y-24 lg:space-y-32">
+  
+  <div class="grid grid-cols-1 lg:grid-cols-[61.8%_38.2%] gap-8 lg:gap-12 items-center">
+    <div>{Text content}</div>
+    <div>{Image}</div>
+  </div>
+  
+  <div class="grid grid-cols-1 lg:grid-cols-[38.2%_61.8%] gap-8 lg:gap-12 items-center">
+    <div class="order-2 lg:order-1">{Image}</div>
+    <div class="order-1 lg:order-2">{Text content}</div>
+  </div>
+  
+</div>
+-->

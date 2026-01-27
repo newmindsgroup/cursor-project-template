@@ -1,0 +1,88 @@
+{
+  "personas": [
+    {
+      "id": "stressed-executive",
+      "name": "Jennifer",
+      "title": "The Stressed Executive",
+      "age": "42-55",
+      "occupation": "Corporate Executive / Business Owner",
+      "image": "/assets/generated/persona-jennifer.jpg",
+      "quote": "I need a sanctuary where I can truly disconnect and recharge.",
+      "goals": [
+        "Find quick, effective stress relief during lunch breaks",
+        "Maintain work-life balance despite demanding schedule",
+        "Prevent burnout and maintain peak performance"
+      ],
+      "painPoints": [
+        "Limited time for self-care",
+        "Chronic tension from long hours at desk",
+        "Difficulty sleeping due to work stress"
+      ],
+      "preferredServices": [
+        "Express 30-minute massage",
+        "Deep tissue therapy",
+        "Executive wellness packages"
+      ],
+      "communicationPreferences": {
+        "channels": ["Email", "Text reminders"],
+        "tone": "Professional, efficient, results-focused"
+      }
+    },
+    {
+      "id": "self-care-enthusiast",
+      "name": "Melissa",
+      "title": "The Self-Care Enthusiast",
+      "age": "28-40",
+      "occupation": "Marketing Professional / Creative",
+      "image": "/assets/generated/persona-melissa.jpg",
+      "quote": "Self-care isn't selfish—it's essential for being my best self.",
+      "goals": [
+        "Maintain a regular self-care routine",
+        "Try new wellness treatments and experiences",
+        "Look and feel radiant for special occasions"
+      ],
+      "painPoints": [
+        "Finding high-quality, trustworthy spa services",
+        "Balancing budget with desire for premium treatments",
+        "Coordinating spa visits with busy social calendar"
+      ],
+      "preferredServices": [
+        "Monthly facial memberships",
+        "Seasonal body treatments",
+        "Couples spa packages"
+      ],
+      "communicationPreferences": {
+        "channels": ["Instagram", "Email newsletter"],
+        "tone": "Warm, aspirational, lifestyle-focused"
+      }
+    },
+    {
+      "id": "active-athlete",
+      "name": "David",
+      "title": "The Active Athlete",
+      "age": "30-50",
+      "occupation": "Fitness Enthusiast / Weekend Warrior",
+      "image": "/assets/generated/persona-david.jpg",
+      "quote": "Recovery is just as important as training—my body is my instrument.",
+      "goals": [
+        "Optimize recovery between workouts",
+        "Prevent and treat sports-related injuries",
+        "Improve flexibility and range of motion"
+      ],
+      "painPoints": [
+        "Muscle soreness impacting performance",
+        "Finding therapists who understand athletic needs",
+        "Fitting recovery sessions into training schedule"
+      ],
+      "preferredServices": [
+        "Sports massage",
+        "Deep tissue therapy",
+        "Hot stone muscle recovery"
+      ],
+      "communicationPreferences": {
+        "channels": ["App booking", "SMS"],
+        "tone": "Direct, performance-oriented, data-driven"
+      }
+    }
+  ]
+}

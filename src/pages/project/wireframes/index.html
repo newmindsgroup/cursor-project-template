@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wireframe Gallery - Content Review</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="description" content="Review website wireframes and content without visual design distractions" />
+    <link rel="stylesheet" href="../../../styles/tokens.css" />
+    <link rel="stylesheet" href="../../../styles/base.css" />
+    <link rel="stylesheet" href="../../../styles/project-portal.css" />
+    <link rel="stylesheet" href="../../../styles/wireframe.css" />
+  </head>
+  <body class="bg-neutral-50">
+    <!-- Header -->
+    <header class="bg-neutral-800 text-white py-6">
+      <div class="container-custom">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-4">
+            <div class="w-10 h-10 bg-neutral-600 rounded-lg flex items-center justify-center">
+              <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
+              </svg>
+            </div>
+            <div>
+              <h1 class="text-2xl font-bold">Wireframe Gallery</h1>
+              <p class="text-neutral-400 text-sm">Content review without design distractions</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-4">
+            <a href="../" class="text-neutral-300 hover:text-white text-sm font-medium">
+              ← Back to Dashboard
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="portal-container">
+      <!-- Portal Header -->
+      <div class="portal-header">
+        <h2 class="portal-title">Content Review Mode</h2>
+        <p class="portal-subtitle">
+          Review the website structure and content without colors or images. This helps focus on messaging, hierarchy, and layout before visual design.
+        </p>
+      </div>
+
+      <!-- Navigation Tabs -->
+      <nav class="portal-tabs">
+        <a href="../" class="portal-tab">Progress</a>
+        <a href="../ux/" class="portal-tab">UX Assets</a>
+        <a href="./" class="portal-tab active">Wireframes</a>
+      </nav>
+
+      <!-- Instructions -->
+      <section class="portal-section">
+        <div class="bg-white rounded-2xl border border-neutral-200 p-8">
+          <h3 class="text-xl font-bold text-neutral-900 mb-6 flex items-center gap-3">
+            <svg class="w-6 h-6 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            How to Use Wireframe Mode
+          </h3>
+          <div class="grid md:grid-cols-3 gap-6 mb-8">
+            <div class="p-4 bg-neutral-50 rounded-xl">
+              <div class="w-10 h-10 bg-neutral-200 rounded-lg flex items-center justify-center mb-4">
+                <span class="text-neutral-600 font-bold text-lg">1</span>
+              </div>
+              <h4 class="font-bold text-neutral-900 mb-2">Focus on Content</h4>
+              <p class="text-neutral-600 text-sm">Review headlines, body copy, and calls-to-action without color or imagery distractions.</p>
+            </div>
+            <div class="p-4 bg-neutral-50 rounded-xl">
+              <div class="w-10 h-10 bg-neutral-200 rounded-lg flex items-center justify-center mb-4">
+                <span class="text-neutral-600 font-bold text-lg">2</span>
+              </div>
+              <h4 class="font-bold text-neutral-900 mb-2">Check Hierarchy</h4>
+              <p class="text-neutral-600 text-sm">Verify the visual hierarchy of information makes sense without relying on color cues.</p>
+            </div>
+            <div class="p-4 bg-neutral-50 rounded-xl">
+              <div class="w-10 h-10 bg-neutral-200 rounded-lg flex items-center justify-center mb-4">
+                <span class="text-neutral-600 font-bold text-lg">3</span>
+              </div>
+              <h4 class="font-bold text-neutral-900 mb-2">Note Placeholders</h4>
+              <p class="text-neutral-600 text-sm">Striped boxes indicate where images and videos will go. Review what content is needed.</p>
+            </div>
+          </div>
+          
+          <div class="flex flex-wrap items-center gap-4 pt-6 border-t border-neutral-200">
+            <div class="flex items-center gap-2 text-sm text-neutral-600">
+              <span class="font-medium">Toggle wireframe mode on any page:</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <kbd class="px-2 py-1 bg-neutral-100 border border-neutral-300 rounded text-sm font-mono">Cmd/Ctrl + Shift + W</kbd>
+              <span class="text-neutral-400">or</span>
+              <code class="px-2 py-1 bg-neutral-100 rounded text-sm font-mono">?wireframe=1</code>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Page Gallery -->
+      <section class="portal-section">
+        <h3 class="portal-section-title">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+          </svg>
+          All Pages
+        </h3>
+        <div id="wireframe-gallery" class="wireframe-gallery-grid">
+          <!-- Gallery items -->
+          <div class="wireframe-gallery-card">
+            <div class="wireframe-gallery-preview bg-neutral-200 flex items-center justify-center">
+              <span class="text-neutral-400 text-sm">Homepage Preview</span>
+            </div>
+            <div class="wireframe-gallery-info">
+              <h4 class="wireframe-gallery-title">Homepage</h4>
+              <p class="wireframe-gallery-meta">Main landing page</p>
+              <div class="wireframe-gallery-actions">
+                <a href="../../index.html?wireframe=1" class="wireframe-gallery-btn primary">View Wireframe</a>
+                <a href="../../index.html" class="wireframe-gallery-btn secondary">View Design</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="wireframe-gallery-card">
+            <div class="wireframe-gallery-preview bg-neutral-200 flex items-center justify-center">
+              <span class="text-neutral-400 text-sm">About Preview</span>
+            </div>
+            <div class="wireframe-gallery-info">
+              <h4 class="wireframe-gallery-title">About</h4>
+              <p class="wireframe-gallery-meta">Company information</p>
+              <div class="wireframe-gallery-actions">
+                <a href="../../about.html?wireframe=1" class="wireframe-gallery-btn primary">View Wireframe</a>
+                <a href="../../about.html" class="wireframe-gallery-btn secondary">View Design</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="wireframe-gallery-card">
+            <div class="wireframe-gallery-preview bg-neutral-200 flex items-center justify-center">
+              <span class="text-neutral-400 text-sm">Services Preview</span>
+            </div>
+            <div class="wireframe-gallery-info">
+              <h4 class="wireframe-gallery-title">Services</h4>
+              <p class="wireframe-gallery-meta">Service offerings</p>
+              <div class="wireframe-gallery-actions">
+                <a href="../../services.html?wireframe=1" class="wireframe-gallery-btn primary">View Wireframe</a>
+                <a href="../../services.html" class="wireframe-gallery-btn secondary">View Design</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="wireframe-gallery-card">
+            <div class="wireframe-gallery-preview bg-neutral-200 flex items-center justify-center">
+              <span class="text-neutral-400 text-sm">Contact Preview</span>
+            </div>
+            <div class="wireframe-gallery-info">
+              <h4 class="wireframe-gallery-title">Contact</h4>
+              <p class="wireframe-gallery-meta">Contact form and info</p>
+              <div class="wireframe-gallery-actions">
+                <a href="../../contact.html?wireframe=1" class="wireframe-gallery-btn primary">View Wireframe</a>
+                <a href="../../contact.html" class="wireframe-gallery-btn secondary">View Design</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Content Checklist -->
+      <section class="portal-section">
+        <h3 class="portal-section-title">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+          </svg>
+          Content Review Checklist
+        </h3>
+        <div class="bg-white rounded-2xl border border-neutral-200 p-6">
+          <p class="text-neutral-600 mb-6">Use this checklist when reviewing wireframes to ensure content is complete and effective:</p>
+          
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="space-y-3">
+              <h4 class="font-semibold text-neutral-900">Headlines & Copy</h4>
+              <label class="flex items-start gap-3 cursor-pointer">
+                <input type="checkbox" class="mt-1 w-4 h-4 rounded border-neutral-300 text-primary-600 focus:ring-primary-500">
+                <span class="text-sm text-neutral-700">Headlines are clear and compelling</span>
+              </label>
+              <label class="flex items-start gap-3 cursor-pointer">
+                <input type="checkbox" class="mt-1 w-4 h-4 rounded border-neutral-300 text-primary-600 focus:ring-primary-500">
+                <span class="text-sm text-neutral-700">Body copy supports the headline message</span>
+              </label>
+              <label class="flex items-start gap-3 cursor-pointer">
+                <input type="checkbox" class="mt-1 w-4 h-4 rounded border-neutral-300 text-primary-600 focus:ring-primary-500">
+                <span class="text-sm text-neutral-700">No placeholder text remains (Lorem ipsum)</span>
+              </label>
+              <label class="flex items-start gap-3 cursor-pointer">
+                <input type="checkbox" class="mt-1 w-4 h-4 rounded border-neutral-300 text-primary-600 focus:ring-primary-500">
+                <span class="text-sm text-neutral-700">Tone is consistent throughout</span>
+              </label>
+            </div>
+
+            <div class="space-y-3">
+              <h4 class="font-semibold text-neutral-900">Calls to Action</h4>
+              <label class="flex items-start gap-3 cursor-pointer">
+                <input type="checkbox" class="mt-1 w-4 h-4 rounded border-neutral-300 text-primary-600 focus:ring-primary-500">
+                <span class="text-sm text-neutral-700">CTAs have clear, action-oriented text</span>
+              </label>
+              <label class="flex items-start gap-3 cursor-pointer">
+                <input type="checkbox" class="mt-1 w-4 h-4 rounded border-neutral-300 text-primary-600 focus:ring-primary-500">
+                <span class="text-sm text-neutral-700">Each page has a clear primary CTA</span>
+              </label>
+              <label class="flex items-start gap-3 cursor-pointer">
+                <input type="checkbox" class="mt-1 w-4 h-4 rounded border-neutral-300 text-primary-600 focus:ring-primary-500">
+                <span class="text-sm text-neutral-700">CTA placement is logical for the content</span>
+              </label>
+              <label class="flex items-start gap-3 cursor-pointer">
+                <input type="checkbox" class="mt-1 w-4 h-4 rounded border-neutral-300 text-primary-600 focus:ring-primary-500">
+                <span class="text-sm text-neutral-700">Secondary CTAs don't compete with primary</span>
+              </label>
+            </div>
+
+            <div class="space-y-3">
+              <h4 class="font-semibold text-neutral-900">Visual Content Needs</h4>
+              <label class="flex items-start gap-3 cursor-pointer">
+                <input type="checkbox" class="mt-1 w-4 h-4 rounded border-neutral-300 text-primary-600 focus:ring-primary-500">
+                <span class="text-sm text-neutral-700">All image placeholders have been reviewed</span>
+              </label>
+              <label class="flex items-start gap-3 cursor-pointer">
+                <input type="checkbox" class="mt-1 w-4 h-4 rounded border-neutral-300 text-primary-600 focus:ring-primary-500">
+                <span class="text-sm text-neutral-700">Image requirements are documented</span>
+              </label>
+              <label class="flex items-start gap-3 cursor-pointer">
+                <input type="checkbox" class="mt-1 w-4 h-4 rounded border-neutral-300 text-primary-600 focus:ring-primary-500">
+                <span class="text-sm text-neutral-700">Video content needs are identified</span>
+              </label>
+              <label class="flex items-start gap-3 cursor-pointer">
+                <input type="checkbox" class="mt-1 w-4 h-4 rounded border-neutral-300 text-primary-600 focus:ring-primary-500">
+                <span class="text-sm text-neutral-700">Alt text requirements considered</span>
+              </label>
+            </div>
+
+            <div class="space-y-3">
+              <h4 class="font-semibold text-neutral-900">Information Architecture</h4>
+              <label class="flex items-start gap-3 cursor-pointer">
+                <input type="checkbox" class="mt-1 w-4 h-4 rounded border-neutral-300 text-primary-600 focus:ring-primary-500">
+                <span class="text-sm text-neutral-700">Content hierarchy is clear</span>
+              </label>
+              <label class="flex items-start gap-3 cursor-pointer">
+                <input type="checkbox" class="mt-1 w-4 h-4 rounded border-neutral-300 text-primary-600 focus:ring-primary-500">
+                <span class="text-sm text-neutral-700">Navigation labels are intuitive</span>
+              </label>
+              <label class="flex items-start gap-3 cursor-pointer">
+                <input type="checkbox" class="mt-1 w-4 h-4 rounded border-neutral-300 text-primary-600 focus:ring-primary-500">
+                <span class="text-sm text-neutral-700">Section order makes logical sense</span>
+              </label>
+              <label class="flex items-start gap-3 cursor-pointer">
+                <input type="checkbox" class="mt-1 w-4 h-4 rounded border-neutral-300 text-primary-600 focus:ring-primary-500">
+                <span class="text-sm text-neutral-700">Important info is above the fold</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Feedback Section -->
+      <section class="portal-section">
+        <div class="bg-neutral-800 rounded-2xl p-8 text-white text-center">
+          <h3 class="text-2xl font-bold mb-4">Ready to Finalize Content?</h3>
+          <p class="text-neutral-300 mb-6 max-w-2xl mx-auto">
+            Once you've reviewed the wireframes and are satisfied with the content and structure, let us know and we'll proceed to visual design.
+          </p>
+          <div class="flex flex-wrap justify-center gap-4">
+            <a href="mailto:project@example.com?subject=Content Approved" class="inline-flex items-center gap-2 px-6 py-3 bg-green-500 text-white font-semibold rounded-lg hover:bg-green-600 transition-colors">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              Approve Content
+            </a>
+            <a href="mailto:project@example.com?subject=Content Feedback" class="inline-flex items-center gap-2 px-6 py-3 bg-white text-neutral-800 font-semibold rounded-lg hover:bg-neutral-100 transition-colors">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
+              </svg>
+              Send Feedback
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-neutral-200 py-8 mt-12">
+      <div class="container-custom text-center">
+        <p class="text-sm text-neutral-500">Wireframe Gallery - Focus on content before design</p>
+      </div>
+    </footer>
+
+    <script type="module" src="../../../scripts/wireframe.ts"></script>
+  </body>
+</html>

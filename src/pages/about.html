@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About - Prototype Starter Kit</title>
+    <meta name="description" content="Learn about our modern prototype system and mission" />
+    <link rel="stylesheet" href="../styles/tokens.css" />
+    <link rel="stylesheet" href="../styles/base.css" />
+    <link rel="stylesheet" href="../styles/wireframe.css" />
+  </head>
+  <body>
+    <a href="#main-content" class="skip-to-main">Skip to main content</a>
+
+    <!-- Header -->
+    <div id="header-section"></div>
+
+    <!-- Main Content -->
+    <main id="main-content">
+      <!-- Hero Section -->
+      <section
+        class="relative min-h-[60vh] flex items-center justify-center bg-gradient-to-br from-primary-600 to-primary-800"
+        data-section="HeroAbout"
+        data-elementor-widget-suggestion="Container, Heading, Text Editor"
+        data-notes="Elementor: Container > Flex column, align-center, min-height-60vh"
+      >
+        <div class="container-custom">
+          <div class="max-w-3xl mx-auto text-center text-white" data-animate="fade-up">
+            <h1 class="mb-6 text-5xl md:text-6xl font-bold">About Our Mission</h1>
+            <p class="text-xl md:text-2xl text-primary-100 leading-relaxed">
+              We're on a mission to bridge the gap between design and development with powerful
+              prototyping tools and seamless handoff.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Story Section -->
+      <section
+        class="section bg-white"
+        data-section="Story"
+        data-elementor-widget-suggestion="Container, Heading, Text Editor, Image"
+        data-notes="Elementor: Container > 2-column grid, gap-12, align-center"
+      >
+        <div class="container-custom">
+          <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div data-animate="fade-up">
+              <h2 class="mb-6 text-4xl md:text-5xl font-bold text-neutral-900">Our Story</h2>
+              <div class="space-y-4 text-lg text-neutral-600 leading-relaxed">
+                <p>
+                  We started with a simple observation: too much time was wasted in the handoff
+                  between design and development. Designers spent hours creating Figma annotations,
+                  developers struggled to interpret specs, and clients waited longer for results.
+                </p>
+                <p>
+                  The Prototype Starter Kit was born from this frustration. By building directly in
+                  code with design tokens and automated export, we've eliminated the guesswork and
+                  created a workflow that's faster, more accurate, and more enjoyable for everyone.
+                </p>
+                <p>
+                  Today, teams around the world use our kit to prototype faster, deliver pixel-perfect
+                  implementations, and spend more time on what matters: creating exceptional user
+                  experiences.
+                </p>
+              </div>
+            </div>
+            <div class="aspect-square bg-neutral-200 rounded-2xl" data-animate="fade-up" data-animate-delay="200">
+              <!-- Image placeholder -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Values Section -->
+      <section
+        class="section bg-neutral-50"
+        data-section="Values"
+        data-elementor-widget-suggestion="Container, Icon Box, Heading"
+        data-notes="Elementor: Container > 3-column grid, gap-8"
+      >
+        <div class="container-custom">
+          <div class="max-w-3xl mx-auto text-center mb-16" data-animate="fade-up">
+            <h2 class="mb-4 text-4xl md:text-5xl font-bold text-neutral-900">Our Values</h2>
+            <p class="text-xl text-neutral-600">
+              The principles that guide everything we build
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-8">
+            <div class="text-center" data-animate="fade-up" data-animate-delay="100">
+              <div class="w-16 h-16 bg-primary-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <svg class="w-8 h-8 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M13 10V3L4 14h7v7l9-11h-7z"
+                  />
+                </svg>
+              </div>
+              <h3 class="mb-3 text-xl font-bold text-neutral-900">Speed</h3>
+              <p class="text-neutral-600 leading-relaxed">
+                Fast iterations lead to better outcomes. Our tools are built for velocity without
+                sacrificing quality.
+              </p>
+            </div>
+
+            <div class="text-center" data-animate="fade-up" data-animate-delay="200">
+              <div class="w-16 h-16 bg-secondary-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <svg class="w-8 h-8 text-secondary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+              </div>
+              <h3 class="mb-3 text-xl font-bold text-neutral-900">Precision</h3>
+              <p class="text-neutral-600 leading-relaxed">
+                Every pixel matters. Our handoff system ensures implementations match the design
+                exactly.
+              </p>
+            </div>
+
+            <div class="text-center" data-animate="fade-up" data-animate-delay="300">
+              <div class="w-16 h-16 bg-primary-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <svg class="w-8 h-8 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
+                  />
+                </svg>
+              </div>
+              <h3 class="mb-3 text-xl font-bold text-neutral-900">Collaboration</h3>
+              <p class="text-neutral-600 leading-relaxed">
+                Great work happens when teams align. Our workflow creates clarity for everyone involved.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <div id="cta-section"></div>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-section"></div>
+
+    <!-- Handoff Overlay Toggle -->
+    <div id="handoff-overlay-root"></div>
+
+    <script type="module" src="../scripts/main.ts"></script>
+    <script type="module" src="../scripts/animations.ts"></script>
+    <script type="module" src="../scripts/overlay.ts"></script>
+    <script type="module" src="../scripts/wireframe.ts"></script>
+    <script type="module">
+      async function loadSection(sectionId, sectionFile) {
+        const response = await fetch(`../sections/${sectionFile}.html`);
+        const html = await response.text();
+        document.getElementById(sectionId).innerHTML = html;
+      }
+
+      Promise.all([
+        loadSection('header-section', 'Header'),
+        loadSection('cta-section', 'CTA'),
+        loadSection('footer-section', 'Footer'),
+      ]).then(() => {
+        window.dispatchEvent(new Event('sections-loaded'));
+      });
+    </script>
+  </body>
+</html>

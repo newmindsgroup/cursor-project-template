@@ -19,9 +19,16 @@ logs/
 # Env / secrets
 .env
 .env.*
+!.env.example
 *.pem
 *.key
 *.p12
+
+# Project settings (contains API keys)
+project-settings.local.json
+
+# Cursor AI fallback prompts
+.cursor-prompts/
 
 # Build outputs (generic)
 dist/
@@ -29,6 +36,23 @@ build/
 .next/
 .out/
 coverage/
+
+# Prototype Kit - generated handoff files (track structure, not generated content)
+/_handoff/elementor-map.json
+/_handoff/elementor-map.md
+/_handoff/assets/*
+!/_handoff/assets/.gitkeep
+
+# AI-generated images (regenerate with npm run assets:generate)
+/.image-cache/
+/src/assets/generated/*
+!/src/assets/generated/.gitkeep
+
+# Generation cache (for incremental builds)
+/.generation-cache/
+
+# Content backups
+/.content-backups/
 
 # Dependencies (generic)
 node_modules/
@@ -42,6 +66,10 @@ __pycache__/
 /business-context/*
 !/business-context/.gitkeep
 !/business-context/README.md
+!/business-context/uploads/
+/business-context/uploads/*
+!/business-context/uploads/.gitkeep
+/business-context/extracted-context.json
 /resource-library/*
 !/resource-library/.gitkeep
 !/resource-library/README.md

@@ -1,0 +1,210 @@
+{
+  "$schema": "./schemas/section-rationale.schema.json",
+  "version": "1.0.0",
+  "lastUpdated": "2026-01-26",
+  "sections": [
+    {
+      "sectionId": "hero-001",
+      "sectionName": "Hero",
+      "sectionPurpose": "Capture attention and communicate primary value proposition in under 5 seconds. Establish the customer as the hero and introduce their core desire.",
+      "storybrandElement": "Character + Call to Action",
+      "generatedDate": "2026-01-26",
+      "designDecisions": [
+        {
+          "element": "Headline",
+          "decision": "Transformation-focused headline, customer-centric language, max 12 words",
+          "rationale": "Headlines that promise transformation outperform feature-focused headlines. Short headlines are scannable in the 3-5 second attention window.",
+          "uxPrinciple": "Hick's Law - single clear message reduces cognitive load and decision time",
+          "storybrandAlignment": "Opens by identifying what the Character (customer) wants - their transformation",
+          "evidenceSource": "Building a StoryBrand by Donald Miller, Chapter 2; Nielsen Norman Group headline research",
+          "accessibilityNote": "H1 tag, minimum 4.5:1 contrast ratio, minimum 32px font size"
+        },
+        {
+          "element": "Subheadline",
+          "decision": "Supporting copy that expands on headline without repeating, max 30 words",
+          "rationale": "Subheadline provides additional context for users who want more information before taking action.",
+          "uxPrinciple": "Progressive disclosure - primary message first, details second",
+          "storybrandAlignment": "Addresses the external problem the customer faces",
+          "evidenceSource": "Conversion rate optimization research shows supporting copy increases engagement",
+          "accessibilityNote": "Appropriate heading level (H2 or paragraph), readable contrast"
+        },
+        {
+          "element": "Primary CTA Button",
+          "decision": "High-contrast brand color, action verb + outcome, prominent size (min 48px height)",
+          "rationale": "Primary CTAs must be immediately visible and communicate exactly what happens when clicked. Action verbs increase CTR by 30-40%.",
+          "uxPrinciple": "Von Restorff Effect - distinct elements are remembered; Fitts's Law - large targets are easier to hit",
+          "storybrandAlignment": "Direct CTA - clear call to action with specific outcome",
+          "evidenceSource": "ConversionXL button copy research; Baymard Institute form studies",
+          "accessibilityNote": "Minimum 44x44px touch target, 4.5:1 contrast ratio, visible focus state"
+        },
+        {
+          "element": "Secondary CTA",
+          "decision": "Lower-emphasis styling (outline or text), transitional action",
+          "rationale": "Provides option for users not ready to commit but interested in learning more. Reduces bounce rate from undecided visitors.",
+          "uxPrinciple": "Commitment and Consistency - small first steps lead to larger commitments",
+          "storybrandAlignment": "Transitional CTA - nurtures relationship before direct sale",
+          "evidenceSource": "StoryBrand framework recommends both direct and transitional CTAs",
+          "accessibilityNote": "Visually distinct from primary but still accessible contrast"
+        }
+      ],
+      "layoutRationale": {
+        "decision": "Centered single-column layout with max-width container (1200px)",
+        "rationale": "Hero sections benefit from focused, distraction-free layouts. Centered alignment creates symmetry and draws attention to central message.",
+        "uxPrinciple": "Hick's Law - fewer visual elements reduce cognitive load; Z-pattern scanning supported",
+        "source": "Landing page best practices; eye-tracking studies show centered heroes perform well"
+      },
+      "spacingRationale": {
+        "decision": "128px vertical padding desktop, 96px tablet, 64px mobile",
+        "rationale": "Generous vertical spacing creates visual breathing room and emphasizes importance. Reduced on smaller screens to maximize content visibility.",
+        "source": "modern-design-standards.md spacing standards; industry standard hero padding"
+      },
+      "colorRationale": {
+        "decision": "Dark/gradient background with light text, brand-color CTA",
+        "rationale": "High contrast creates visual impact and establishes section importance. Brand-color CTA ensures button prominence.",
+        "accessibilityNote": "WCAG AA contrast verified for all text elements"
+      },
+      "animationRationale": {
+        "decision": "Fade-in on load with subtle upward movement, 300ms duration, ease-out timing",
+        "rationale": "Subtle entrance animation creates polish without distraction. 300ms is perceived as natural and not slow.",
+        "uxPrinciple": "Aesthetic-Usability Effect - polish increases perceived quality and trust",
+        "accessibilityNote": "Respects prefers-reduced-motion media query; no essential information conveyed via animation"
+      },
+      "mobileConsiderations": {
+        "changes": "Full-width CTA, stacked layout, reduced padding, adjusted typography scale",
+        "rationale": "Mobile users benefit from edge-to-edge buttons (Fitts's Law - screen edges are infinite targets). Stacked layout maintains hierarchy in narrow viewport."
+      },
+      "accessibilityNotes": "All text meets WCAG AA contrast requirements. Focus states visible for all interactive elements. Heading hierarchy maintained. No content depends solely on color.",
+      "elementorImplementation": {
+        "widgets": ["Container (Flexbox)", "Heading", "Text Editor", "Button", "Button (secondary)"],
+        "notes": "Use Elementor's Motion Effects for fade-in animation. Set container to Flex with centered alignment. Use Global Typography for headings. Set responsive padding in container settings.",
+        "customCss": "None required for standard hero"
+      },
+      "persuasionPrinciples": ["Authority", "Commitment"],
+      "trendSources": ["https://stripe.com", "https://linear.app"]
+    },
+    {
+      "sectionId": "features-001",
+      "sectionName": "Features",
+      "sectionPurpose": "Communicate key benefits and solutions to customer problems. Show how the product/service solves their specific pain points.",
+      "storybrandElement": "Guide",
+      "generatedDate": "2026-01-26",
+      "designDecisions": [
+        {
+          "element": "Section Headline",
+          "decision": "Benefit-focused headline that introduces solutions, not feature list",
+          "rationale": "Customers care about outcomes, not features. Benefits connect emotionally while features inform logically.",
+          "uxPrinciple": "Focus attention on transformation and value",
+          "storybrandAlignment": "Guide shows solutions to the customer's problems",
+          "evidenceSource": "StoryBrand framework; benefit-focused copy consistently outperforms feature-focused"
+        },
+        {
+          "element": "Feature Cards",
+          "decision": "3-4 cards per row desktop, icon + headline + description format",
+          "rationale": "3-4 items is within Miller's Law cognitive limit. Icon provides quick visual recognition, headline states benefit, description provides detail.",
+          "uxPrinciple": "Miller's Law - 7±2 items in working memory; chunking information aids comprehension",
+          "storybrandAlignment": "Each card addresses a specific aspect of the customer's problem",
+          "evidenceSource": "Card-based UI patterns; UX research on information chunking"
+        },
+        {
+          "element": "Feature Icons",
+          "decision": "Consistent icon style, meaningful (not decorative) icons, adequate size",
+          "rationale": "Icons should aid recognition and scanning, not just decoration. Consistent style maintains visual harmony.",
+          "uxPrinciple": "Gestalt - similarity principle groups related elements",
+          "accessibilityNote": "Icons are decorative; text conveys all meaning. Icons have appropriate aria-hidden."
+        }
+      ],
+      "layoutRationale": {
+        "decision": "CSS Grid with 3-4 columns desktop, 2 columns tablet, 1 column mobile",
+        "rationale": "Grid provides consistent alignment and spacing. Responsive columns maintain readability at all sizes.",
+        "uxPrinciple": "Gestalt principles - alignment and proximity create visual grouping",
+        "source": "Responsive design best practices"
+      },
+      "spacingRationale": {
+        "decision": "96px section padding, 32px gap between cards",
+        "rationale": "Standard section padding maintains rhythm. Card gap provides clear separation while maintaining grouping.",
+        "source": "8px grid system; modern-design-standards.md"
+      },
+      "elementorImplementation": {
+        "widgets": ["Container (Grid or Flex)", "Icon Box", "Heading", "Text Editor"],
+        "notes": "Use Icon Box widget for each feature. Set container to Grid for precise control. Alternatively, use nested Flex containers."
+      },
+      "persuasionPrinciples": ["Authority"],
+      "trendSources": []
+    },
+    {
+      "sectionId": "testimonials-001",
+      "sectionName": "Testimonials",
+      "sectionPurpose": "Build trust through social proof. Show real results from real customers to reduce anxiety about taking action.",
+      "storybrandElement": "Guide + Authority",
+      "generatedDate": "2026-01-26",
+      "designDecisions": [
+        {
+          "element": "Testimonial Quote",
+          "decision": "Specific results and outcomes, not generic praise",
+          "rationale": "Specific testimonials ('47% increase in revenue') are more credible than generic ('great service!'). Specificity demonstrates authenticity.",
+          "uxPrinciple": "Social Proof - specific evidence is more persuasive",
+          "storybrandAlignment": "Demonstrates Guide's authority through proven results",
+          "evidenceSource": "Cialdini's Influence; ConversionXL testimonial research"
+        },
+        {
+          "element": "Attribution",
+          "decision": "Name, role, company, and photo for each testimonial",
+          "rationale": "Full attribution increases credibility. Photos humanize testimonials and increase trust.",
+          "uxPrinciple": "Authority and Liking principles - real people are more persuasive",
+          "storybrandAlignment": "Creates connection through relatable success stories"
+        }
+      ],
+      "layoutRationale": {
+        "decision": "Card carousel or grid layout, depending on quantity",
+        "rationale": "Carousel saves space when multiple testimonials exist. Grid works for 2-4 testimonials.",
+        "source": "Social proof section patterns"
+      },
+      "elementorImplementation": {
+        "widgets": ["Testimonial Carousel", "Container", "Image", "Text Editor"],
+        "notes": "Use Testimonial Carousel widget for 4+ testimonials. Manual layout with Container for 2-3 testimonials."
+      },
+      "persuasionPrinciples": ["Social Proof", "Authority", "Liking"]
+    },
+    {
+      "sectionId": "cta-001",
+      "sectionName": "CTA (Call to Action)",
+      "sectionPurpose": "Drive final conversion by painting the success picture and providing clear next step. This is the culmination of the StoryBrand journey.",
+      "storybrandElement": "Success + Call to Action",
+      "generatedDate": "2026-01-26",
+      "designDecisions": [
+        {
+          "element": "CTA Headline",
+          "decision": "Success-focused headline that paints the transformation picture",
+          "rationale": "Final CTA should show what success looks like, not repeat the problem. Customers should visualize their improved state.",
+          "uxPrinciple": "Peak-End Rule - end on a positive, memorable note",
+          "storybrandAlignment": "StoryBrand Element 7: Success - show the transformation",
+          "evidenceSource": "Building a StoryBrand, Chapter 9"
+        },
+        {
+          "element": "CTA Button",
+          "decision": "High-contrast, large button with action-oriented text",
+          "rationale": "Final CTA should be unmissable and clearly communicate the value of clicking.",
+          "uxPrinciple": "Von Restorff Effect - make the CTA the most prominent element",
+          "storybrandAlignment": "Clear Direct CTA"
+        },
+        {
+          "element": "Supporting Text",
+          "decision": "Brief anxiety-reducer below headline (guarantee, process, what happens next)",
+          "rationale": "Reduces final-moment hesitation by addressing common concerns.",
+          "uxPrinciple": "Anxiety reduction in LIFT model",
+          "storybrandAlignment": "Addresses failure stakes indirectly by showing the safe path forward"
+        }
+      ],
+      "layoutRationale": {
+        "decision": "Centered layout with strong visual emphasis, often with contrasting background",
+        "rationale": "CTA sections need to stand out from surrounding content. Center alignment focuses attention.",
+        "source": "Landing page best practices; conversion optimization research"
+      },
+      "elementorImplementation": {
+        "widgets": ["Container", "Heading", "Text Editor", "Button"],
+        "notes": "Use contrasting background color or gradient. Ensure button size and padding are generous."
+      },
+      "persuasionPrinciples": ["Commitment", "Scarcity"]
+    }
+  ]
+}

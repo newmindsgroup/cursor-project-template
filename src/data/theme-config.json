@@ -1,0 +1,38 @@
+{
+  "$schema": "./schemas/theme-config.schema.json",
+  "version": "1.0.0",
+  "activeTheme": "corporate",
+  "description": "Theme configuration for rapid visual customization",
+  "themes": {
+    "corporate": {
+      "name": "Corporate",
+      "description": "Professional blue/gray theme for business websites",
+      "presetFile": "theme-presets/corporate.json"
+    },
+    "startup": {
+      "name": "Startup",
+      "description": "Vibrant, modern theme with bold gradients",
+      "presetFile": "theme-presets/startup.json"
+    },
+    "creative": {
+      "name": "Creative",
+      "description": "Bold, playful theme for creative agencies",
+      "presetFile": "theme-presets/creative.json"
+    },
+    "minimal": {
+      "name": "Minimal",
+      "description": "Clean black/white theme with subtle accents",
+      "presetFile": "theme-presets/minimal.json"
+    },
+    "warm": {
+      "name": "Warm",
+      "description": "Friendly orange/brown theme",
+      "presetFile": "theme-presets/warm.json"
+    },
+    "cool": {
+      "name": "Cool",
+      "description": "Calming teal/purple theme",
+      "presetFile": "theme-presets/cool.json"
+    }
+  }
+}

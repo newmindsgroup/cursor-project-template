@@ -1,0 +1,256 @@
+{
+  "$schema": "./schemas/project-status.schema.json",
+  "version": "1.0.0",
+  "projectName": "",
+  "lastUpdated": "",
+  "lastScanned": "",
+  "overallProgress": 0,
+  "currentPhase": "brief",
+  "phases": [
+    {
+      "id": "brief",
+      "name": "Project Brief",
+      "order": 1,
+      "status": "pending",
+      "progress": 0,
+      "description": "Define project goals, scope, and stakeholders",
+      "docsFolder": "docs/01-brief",
+      "deliverables": [
+        {
+          "id": "kickoff-checklist",
+          "name": "Kickoff Checklist",
+          "file": "docs/01-brief/00-kickoff-checklist.md",
+          "status": "pending",
+          "progress": 0,
+          "required": true,
+          "clientVisible": true
+        },
+        {
+          "id": "project-brief",
+          "name": "Project Brief",
+          "file": "docs/01-brief/brief.md",
+          "status": "pending",
+          "progress": 0,
+          "required": true,
+          "clientVisible": true
+        },
+        {
+          "id": "project-md",
+          "name": "PROJECT.md",
+          "file": "PROJECT.md",
+          "status": "pending",
+          "progress": 0,
+          "required": true,
+          "clientVisible": false
+        },
+        {
+          "id": "scope-md",
+          "name": "SCOPE.md",
+          "file": "SCOPE.md",
+          "status": "pending",
+          "progress": 0,
+          "required": true,
+          "clientVisible": true
+        }
+      ]
+    },
+    {
+      "id": "discovery",
+      "name": "Discovery",
+      "order": 2,
+      "status": "pending",
+      "progress": 0,
+      "description": "Research and gather insights",
+      "docsFolder": "docs/02-discovery",
+      "deliverables": [
+        {
+          "id": "discovery-summary",
+          "name": "Discovery Summary",
+          "file": "docs/02-discovery/discovery-summary.md",
+          "status": "pending",
+          "progress": 0,
+          "required": true,
+          "clientVisible": true
+        }
+      ]
+    },
+    {
+      "id": "requirements",
+      "name": "Requirements",
+      "order": 3,
+      "status": "pending",
+      "progress": 0,
+      "description": "Define features and acceptance criteria",
+      "docsFolder": "docs/03-requirements",
+      "deliverables": [
+        {
+          "id": "requirements-doc",
+          "name": "Requirements Document",
+          "file": "docs/03-requirements/REQUIREMENTS.md",
+          "status": "pending",
+          "progress": 0,
+          "required": true,
+          "clientVisible": true
+        }
+      ]
+    },
+    {
+      "id": "ux",
+      "name": "UX Design",
+      "order": 4,
+      "status": "pending",
+      "progress": 0,
+      "description": "User flows, wireframes, and UX assets",
+      "docsFolder": "docs/04-ux",
+      "deliverables": [
+        {
+          "id": "user-personas",
+          "name": "User Personas",
+          "file": "src/data/personas.json",
+          "status": "pending",
+          "progress": 0,
+          "required": true,
+          "clientVisible": true
+        },
+        {
+          "id": "user-flows",
+          "name": "User Flows",
+          "file": "src/data/user-flows.json",
+          "status": "pending",
+          "progress": 0,
+          "required": true,
+          "clientVisible": true
+        },
+        {
+          "id": "ux-flows-doc",
+          "name": "UX Flows Documentation",
+          "file": "docs/04-ux/ux-flows.md",
+          "status": "pending",
+          "progress": 0,
+          "required": true,
+          "clientVisible": true
+        },
+        {
+          "id": "wireframes",
+          "name": "Wireframes",
+          "file": "src/pages/project/wireframes/index.html",
+          "status": "pending",
+          "progress": 0,
+          "required": true,
+          "clientVisible": true
+        }
+      ]
+    },
+    {
+      "id": "architecture",
+      "name": "Architecture",
+      "order": 5,
+      "status": "pending",
+      "progress": 0,
+      "description": "Technical architecture and decisions",
+      "docsFolder": "docs/05-architecture",
+      "deliverables": [
+        {
+          "id": "architecture-doc",
+          "name": "Architecture Document",
+          "file": "docs/05-architecture/ARCHITECTURE.md",
+          "status": "pending",
+          "progress": 0,
+          "required": true,
+          "clientVisible": false
+        }
+      ]
+    },
+    {
+      "id": "implementation",
+      "name": "Implementation",
+      "order": 6,
+      "status": "pending",
+      "progress": 0,
+      "description": "Build and develop the website",
+      "docsFolder": "docs/06-implementation",
+      "deliverables": [
+        {
+          "id": "implementation-plan",
+          "name": "Implementation Plan",
+          "file": "docs/06-implementation/implementation-plan.md",
+          "status": "pending",
+          "progress": 0,
+          "required": true,
+          "clientVisible": false
+        },
+        {
+          "id": "prototype",
+          "name": "Prototype",
+          "file": "src/pages/index.html",
+          "status": "pending",
+          "progress": 0,
+          "required": true,
+          "clientVisible": true
+        },
+        {
+          "id": "handoff-portal",
+          "name": "Handoff Portal",
+          "file": "src/pages/handoff/index.html",
+          "status": "pending",
+          "progress": 0,
+          "required": true,
+          "clientVisible": false
+        }
+      ]
+    },
+    {
+      "id": "qa",
+      "name": "QA & Testing",
+      "order": 7,
+      "status": "pending",
+      "progress": 0,
+      "description": "Quality assurance and testing",
+      "docsFolder": "docs/07-qa",
+      "deliverables": [
+        {
+          "id": "qa-plan",
+          "name": "QA Plan",
+          "file": "docs/07-qa/qa-plan.md",
+          "status": "pending",
+          "progress": 0,
+          "required": true,
+          "clientVisible": false
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "name": "Launch",
+      "order": 8,
+      "status": "pending",
+      "progress": 0,
+      "description": "Final checks and go-live",
+      "docsFolder": "docs/08-launch",
+      "deliverables": [
+        {
+          "id": "launch-checklist",
+          "name": "Launch Checklist",
+          "file": "docs/08-launch/launch-checklist.md",
+          "status": "pending",
+          "progress": 0,
+          "required": true,
+          "clientVisible": true
+        },
+        {
+          "id": "launch-plan",
+          "name": "Launch Plan",
+          "file": "docs/08-launch/LAUNCH_PLAN.md",
+          "status": "pending",
+          "progress": 0,
+          "required": true,
+          "clientVisible": true
+        }
+      ]
+    }
+  ],
+  "overrides": {},
+  "notes": "",
+  "risks": [],
+  "blockers": []
+}

@@ -1,0 +1,42 @@
+{
+  "$schema": "../schema/page-content.schema.json",
+  "_usage": "This file contains content for the About page. Run 'npm run wizard' to generate content using AI with StoryBrand methodology.",
+  "meta": {
+    "title": "",
+    "description": "",
+    "language": "en",
+    "status": "draft",
+    "lastUpdated": ""
+  },
+  "hero": {
+    "headline": "",
+    "subheadline": ""
+  },
+  "story": {
+    "sectionTitle": "",
+    "content": ""
+  },
+  "mission": {
+    "sectionTitle": "",
+    "statement": ""
+  },
+  "values": {
+    "sectionTitle": "",
+    "items": []
+  },
+  "team": {
+    "sectionTitle": "",
+    "sectionSubtitle": "",
+    "members": []
+  },
+  "timeline": {
+    "sectionTitle": "",
+    "milestones": []
+  },
+  "cta": {
+    "headline": "",
+    "subheadline": "",
+    "buttonText": "",
+    "buttonUrl": ""
+  }
+}

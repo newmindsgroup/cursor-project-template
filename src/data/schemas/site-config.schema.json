@@ -1,0 +1,112 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "site-config.schema.json",
+  "title": "Site Configuration",
+  "description": "Schema for site-wide configuration including navigation and branding",
+  "type": "object",
+  "required": ["siteName"],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "siteName": {
+      "type": "string",
+      "minLength": 1
+    },
+    "tagline": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "logo": {
+      "type": "object",
+      "properties": {
+        "default": { "type": "string" },
+        "light": { "type": "string" },
+        "dark": { "type": "string" },
+        "favicon": { "type": "string" }
+      }
+    },
+    "navigation": {
+      "type": "object",
+      "properties": {
+        "main": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/navItem"
+          }
+        },
+        "footer": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/navGroup"
+          }
+        },
+        "utility": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/navItem"
+          }
+        }
+      }
+    },
+    "social": {
+      "type": "object",
+      "additionalProperties": { "type": "string" }
+    },
+    "contact": {
+      "type": "object",
+      "properties": {
+        "email": { "type": "string", "format": "email" },
+        "phone": { "type": "string" },
+        "address": { "type": "string" }
+      }
+    },
+    "seo": {
+      "type": "object",
+      "properties": {
+        "defaultTitle": { "type": "string" },
+        "titleTemplate": { "type": "string" },
+        "defaultDescription": { "type": "string" },
+        "ogImage": { "type": "string" },
+        "twitterHandle": { "type": "string" }
+      }
+    },
+    "analytics": {
+      "type": "object",
+      "properties": {
+        "googleAnalytics": { "type": "string" },
+        "googleTagManager": { "type": "string" },
+        "facebookPixel": { "type": "string" }
+      }
+    }
+  },
+  "definitions": {
+    "navItem": {
+      "type": "object",
+      "required": ["label", "href"],
+      "properties": {
+        "label": { "type": "string" },
+        "href": { "type": "string" },
+        "external": { "type": "boolean" },
+        "icon": { "type": "string" },
+        "children": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/navItem" }
+        }
+      }
+    },
+    "navGroup": {
+      "type": "object",
+      "required": ["title", "links"],
+      "properties": {
+        "title": { "type": "string" },
+        "links": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/navItem" }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  prototype-dev:
+    build:
+      context: ..
+      dockerfile: infra/Dockerfile
+    container_name: prototype-starter-dev
+    ports:
+      - '5173:5173'
+    volumes:
+      # Mount source files for live editing
+      - ../src:/app/src
+      - ../public:/app/public
+      - ../package.json:/app/package.json
+      - ../vite.config.ts:/app/vite.config.ts
+      - ../tailwind.config.ts:/app/tailwind.config.ts
+      - ../tsconfig.json:/app/tsconfig.json
+      - ../postcss.config.js:/app/postcss.config.js
+      # Mount scripts for automation
+      - ../scripts:/app/scripts
+      # Mount business context for AI generation
+      - ../business-context:/app/business-context
+      # Mount handoff output
+      - ../_handoff:/app/_handoff
+      # Prevent overwriting node_modules
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+      # Optional: AI API keys (set in .env file)
+      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:-}
+    stdin_open: true
+    tty: true
+    # Health check to verify dev server is running
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:5173"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    # Restart policy for development
+    restart: unless-stopped

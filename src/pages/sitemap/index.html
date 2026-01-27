@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sitemap & Information Architecture</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="description" content="Website sitemap and information architecture visualization" />
+    <link rel="stylesheet" href="../../styles/tokens.css" />
+    <link rel="stylesheet" href="../../styles/base.css" />
+    <link rel="stylesheet" href="../../styles/sitemap.css" />
+  </head>
+  <body class="bg-neutral-50">
+    <!-- Header -->
+    <header class="bg-white border-b border-neutral-200 py-6">
+      <div class="container-custom">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-4">
+            <div class="w-10 h-10 bg-teal-600 rounded-lg flex items-center justify-center">
+              <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
+              </svg>
+            </div>
+            <div>
+              <h1 class="text-2xl font-bold text-neutral-900">Sitemap & IA</h1>
+              <p class="text-neutral-500 text-sm">Information Architecture & Navigation</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-4">
+            <!-- Language Switcher -->
+            <div class="flex items-center gap-2 bg-neutral-100 rounded-lg p-1">
+              <button id="lang-en" class="lang-btn active px-3 py-1.5 text-sm font-medium rounded-md transition-colors">EN</button>
+              <button id="lang-es" class="lang-btn px-3 py-1.5 text-sm font-medium rounded-md transition-colors">ES</button>
+            </div>
+            <a href="../index.html" class="text-teal-600 hover:text-teal-700 text-sm font-medium">
+              ← View Website
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="sitemap-container py-8">
+      <div class="container-custom">
+        <!-- Portal Header -->
+        <div class="sitemap-header mb-8">
+          <h2 class="text-3xl font-bold text-neutral-900 mb-2">Website Structure</h2>
+          <p class="text-neutral-600 max-w-3xl">
+            Visualize the complete website hierarchy including all pages, navigation menus, and multilingual structure. 
+            Use this tool to plan, review, and export the site architecture.
+          </p>
+        </div>
+
+        <!-- View Tabs & Actions -->
+        <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
+          <!-- View Tabs -->
+          <nav class="sitemap-tabs flex bg-white rounded-lg border border-neutral-200 p-1">
+            <button id="tab-tree" class="sitemap-tab active px-4 py-2 text-sm font-medium rounded-md transition-colors">
+              <svg class="w-4 h-4 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1-1v-6z" />
+              </svg>
+              Tree View
+            </button>
+            <button id="tab-cards" class="sitemap-tab px-4 py-2 text-sm font-medium rounded-md transition-colors">
+              <svg class="w-4 h-4 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+              </svg>
+              Card View
+            </button>
+            <button id="tab-nav" class="sitemap-tab px-4 py-2 text-sm font-medium rounded-md transition-colors">
+              <svg class="w-4 h-4 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" />
+              </svg>
+              Navigation
+            </button>
+            <button id="tab-edit" class="sitemap-tab px-4 py-2 text-sm font-medium rounded-md transition-colors">
+              <svg class="w-4 h-4 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+              </svg>
+              Edit Mode
+            </button>
+          </nav>
+
+          <!-- Actions -->
+          <div class="flex items-center gap-3">
+            <button id="btn-expand-all" class="px-3 py-2 text-sm text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100 rounded-lg transition-colors">
+              Expand All
+            </button>
+            <button id="btn-collapse-all" class="px-3 py-2 text-sm text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100 rounded-lg transition-colors">
+              Collapse All
+            </button>
+            <div class="relative">
+              <button id="btn-export" class="flex items-center gap-2 px-4 py-2 bg-teal-600 text-white text-sm font-medium rounded-lg hover:bg-teal-700 transition-colors">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                </svg>
+                Export
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <!-- Export Dropdown -->
+              <div id="export-dropdown" class="hidden absolute right-0 mt-2 w-56 bg-white rounded-lg shadow-lg border border-neutral-200 py-2 z-20">
+                <button data-export="wp-cli" class="export-option w-full px-4 py-2 text-left text-sm text-neutral-700 hover:bg-neutral-50 flex items-center gap-3">
+                  <svg class="w-5 h-5 text-neutral-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                  WP-CLI Commands
+                </button>
+                <button data-export="xml" class="export-option w-full px-4 py-2 text-left text-sm text-neutral-700 hover:bg-neutral-50 flex items-center gap-3">
+                  <svg class="w-5 h-5 text-neutral-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                  WordPress XML
+                </button>
+                <button data-export="json" class="export-option w-full px-4 py-2 text-left text-sm text-neutral-700 hover:bg-neutral-50 flex items-center gap-3">
+                  <svg class="w-5 h-5 text-neutral-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4" />
+                  </svg>
+                  REST API JSON
+                </button>
+                <button data-export="guide" class="export-option w-full px-4 py-2 text-left text-sm text-neutral-700 hover:bg-neutral-50 flex items-center gap-3">
+                  <svg class="w-5 h-5 text-neutral-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                  </svg>
+                  Implementation Guide
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats Bar -->
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-4 mb-6">
+          <div class="bg-white rounded-xl border border-neutral-200 p-4">
+            <div class="text-2xl font-bold text-neutral-900" id="stat-total-pages">0</div>
+            <div class="text-sm text-neutral-500">Total Pages</div>
+          </div>
+          <div class="bg-white rounded-xl border border-neutral-200 p-4">
+            <div class="text-2xl font-bold text-teal-600" id="stat-primary-nav">0</div>
+            <div class="text-sm text-neutral-500">Primary Nav</div>
+          </div>
+          <div class="bg-white rounded-xl border border-neutral-200 p-4">
+            <div class="text-2xl font-bold text-blue-600" id="stat-secondary-nav">0</div>
+            <div class="text-sm text-neutral-500">Secondary Nav</div>
+          </div>
+          <div class="bg-white rounded-xl border border-neutral-200 p-4">
+            <div class="text-2xl font-bold text-purple-600" id="stat-max-depth">0</div>
+            <div class="text-sm text-neutral-500">Max Depth</div>
+          </div>
+          <div class="bg-white rounded-xl border border-neutral-200 p-4">
+            <div class="text-2xl font-bold text-orange-600" id="stat-languages">0</div>
+            <div class="text-sm text-neutral-500">Languages</div>
+          </div>
+        </div>
+
+        <!-- Deliverables Progress Bar -->
+        <div class="bg-white rounded-xl border border-neutral-200 p-4 mb-6">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="font-semibold text-neutral-900">Deliverables Progress</h3>
+            <!-- Filters -->
+            <div class="flex items-center gap-3">
+              <div class="flex items-center gap-2">
+                <label for="filter-deliverable" class="text-sm text-neutral-500">Filter by:</label>
+                <select id="filter-deliverable" class="text-sm border border-neutral-200 rounded-lg px-2 py-1.5 focus:ring-2 focus:ring-teal-500 focus:border-teal-500">
+                  <option value="all">All Deliverables</option>
+                  <option value="wireframe">Wireframes</option>
+                  <option value="visualDesign">Visual Design</option>
+                  <option value="content">Content</option>
+                  <option value="development">Development</option>
+                </select>
+              </div>
+              <div class="flex items-center gap-2">
+                <label for="filter-status" class="text-sm text-neutral-500">Status:</label>
+                <select id="filter-status" class="text-sm border border-neutral-200 rounded-lg px-2 py-1.5 focus:ring-2 focus:ring-teal-500 focus:border-teal-500">
+                  <option value="all">All Statuses</option>
+                  <option value="pending">Pending</option>
+                  <option value="in-progress">In Progress</option>
+                  <option value="review">Review</option>
+                  <option value="complete">Complete</option>
+                  <option value="skipped">Skipped</option>
+                </select>
+              </div>
+              <span id="filter-badge" class="hidden text-xs bg-teal-100 text-teal-700 px-2 py-1 rounded-full"></span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="text-sm text-neutral-600 flex items-center gap-2">
+                  <span class="text-lg">📐</span> Wireframes
+                </span>
+                <span class="text-sm font-medium text-neutral-900" id="stat-wireframes">0/0</span>
+              </div>
+              <div id="progress-wireframes"></div>
+            </div>
+            <div class="space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="text-sm text-neutral-600 flex items-center gap-2">
+                  <span class="text-lg">🎨</span> Visual Design
+                </span>
+                <span class="text-sm font-medium text-neutral-900" id="stat-designs">0/0</span>
+              </div>
+              <div id="progress-designs"></div>
+            </div>
+            <div class="space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="text-sm text-neutral-600 flex items-center gap-2">
+                  <span class="text-lg">📝</span> Content
+                </span>
+                <span class="text-sm font-medium text-neutral-900" id="stat-content">0/0</span>
+              </div>
+              <div id="progress-content"></div>
+            </div>
+            <div class="space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="text-sm text-neutral-600 flex items-center gap-2">
+                  <span class="text-lg">💻</span> Development
+                </span>
+                <span class="text-sm font-medium text-neutral-900" id="stat-development">0/0</span>
+              </div>
+              <div id="progress-development"></div>
+            </div>
+          </div>
+          <div class="flex items-center gap-4 mt-4 pt-4 border-t border-neutral-100 text-xs text-neutral-500">
+            <span class="flex items-center gap-1"><span class="w-3 h-3 bg-green-500 rounded"></span> Complete</span>
+            <span class="flex items-center gap-1"><span class="w-3 h-3 bg-yellow-500 rounded"></span> Review</span>
+            <span class="flex items-center gap-1"><span class="w-3 h-3 bg-blue-500 rounded"></span> In Progress</span>
+            <span class="flex items-center gap-1"><span class="w-3 h-3 bg-neutral-200 rounded"></span> Pending</span>
+          </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="sitemap-content grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <!-- Tree/Cards View Panel -->
+          <div class="lg:col-span-2">
+            <div class="bg-white rounded-2xl border border-neutral-200 shadow-soft overflow-hidden">
+              <div id="view-tree" class="view-panel">
+                <div class="sitemap-tree-header bg-teal-600 px-6 py-4">
+                  <h3 class="text-lg font-bold text-white flex items-center gap-2">
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
+                    </svg>
+                    Site Hierarchy
+                  </h3>
+                </div>
+                <div id="tree-container" class="p-6 min-h-[400px]">
+                  <!-- Tree will be rendered here -->
+                  <div class="skeleton-tree">
+                    <div class="animate-pulse space-y-4">
+                      <div class="h-8 bg-neutral-200 rounded w-1/3"></div>
+                      <div class="ml-8 space-y-3">
+                        <div class="h-6 bg-neutral-100 rounded w-1/4"></div>
+                        <div class="h-6 bg-neutral-100 rounded w-1/4"></div>
+                        <div class="h-6 bg-neutral-100 rounded w-1/4"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div id="view-cards" class="view-panel hidden">
+                <div class="sitemap-tree-header bg-blue-600 px-6 py-4">
+                  <h3 class="text-lg font-bold text-white flex items-center gap-2">
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6z" />
+                    </svg>
+                    All Pages
+                  </h3>
+                </div>
+                <div id="cards-container" class="p-6">
+                  <!-- Cards will be rendered here -->
+                </div>
+              </div>
+
+              <div id="view-nav" class="view-panel hidden">
+                <div class="sitemap-tree-header bg-purple-600 px-6 py-4">
+                  <h3 class="text-lg font-bold text-white flex items-center gap-2">
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" />
+                    </svg>
+                    Navigation Menus
+                  </h3>
+                </div>
+                <div id="nav-container" class="p-6">
+                  <!-- Navigation menus will be rendered here -->
+                </div>
+              </div>
+
+              <div id="view-edit" class="view-panel hidden">
+                <div class="sitemap-tree-header bg-orange-500 px-6 py-4">
+                  <h3 class="text-lg font-bold text-white flex items-center gap-2">
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                    </svg>
+                    Edit Sitemap
+                  </h3>
+                </div>
+                <div id="edit-container" class="p-6">
+                  <!-- Edit interface will be rendered here -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Details Panel -->
+          <div class="lg:col-span-1">
+            <div id="details-panel" class="bg-white rounded-2xl border border-neutral-200 shadow-soft sticky top-6">
+              <div class="bg-neutral-100 px-6 py-4 border-b border-neutral-200">
+                <h3 class="text-lg font-bold text-neutral-900">Page Details</h3>
+              </div>
+              <div id="details-content" class="p-6">
+                <div class="text-center py-12 text-neutral-400">
+                  <svg class="w-12 h-12 mx-auto mb-4 opacity-50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
+                  </svg>
+                  <p>Select a page to view details</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Legend -->
+            <div class="mt-6 bg-white rounded-2xl border border-neutral-200 shadow-soft p-6">
+              <h4 class="font-bold text-neutral-900 mb-4">Legend</h4>
+              <div class="space-y-3 text-sm">
+                <p class="text-xs text-neutral-500 font-semibold uppercase">Navigation</p>
+                <div class="flex items-center gap-3">
+                  <span class="w-3 h-3 rounded-full bg-teal-500"></span>
+                  <span class="text-neutral-600">Primary Navigation</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <span class="w-3 h-3 rounded-full bg-blue-500"></span>
+                  <span class="text-neutral-600">Secondary Navigation</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <span class="w-3 h-3 rounded-full bg-purple-500"></span>
+                  <span class="text-neutral-600">Both Navigations</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <span class="w-3 h-3 rounded-full bg-neutral-300"></span>
+                  <span class="text-neutral-600">Not in Navigation</span>
+                </div>
+                <hr class="border-neutral-200 my-3">
+                <p class="text-xs text-neutral-500 font-semibold uppercase">Page Status</p>
+                <div class="flex items-center gap-3">
+                  <span class="status-badge status-planned">Planned</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <span class="status-badge status-in-progress">In Progress</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <span class="status-badge status-review">Review</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <span class="status-badge status-complete">Complete</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <span class="status-badge status-on-hold">On Hold</span>
+                </div>
+                <hr class="border-neutral-200 my-3">
+                <p class="text-xs text-neutral-500 font-semibold uppercase">Deliverable Badges</p>
+                <div class="flex flex-wrap gap-2">
+                  <span class="deliverable-badge deliverable-complete" title="Wireframe">W</span>
+                  <span class="deliverable-badge deliverable-in-progress" title="Visual Design">V</span>
+                  <span class="deliverable-badge deliverable-review" title="Content">C</span>
+                  <span class="deliverable-badge deliverable-pending" title="Development">D</span>
+                </div>
+                <div class="text-xs text-neutral-500 space-y-1 mt-2">
+                  <p><strong>W</strong> = Wireframe</p>
+                  <p><strong>V</strong> = Visual Design</p>
+                  <p><strong>C</strong> = Content</p>
+                  <p><strong>D</strong> = Development</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Add/Edit Page Modal -->
+    <div id="page-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/50">
+      <div class="bg-white rounded-2xl shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+        <div class="sticky top-0 bg-white border-b border-neutral-200 px-6 py-4 flex items-center justify-between">
+          <h3 id="modal-title" class="text-xl font-bold text-neutral-900">Add New Page</h3>
+          <button id="modal-close" class="text-neutral-400 hover:text-neutral-600">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <form id="page-form" class="p-6 space-y-6">
+          <input type="hidden" id="page-id" name="id" />
+          
+          <!-- Basic Info -->
+          <div class="space-y-4">
+            <h4 class="font-semibold text-neutral-900">Basic Information</h4>
+            
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label for="page-title-en" class="block text-sm font-medium text-neutral-700 mb-1">Title (English)</label>
+                <input type="text" id="page-title-en" name="title_en" class="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500" required />
+              </div>
+              <div>
+                <label for="page-title-es" class="block text-sm font-medium text-neutral-700 mb-1">Title (Spanish)</label>
+                <input type="text" id="page-title-es" name="title_es" class="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500" />
+              </div>
+            </div>
+
+            <div>
+              <label for="page-slug" class="block text-sm font-medium text-neutral-700 mb-1">URL Slug</label>
+              <input type="text" id="page-slug" name="slug" class="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500" placeholder="/example-page" required />
+            </div>
+
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label for="page-template" class="block text-sm font-medium text-neutral-700 mb-1">Template</label>
+                <select id="page-template" name="template" class="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500">
+                  <option value="homepage">Homepage</option>
+                  <option value="about">About Page</option>
+                  <option value="services">Services Page</option>
+                  <option value="services-single">Single Service</option>
+                  <option value="contact">Contact Page</option>
+                  <option value="pricing">Pricing Page</option>
+                  <option value="portfolio">Portfolio Page</option>
+                  <option value="portfolio-single">Portfolio Case Study</option>
+                  <option value="blog">Blog Index</option>
+                  <option value="landing">Landing Page</option>
+                  <option value="minimal">Minimal Page</option>
+                </select>
+              </div>
+              <div>
+                <label for="page-parent" class="block text-sm font-medium text-neutral-700 mb-1">Parent Page</label>
+                <select id="page-parent" name="parent" class="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500">
+                  <option value="">None (Top Level)</option>
+                  <!-- Options populated by JS -->
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label for="page-status" class="block text-sm font-medium text-neutral-700 mb-1">Status</label>
+              <select id="page-status" name="status" class="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500">
+                <option value="planned">Planned</option>
+                <option value="in-progress">In Progress</option>
+                <option value="complete">Complete</option>
+                <option value="on-hold">On Hold</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Navigation Settings -->
+          <div class="space-y-4">
+            <h4 class="font-semibold text-neutral-900">Navigation Settings</h4>
+            
+            <div class="space-y-3">
+              <label class="flex items-center gap-3">
+                <input type="checkbox" id="page-primary-nav" name="inPrimaryNav" class="w-4 h-4 text-teal-600 border-neutral-300 rounded focus:ring-teal-500" />
+                <span class="text-sm text-neutral-700">Include in Primary Navigation</span>
+              </label>
+              <label class="flex items-center gap-3">
+                <input type="checkbox" id="page-secondary-nav" name="inSecondaryNav" class="w-4 h-4 text-teal-600 border-neutral-300 rounded focus:ring-teal-500" />
+                <span class="text-sm text-neutral-700">Include in Secondary Navigation</span>
+              </label>
+              <label class="flex items-center gap-3">
+                <input type="checkbox" id="page-footer-nav" name="inFooterNav" class="w-4 h-4 text-teal-600 border-neutral-300 rounded focus:ring-teal-500" />
+                <span class="text-sm text-neutral-700">Include in Footer Navigation</span>
+              </label>
+            </div>
+
+            <div id="nav-order-container" class="hidden">
+              <label for="page-nav-order" class="block text-sm font-medium text-neutral-700 mb-1">Navigation Order</label>
+              <input type="number" id="page-nav-order" name="navOrder" min="1" class="w-32 px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500" />
+            </div>
+          </div>
+
+          <!-- Description -->
+          <div>
+            <label for="page-description-en" class="block text-sm font-medium text-neutral-700 mb-1">Description (English)</label>
+            <textarea id="page-description-en" name="description_en" rows="2" class="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500" placeholder="Brief page description..."></textarea>
+          </div>
+
+          <!-- Actions -->
+          <div class="flex items-center justify-between pt-4 border-t border-neutral-200">
+            <button type="button" id="btn-delete-page" class="hidden px-4 py-2 text-red-600 hover:text-red-700 hover:bg-red-50 rounded-lg transition-colors">
+              Delete Page
+            </button>
+            <div class="flex items-center gap-3 ml-auto">
+              <button type="button" id="btn-cancel" class="px-4 py-2 text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100 rounded-lg transition-colors">
+                Cancel
+              </button>
+              <button type="submit" class="px-6 py-2 bg-teal-600 text-white font-medium rounded-lg hover:bg-teal-700 transition-colors">
+                Save Page
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 hidden">
+      <div class="bg-neutral-900 text-white px-6 py-3 rounded-lg shadow-lg flex items-center gap-3">
+        <svg class="w-5 h-5 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+        </svg>
+        <span id="toast-message">Changes saved</span>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-neutral-200 py-8 mt-12">
+      <div class="container-custom text-center">
+        <p class="text-sm text-neutral-500">Sitemap & Information Architecture Portal</p>
+        <p class="text-xs text-neutral-400 mt-2">
+          <span id="page-count">0</span> pages across <span id="lang-count">0</span> languages
+        </p>
+      </div>
+    </footer>
+
+    <!-- Embedded data fallback -->
+    <script type="application/json" id="sitemap-data"></script>
+    <script type="application/json" id="navigation-data"></script>
+
+    <script type="module" src="../../scripts/sitemap-portal.ts"></script>
+  </body>
+</html>

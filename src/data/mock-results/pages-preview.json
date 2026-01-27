@@ -1,0 +1,88 @@
+{
+  "pages": [
+    {
+      "id": "homepage",
+      "name": "Homepage",
+      "path": "/pages/index.html",
+      "status": "complete",
+      "sections": 6,
+      "wordCount": 850,
+      "images": 3,
+      "lastUpdated": "2024-01-15T14:30:00Z",
+      "preview": {
+        "thumbnail": "/assets/generated/preview-homepage.jpg",
+        "description": "Main landing page with hero section, problem/solution narrative, testimonials, and booking CTA"
+      }
+    },
+    {
+      "id": "about",
+      "name": "About",
+      "path": "/pages/about.html",
+      "status": "complete",
+      "sections": 5,
+      "wordCount": 720,
+      "images": 4,
+      "lastUpdated": "2024-01-15T14:32:00Z",
+      "preview": {
+        "thumbnail": "/assets/generated/preview-about.jpg",
+        "description": "Company story, team profiles, values statement, and certifications"
+      }
+    },
+    {
+      "id": "services",
+      "name": "Services",
+      "path": "/pages/services.html",
+      "status": "complete",
+      "sections": 5,
+      "wordCount": 1200,
+      "images": 2,
+      "lastUpdated": "2024-01-15T14:35:00Z",
+      "preview": {
+        "thumbnail": "/assets/generated/preview-services.jpg",
+        "description": "Service offerings with descriptions, pricing, and booking integration"
+      }
+    },
+    {
+      "id": "contact",
+      "name": "Contact",
+      "path": "/pages/contact.html",
+      "status": "complete",
+      "sections": 5,
+      "wordCount": 380,
+      "images": 1,
+      "lastUpdated": "2024-01-15T14:37:00Z",
+      "preview": {
+        "thumbnail": "/assets/generated/preview-contact.jpg",
+        "description": "Contact form, location map, business hours, and FAQ section"
+      }
+    },
+    {
+      "id": "pricing",
+      "name": "Pricing",
+      "path": "/pages/pricing.html",
+      "status": "complete",
+      "sections": 5,
+      "wordCount": 650,
+      "images": 0,
+      "lastUpdated": "2024-01-15T14:40:00Z",
+      "preview": {
+        "thumbnail": "/assets/generated/preview-pricing.jpg",
+        "description": "Pricing tables, service packages, and membership options"
+      }
+    }
+  ],
+  "summary": {
+    "totalPages": 5,
+    "totalSections": 26,
+    "totalWordCount": 3800,
+    "totalImages": 10,
+    "completedAt": "2024-01-15T14:40:00Z",
+    "generationTime": "4m 23s"
+  },
+  "deployment": {
+    "status": "deployed",
+    "url": "https://serenity-wellness-demo.vercel.app",
+    "githubRepo": "serenity-wellness-website",
+    "deployedAt": "2024-01-15T14:45:00Z"
+  }
+}

@@ -1,0 +1,420 @@
+/* Wireframe Mode Styles
+ * Converts the prototype to a content-focused wireframe view
+ * Enable via ?wireframe=1 URL param or Cmd/Ctrl+Shift+W
+ */
+
+/* Base wireframe mode variables */
+body.wireframe-mode {
+  --wireframe-border: #a3a3a3;
+  --wireframe-bg: #f5f5f5;
+  --wireframe-text: #262626;
+  --wireframe-text-muted: #525252;
+  --wireframe-placeholder: #d4d4d4;
+  --wireframe-label: #737373;
+}
+
+/* Override design tokens to neutral values */
+body.wireframe-mode {
+  --color-primary-50: #fafafa;
+  --color-primary-100: #f5f5f5;
+  --color-primary-200: #e5e5e5;
+  --color-primary-300: #d4d4d4;
+  --color-primary-400: #a3a3a3;
+  --color-primary-500: #737373;
+  --color-primary-600: #525252;
+  --color-primary-700: #404040;
+  --color-primary-800: #262626;
+  --color-primary-900: #171717;
+
+  --color-secondary-50: #fafafa;
+  --color-secondary-100: #f5f5f5;
+  --color-secondary-200: #e5e5e5;
+  --color-secondary-300: #d4d4d4;
+  --color-secondary-400: #a3a3a3;
+  --color-secondary-500: #737373;
+  --color-secondary-600: #525252;
+  --color-secondary-700: #404040;
+  --color-secondary-800: #262626;
+  --color-secondary-900: #171717;
+}
+
+/* Force ALL text to be readable - nuclear option for wireframe mode */
+/* This overrides Tailwind's color implementation completely */
+body.wireframe-mode * {
+  color: #262626 !important;
+  --tw-text-opacity: 1 !important;
+  -webkit-text-fill-color: #262626 !important;
+}
+
+body.wireframe-mode h1,
+body.wireframe-mode h2,
+body.wireframe-mode h3 {
+  color: #171717 !important;
+  -webkit-text-fill-color: #171717 !important;
+}
+
+body.wireframe-mode p,
+body.wireframe-mode span {
+  color: #404040 !important;
+  -webkit-text-fill-color: #404040 !important;
+}
+
+/* Force all backgrounds to be white/light */
+body.wireframe-mode,
+body.wireframe-mode section,
+body.wireframe-mode [data-section],
+body.wireframe-mode header,
+body.wireframe-mode footer,
+body.wireframe-mode main,
+body.wireframe-mode div:not(.wireframe-toggle-button):not(.wireframe-content-indicator):not(.indicator-dot) {
+  background-color: white !important;
+  background-image: none !important;
+}
+
+/* Force background decorations to be invisible (only negative z-index backgrounds) */
+body.wireframe-mode .absolute.-z-10 {
+  display: none !important;
+}
+
+/* Remove all gradient overlays */
+body.wireframe-mode .gradient-overlay,
+body.wireframe-mode .gradient-overlay::before,
+body.wireframe-mode [class*="bg-gradient"],
+body.wireframe-mode [style*="gradient"] {
+  background: #f8fafc !important;
+  background-image: none !important;
+}
+
+/* Image placeholders */
+body.wireframe-mode img {
+  position: relative;
+  background: var(--wireframe-placeholder);
+  border: 2px dashed var(--wireframe-border);
+  object-fit: none !important;
+}
+
+body.wireframe-mode img::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--wireframe-placeholder);
+}
+
+/* Hide actual image content and show placeholder */
+body.wireframe-mode [data-wireframe-placeholder="image"],
+body.wireframe-mode img:not([data-wireframe-keep]) {
+  background: repeating-linear-gradient(
+    45deg,
+    var(--wireframe-placeholder),
+    var(--wireframe-placeholder) 10px,
+    #e5e5e5 10px,
+    #e5e5e5 20px
+  );
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed var(--wireframe-border);
+  border-radius: 8px;
+}
+
+/* Video placeholders */
+body.wireframe-mode video,
+body.wireframe-mode iframe[src*="youtube"],
+body.wireframe-mode iframe[src*="vimeo"],
+body.wireframe-mode [data-wireframe-placeholder="video"] {
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--wireframe-placeholder),
+    var(--wireframe-placeholder) 10px,
+    #e5e5e5 10px,
+    #e5e5e5 20px
+  );
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed var(--wireframe-border);
+  border-radius: 8px;
+  position: relative;
+}
+
+body.wireframe-mode video *,
+body.wireframe-mode iframe[src*="youtube"] *,
+body.wireframe-mode iframe[src*="vimeo"] * {
+  visibility: hidden;
+}
+
+/* Placeholder labels */
+body.wireframe-mode [data-wireframe-label]::after {
+  content: attr(data-wireframe-label);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--wireframe-label);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: 1px solid var(--wireframe-border);
+  z-index: 10;
+}
+
+/* Icon placeholders */
+body.wireframe-mode svg:not(.wireframe-keep) {
+  filter: grayscale(100%);
+  opacity: 0.6;
+}
+
+/* Remove gradients and replace with solid colors */
+body.wireframe-mode .gradient-primary,
+body.wireframe-mode .gradient-secondary,
+body.wireframe-mode [class*="bg-gradient"] {
+  background: #f8fafc !important;
+  background-image: none !important;
+}
+
+body.wireframe-mode .text-gradient {
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  background-clip: unset !important;
+  -webkit-text-fill-color: var(--wireframe-text) !important;
+  color: var(--wireframe-text) !important;
+}
+
+/* Force headings to be visible and bold */
+body.wireframe-mode h1,
+body.wireframe-mode h2,
+body.wireframe-mode h3,
+body.wireframe-mode h4,
+body.wireframe-mode h5,
+body.wireframe-mode h6 {
+  color: #171717 !important;
+}
+
+/* Remove shadows but keep structure */
+body.wireframe-mode * {
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+
+/* Add subtle borders for structure visibility */
+body.wireframe-mode section,
+body.wireframe-mode [data-section] {
+  border: 1px solid #d4d4d4 !important;
+  background: white !important;
+  min-height: auto !important;
+}
+
+/* Show content structure with dotted borders */
+body.wireframe-mode .container-custom > * {
+  border: 1px dotted #e5e5e5;
+  padding: 4px;
+}
+
+/* Ensure hero and colored sections show content properly */
+body.wireframe-mode .gradient-overlay,
+body.wireframe-mode [data-section="Hero"] {
+  background: #f0f4f8 !important;
+  min-height: 400px !important;
+  display: flex !important;
+  align-items: center !important;
+  padding: 4rem 1rem !important;
+}
+
+/* Hero specific - ensure min-h-screen doesn't hide content */
+body.wireframe-mode .min-h-screen {
+  min-height: 400px !important;
+}
+
+/* CRITICAL: Force hero text visibility with maximum specificity */
+body.wireframe-mode section[data-section="Hero"] h1,
+body.wireframe-mode section[data-section="Hero"] h1.text-white,
+body.wireframe-mode section.gradient-overlay h1,
+body.wireframe-mode section.gradient-overlay h1.text-white {
+  color: #171717 !important;
+  -webkit-text-fill-color: #171717 !important;
+}
+
+body.wireframe-mode section[data-section="Hero"] p,
+body.wireframe-mode section[data-section="Hero"] p.text-primary-100,
+body.wireframe-mode section.gradient-overlay p {
+  color: #404040 !important;
+  -webkit-text-fill-color: #404040 !important;
+}
+
+body.wireframe-mode section[data-section="Hero"] a,
+body.wireframe-mode section.gradient-overlay a {
+  color: #525252 !important;
+  -webkit-text-fill-color: #525252 !important;
+  border-color: #525252 !important;
+  background: white !important;
+}
+
+/* Make sure flex containers work properly */
+body.wireframe-mode .flex {
+  display: flex !important;
+}
+
+body.wireframe-mode .items-center {
+  align-items: center !important;
+}
+
+body.wireframe-mode .justify-center {
+  justify-content: center !important;
+}
+
+/* Make muted text slightly lighter */
+body.wireframe-mode p,
+body.wireframe-mode .text-neutral-600,
+body.wireframe-mode [class*="text-primary-100"],
+body.wireframe-mode [class*="text-neutral"] {
+  color: var(--wireframe-text-muted) !important;
+}
+
+/* Button styling - outline only */
+body.wireframe-mode button,
+body.wireframe-mode .btn,
+body.wireframe-mode [class*="btn-"] {
+  background: white !important;
+  border: 2px solid var(--wireframe-border) !important;
+  color: var(--wireframe-text) !important;
+}
+
+/* Card styling - simple borders */
+body.wireframe-mode .card,
+body.wireframe-mode [class*="card"] {
+  background: white !important;
+  border: 1px solid var(--wireframe-border) !important;
+}
+
+/* Wireframe mode toggle button */
+.wireframe-toggle-button {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  z-index: 9999;
+  padding: 12px 16px;
+  background: #404040;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease;
+}
+
+.wireframe-toggle-button:hover {
+  background: #262626;
+  transform: translateY(-2px);
+}
+
+.wireframe-toggle-button svg {
+  width: 20px;
+  height: 20px;
+}
+
+body.wireframe-mode .wireframe-toggle-button {
+  background: #3b82f6;
+  filter: none !important;
+}
+
+body.wireframe-mode .wireframe-toggle-button:hover {
+  background: #2563eb;
+}
+
+/* Content review indicator */
+.wireframe-content-indicator {
+  position: fixed;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  padding: 12px 24px;
+  background: white;
+  border: 2px solid #404040;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #404040;
+  display: none;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+body.wireframe-mode .wireframe-content-indicator {
+  display: flex;
+  filter: none !important;
+}
+
+.wireframe-content-indicator .indicator-dot {
+  width: 8px;
+  height: 8px;
+  background: #404040;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Annotations for content sections */
+body.wireframe-mode [data-content-section] {
+  position: relative;
+}
+
+body.wireframe-mode [data-content-section]::before {
+  content: attr(data-content-section);
+  position: absolute;
+  top: -12px;
+  left: 12px;
+  background: #404040;
+  color: white;
+  padding: 4px 8px;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: 4px;
+  z-index: 100;
+}
+
+/* Print styles for wireframe */
+@media print {
+  body.wireframe-mode {
+    filter: none;
+  }
+
+  body.wireframe-mode * {
+    color: black !important;
+    background: white !important;
+  }
+
+  .wireframe-toggle-button,
+  .wireframe-content-indicator {
+    display: none !important;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .wireframe-content-indicator .indicator-dot {
+    animation: none;
+  }
+}

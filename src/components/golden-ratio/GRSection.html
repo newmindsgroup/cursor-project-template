@@ -1,0 +1,138 @@
+<!--
+  GRSection - Golden Ratio Section Template
+  
+  Pre-validated section template with correct RESPONSIVE padding and container structure.
+  Use this as the base for all new sections. ALL sections must look perfect at every breakpoint.
+  
+  RESPONSIVE BREAKPOINTS:
+  - Mobile (< 768px):  Base styles, single column, minimum 32px horizontal padding
+  - Tablet (768px+):   md: prefix, 2-column grids, 48px horizontal padding
+  - Desktop (1024px+): lg: prefix, full columns, 64px horizontal padding
+  
+  SECTION PADDING VARIANTS:
+  | Variant  | Mobile    | Tablet      | Desktop     |
+  |----------|-----------|-------------|-------------|
+  | Standard | py-16     | md:py-20    | lg:py-24    |
+  | Compact  | py-12     | md:py-16    | lg:py-20    |
+  | Large    | py-20     | md:py-32    | lg:py-40    |
+  
+  CONTAINER PADDING (All variants):
+  | Breakpoint | Class     | Value |
+  |------------|-----------|-------|
+  | Mobile     | px-8      | 32px  |
+  | Tablet     | md:px-12  | 48px  |
+  | Desktop    | lg:px-16  | 64px  |
+  
+  Background options:
+  - bg-white (default)
+  - bg-neutral-50
+  - bg-neutral-900 text-neutral-300
+  - bg-gradient-to-br from-primary-600 to-primary-800 text-white
+-->
+
+<!-- ============================================================================
+     STANDARD SECTION
+     Use for most content sections (Features, Testimonials, FAQ, etc.)
+     ============================================================================ -->
+<section
+  class="py-16 md:py-20 lg:py-24 bg-white"
+  data-section="{SectionName}"
+  data-tokens='{"padding": "64px/80px/96px", "container": "32px/48px/64px", "variant": "standard"}'
+>
+  <div class="max-w-7xl mx-auto px-8 md:px-12 lg:px-16">
+    
+    <!-- Section Header (Optional but recommended) -->
+    <div class="max-w-3xl mx-auto text-center mb-12 md:mb-16">
+      <!-- H2 with responsive typography -->
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4">
+        {Section Headline}
+      </h2>
+      <p class="text-lg md:text-xl text-neutral-600 leading-relaxed">
+        {Section description text goes here}
+      </p>
+    </div>
+    
+    <!-- Section Content - Use responsive grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+      <!-- Content items - stack on mobile, expand on larger screens -->
+      {Content goes here}
+    </div>
+    
+  </div>
+</section>
+
+<!-- ============================================================================
+     COMPACT SECTION
+     Use for shorter sections (LogoCloud, Stats, social proof)
+     ============================================================================ -->
+<!--
+<section
+  class="py-12 md:py-16 lg:py-20 bg-neutral-50"
+  data-section="{SectionName}"
+  data-tokens='{"padding": "48px/64px/80px", "container": "32px/48px/64px", "variant": "compact"}'
+>
+  <div class="max-w-7xl mx-auto px-8 md:px-12 lg:px-16">
+    
+    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 lg:gap-12 items-center">
+      {Compact content - like logos or stats}
+    </div>
+    
+  </div>
+</section>
+-->
+
+<!-- ============================================================================
+     LARGE SECTION
+     Use for hero sections, CTAs, or sections that need maximum impact
+     ============================================================================ -->
+<!--
+<section
+  class="py-20 md:py-32 lg:py-40 bg-gradient-to-br from-primary-600 to-primary-800 text-white"
+  data-section="{SectionName}"
+  data-tokens='{"padding": "80px/128px/160px", "container": "32px/48px/64px", "variant": "large"}'
+>
+  <div class="max-w-7xl mx-auto px-8 md:px-12 lg:px-16">
+    
+    <div class="max-w-4xl mx-auto text-center">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 md:mb-8">
+        {Large Section Headline}
+      </h1>
+      <p class="text-xl md:text-2xl text-white/90 mb-8 md:mb-12">
+        {Subheadline with supporting message}
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#" class="px-8 py-4 bg-white text-primary-600 font-semibold rounded-lg">
+          Primary CTA
+        </a>
+        <a href="#" class="px-8 py-4 bg-transparent border-2 border-white text-white font-semibold rounded-lg">
+          Secondary CTA
+        </a>
+      </div>
+    </div>
+    
+  </div>
+</section>
+-->
+
+<!-- ============================================================================
+     DARK SECTION
+     Use for contrast, footer, or dark-themed content
+     ============================================================================ -->
+<!--
+<section
+  class="py-16 md:py-20 lg:py-24 bg-neutral-900 text-neutral-300"
+  data-section="{SectionName}"
+  data-tokens='{"padding": "64px/80px/96px", "container": "32px/48px/64px", "variant": "dark"}'
+>
+  <div class="max-w-7xl mx-auto px-8 md:px-12 lg:px-16">
+    
+    <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+      {Dark Section Headline}
+    </h2>
+    <p class="text-lg md:text-xl text-neutral-400 leading-relaxed">
+      {Content with appropriate text colors for dark backgrounds}
+    </p>
+    
+  </div>
+</section>
+-->

@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Setup Wizard</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="description" content="Set up your new website project with guided steps" />
+    <link rel="stylesheet" href="../../styles/tokens.css" />
+    <link rel="stylesheet" href="../../styles/base.css" />
+    <link rel="stylesheet" href="../../styles/wizard.css" />
+  </head>
+  <body class="bg-neutral-50 min-h-screen">
+    <!-- Header -->
+    <header class="bg-white border-b border-neutral-200 py-4">
+      <div class="container-custom">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-gradient-to-br from-primary-600 to-secondary-600 rounded-xl flex items-center justify-center">
+              <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <div>
+              <h1 class="text-xl font-bold text-neutral-900">Project Setup Wizard</h1>
+              <p class="text-sm text-neutral-500">Configure and generate your website project</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-4">
+            <a href="./status/" class="text-sm text-neutral-600 hover:text-neutral-900">Status Dashboard</a>
+            <a href="./context/" class="text-sm text-neutral-600 hover:text-neutral-900">Add Context</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="py-8">
+      <div class="container-custom max-w-4xl">
+        <!-- Progress Steps -->
+        <div class="wizard-progress mb-8">
+          <div class="wizard-progress-bar">
+            <div class="wizard-progress-fill" id="progress-fill"></div>
+          </div>
+          <div class="wizard-steps">
+            <button class="wizard-step active" data-step="1">
+              <span class="wizard-step-number">1</span>
+              <span class="wizard-step-label">Project Basics</span>
+            </button>
+            <button class="wizard-step" data-step="2">
+              <span class="wizard-step-number">2</span>
+              <span class="wizard-step-label">AI Provider</span>
+            </button>
+            <button class="wizard-step" data-step="3">
+              <span class="wizard-step-number">3</span>
+              <span class="wizard-step-label">Upload Context</span>
+            </button>
+            <button class="wizard-step" data-step="4">
+              <span class="wizard-step-number">4</span>
+              <span class="wizard-step-label">Configure Pages</span>
+            </button>
+            <button class="wizard-step" data-step="5">
+              <span class="wizard-step-number">5</span>
+              <span class="wizard-step-label">Generate</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Wizard Form Container -->
+        <div class="wizard-container">
+          <!-- Step 1: Project Basics -->
+          <section class="wizard-panel active" data-panel="1">
+            <div class="wizard-panel-header">
+              <h2 class="wizard-panel-title">Project Basics</h2>
+              <p class="wizard-panel-subtitle">Tell us about your project and client</p>
+            </div>
+            <div class="wizard-panel-content">
+              <div class="wizard-form-grid">
+                <div class="wizard-field">
+                  <label for="project-name" class="wizard-label">Project Name <span class="text-red-500">*</span></label>
+                  <input type="text" id="project-name" name="projectName" class="wizard-input" placeholder="e.g., Acme Corp Website Redesign" required />
+                </div>
+                <div class="wizard-field">
+                  <label for="client-name" class="wizard-label">Client Name <span class="text-red-500">*</span></label>
+                  <input type="text" id="client-name" name="clientName" class="wizard-input" placeholder="e.g., Acme Corporation" required />
+                </div>
+                <div class="wizard-field">
+                  <label for="industry" class="wizard-label">Industry</label>
+                  <select id="industry" name="industry" class="wizard-select">
+                    <option value="">Select industry...</option>
+                    <option value="technology">Technology</option>
+                    <option value="healthcare">Healthcare</option>
+                    <option value="finance">Finance</option>
+                    <option value="ecommerce">E-commerce</option>
+                    <option value="education">Education</option>
+                    <option value="agency">Creative/Agency</option>
+                    <option value="professional">Professional Services</option>
+                    <option value="manufacturing">Manufacturing</option>
+                    <option value="real-estate">Real Estate</option>
+                    <option value="hospitality">Hospitality</option>
+                    <option value="nonprofit">Non-profit</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+                <div class="wizard-field">
+                  <label for="contact-email" class="wizard-label">Primary Contact Email</label>
+                  <input type="email" id="contact-email" name="contactEmail" class="wizard-input" placeholder="client@example.com" />
+                </div>
+                <div class="wizard-field col-span-2">
+                  <label for="project-description" class="wizard-label">Project Description</label>
+                  <textarea id="project-description" name="projectDescription" class="wizard-textarea" rows="3" placeholder="Brief description of the website project goals..."></textarea>
+                </div>
+                <div class="wizard-field">
+                  <label for="target-launch" class="wizard-label">Target Launch Date</label>
+                  <input type="date" id="target-launch" name="targetLaunch" class="wizard-input" />
+                </div>
+                <div class="wizard-field">
+                  <label for="budget-range" class="wizard-label">Budget Range</label>
+                  <select id="budget-range" name="budgetRange" class="wizard-select">
+                    <option value="">Select range...</option>
+                    <option value="under5k">Under $5,000</option>
+                    <option value="5k-10k">$5,000 - $10,000</option>
+                    <option value="10k-25k">$10,000 - $25,000</option>
+                    <option value="25k-50k">$25,000 - $50,000</option>
+                    <option value="50k-100k">$50,000 - $100,000</option>
+                    <option value="over100k">Over $100,000</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Step 2: AI Provider Configuration -->
+          <section class="wizard-panel" data-panel="2">
+            <div class="wizard-panel-header">
+              <h2 class="wizard-panel-title">AI Provider Configuration</h2>
+              <p class="wizard-panel-subtitle">Choose how to power AI-generated content and images</p>
+            </div>
+            <div class="wizard-panel-content">
+              <div class="wizard-section">
+                <h3 class="wizard-section-title">Text Generation Provider</h3>
+                <div class="wizard-radio-group">
+                  <label class="wizard-radio-card">
+                    <input type="radio" name="aiProvider" value="openai" />
+                    <div class="wizard-radio-card-content">
+                      <div class="wizard-radio-card-icon bg-green-100">
+                        <svg class="w-6 h-6 text-green-600" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364l2.0201-1.1638a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z"/>
+                        </svg>
+                      </div>
+                      <div class="wizard-radio-card-text">
+                        <span class="wizard-radio-card-title">OpenAI</span>
+                        <span class="wizard-radio-card-desc">GPT-4o, GPT-4 Turbo</span>
+                      </div>
+                    </div>
+                  </label>
+                  <label class="wizard-radio-card">
+                    <input type="radio" name="aiProvider" value="anthropic" />
+                    <div class="wizard-radio-card-content">
+                      <div class="wizard-radio-card-icon bg-orange-100">
+                        <svg class="w-6 h-6 text-orange-600" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M17.304 3h-3.607l6.636 18h3.607L17.304 3zM6.057 3H2.45l6.636 18h3.607L6.057 3z"/>
+                        </svg>
+                      </div>
+                      <div class="wizard-radio-card-text">
+                        <span class="wizard-radio-card-title">Anthropic</span>
+                        <span class="wizard-radio-card-desc">Claude 3.5 Sonnet, Opus</span>
+                      </div>
+                    </div>
+                  </label>
+                  <label class="wizard-radio-card">
+                    <input type="radio" name="aiProvider" value="google" />
+                    <div class="wizard-radio-card-content">
+                      <div class="wizard-radio-card-icon bg-blue-100">
+                        <svg class="w-6 h-6 text-blue-600" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                        </svg>
+                      </div>
+                      <div class="wizard-radio-card-text">
+                        <span class="wizard-radio-card-title">Google AI</span>
+                        <span class="wizard-radio-card-desc">Gemini 1.5 Pro, Flash</span>
+                      </div>
+                    </div>
+                  </label>
+                  <label class="wizard-radio-card">
+                    <input type="radio" name="aiProvider" value="cursor" checked />
+                    <div class="wizard-radio-card-content">
+                      <div class="wizard-radio-card-icon bg-purple-100">
+                        <svg class="w-6 h-6 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                      </div>
+                      <div class="wizard-radio-card-text">
+                        <span class="wizard-radio-card-title">Cursor Fallback</span>
+                        <span class="wizard-radio-card-desc">No API key needed</span>
+                      </div>
+                    </div>
+                  </label>
+                </div>
+                
+                <!-- API Key Input (shown when not cursor) -->
+                <div id="api-key-section" class="wizard-field mt-6 hidden">
+                  <label for="api-key" class="wizard-label">API Key <span class="text-red-500">*</span></label>
+                  <div class="wizard-input-group">
+                    <input type="password" id="api-key" name="apiKey" class="wizard-input" placeholder="sk-..." />
+                    <button type="button" id="toggle-api-key" class="wizard-input-addon">
+                      <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                      </svg>
+                    </button>
+                    <button type="button" id="test-api-key" class="wizard-btn-sm">Test</button>
+                  </div>
+                  <p id="api-key-status" class="wizard-field-hint mt-2"></p>
+                </div>
+              </div>
+
+              <div class="wizard-section mt-8">
+                <h3 class="wizard-section-title">Image Generation Provider</h3>
+                <div class="wizard-radio-group cols-2">
+                  <label class="wizard-radio-card">
+                    <input type="radio" name="imageProvider" value="google" checked />
+                    <div class="wizard-radio-card-content">
+                      <div class="wizard-radio-card-icon bg-blue-100">
+                        <svg class="w-6 h-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                      </div>
+                      <div class="wizard-radio-card-text">
+                        <span class="wizard-radio-card-title">Google AI (Imagen 3)</span>
+                        <span class="wizard-radio-card-desc">$0.02/image</span>
+                      </div>
+                    </div>
+                  </label>
+                  <label class="wizard-radio-card">
+                    <input type="radio" name="imageProvider" value="nanobanana" />
+                    <div class="wizard-radio-card-content">
+                      <div class="wizard-radio-card-icon bg-yellow-100">
+                        <svg class="w-6 h-6 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                        </svg>
+                      </div>
+                      <div class="wizard-radio-card-text">
+                        <span class="wizard-radio-card-title">NanoBanana</span>
+                        <span class="wizard-radio-card-desc">$0.02/image</span>
+                      </div>
+                    </div>
+                  </label>
+                </div>
+                
+                <div id="image-api-key-section" class="wizard-field mt-6">
+                  <label for="image-api-key" class="wizard-label">Image API Key</label>
+                  <input type="password" id="image-api-key" name="imageApiKey" class="wizard-input" placeholder="Enter API key for image generation..." />
+                  <p class="wizard-field-hint">Uses same Google AI key if selected above, or separate NanoBanana key</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Step 3: Upload Context Files -->
+          <section class="wizard-panel" data-panel="3">
+            <div class="wizard-panel-header">
+              <h2 class="wizard-panel-title">Upload Context Files</h2>
+              <p class="wizard-panel-subtitle">Add business documents, brand assets, and reference materials</p>
+            </div>
+            <div class="wizard-panel-content">
+              <div class="wizard-upload-zone" id="upload-zone">
+                <div class="wizard-upload-zone-content">
+                  <svg class="w-12 h-12 text-neutral-400 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                  </svg>
+                  <p class="text-lg font-medium text-neutral-700 mb-2">Drop files here or click to browse</p>
+                  <p class="text-sm text-neutral-500">Supports PDF, Word, Excel, CSV, images, and text files</p>
+                  <input type="file" id="file-input" multiple accept=".pdf,.doc,.docx,.xls,.xlsx,.csv,.txt,.md,.png,.jpg,.jpeg,.webp" class="hidden" />
+                </div>
+              </div>
+
+              <div id="uploaded-files" class="wizard-file-list mt-6 hidden">
+                <h3 class="wizard-section-title">Uploaded Files</h3>
+                <div id="file-list-content" class="space-y-2"></div>
+              </div>
+
+              <div id="extracted-preview" class="wizard-extract-preview mt-6 hidden">
+                <h3 class="wizard-section-title">Extracted Content Preview</h3>
+                <div id="extract-content" class="wizard-extract-content"></div>
+              </div>
+
+              <div class="wizard-info-box mt-6">
+                <svg class="w-5 h-5 text-blue-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                </svg>
+                <div>
+                  <p class="font-medium text-blue-900">What to upload</p>
+                  <ul class="text-sm text-blue-700 mt-1 space-y-1">
+                    <li>Brand guidelines, style guides, logo files</li>
+                    <li>Existing website content or copy documents</li>
+                    <li>Competitor analysis, market research</li>
+                    <li>Client questionnaires, discovery notes</li>
+                    <li>Spreadsheets with product/service data</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Step 4: Configure Pages -->
+          <section class="wizard-panel" data-panel="4">
+            <div class="wizard-panel-header">
+              <h2 class="wizard-panel-title">Configure Pages</h2>
+              <p class="wizard-panel-subtitle">Select which pages to generate for your website</p>
+            </div>
+            <div class="wizard-panel-content">
+              <div class="wizard-page-grid">
+                <!-- Homepage -->
+                <label class="wizard-page-card">
+                  <input type="checkbox" name="pages" value="homepage" checked />
+                  <div class="wizard-page-card-content">
+                    <div class="wizard-page-card-header">
+                      <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                      </svg>
+                      <span class="wizard-page-card-title">Homepage</span>
+                    </div>
+                    <p class="wizard-page-card-desc">Main landing page with hero, features, testimonials</p>
+                    <select class="wizard-page-blueprint" name="homepage-blueprint">
+                      <option value="homepage">Standard Homepage</option>
+                      <option value="landing">Landing Page</option>
+                      <option value="minimal">Minimal</option>
+                    </select>
+                  </div>
+                </label>
+
+                <!-- About -->
+                <label class="wizard-page-card">
+                  <input type="checkbox" name="pages" value="about" checked />
+                  <div class="wizard-page-card-content">
+                    <div class="wizard-page-card-header">
+                      <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                      </svg>
+                      <span class="wizard-page-card-title">About</span>
+                    </div>
+                    <p class="wizard-page-card-desc">Company story, team, values, and mission</p>
+                    <select class="wizard-page-blueprint" name="about-blueprint">
+                      <option value="about">Standard About</option>
+                      <option value="minimal">Minimal</option>
+                    </select>
+                  </div>
+                </label>
+
+                <!-- Services -->
+                <label class="wizard-page-card">
+                  <input type="checkbox" name="pages" value="services" checked />
+                  <div class="wizard-page-card-content">
+                    <div class="wizard-page-card-header">
+                      <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                      </svg>
+                      <span class="wizard-page-card-title">Services</span>
+                    </div>
+                    <p class="wizard-page-card-desc">Service offerings, features, and benefits</p>
+                    <select class="wizard-page-blueprint" name="services-blueprint">
+                      <option value="services">Standard Services</option>
+                      <option value="services-single">Single Service</option>
+                    </select>
+                  </div>
+                </label>
+
+                <!-- Contact -->
+                <label class="wizard-page-card">
+                  <input type="checkbox" name="pages" value="contact" checked />
+                  <div class="wizard-page-card-content">
+                    <div class="wizard-page-card-header">
+                      <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                      </svg>
+                      <span class="wizard-page-card-title">Contact</span>
+                    </div>
+                    <p class="wizard-page-card-desc">Contact form, location, and info</p>
+                    <select class="wizard-page-blueprint" name="contact-blueprint">
+                      <option value="contact">Standard Contact</option>
+                    </select>
+                  </div>
+                </label>
+
+                <!-- Pricing -->
+                <label class="wizard-page-card">
+                  <input type="checkbox" name="pages" value="pricing" />
+                  <div class="wizard-page-card-content">
+                    <div class="wizard-page-card-header">
+                      <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      <span class="wizard-page-card-title">Pricing</span>
+                    </div>
+                    <p class="wizard-page-card-desc">Pricing tables and comparison</p>
+                    <select class="wizard-page-blueprint" name="pricing-blueprint">
+                      <option value="pricing">Standard Pricing</option>
+                    </select>
+                  </div>
+                </label>
+
+                <!-- Portfolio -->
+                <label class="wizard-page-card">
+                  <input type="checkbox" name="pages" value="portfolio" />
+                  <div class="wizard-page-card-content">
+                    <div class="wizard-page-card-header">
+                      <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                      </svg>
+                      <span class="wizard-page-card-title">Portfolio</span>
+                    </div>
+                    <p class="wizard-page-card-desc">Work samples and case studies</p>
+                    <select class="wizard-page-blueprint" name="portfolio-blueprint">
+                      <option value="portfolio">Portfolio Grid</option>
+                      <option value="portfolio-single">Single Project</option>
+                    </select>
+                  </div>
+                </label>
+
+                <!-- Blog -->
+                <label class="wizard-page-card">
+                  <input type="checkbox" name="pages" value="blog" />
+                  <div class="wizard-page-card-content">
+                    <div class="wizard-page-card-header">
+                      <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+                      </svg>
+                      <span class="wizard-page-card-title">Blog</span>
+                    </div>
+                    <p class="wizard-page-card-desc">Blog listing and article template</p>
+                    <select class="wizard-page-blueprint" name="blog-blueprint">
+                      <option value="blog">Standard Blog</option>
+                    </select>
+                  </div>
+                </label>
+
+                <!-- Custom Page -->
+                <div class="wizard-page-card wizard-page-card-add" id="add-custom-page">
+                  <div class="wizard-page-card-content">
+                    <svg class="w-8 h-8 text-neutral-400 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                    </svg>
+                    <span class="text-sm font-medium text-neutral-600">Add Custom Page</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Custom Pages Container -->
+              <div id="custom-pages-container" class="mt-6 space-y-4 hidden"></div>
+            </div>
+          </section>
+
+          <!-- Step 5: Review & Generate -->
+          <section class="wizard-panel" data-panel="5">
+            <div class="wizard-panel-header">
+              <h2 class="wizard-panel-title">Review & Generate</h2>
+              <p class="wizard-panel-subtitle">Review your configuration and start generation</p>
+            </div>
+            <div class="wizard-panel-content">
+              <!-- Summary Cards -->
+              <div class="wizard-summary-grid">
+                <div class="wizard-summary-card">
+                  <h4 class="wizard-summary-card-title">Project</h4>
+                  <dl class="wizard-summary-list">
+                    <div class="wizard-summary-item">
+                      <dt>Name</dt>
+                      <dd id="summary-project-name">-</dd>
+                    </div>
+                    <div class="wizard-summary-item">
+                      <dt>Client</dt>
+                      <dd id="summary-client-name">-</dd>
+                    </div>
+                    <div class="wizard-summary-item">
+                      <dt>Industry</dt>
+                      <dd id="summary-industry">-</dd>
+                    </div>
+                  </dl>
+                </div>
+                <div class="wizard-summary-card">
+                  <h4 class="wizard-summary-card-title">AI Configuration</h4>
+                  <dl class="wizard-summary-list">
+                    <div class="wizard-summary-item">
+                      <dt>Text Provider</dt>
+                      <dd id="summary-ai-provider">-</dd>
+                    </div>
+                    <div class="wizard-summary-item">
+                      <dt>Image Provider</dt>
+                      <dd id="summary-image-provider">-</dd>
+                    </div>
+                  </dl>
+                </div>
+                <div class="wizard-summary-card">
+                  <h4 class="wizard-summary-card-title">Context Files</h4>
+                  <p id="summary-files" class="text-sm text-neutral-600">No files uploaded</p>
+                </div>
+                <div class="wizard-summary-card">
+                  <h4 class="wizard-summary-card-title">Pages to Generate</h4>
+                  <ul id="summary-pages" class="wizard-summary-pages"></ul>
+                </div>
+              </div>
+              
+              <!-- Deployment Option -->
+              <div class="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-xl">
+                <label class="flex items-start gap-3 cursor-pointer">
+                  <input type="checkbox" id="enable-deploy" class="mt-1 rounded border-blue-300" checked />
+                  <div>
+                    <span class="font-semibold text-blue-900 block">Deploy to Vercel after generation</span>
+                    <span class="text-sm text-blue-700">Automatically push to GitHub and deploy to Vercel for live preview</span>
+                    <div id="deploy-prereqs" class="text-xs text-blue-600 mt-2 hidden">
+                      Requires: GitHub CLI (gh) and Vercel CLI installed and authenticated
+                    </div>
+                  </div>
+                </label>
+              </div>
+
+              <!-- Generation Pipeline -->
+              <div class="wizard-generation-panel mt-8">
+                <h3 class="wizard-section-title">Generation Pipeline</h3>
+                <div class="wizard-pipeline">
+                  <div class="wizard-pipeline-item" data-pipeline="setup">
+                    <div class="wizard-pipeline-icon">
+                      <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                      </svg>
+                    </div>
+                    <div class="wizard-pipeline-content">
+                      <span class="wizard-pipeline-title">Setup Project Files</span>
+                      <span class="wizard-pipeline-desc">PROJECT.md, SCOPE.md, settings</span>
+                    </div>
+                    <div class="wizard-pipeline-status"></div>
+                  </div>
+                  <div class="wizard-pipeline-item" data-pipeline="analyze">
+                    <div class="wizard-pipeline-icon">
+                      <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                      </svg>
+                    </div>
+                    <div class="wizard-pipeline-content">
+                      <span class="wizard-pipeline-title">Analyze Business Context</span>
+                      <span class="wizard-pipeline-desc">Extract insights from uploaded files</span>
+                    </div>
+                    <div class="wizard-pipeline-status"></div>
+                  </div>
+                  <div class="wizard-pipeline-item" data-pipeline="personas">
+                    <div class="wizard-pipeline-icon">
+                      <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                      </svg>
+                    </div>
+                    <div class="wizard-pipeline-content">
+                      <span class="wizard-pipeline-title">Generate User Personas</span>
+                      <span class="wizard-pipeline-desc">Create target audience profiles</span>
+                    </div>
+                    <div class="wizard-pipeline-status"></div>
+                  </div>
+                  <div class="wizard-pipeline-item" data-pipeline="content">
+                    <div class="wizard-pipeline-icon">
+                      <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                      </svg>
+                    </div>
+                    <div class="wizard-pipeline-content">
+                      <span class="wizard-pipeline-title">Generate Page Content</span>
+                      <span class="wizard-pipeline-desc">StoryBrand content for each page</span>
+                    </div>
+                    <div class="wizard-pipeline-status"></div>
+                  </div>
+                  <div class="wizard-pipeline-item" data-pipeline="pages">
+                    <div class="wizard-pipeline-icon">
+                      <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
+                      </svg>
+                    </div>
+                    <div class="wizard-pipeline-content">
+                      <span class="wizard-pipeline-title">Generate Page HTML</span>
+                      <span class="wizard-pipeline-desc">Create pages from blueprints</span>
+                    </div>
+                    <div class="wizard-pipeline-status"></div>
+                  </div>
+                  <div class="wizard-pipeline-item" data-pipeline="images">
+                    <div class="wizard-pipeline-icon">
+                      <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                      </svg>
+                    </div>
+                    <div class="wizard-pipeline-content">
+                      <span class="wizard-pipeline-title">Generate Images</span>
+                      <span class="wizard-pipeline-desc">AI-generated images for content</span>
+                    </div>
+                    <div class="wizard-pipeline-status"></div>
+                  </div>
+                  <div class="wizard-pipeline-item" data-pipeline="deploy">
+                    <div class="wizard-pipeline-icon">
+                      <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </div>
+                    <div class="wizard-pipeline-content">
+                      <span class="wizard-pipeline-title">Deploy to Vercel</span>
+                      <span class="wizard-pipeline-desc">Push to GitHub and deploy preview</span>
+                    </div>
+                    <div class="wizard-pipeline-status"></div>
+                  </div>
+                </div>
+
+                <!-- Progress Bar -->
+                <div class="wizard-generation-progress hidden" id="generation-progress">
+                  <div class="wizard-generation-progress-bar">
+                    <div class="wizard-generation-progress-fill" id="generation-progress-fill"></div>
+                  </div>
+                  <p class="wizard-generation-status" id="generation-status">Initializing...</p>
+                </div>
+
+                <!-- Generate Button -->
+                <div class="wizard-generate-actions mt-8">
+                  <button type="button" id="generate-all-btn" class="wizard-btn wizard-btn-primary wizard-btn-lg">
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                    Generate All
+                  </button>
+                  <p class="text-sm text-neutral-500 mt-2">This will create all project files and may take a few minutes</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Navigation Buttons -->
+          <div class="wizard-nav">
+            <button type="button" id="prev-btn" class="wizard-btn wizard-btn-secondary" disabled>
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+              </svg>
+              Previous
+            </button>
+            <button type="button" id="next-btn" class="wizard-btn wizard-btn-primary">
+              Next
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Completion Modal -->
+    <div id="completion-modal" class="wizard-modal hidden">
+      <div class="wizard-modal-backdrop"></div>
+      <div class="wizard-modal-content">
+        <div class="wizard-modal-icon success">
+          <svg class="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+        <h3 class="wizard-modal-title">Project Setup Complete!</h3>
+        <p class="wizard-modal-desc">Your project has been configured and all files have been generated.</p>
+        
+        <!-- Deployment Status -->
+        <div id="deploy-status" class="mt-4 p-4 bg-neutral-50 rounded-lg text-left hidden">
+          <div class="flex items-center gap-2 mb-2">
+            <svg class="w-5 h-5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span class="font-semibold text-neutral-900">Deployed to Vercel</span>
+          </div>
+          <p class="text-sm text-neutral-600 mb-2">Share this URL with your client and implementation team:</p>
+          <div class="flex items-center gap-2">
+            <input type="text" id="deploy-url" class="flex-1 px-3 py-2 bg-white border border-neutral-200 rounded text-sm" readonly />
+            <button type="button" id="copy-url-btn" class="px-3 py-2 bg-primary-600 text-white rounded text-sm hover:bg-primary-700">
+              Copy
+            </button>
+          </div>
+        </div>
+        
+        <div class="wizard-modal-actions">
+          <a href="./status/" class="wizard-btn wizard-btn-primary">View Status Dashboard</a>
+          <a href="./pages/" class="wizard-btn wizard-btn-secondary">Design Pages</a>
+          <a href="../" class="wizard-btn wizard-btn-ghost">View Website</a>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="../../scripts/wizard.ts"></script>
+  </body>
+</html>

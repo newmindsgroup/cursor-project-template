@@ -1,0 +1,45 @@
+{
+  "_usage": "This file contains site-wide configuration. Update these values when setting up your project, or use 'npm run wizard' to configure automatically.",
+  "siteName": "",
+  "tagline": "",
+  "description": "",
+  "navigation": [
+    { "label": "Home", "href": "/", "active": true },
+    { "label": "About", "href": "/about.html" },
+    { "label": "Services", "href": "/services.html" },
+    { "label": "Contact", "href": "/contact.html" }
+  ],
+  "footer": {
+    "copyright": "",
+    "sections": [
+      {
+        "title": "Company",
+        "links": [
+          { "label": "About", "href": "/about.html" },
+          { "label": "Services", "href": "/services.html" },
+          { "label": "Contact", "href": "/contact.html" }
+        ]
+      },
+      {
+        "title": "Resources",
+        "links": [
+          { "label": "Documentation", "href": "#" },
+          { "label": "Support", "href": "#" },
+          { "label": "FAQ", "href": "#" }
+        ]
+      },
+      {
+        "title": "Legal",
+        "links": [
+          { "label": "Privacy Policy", "href": "#" },
+          { "label": "Terms of Service", "href": "#" }
+        ]
+      }
+    ],
+    "social": [
+      { "platform": "Twitter", "url": "", "icon": "twitter" },
+      { "platform": "LinkedIn", "url": "", "icon": "linkedin" },
+      { "platform": "GitHub", "url": "", "icon": "github" }
+    ]
+  }
+}

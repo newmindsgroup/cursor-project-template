@@ -1,3 +1,10 @@
+# Launch Plan (Legacy)
+
+This file is kept for backwards compatibility. The canonical launch checklist is:
+- `docs/08-launch/launch-checklist.md`
+
+---
+
 # Launch Plan
 
 ## Purpose

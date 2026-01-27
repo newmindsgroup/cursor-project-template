@@ -1,0 +1,570 @@
+/* Project Portal Styles
+ * Dashboard, progress tracking, UX assets, and wireframe gallery
+ */
+
+/* ===== Layout ===== */
+.portal-container {
+  @apply max-w-6xl mx-auto px-6 py-8 lg:px-8;
+}
+
+.portal-header {
+  @apply mb-12 text-center;
+}
+
+.portal-title {
+  @apply text-4xl md:text-5xl font-bold text-neutral-900 mb-4;
+}
+
+.portal-subtitle {
+  @apply text-lg text-neutral-600 max-w-2xl mx-auto;
+}
+
+.portal-section {
+  @apply mb-16;
+}
+
+.portal-section-title {
+  @apply text-2xl font-bold text-neutral-900 mb-6 flex items-center gap-3;
+}
+
+.portal-section-title svg {
+  @apply w-6 h-6 text-primary-600;
+}
+
+/* ===== Progress Overview ===== */
+.progress-overview {
+  @apply grid grid-cols-1 md:grid-cols-3 gap-6 mb-12;
+}
+
+.progress-stat-card {
+  @apply bg-white rounded-2xl p-6 border border-neutral-200 text-center;
+}
+
+.progress-stat-value {
+  @apply text-4xl font-bold text-primary-600 mb-2;
+}
+
+.progress-stat-label {
+  @apply text-sm text-neutral-600 font-medium;
+}
+
+/* ===== Progress Ring ===== */
+.progress-ring-container {
+  @apply flex flex-col items-center justify-center p-8;
+}
+
+.progress-ring {
+  @apply relative w-40 h-40;
+}
+
+.progress-ring svg {
+  @apply transform -rotate-90;
+}
+
+.progress-ring-bg {
+  fill: none;
+  stroke: #e5e5e5;
+  stroke-width: 8;
+}
+
+.progress-ring-fill {
+  fill: none;
+  stroke: #3b82f6;
+  stroke-width: 8;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.5s ease;
+}
+
+.progress-ring-text {
+  @apply absolute inset-0 flex flex-col items-center justify-center;
+}
+
+.progress-ring-percentage {
+  @apply text-3xl font-bold text-neutral-900;
+}
+
+.progress-ring-label {
+  @apply text-sm text-neutral-500;
+}
+
+/* ===== Phase Timeline ===== */
+.phase-timeline {
+  @apply relative;
+}
+
+.phase-timeline-line {
+  @apply absolute top-8 left-0 right-0 h-1 bg-neutral-200;
+}
+
+.phase-timeline-progress {
+  @apply absolute top-8 left-0 h-1 bg-primary-600 transition-all duration-500;
+}
+
+.phase-timeline-items {
+  @apply flex justify-between relative;
+}
+
+.phase-item {
+  @apply flex flex-col items-center text-center w-24 md:w-32;
+}
+
+.phase-item-dot {
+  @apply w-4 h-4 rounded-full border-4 border-neutral-200 bg-white relative z-10 transition-all duration-300;
+}
+
+.phase-item.completed .phase-item-dot {
+  @apply border-primary-600 bg-primary-600;
+}
+
+.phase-item.current .phase-item-dot {
+  @apply border-primary-600 bg-white ring-4 ring-primary-100;
+}
+
+.phase-item-label {
+  @apply mt-4 text-xs md:text-sm font-medium text-neutral-600;
+}
+
+.phase-item.completed .phase-item-label,
+.phase-item.current .phase-item-label {
+  @apply text-neutral-900;
+}
+
+.phase-item-status {
+  @apply mt-1 text-xs text-neutral-400;
+}
+
+.phase-item.completed .phase-item-status {
+  @apply text-green-600;
+}
+
+.phase-item.current .phase-item-status {
+  @apply text-primary-600;
+}
+
+/* ===== Deliverable Cards ===== */
+.deliverables-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4;
+}
+
+.deliverable-card {
+  @apply bg-white rounded-xl p-5 border border-neutral-200 transition-all duration-200 hover:border-primary-300 hover:shadow-md;
+}
+
+.deliverable-card-header {
+  @apply flex items-start justify-between gap-3 mb-3;
+}
+
+.deliverable-card-title {
+  @apply font-semibold text-neutral-900;
+}
+
+.deliverable-card-status {
+  @apply flex-shrink-0;
+}
+
+.status-badge {
+  @apply inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs font-medium;
+}
+
+.status-badge.pending {
+  @apply bg-neutral-100 text-neutral-600;
+}
+
+.status-badge.in-progress {
+  @apply bg-blue-100 text-blue-700;
+}
+
+.status-badge.completed {
+  @apply bg-green-100 text-green-700;
+}
+
+.status-badge.blocked {
+  @apply bg-red-100 text-red-700;
+}
+
+.deliverable-card-meta {
+  @apply text-sm text-neutral-500;
+}
+
+.deliverable-card-link {
+  @apply text-sm text-primary-600 hover:text-primary-700 font-medium flex items-center gap-1 mt-3;
+}
+
+/* ===== Persona Cards ===== */
+.personas-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-6;
+}
+
+.persona-card {
+  @apply bg-white rounded-2xl border border-neutral-200 overflow-hidden;
+}
+
+.persona-card-header {
+  @apply p-6 bg-gradient-to-r from-primary-50 to-secondary-50 flex items-center gap-4;
+}
+
+.persona-avatar {
+  @apply w-16 h-16 rounded-full bg-neutral-200 flex items-center justify-center text-2xl font-bold text-neutral-400 border-4 border-white shadow-md;
+}
+
+.persona-info h3 {
+  @apply text-xl font-bold text-neutral-900 mb-1;
+}
+
+.persona-info p {
+  @apply text-sm text-neutral-600;
+}
+
+.persona-card-body {
+  @apply p-6 space-y-4;
+}
+
+.persona-section {
+  @apply space-y-2;
+}
+
+.persona-section-title {
+  @apply text-xs font-semibold text-neutral-500 uppercase tracking-wider;
+}
+
+.persona-jtbd {
+  @apply p-4 bg-primary-50 rounded-lg border-l-4 border-primary-500 text-sm text-neutral-700 italic;
+}
+
+.persona-list {
+  @apply space-y-1;
+}
+
+.persona-list-item {
+  @apply flex items-start gap-2 text-sm text-neutral-700;
+}
+
+.persona-list-item svg {
+  @apply w-4 h-4 text-primary-500 flex-shrink-0 mt-0.5;
+}
+
+/* ===== User Flow Diagram ===== */
+.flow-card {
+  @apply bg-white rounded-2xl border border-neutral-200 overflow-hidden;
+}
+
+.flow-card-header {
+  @apply p-6 border-b border-neutral-100;
+}
+
+.flow-card-title {
+  @apply text-xl font-bold text-neutral-900 mb-2;
+}
+
+.flow-card-meta {
+  @apply flex items-center gap-4 text-sm text-neutral-500;
+}
+
+.flow-diagram {
+  @apply p-6 overflow-x-auto;
+}
+
+.flow-steps {
+  @apply flex items-center gap-2 min-w-max;
+}
+
+.flow-step {
+  @apply flex items-center gap-2;
+}
+
+.flow-step-box {
+  @apply px-4 py-3 bg-neutral-50 border border-neutral-200 rounded-lg text-sm font-medium text-neutral-700 whitespace-nowrap;
+}
+
+.flow-step-box.entry {
+  @apply bg-green-50 border-green-200 text-green-700;
+}
+
+.flow-step-box.success {
+  @apply bg-blue-50 border-blue-200 text-blue-700;
+}
+
+.flow-step-arrow {
+  @apply text-neutral-400;
+}
+
+.flow-outcomes {
+  @apply p-6 bg-neutral-50 border-t border-neutral-100;
+}
+
+.flow-outcomes-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-4;
+}
+
+.flow-outcome {
+  @apply flex items-start gap-2 text-sm;
+}
+
+.flow-outcome.success {
+  @apply text-green-700;
+}
+
+.flow-outcome.failure {
+  @apply text-red-700;
+}
+
+/* ===== Journey Map ===== */
+.journey-map {
+  @apply bg-white rounded-2xl border border-neutral-200 overflow-hidden;
+}
+
+.journey-header {
+  @apply p-6 border-b border-neutral-100;
+}
+
+.journey-timeline {
+  @apply overflow-x-auto;
+}
+
+.journey-phases {
+  @apply flex min-w-max;
+}
+
+.journey-phase {
+  @apply flex-1 min-w-48 border-r border-neutral-100 last:border-r-0;
+}
+
+.journey-phase-header {
+  @apply p-4 bg-neutral-50 border-b border-neutral-100 font-semibold text-neutral-900;
+}
+
+.journey-phase-content {
+  @apply p-4 space-y-3;
+}
+
+.journey-touchpoint {
+  @apply p-3 bg-neutral-50 rounded-lg text-sm;
+}
+
+.journey-touchpoint-title {
+  @apply font-medium text-neutral-900 mb-1;
+}
+
+.journey-touchpoint-desc {
+  @apply text-neutral-600;
+}
+
+.journey-emotion {
+  @apply flex items-center gap-1 mt-2 text-xs;
+}
+
+.journey-emotion.positive {
+  @apply text-green-600;
+}
+
+.journey-emotion.neutral {
+  @apply text-neutral-500;
+}
+
+.journey-emotion.negative {
+  @apply text-red-600;
+}
+
+/* ===== Wireframe Gallery ===== */
+.wireframe-gallery-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6;
+}
+
+.wireframe-gallery-card {
+  @apply bg-white rounded-xl border border-neutral-200 overflow-hidden transition-all duration-200 hover:shadow-lg cursor-pointer;
+}
+
+.wireframe-gallery-preview {
+  @apply aspect-video bg-neutral-100 relative overflow-hidden;
+}
+
+.wireframe-gallery-preview iframe {
+  @apply w-full h-full border-0;
+  transform: scale(0.5);
+  transform-origin: top left;
+  width: 200%;
+  height: 200%;
+  pointer-events: none;
+}
+
+.wireframe-gallery-info {
+  @apply p-4;
+}
+
+.wireframe-gallery-title {
+  @apply font-semibold text-neutral-900 mb-1;
+}
+
+.wireframe-gallery-meta {
+  @apply text-sm text-neutral-500;
+}
+
+.wireframe-gallery-actions {
+  @apply flex gap-2 mt-3;
+}
+
+.wireframe-gallery-btn {
+  @apply px-3 py-1.5 text-xs font-medium rounded-lg transition-colors;
+}
+
+.wireframe-gallery-btn.primary {
+  @apply bg-primary-600 text-white hover:bg-primary-700;
+}
+
+.wireframe-gallery-btn.secondary {
+  @apply bg-neutral-100 text-neutral-700 hover:bg-neutral-200;
+}
+
+/* ===== Internal View Extras ===== */
+.internal-badge {
+  @apply inline-flex items-center gap-1 px-2 py-1 bg-orange-100 text-orange-700 text-xs font-medium rounded-full;
+}
+
+.override-control {
+  @apply flex items-center gap-3 p-3 bg-neutral-50 rounded-lg border border-neutral-200;
+}
+
+.override-control select {
+  @apply px-3 py-1.5 bg-white border border-neutral-300 rounded-md text-sm focus:ring-2 focus:ring-primary-500 focus:border-primary-500;
+}
+
+.file-path {
+  @apply text-xs font-mono text-neutral-500 bg-neutral-100 px-2 py-1 rounded;
+}
+
+.risk-indicator {
+  @apply flex items-center gap-2 p-3 bg-red-50 border border-red-200 rounded-lg text-sm text-red-700;
+}
+
+.dependency-list {
+  @apply space-y-2 text-sm;
+}
+
+.dependency-item {
+  @apply flex items-center gap-2 text-neutral-600;
+}
+
+.dependency-item svg {
+  @apply w-4 h-4;
+}
+
+/* ===== Navigation Tabs ===== */
+.portal-tabs {
+  @apply flex gap-1 p-1 bg-neutral-100 rounded-xl mb-8;
+}
+
+.portal-tab {
+  @apply flex-1 px-4 py-2.5 text-sm font-medium text-neutral-600 rounded-lg transition-all duration-200 text-center;
+}
+
+.portal-tab:hover {
+  @apply text-neutral-900;
+}
+
+.portal-tab.active {
+  @apply bg-white text-neutral-900 shadow-sm;
+}
+
+/* ===== Quick Links ===== */
+.quick-links {
+  @apply grid grid-cols-2 md:grid-cols-4 gap-4;
+}
+
+.quick-link {
+  @apply flex flex-col items-center gap-3 p-6 bg-white rounded-xl border border-neutral-200 hover:border-primary-300 hover:shadow-md transition-all duration-200 text-center;
+}
+
+.quick-link-icon {
+  @apply w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center;
+}
+
+.quick-link-icon svg {
+  @apply w-6 h-6 text-primary-600;
+}
+
+.quick-link-title {
+  @apply font-medium text-neutral-900;
+}
+
+.quick-link-desc {
+  @apply text-xs text-neutral-500;
+}
+
+/* ===== Empty States ===== */
+.empty-state {
+  @apply text-center py-12;
+}
+
+.empty-state-icon {
+  @apply w-16 h-16 mx-auto mb-4 text-neutral-300;
+}
+
+.empty-state-title {
+  @apply text-lg font-semibold text-neutral-900 mb-2;
+}
+
+.empty-state-desc {
+  @apply text-neutral-500 max-w-md mx-auto;
+}
+
+/* ===== Loading States ===== */
+.skeleton {
+  @apply animate-pulse bg-neutral-200 rounded;
+}
+
+.skeleton-text {
+  @apply h-4 rounded;
+}
+
+.skeleton-title {
+  @apply h-6 w-48 rounded;
+}
+
+.skeleton-avatar {
+  @apply w-16 h-16 rounded-full;
+}
+
+/* ===== Print Styles ===== */
+@media print {
+  .portal-tabs,
+  .quick-links,
+  .override-control,
+  .wireframe-gallery-actions {
+    display: none !important;
+  }
+
+  .portal-container {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .deliverable-card,
+  .persona-card,
+  .flow-card {
+    break-inside: avoid;
+  }
+}
+
+/* ===== Responsive Adjustments ===== */
+@media (max-width: 768px) {
+  .phase-timeline-items {
+    @apply flex-wrap justify-center gap-4;
+  }
+
+  .phase-timeline-line,
+  .phase-timeline-progress {
+    display: none;
+  }
+
+  .phase-item {
+    @apply w-20;
+  }
+
+  .journey-phases {
+    @apply flex-col;
+  }
+
+  .journey-phase {
+    @apply border-r-0 border-b border-neutral-100 last:border-b-0;
+  }
+}

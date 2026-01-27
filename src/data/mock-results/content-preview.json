@@ -1,0 +1,118 @@
+{
+  "homepage": {
+    "meta": {
+      "title": "Serenity Wellness Center | Premier Spa & Wellness in Santa Monica",
+      "description": "Discover your path to total wellbeing at Serenity Wellness Center. Expert massage therapy, rejuvenating facials, and holistic wellness programs in Santa Monica.",
+      "keywords": ["spa santa monica", "wellness center", "massage therapy", "facials", "relaxation"]
+    },
+    "hero": {
+      "headline": "Your Journey to Inner Peace Begins Here",
+      "subheadline": "Expert massage therapy, rejuvenating facials, and holistic wellness programs designed to restore balance to your busy life.",
+      "cta": {
+        "primary": {
+          "text": "Book Your Escape",
+          "href": "/contact"
+        },
+        "secondary": {
+          "text": "Explore Services",
+          "href": "/services"
+        }
+      }
+    },
+    "problem": {
+      "headline": "Modern Life Takes Its Toll",
+      "body": "Between endless meetings, constant connectivity, and the pressure to perform, your body and mind are crying out for relief. Tension builds in your shoulders. Sleep becomes elusive. The joy you once felt starts to fade.",
+      "stats": [
+        { "value": "83%", "label": "of workers suffer from work-related stress" },
+        { "value": "1 in 3", "label": "adults don't get enough sleep" },
+        { "value": "$300B", "label": "lost annually to stress-related issues" }
+      ]
+    },
+    "solution": {
+      "headline": "Reclaim Your Balance",
+      "body": "At Serenity Wellness Center, we've helped thousands of stressed professionals rediscover what it feels like to truly relax. Our certified therapists combine ancient healing traditions with modern wellness science to create your personalized path to wellbeing.",
+      "features": [
+        {
+          "title": "Expert Therapists",
+          "description": "Every massage and treatment is performed by certified professionals with years of experience."
+        },
+        {
+          "title": "Personalized Approach",
+          "description": "We customize every session to address your specific needs and goals."
+        },
+        {
+          "title": "Serene Environment",
+          "description": "Step into our tranquil space and leave the chaos of daily life behind."
+        }
+      ]
+    },
+    "testimonials": [
+      {
+        "quote": "After just one visit, I felt like a completely different person. The tension I'd been carrying for months simply melted away.",
+        "author": "Sarah M.",
+        "role": "Marketing Director",
+        "rating": 5
+      },
+      {
+        "quote": "The team at Serenity truly understands what busy professionals need. Their express services fit perfectly into my lunch break.",
+        "author": "Michael T.",
+        "role": "Financial Advisor",
+        "rating": 5
+      },
+      {
+        "quote": "I've tried spas all over LA, and nothing compares to the experience at Serenity. It's my monthly non-negotiable now.",
+        "author": "Jennifer L.",
+        "role": "Entrepreneur",
+        "rating": 5
+      }
+    ],
+    "cta": {
+      "headline": "Ready to Feel Like Yourself Again?",
+      "body": "Book your first session today and take the first step toward a more balanced, peaceful you.",
+      "buttonText": "Schedule Your Visit",
+      "buttonHref": "/contact"
+    }
+  },
+  "about": {
+    "hero": {
+      "headline": "Our Story of Healing",
+      "subheadline": "For nearly a decade, we've been helping Santa Monica find peace, one treatment at a time."
+    },
+    "story": {
+      "headline": "Founded on a Simple Belief",
+      "body": "Serenity Wellness Center was born in 2015 from founder Elena Chen's personal journey through burnout. After leaving a high-pressure corporate career and rediscovering balance through massage therapy and mindfulness, she knew she had to share this gift with others.\n\nWhat started as a small studio with just two treatment rooms has grown into Santa Monica's most trusted wellness destination. But our mission remains the same: helping every guest reconnect with their inner calm."
+    }
+  },
+  "services": {
+    "hero": {
+      "headline": "Treatments Designed for Results",
+      "subheadline": "From quick stress relief to comprehensive wellness packages, we have the perfect service for your needs."
+    },
+    "services": [
+      {
+        "name": "Swedish Massage",
+        "description": "Classic relaxation massage using long, flowing strokes to ease tension and promote circulation.",
+        "duration": "60/90 min",
+        "price": "$95/$135"
+      },
+      {
+        "name": "Deep Tissue Therapy",
+        "description": "Targeted pressure to release chronic muscle tension and break up adhesions.",
+        "duration": "60/90 min",
+        "price": "$115/$165"
+      },
+      {
+        "name": "Hot Stone Massage",
+        "description": "Heated basalt stones combined with massage for deep muscle relaxation.",
+        "duration": "75 min",
+        "price": "$145"
+      },
+      {
+        "name": "Signature Facial",
+        "description": "Customized facial treatment addressing your specific skin concerns.",
+        "duration": "60 min",
+        "price": "$125"
+      }
+    ]
+  }
+}

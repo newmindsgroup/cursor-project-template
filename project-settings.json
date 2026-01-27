@@ -1,0 +1,33 @@
+{
+  "$schema": "./src/data/schemas/project-settings.schema.json",
+  "_comment": "Project settings - DO NOT commit with real API keys. This file is gitignored.",
+  
+  "ai": {
+    "apiKeys": {
+      "openai": "",
+      "anthropic": "",
+      "google": "",
+      "nanobanana": ""
+    },
+    "preferences": {
+      "defaultProvider": "auto",
+      "contentModel": "",
+      "analysisModel": "",
+      "quickModel": "",
+      "imageModel": ""
+    },
+    "settings": {
+      "temperature": 0.7,
+      "maxTokens": 4096,
+      "maxRetries": 3,
+      "useCursorFallback": true
+    }
+  },
+  
+  "project": {
+    "name": "",
+    "client": "",
+    "industry": "",
+    "targetLanguages": ["en"]
+  }
+}

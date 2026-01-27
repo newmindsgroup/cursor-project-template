@@ -1,0 +1,434 @@
+{
+  "version": "1.0.0",
+  "description": "Deterministic mappings from prototype patterns to Elementor widgets and settings",
+  "mappings": {
+    "sections": {
+      "Header": {
+        "container": "Flexbox Row",
+        "widgets": ["Logo", "Nav Menu", "Button"],
+        "settings": {
+          "position": "Sticky",
+          "background": "White with backdrop blur",
+          "zIndex": "50"
+        },
+        "notes": "Use Elementor Nav Menu widget for desktop, separate container for mobile menu"
+      },
+      "Hero": {
+        "container": "Flexbox Column",
+        "widgets": ["Heading", "Text Editor", "Button"],
+        "settings": {
+          "minHeight": "100vh",
+          "background": "Gradient overlay",
+          "alignment": "Center"
+        },
+        "notes": "Full-height hero with gradient background. Use Container > Flex column, center aligned"
+      },
+      "HeroAbout": {
+        "container": "Flexbox Column",
+        "widgets": ["Heading", "Text Editor"],
+        "settings": {
+          "minHeight": "60vh",
+          "background": "Primary gradient"
+        },
+        "notes": "Variant hero for inner pages, shorter height"
+      },
+      "HeroServices": {
+        "container": "Flexbox Column",
+        "widgets": ["Heading", "Text Editor"],
+        "settings": {
+          "minHeight": "60vh",
+          "background": "Secondary gradient"
+        },
+        "notes": "Services page hero with secondary color scheme"
+      },
+      "HeroContact": {
+        "container": "Flexbox Column",
+        "widgets": ["Heading", "Text Editor"],
+        "settings": {
+          "background": "Primary to secondary gradient"
+        },
+        "notes": "Contact page hero"
+      },
+      "Features": {
+        "container": "Grid 3 columns",
+        "widgets": ["Icon Box"],
+        "settings": {
+          "gap": "2rem",
+          "background": "Neutral 50"
+        },
+        "notes": "Use Icon Box widget for each feature card. 3 columns on desktop, 2 on tablet, 1 on mobile"
+      },
+      "Stats": {
+        "container": "Grid 4 columns",
+        "widgets": ["Counter"],
+        "settings": {
+          "gap": "2rem",
+          "border": "Top and bottom"
+        },
+        "notes": "Use Counter widget with animation. 4 columns desktop, 2 columns mobile"
+      },
+      "Testimonials": {
+        "container": "Grid 3 columns",
+        "widgets": ["Testimonial", "Star Rating"],
+        "settings": {
+          "gap": "2rem",
+          "background": "Neutral 50"
+        },
+        "notes": "Use Testimonial widget or custom Container with text + image layout"
+      },
+      "FAQ": {
+        "container": "Grid 2 columns",
+        "widgets": ["Accordion", "Heading", "Text Editor"],
+        "settings": {
+          "gap": "3rem"
+        },
+        "notes": "Left column: heading + description. Right column: Accordion widget"
+      },
+      "CTA": {
+        "container": "Flexbox Column",
+        "widgets": ["Heading", "Text Editor", "Button"],
+        "settings": {
+          "background": "Gradient overlay",
+          "alignment": "Center"
+        },
+        "notes": "Full-width call-to-action with gradient background"
+      },
+      "Contact": {
+        "container": "Grid 2 columns",
+        "widgets": ["Form", "Icon List", "Text Editor"],
+        "settings": {
+          "gap": "3rem",
+          "background": "Neutral 50"
+        },
+        "notes": "Left: Elementor Form. Right: Contact info with icons"
+      },
+      "Story": {
+        "container": "Grid 2 columns",
+        "widgets": ["Heading", "Text Editor", "Image"],
+        "settings": {
+          "gap": "3rem",
+          "alignment": "Center vertical"
+        },
+        "notes": "Two-column layout with text on left, image on right"
+      },
+      "Values": {
+        "container": "Grid 3 columns",
+        "widgets": ["Icon Box"],
+        "settings": {
+          "gap": "2rem",
+          "background": "Neutral 50"
+        },
+        "notes": "Similar to Features section. Center-aligned icon boxes"
+      },
+      "ServicesGrid": {
+        "container": "Grid 2 columns",
+        "widgets": ["Container", "Icon Box", "Heading", "Text Editor", "Icon List"],
+        "settings": {
+          "gap": "2rem"
+        },
+        "notes": "Service cards with icon, title, description, and feature list"
+      },
+      "Footer": {
+        "container": "Grid 4 columns",
+        "widgets": ["Logo", "Text Editor", "Icon List", "Social Icons"],
+        "settings": {
+          "background": "Neutral 900",
+          "padding": "64px 24px 32px"
+        },
+        "notes": "4-column footer on desktop, stacking on mobile. Use Text Editor for link lists"
+      },
+      "Pricing": {
+        "container": "Grid 3 columns",
+        "widgets": ["Price Table", "Toggle", "Heading", "Button"],
+        "settings": {
+          "gap": "2rem",
+          "background": "Neutral 50"
+        },
+        "notes": "3-tier pricing with billing toggle. Middle plan elevated and highlighted"
+      },
+      "Team": {
+        "container": "Grid 4 columns",
+        "widgets": ["Image Box", "Heading", "Social Icons"],
+        "settings": {
+          "gap": "2rem",
+          "background": "White"
+        },
+        "notes": "Team member cards with photo, name, role, and social links on hover"
+      },
+      "Portfolio": {
+        "container": "Grid 3 columns",
+        "widgets": ["Gallery", "Image Box", "Tabs", "Button"],
+        "settings": {
+          "gap": "2rem",
+          "background": "Neutral 50"
+        },
+        "notes": "Filterable portfolio grid with category tabs and hover overlay"
+      },
+      "Timeline": {
+        "container": "Flexbox Column",
+        "widgets": ["Icon List", "Heading", "Divider"],
+        "settings": {
+          "background": "White"
+        },
+        "notes": "Vertical timeline with alternating left/right layout on desktop"
+      },
+      "LogoCloud": {
+        "container": "Flexbox Row",
+        "widgets": ["Image", "Image Carousel"],
+        "settings": {
+          "padding": "64px 24px",
+          "gap": "3rem"
+        },
+        "notes": "Client logos in a row with grayscale hover effect"
+      },
+      "Newsletter": {
+        "container": "Flexbox Column",
+        "widgets": ["Form", "Heading", "Text Editor"],
+        "settings": {
+          "background": "Primary gradient",
+          "alignment": "Center"
+        },
+        "notes": "Email signup form with gradient background and inline layout"
+      },
+      "Blog": {
+        "container": "Grid 3 columns",
+        "widgets": ["Posts", "Heading", "Button"],
+        "settings": {
+          "gap": "2rem",
+          "background": "Neutral 50"
+        },
+        "notes": "Blog post cards with image, category, title, excerpt, and author"
+      },
+      "Process": {
+        "container": "Grid 4 columns",
+        "widgets": ["Icon Box", "Heading", "Divider"],
+        "settings": {
+          "gap": "1rem",
+          "background": "White"
+        },
+        "notes": "4-step process with numbered icons and horizontal connector line"
+      },
+      "Comparison": {
+        "container": "Flexbox Column",
+        "widgets": ["Table", "Heading", "Icon"],
+        "settings": {
+          "background": "Neutral 50"
+        },
+        "notes": "Feature comparison table with sticky header and highlighted column"
+      },
+      "Video": {
+        "container": "Flexbox Column",
+        "widgets": ["Video", "Heading", "Button"],
+        "settings": {
+          "background": "Neutral 900",
+          "alignment": "Center"
+        },
+        "notes": "Video section with custom play button overlay and lightbox"
+      }
+    },
+    "components": {
+      "btn-primary": {
+        "widget": "Button",
+        "settings": {
+          "type": "Default",
+          "background": "Primary 600",
+          "hoverBackground": "Primary 700",
+          "textColor": "White",
+          "padding": "1rem 2rem",
+          "borderRadius": "0.5rem"
+        },
+        "notes": "Primary CTA button style"
+      },
+      "btn-secondary": {
+        "widget": "Button",
+        "settings": {
+          "type": "Default",
+          "background": "Primary 50",
+          "textColor": "Primary 600",
+          "padding": "1rem 2rem",
+          "borderRadius": "0.5rem"
+        },
+        "notes": "Secondary/light button variant"
+      },
+      "btn-outline": {
+        "widget": "Button",
+        "settings": {
+          "type": "Default",
+          "background": "Transparent",
+          "border": "2px solid Primary 600",
+          "textColor": "Primary 600",
+          "hoverBackground": "Primary 600",
+          "hoverTextColor": "White"
+        },
+        "notes": "Outline button with fill on hover"
+      },
+      "feature-card": {
+        "widget": "Container",
+        "children": ["Icon Box OR Icon + Heading + Text Editor"],
+        "settings": {
+          "background": "White",
+          "padding": "2rem",
+          "borderRadius": "1rem",
+          "border": "1px solid Neutral 200",
+          "hoverShadow": "Large",
+          "hoverTransform": "translateY(-4px)"
+        },
+        "notes": "Card with hover lift effect. Use Icon Box or nested elements"
+      },
+      "testimonial-card": {
+        "widget": "Container",
+        "children": ["Star Rating", "Text Editor", "Container (avatar + name)"],
+        "settings": {
+          "background": "White",
+          "padding": "2rem",
+          "borderRadius": "1rem",
+          "border": "1px solid Neutral 200",
+          "shadow": "Soft"
+        },
+        "notes": "Testimonial with stars, quote, and author info"
+      },
+      "faq-item": {
+        "widget": "Accordion",
+        "settings": {
+          "titleTag": "span",
+          "icon": "Chevron",
+          "iconPosition": "Right",
+          "spacing": "0"
+        },
+        "notes": "Use Elementor Accordion widget with custom styling"
+      },
+      "nav-link": {
+        "widget": "Nav Menu Item OR Text Editor",
+        "settings": {
+          "fontSize": "1rem",
+          "fontWeight": "500",
+          "color": "Neutral 700",
+          "hoverColor": "Primary 600"
+        },
+        "notes": "Use within Nav Menu widget or as individual text links"
+      },
+      "input-field": {
+        "widget": "Form Field",
+        "settings": {
+          "padding": "1rem",
+          "borderRadius": "0.5rem",
+          "border": "1px solid Neutral 300",
+          "focusRing": "Primary 500"
+        },
+        "notes": "Standard form input styling"
+      },
+      "social-icon": {
+        "widget": "Social Icons",
+        "settings": {
+          "shape": "Rounded",
+          "size": "40px",
+          "background": "Neutral 100",
+          "hoverBackground": "Primary 600",
+          "iconColor": "Neutral 600",
+          "hoverIconColor": "White"
+        },
+        "notes": "Use Elementor Social Icons widget"
+      }
+    },
+    "patterns": {
+      "grid-cols-2": {
+        "elementor": "Container with Grid layout, 2 columns",
+        "responsive": "2 columns desktop, 1 column mobile"
+      },
+      "grid-cols-3": {
+        "elementor": "Container with Grid layout, 3 columns",
+        "responsive": "3 columns desktop, 2 columns tablet, 1 column mobile"
+      },
+      "grid-cols-4": {
+        "elementor": "Container with Grid layout, 4 columns",
+        "responsive": "4 columns desktop, 2 columns tablet/mobile"
+      },
+      "flex-row": {
+        "elementor": "Container > Flexbox > Direction: Row",
+        "notes": "Items in a horizontal row"
+      },
+      "flex-col": {
+        "elementor": "Container > Flexbox > Direction: Column",
+        "notes": "Items stacked vertically"
+      },
+      "sticky": {
+        "elementor": "Advanced > Motion Effects > Sticky: Top",
+        "notes": "Enable sticky positioning for headers"
+      },
+      "gradient-overlay": {
+        "elementor": "Container > Background > Gradient OR Background Overlay",
+        "settings": "135deg, Primary 600 to Primary 800, 0.9 opacity"
+      },
+      "backdrop-blur": {
+        "elementor": "Custom CSS: backdrop-filter: blur(12px)",
+        "notes": "May require custom CSS in Elementor"
+      },
+      "hover-lift": {
+        "elementor": "Advanced > Motion Effects > Hover > Transform > translateY(-4px)",
+        "notes": "Add shadow increase on hover as well"
+      },
+      "scroll-reveal": {
+        "elementor": "Advanced > Motion Effects > Entrance Animation > Fade In Up",
+        "notes": "Use built-in entrance animations"
+      }
+    }
+  },
+  "tokens": {
+    "colors": {
+      "primary-50": "#eff6ff",
+      "primary-100": "#dbeafe",
+      "primary-500": "#3b82f6",
+      "primary-600": "#2563eb",
+      "primary-700": "#1d4ed8",
+      "secondary-500": "#8b5cf6",
+      "secondary-600": "#7c3aed",
+      "neutral-50": "#fafafa",
+      "neutral-100": "#f5f5f5",
+      "neutral-200": "#e5e5e5",
+      "neutral-300": "#d4d4d4",
+      "neutral-400": "#a3a3a3",
+      "neutral-500": "#737373",
+      "neutral-600": "#525252",
+      "neutral-700": "#404040",
+      "neutral-800": "#262626",
+      "neutral-900": "#171717"
+    },
+    "spacing": {
+      "section-padding-y": "96px",
+      "section-gap": "64px",
+      "container-padding": "24px",
+      "element-gap": "32px"
+    },
+    "typography": {
+      "font-heading": "Inter, system-ui, sans-serif",
+      "font-body": "Inter, system-ui, sans-serif",
+      "text-7xl": "4.5rem",
+      "text-6xl": "3.75rem",
+      "text-5xl": "3rem",
+      "text-4xl": "2.25rem",
+      "text-3xl": "1.875rem",
+      "text-2xl": "1.5rem",
+      "text-xl": "1.25rem",
+      "text-lg": "1.125rem",
+      "text-base": "1rem"
+    },
+    "shadows": {
+      "soft": "0 2px 15px rgba(0,0,0,0.05)",
+      "medium": "0 4px 20px rgba(0,0,0,0.08)",
+      "large": "0 10px 40px rgba(0,0,0,0.12)"
+    },
+    "radii": {
+      "sm": "0.25rem",
+      "md": "0.5rem",
+      "lg": "0.75rem",
+      "xl": "1rem",
+      "2xl": "1.5rem"
+    },
+    "breakpoints": {
+      "sm": "640px",
+      "md": "768px",
+      "lg": "1024px",
+      "xl": "1280px"
+    }
+  }
+}

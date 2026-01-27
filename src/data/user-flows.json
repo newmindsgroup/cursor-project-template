@@ -1,0 +1,319 @@
+{
+  "$schema": "./schemas/user-flows.schema.json",
+  "version": "1.0.0",
+  "lastUpdated": "",
+  "flows": [
+    {
+      "id": "flow-homepage-to-contact",
+      "name": "Homepage to Contact",
+      "description": "Primary conversion path from homepage to contact form submission",
+      "persona": "persona-3",
+      "entry": {
+        "screen": "Homepage",
+        "path": "/",
+        "trigger": "Direct visit, search, or referral"
+      },
+      "steps": [
+        {
+          "order": 1,
+          "screen": "Homepage",
+          "action": "Scan hero section",
+          "element": "Hero Section",
+          "outcome": "Understands value proposition",
+          "notes": "5-second test: user should understand what the business does"
+        },
+        {
+          "order": 2,
+          "screen": "Homepage",
+          "action": "Scroll to features/services",
+          "element": "Features Section",
+          "outcome": "Identifies relevant offering",
+          "notes": "Clear benefit-focused copy"
+        },
+        {
+          "order": 3,
+          "screen": "Homepage",
+          "action": "Review social proof",
+          "element": "Testimonials Section",
+          "outcome": "Builds trust and credibility",
+          "notes": "Real testimonials with names and photos preferred"
+        },
+        {
+          "order": 4,
+          "screen": "Homepage",
+          "action": "Click CTA button",
+          "element": "CTA Section",
+          "outcome": "Navigates to contact page",
+          "notes": "CTA should stand out visually"
+        },
+        {
+          "order": 5,
+          "screen": "Contact Page",
+          "action": "Fill contact form",
+          "element": "Contact Form",
+          "outcome": "Submits inquiry",
+          "notes": "Minimal required fields"
+        },
+        {
+          "order": 6,
+          "screen": "Thank You",
+          "action": "Receive confirmation",
+          "element": "Confirmation Message",
+          "outcome": "Knows next steps",
+          "notes": "Set expectations for response time"
+        }
+      ],
+      "successState": "Contact form submitted successfully with confirmation displayed",
+      "failureStates": [
+        {
+          "description": "User bounces from homepage",
+          "cause": "Value proposition unclear or page loads slowly",
+          "recovery": "Improve hero messaging, optimize performance"
+        },
+        {
+          "description": "User abandons contact form",
+          "cause": "Too many fields or unclear purpose",
+          "recovery": "Reduce required fields, add progress indicator"
+        },
+        {
+          "description": "Form submission error",
+          "cause": "Validation or server error",
+          "recovery": "Clear error messages, retain form data"
+        }
+      ],
+      "metrics": {
+        "target": "5% visitor-to-lead conversion rate",
+        "tracking": ["Page views", "CTA clicks", "Form starts", "Form completions"]
+      }
+    },
+    {
+      "id": "flow-services-exploration",
+      "name": "Services Exploration",
+      "description": "User exploring service offerings to understand capabilities",
+      "persona": "persona-1",
+      "entry": {
+        "screen": "Homepage or Services",
+        "path": "/services",
+        "trigger": "Navigation click or direct link"
+      },
+      "steps": [
+        {
+          "order": 1,
+          "screen": "Services Page",
+          "action": "View services overview",
+          "element": "Services Hero",
+          "outcome": "Understands service categories",
+          "notes": "Clear categorization of offerings"
+        },
+        {
+          "order": 2,
+          "screen": "Services Page",
+          "action": "Click service category",
+          "element": "Service Cards",
+          "outcome": "Views detailed service info",
+          "notes": "Each card should have clear value prop"
+        },
+        {
+          "order": 3,
+          "screen": "Services Page",
+          "action": "Review pricing/packages",
+          "element": "Pricing Section",
+          "outcome": "Understands cost expectations",
+          "notes": "If no pricing, explain process"
+        },
+        {
+          "order": 4,
+          "screen": "Services Page",
+          "action": "Click to learn more or contact",
+          "element": "CTA Button",
+          "outcome": "Proceeds to conversion path",
+          "notes": "Multiple CTAs throughout page"
+        }
+      ],
+      "successState": "User proceeds to contact or schedules consultation",
+      "failureStates": [
+        {
+          "description": "User can't find relevant service",
+          "cause": "Poor categorization or missing service",
+          "recovery": "Add search or filter, review service coverage"
+        },
+        {
+          "description": "User confused by pricing",
+          "cause": "Pricing not transparent or too complex",
+          "recovery": "Simplify pricing display or add FAQ"
+        }
+      ],
+      "metrics": {
+        "target": "60% of visitors view at least 2 service pages",
+        "tracking": ["Page depth", "Service card clicks", "Time on page"]
+      }
+    },
+    {
+      "id": "flow-about-trust-building",
+      "name": "About Page Trust Building",
+      "description": "User researching company credibility before engaging",
+      "persona": "persona-2",
+      "entry": {
+        "screen": "About Page",
+        "path": "/about",
+        "trigger": "Navigation click during research phase"
+      },
+      "steps": [
+        {
+          "order": 1,
+          "screen": "About Page",
+          "action": "Read company story",
+          "element": "Company Story Section",
+          "outcome": "Understands company background",
+          "notes": "Authentic, human story"
+        },
+        {
+          "order": 2,
+          "screen": "About Page",
+          "action": "View team members",
+          "element": "Team Section",
+          "outcome": "Sees real people behind company",
+          "notes": "Photos and brief bios"
+        },
+        {
+          "order": 3,
+          "screen": "About Page",
+          "action": "Check credentials/awards",
+          "element": "Credentials Section",
+          "outcome": "Validates expertise",
+          "notes": "Logos, certifications, awards"
+        },
+        {
+          "order": 4,
+          "screen": "About Page",
+          "action": "Navigate to contact or services",
+          "element": "Navigation/CTA",
+          "outcome": "Continues journey",
+          "notes": "Clear next step options"
+        }
+      ],
+      "successState": "User feels confident in company credibility and proceeds",
+      "failureStates": [
+        {
+          "description": "User doubts credibility",
+          "cause": "Lack of proof points or generic content",
+          "recovery": "Add case studies, testimonials, credentials"
+        }
+      ],
+      "metrics": {
+        "target": "40% of About page visitors proceed to contact",
+        "tracking": ["Scroll depth", "Next page navigation", "Exit rate"]
+      }
+    }
+  ],
+  "template": {
+    "id": "flow-template",
+    "name": "[Flow Name]",
+    "description": "[Brief description of the user journey]",
+    "persona": "[persona-id]",
+    "entry": {
+      "screen": "[Entry Screen Name]",
+      "path": "[URL Path]",
+      "trigger": "[How user arrives]"
+    },
+    "steps": [
+      {
+        "order": 1,
+        "screen": "[Screen Name]",
+        "action": "[User Action]",
+        "element": "[UI Element]",
+        "outcome": "[Expected Result]",
+        "notes": "[Design/Implementation Notes]"
+      }
+    ],
+    "successState": "[Description of successful completion]",
+    "failureStates": [
+      {
+        "description": "[Failure scenario]",
+        "cause": "[Why it happens]",
+        "recovery": "[How to address]"
+      }
+    ],
+    "metrics": {
+      "target": "[Success metric target]",
+      "tracking": ["[Metric 1]", "[Metric 2]"]
+    }
+  },
+  "journeyMaps": [
+    {
+      "id": "journey-new-customer",
+      "name": "New Customer Journey",
+      "persona": "persona-3",
+      "phases": [
+        {
+          "name": "Awareness",
+          "touchpoints": [
+            {
+              "channel": "Search",
+              "action": "Finds website via Google",
+              "emotion": "curious",
+              "opportunity": "Strong SEO and meta descriptions"
+            },
+            {
+              "channel": "Social",
+              "action": "Sees shared content",
+              "emotion": "interested",
+              "opportunity": "Shareable, valuable content"
+            }
+          ]
+        },
+        {
+          "name": "Consideration",
+          "touchpoints": [
+            {
+              "channel": "Website",
+              "action": "Browses homepage and services",
+              "emotion": "evaluating",
+              "opportunity": "Clear value proposition"
+            },
+            {
+              "channel": "Website",
+              "action": "Compares with competitors",
+              "emotion": "skeptical",
+              "opportunity": "Differentiation and proof points"
+            }
+          ]
+        },
+        {
+          "name": "Decision",
+          "touchpoints": [
+            {
+              "channel": "Website",
+              "action": "Reviews testimonials and case studies",
+              "emotion": "cautious",
+              "opportunity": "Social proof and trust signals"
+            },
+            {
+              "channel": "Website",
+              "action": "Fills contact form",
+              "emotion": "hopeful",
+              "opportunity": "Simple, reassuring form experience"
+            }
+          ]
+        },
+        {
+          "name": "Onboarding",
+          "touchpoints": [
+            {
+              "channel": "Email",
+              "action": "Receives confirmation and next steps",
+              "emotion": "anticipating",
+              "opportunity": "Set clear expectations"
+            },
+            {
+              "channel": "Call/Meeting",
+              "action": "Initial consultation",
+              "emotion": "engaged",
+              "opportunity": "Professional, helpful interaction"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

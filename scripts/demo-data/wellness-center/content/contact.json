@@ -1,0 +1,156 @@
+{
+  "meta": {
+    "title": "Contact & Book | Serenity Wellness Center",
+    "description": "Book your spa appointment, contact our team, or visit our Scottsdale location. Online booking available 24/7.",
+    "keywords": "book spa appointment, contact serenity wellness, scottsdale spa location"
+  },
+  "hero": {
+    "headline": "Book Your Escape",
+    "subheadline": "Schedule your visit or reach out with any questions—we're here to help",
+    "image": {
+      "src": "/assets/contact-hero.jpg",
+      "alt": "Welcoming reception area at Serenity Wellness Center"
+    }
+  },
+  "booking": {
+    "headline": "Schedule Your Treatment",
+    "subheadline": "Book online 24/7 or call us to schedule",
+    "cta": {
+      "text": "Book Online Now",
+      "href": "#booking-widget"
+    },
+    "note": "First-time guests: Please arrive 15 minutes early to complete your wellness intake form."
+  },
+  "contactInfo": {
+    "headline": "Get in Touch",
+    "items": [
+      {
+        "type": "phone",
+        "label": "Phone",
+        "value": "(480) 555-7890",
+        "href": "tel:+14805557890",
+        "note": "We answer calls during business hours"
+      },
+      {
+        "type": "email",
+        "label": "Email",
+        "value": "hello@serenitywellness.example.com",
+        "href": "mailto:hello@serenitywellness.example.com",
+        "note": "We respond within 24 hours"
+      },
+      {
+        "type": "address",
+        "label": "Location",
+        "value": "7890 E Camelback Road, Suite 100\nScottsdale, AZ 85251",
+        "href": "https://maps.google.com/?q=7890+E+Camelback+Road+Scottsdale+AZ",
+        "note": "Free parking available"
+      }
+    ]
+  },
+  "hours": {
+    "headline": "Hours of Operation",
+    "schedule": [
+      { "days": "Monday - Friday", "hours": "9:00 AM - 8:00 PM" },
+      { "days": "Saturday", "hours": "9:00 AM - 6:00 PM" },
+      { "days": "Sunday", "hours": "10:00 AM - 5:00 PM" }
+    ],
+    "note": "Holiday hours may vary. Last appointments start 2 hours before closing."
+  },
+  "form": {
+    "headline": "Send Us a Message",
+    "subheadline": "Have a question about our services or special requests? We'd love to hear from you.",
+    "fields": [
+      {
+        "name": "name",
+        "label": "Your Name",
+        "type": "text",
+        "required": true,
+        "placeholder": "Jane Smith"
+      },
+      {
+        "name": "email",
+        "label": "Email Address",
+        "type": "email",
+        "required": true,
+        "placeholder": "jane@example.com"
+      },
+      {
+        "name": "phone",
+        "label": "Phone Number",
+        "type": "tel",
+        "required": false,
+        "placeholder": "(480) 555-0000"
+      },
+      {
+        "name": "service",
+        "label": "Service Interest",
+        "type": "select",
+        "required": false,
+        "options": [
+          "General Inquiry",
+          "Massage Therapy",
+          "Facial Treatments",
+          "Body Treatments",
+          "Yoga & Meditation",
+          "Gift Certificates",
+          "Group/Party Booking"
+        ]
+      },
+      {
+        "name": "message",
+        "label": "Your Message",
+        "type": "textarea",
+        "required": true,
+        "placeholder": "Tell us how we can help you..."
+      }
+    ],
+    "submit": {
+      "text": "Send Message",
+      "successMessage": "Thank you! We'll be in touch within 24 hours."
+    }
+  },
+  "map": {
+    "enabled": true,
+    "headline": "Find Us",
+    "embedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3326.123456789!2d-111.9456789!3d33.5012345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDMwJzA0LjQiTiAxMTHCsDU2JzQ0LjQiVw!5e0!3m2!1sen!2sus!4v1234567890",
+    "directions": "Located in the Camelback Corridor, just east of Scottsdale Road. Look for the terracotta building with the water feature entrance."
+  },
+  "policies": {
+    "headline": "Booking Policies",
+    "items": [
+      {
+        "title": "Cancellation Policy",
+        "content": "We require 24-hour notice for cancellations. Late cancellations or no-shows may be charged 50% of the service price."
+      },
+      {
+        "title": "Arrival Time",
+        "content": "Please arrive 10-15 minutes before your appointment to relax and complete any necessary forms. Late arrivals may result in shortened treatment time."
+      },
+      {
+        "title": "Gift Certificates",
+        "content": "Gift certificates are available in any amount and never expire. Purchase online or in person."
+      },
+      {
+        "title": "Gratuity",
+        "content": "Gratuity is not included in our service prices. If you'd like to acknowledge exceptional service, tips are always appreciated."
+      }
+    ]
+  },
+  "faq": {
+    "headline": "Common Questions",
+    "items": [
+      {
+        "question": "What should I wear?",
+        "answer": "We provide robes and slippers for your comfort. For massage, you'll undress to your comfort level and be professionally draped throughout."
+      },
+      {
+        "question": "Can I request a specific therapist?",
+        "answer": "Absolutely! When booking, you can request your preferred therapist. We recommend booking in advance for popular team members."
+      },
+      {
+        "question": "Do you accommodate special needs?",
+        "answer": "Yes, please let us know about any health conditions, injuries, or preferences when booking so we can customize your experience."
+      }
+    ]
+  }
+}

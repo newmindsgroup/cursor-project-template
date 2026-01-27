@@ -1,0 +1,133 @@
+{
+  "$schema": "../../../src/data/schemas/personas.schema.json",
+  "version": "1.0.0",
+  "lastUpdated": "2026-01-26",
+  "personas": [
+    {
+      "id": "persona-1",
+      "name": "Stressed Executive",
+      "shortName": "Jennifer",
+      "image": "placeholder",
+      "demographics": {
+        "age": "42-55",
+        "role": "VP of Marketing / Senior Director",
+        "company": "Tech or financial services company",
+        "techSavviness": "Intermediate"
+      },
+      "jtbd": "When I'm overwhelmed with work stress and tension, I want to book a massage quickly and easily, so I can find relief without adding more stress to my schedule.",
+      "goals": [
+        "Relieve chronic neck and shoulder tension from desk work",
+        "Find a regular wellness routine that fits my schedule",
+        "Book appointments quickly without phone calls",
+        "Disconnect from work during treatment time"
+      ],
+      "frustrations": [
+        "Don't have time to call and schedule",
+        "Hard to find availability that works with meetings",
+        "Want to know exactly what I'm getting before I book",
+        "Previous spas felt impersonal or rushed"
+      ],
+      "behaviors": [
+        "Books everything online or via app",
+        "Reads reviews before trying new services",
+        "Prefers recurring appointments",
+        "Values quality over price"
+      ],
+      "quote": "I need a place where I can truly disconnect and reset. My body is screaming for attention but my calendar is packed.",
+      "scenarios": [
+        {
+          "name": "Emergency Stress Relief",
+          "description": "After a particularly stressful week, needs to book a same-day or next-day appointment"
+        },
+        {
+          "name": "Monthly Maintenance",
+          "description": "Setting up recurring monthly massage appointments as part of wellness routine"
+        }
+      ]
+    },
+    {
+      "id": "persona-2",
+      "name": "Self-Care Enthusiast",
+      "shortName": "Melissa",
+      "image": "placeholder",
+      "demographics": {
+        "age": "28-40",
+        "role": "Professional / Small Business Owner",
+        "company": "Various industries",
+        "techSavviness": "High"
+      },
+      "jtbd": "When I want to treat myself or celebrate a special occasion, I want to find the perfect spa treatment that makes me feel pampered and rejuvenated, so I can maintain my self-care practice.",
+      "goals": [
+        "Find effective anti-aging and skincare treatments",
+        "Discover new wellness services to try",
+        "Plan special occasion packages (birthday, bridal)",
+        "Look and feel my best"
+      ],
+      "frustrations": [
+        "Hard to tell which facial is right for my skin type",
+        "Unclear pricing - hate surprises at checkout",
+        "Want to see real results, not just relaxation",
+        "Generic treatments that don't address my specific concerns"
+      ],
+      "behaviors": [
+        "Follows wellness influencers on social media",
+        "Researches ingredients and treatment types",
+        "Books packages for friends and family as gifts",
+        "Leaves detailed reviews after positive experiences"
+      ],
+      "quote": "Self-care isn't selfish - it's essential. I want a spa that understands my specific skin and wellness goals.",
+      "scenarios": [
+        {
+          "name": "Birthday Celebration",
+          "description": "Planning a spa day with friends for her birthday"
+        },
+        {
+          "name": "Skin Concern",
+          "description": "Seeking treatment for a specific skin issue (aging, acne, dryness)"
+        }
+      ]
+    },
+    {
+      "id": "persona-3",
+      "name": "Active Athlete",
+      "shortName": "David",
+      "image": "placeholder",
+      "demographics": {
+        "age": "30-50",
+        "role": "Recreational Athlete / Weekend Warrior",
+        "company": "Various",
+        "techSavviness": "Intermediate"
+      },
+      "jtbd": "When I'm training hard or recovering from an injury, I want to find a massage therapist who understands sports recovery, so I can perform better and avoid injuries.",
+      "goals": [
+        "Faster recovery between workouts",
+        "Address specific muscle issues from training",
+        "Prevent injuries before they happen",
+        "Improve flexibility and range of motion"
+      ],
+      "frustrations": [
+        "Most spa therapists don't understand athletic needs",
+        "Generic massages that don't address problem areas",
+        "Hard to find therapists with sports massage experience",
+        "Want targeted treatment, not just relaxation"
+      ],
+      "behaviors": [
+        "Trains for marathons, triathlons, or competitive sports",
+        "Schedules massage around training schedule",
+        "Asks about therapist qualifications",
+        "Prefers deep tissue and sports-specific techniques"
+      ],
+      "quote": "I need someone who can work on my IT band and knows what I mean when I say my piriformis is tight.",
+      "scenarios": [
+        {
+          "name": "Pre-Event Prep",
+          "description": "Getting ready for a marathon or major competition"
+        },
+        {
+          "name": "Injury Recovery",
+          "description": "Recovering from a running injury or muscle strain"
+        }
+      ]
+    }
+  ]
+}

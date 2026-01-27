@@ -1,0 +1,372 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "page-content.schema.json",
+  "title": "Page Content Schema",
+  "description": "Schema for StoryBrand-structured page content with multilingual support and AI image generation",
+  "type": "object",
+  "required": ["meta", "storybrand"],
+  "definitions": {
+    "imageSpec": {
+      "$ref": "image-spec.schema.json"
+    }
+  },
+  "properties": {
+    "meta": {
+      "type": "object",
+      "description": "Page metadata",
+      "required": ["title", "language"],
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "Page title for SEO and browser tab",
+          "maxLength": 60
+        },
+        "description": {
+          "type": "string",
+          "description": "Meta description for SEO",
+          "maxLength": 160
+        },
+        "language": {
+          "type": "string",
+          "description": "ISO 639-1 language code",
+          "pattern": "^[a-z]{2}$",
+          "examples": ["en", "es", "fr", "de"]
+        },
+        "status": {
+          "type": "string",
+          "enum": ["draft", "review", "approved"],
+          "default": "draft"
+        },
+        "lastUpdated": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "storybrand": {
+      "type": "object",
+      "description": "StoryBrand framework elements",
+      "properties": {
+        "character": {
+          "type": "object",
+          "description": "The Hero (Customer) - Who they are and what they want",
+          "properties": {
+            "identity": {
+              "type": "string",
+              "description": "Who is the customer?",
+              "maxLength": 200
+            },
+            "want": {
+              "type": "string",
+              "description": "What do they want?",
+              "maxLength": 200
+            }
+          }
+        },
+        "problem": {
+          "type": "object",
+          "description": "The Problem - Villain, external, internal, philosophical",
+          "properties": {
+            "villain": {
+              "type": "string",
+              "description": "The villain/root cause",
+              "maxLength": 200
+            },
+            "external": {
+              "type": "string",
+              "description": "External problem (tangible)",
+              "maxLength": 300
+            },
+            "internal": {
+              "type": "string",
+              "description": "Internal problem (feelings)",
+              "maxLength": 300
+            },
+            "philosophical": {
+              "type": "string",
+              "description": "Philosophical problem (why it's wrong)",
+              "maxLength": 300
+            }
+          }
+        },
+        "guide": {
+          "type": "object",
+          "description": "The Guide (Your Brand) - Empathy and Authority",
+          "properties": {
+            "empathy": {
+              "type": "string",
+              "description": "Empathy statement - We understand",
+              "maxLength": 300
+            },
+            "authority": {
+              "type": "string",
+              "description": "Authority statement - Credentials/experience",
+              "maxLength": 300
+            }
+          }
+        },
+        "plan": {
+          "type": "object",
+          "description": "The Plan - Simple steps to success",
+          "properties": {
+            "steps": {
+              "type": "array",
+              "description": "3-4 simple steps",
+              "maxItems": 4,
+              "items": {
+                "type": "object",
+                "required": ["title"],
+                "properties": {
+                  "number": { "type": "integer" },
+                  "title": { "type": "string", "maxLength": 50 },
+                  "description": { "type": "string", "maxLength": 200 }
+                }
+              }
+            }
+          }
+        },
+        "callToAction": {
+          "type": "object",
+          "description": "The Call to Action - Direct and Transitional",
+          "properties": {
+            "direct": {
+              "type": "object",
+              "description": "Primary CTA (Buy, Schedule, etc.)",
+              "properties": {
+                "text": { "type": "string", "maxLength": 30 },
+                "url": { "type": "string", "format": "uri-reference" }
+              }
+            },
+            "transitional": {
+              "type": "object",
+              "description": "Secondary CTA (Learn More, Download, etc.)",
+              "properties": {
+                "text": { "type": "string", "maxLength": 30 },
+                "url": { "type": "string", "format": "uri-reference" }
+              }
+            }
+          }
+        },
+        "failure": {
+          "type": "object",
+          "description": "Stakes - What happens if they don't act",
+          "properties": {
+            "stakes": {
+              "type": "string",
+              "description": "What's at risk if they don't engage",
+              "maxLength": 300
+            }
+          }
+        },
+        "success": {
+          "type": "object",
+          "description": "Success - The transformation/happy ending",
+          "properties": {
+            "transformation": {
+              "type": "string",
+              "description": "How their life will be better",
+              "maxLength": 300
+            },
+            "outcomes": {
+              "type": "array",
+              "description": "Specific outcomes/benefits",
+              "items": {
+                "type": "string",
+                "maxLength": 100
+              }
+            }
+          }
+        }
+      }
+    },
+    "hero": {
+      "type": "object",
+      "description": "Hero section content",
+      "properties": {
+        "headline": {
+          "type": "string",
+          "description": "Main H1 headline",
+          "maxLength": 80
+        },
+        "subheadline": {
+          "type": "string",
+          "description": "Supporting subheadline",
+          "maxLength": 200
+        },
+        "primaryCta": {
+          "type": "object",
+          "properties": {
+            "text": { "type": "string", "maxLength": 30 },
+            "url": { "type": "string" }
+          }
+        },
+        "secondaryCta": {
+          "type": "object",
+          "properties": {
+            "text": { "type": "string", "maxLength": 30 },
+            "url": { "type": "string" }
+          }
+        },
+        "image": {
+          "$ref": "#/definitions/imageSpec",
+          "description": "AI-generated background image for hero section"
+        }
+      }
+    },
+    "features": {
+      "type": "object",
+      "description": "Features section content",
+      "properties": {
+        "sectionTitle": { "type": "string", "maxLength": 60 },
+        "sectionSubtitle": { "type": "string", "maxLength": 200 },
+        "image": {
+          "$ref": "#/definitions/imageSpec",
+          "description": "AI-generated background or hero image for features section"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "icon": { "type": "string" },
+              "title": { "type": "string", "maxLength": 50 },
+              "description": { "type": "string", "maxLength": 200 },
+              "image": {
+                "$ref": "#/definitions/imageSpec",
+                "description": "AI-generated illustration for this feature"
+              }
+            }
+          }
+        }
+      }
+    },
+    "stats": {
+      "type": "object",
+      "description": "Statistics section content",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "value": { "type": "string", "maxLength": 20 },
+              "label": { "type": "string", "maxLength": 50 },
+              "suffix": { "type": "string", "maxLength": 5 }
+            }
+          }
+        }
+      }
+    },
+    "testimonials": {
+      "type": "object",
+      "description": "Testimonials section content",
+      "properties": {
+        "sectionTitle": { "type": "string", "maxLength": 60 },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "quote": { "type": "string", "maxLength": 500 },
+              "author": { "type": "string", "maxLength": 50 },
+              "role": { "type": "string", "maxLength": 50 },
+              "company": { "type": "string", "maxLength": 50 },
+              "rating": { "type": "integer", "minimum": 1, "maximum": 5 },
+              "avatar": {
+                "$ref": "#/definitions/imageSpec",
+                "description": "AI-generated avatar/headshot for testimonial author"
+              }
+            }
+          }
+        }
+      }
+    },
+    "faq": {
+      "type": "object",
+      "description": "FAQ section content",
+      "properties": {
+        "sectionTitle": { "type": "string", "maxLength": 60 },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "question": { "type": "string", "maxLength": 150 },
+              "answer": { "type": "string", "maxLength": 500 }
+            }
+          }
+        }
+      }
+    },
+    "cta": {
+      "type": "object",
+      "description": "CTA section content",
+      "properties": {
+        "headline": { "type": "string", "maxLength": 80 },
+        "subheadline": { "type": "string", "maxLength": 200 },
+        "buttonText": { "type": "string", "maxLength": 30 },
+        "buttonUrl": { "type": "string" },
+        "image": {
+          "$ref": "#/definitions/imageSpec",
+          "description": "AI-generated background image for CTA section"
+        }
+      }
+    },
+    "contact": {
+      "type": "object",
+      "description": "Contact section content",
+      "properties": {
+        "sectionTitle": { "type": "string", "maxLength": 60 },
+        "sectionSubtitle": { "type": "string", "maxLength": 200 },
+        "formLabels": {
+          "type": "object",
+          "properties": {
+            "name": { "type": "string" },
+            "email": { "type": "string" },
+            "phone": { "type": "string" },
+            "message": { "type": "string" },
+            "submit": { "type": "string" }
+          }
+        },
+        "contactInfo": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "icon": { "type": "string" },
+              "label": { "type": "string", "maxLength": 30 },
+              "value": { "type": "string", "maxLength": 100 }
+            }
+          }
+        }
+      }
+    },
+    "footer": {
+      "type": "object",
+      "description": "Footer content",
+      "properties": {
+        "tagline": { "type": "string", "maxLength": 200 },
+        "copyright": { "type": "string", "maxLength": 100 },
+        "links": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "section": { "type": "string" },
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "text": { "type": "string" },
+                    "url": { "type": "string" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

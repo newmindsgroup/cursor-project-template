@@ -1,0 +1,202 @@
+{
+  "$schema": "./schemas/navigation.schema.json",
+  "version": "1.0.0",
+  "description": "Universal navigation template - covers all common website patterns. Customize menus by removing unused items.",
+  "_usage": {
+    "agency": "Primary: Home, About, Services (dropdown), Portfolio, Contact",
+    "saas": "Primary: Home, Products (dropdown), Pricing, Resources, Contact",
+    "business": "Primary: Home, About, Services, Contact",
+    "corporate": "Primary: Home, About (dropdown), Services, Resources, Contact",
+    "ecommerce": "Primary: Home, Shop (dropdown), About, Contact"
+  },
+  "primary": {
+    "name": { "en": "Primary Navigation", "es": "Navegación Principal" },
+    "location": "header",
+    "items": [
+      {
+        "pageId": "home",
+        "label": { "en": "Home", "es": "Inicio" },
+        "order": 1
+      },
+      {
+        "pageId": "about",
+        "label": { "en": "About", "es": "Nosotros" },
+        "order": 2,
+        "dropdown": true,
+        "children": [
+          { "pageId": "our-story", "label": { "en": "Our Story", "es": "Nuestra Historia" } },
+          { "pageId": "team", "label": { "en": "Team", "es": "Equipo" } },
+          { "pageId": "careers", "label": { "en": "Careers", "es": "Carreras" } },
+          { "pageId": "news", "label": { "en": "News", "es": "Noticias" } }
+        ]
+      },
+      {
+        "pageId": "services",
+        "label": { "en": "Services", "es": "Servicios" },
+        "order": 3,
+        "dropdown": true,
+        "children": [
+          { "pageId": "web-design", "label": { "en": "Web Design", "es": "Diseño Web" } },
+          { "pageId": "web-development", "label": { "en": "Web Development", "es": "Desarrollo Web" } },
+          { "pageId": "digital-marketing", "label": { "en": "Digital Marketing", "es": "Marketing Digital" } },
+          { "pageId": "branding", "label": { "en": "Branding", "es": "Branding" } }
+        ]
+      },
+      {
+        "pageId": "portfolio",
+        "label": { "en": "Portfolio", "es": "Portafolio" },
+        "order": 4
+      },
+      {
+        "pageId": "products",
+        "label": { "en": "Products", "es": "Productos" },
+        "order": 5,
+        "dropdown": true,
+        "_note": "Enable for SaaS sites",
+        "enabled": false,
+        "children": [
+          { "pageId": "features", "label": { "en": "Features", "es": "Características" } },
+          { "pageId": "integrations", "label": { "en": "Integrations", "es": "Integraciones" } },
+          { "pageId": "pricing", "label": { "en": "Pricing", "es": "Precios" } }
+        ]
+      },
+      {
+        "pageId": "shop",
+        "label": { "en": "Shop", "es": "Tienda" },
+        "order": 6,
+        "dropdown": true,
+        "_note": "Enable for E-commerce sites",
+        "enabled": false,
+        "children": [
+          { "pageId": "shop-category-1", "label": { "en": "Category One", "es": "Categoría Uno" } },
+          { "pageId": "shop-category-2", "label": { "en": "Category Two", "es": "Categoría Dos" } },
+          { "pageId": "shop-sale", "label": { "en": "Sale", "es": "Ofertas" } }
+        ]
+      },
+      {
+        "pageId": "resources",
+        "label": { "en": "Resources", "es": "Recursos" },
+        "order": 7,
+        "dropdown": true,
+        "children": [
+          { "pageId": "blog", "label": { "en": "Blog", "es": "Blog" } },
+          { "pageId": "guides", "label": { "en": "Guides", "es": "Guías" } },
+          { "pageId": "faq", "label": { "en": "FAQ", "es": "FAQ" } }
+        ]
+      },
+      {
+        "pageId": "contact",
+        "label": { "en": "Contact", "es": "Contacto" },
+        "order": 8
+      }
+    ],
+    "cta": {
+      "label": { "en": "Get Started", "es": "Comenzar" },
+      "href": "/contact",
+      "style": "primary",
+      "variants": {
+        "agency": { "label": { "en": "Get a Quote", "es": "Cotizar" }, "href": "/contact/quote" },
+        "saas": { "label": { "en": "Start Free Trial", "es": "Prueba Gratis" }, "href": "/contact/demo" },
+        "ecommerce": { "label": { "en": "Shop Now", "es": "Comprar" }, "href": "/shop" }
+      }
+    }
+  },
+  "secondary": {
+    "name": { "en": "Footer Navigation", "es": "Navegación de Pie" },
+    "location": "footer",
+    "sections": [
+      {
+        "id": "company",
+        "title": { "en": "Company", "es": "Empresa" },
+        "pageIds": ["about", "our-story", "team", "careers", "news", "partners"]
+      },
+      {
+        "id": "services",
+        "title": { "en": "Services", "es": "Servicios" },
+        "pageIds": ["web-design", "web-development", "digital-marketing", "branding", "consulting"]
+      },
+      {
+        "id": "products",
+        "title": { "en": "Products", "es": "Productos" },
+        "_note": "For SaaS sites",
+        "pageIds": ["features", "integrations", "pricing", "roadmap", "changelog"]
+      },
+      {
+        "id": "resources",
+        "title": { "en": "Resources", "es": "Recursos" },
+        "pageIds": ["blog", "guides", "faq", "help-center", "downloads"]
+      },
+      {
+        "id": "support",
+        "title": { "en": "Support", "es": "Soporte" },
+        "pageIds": ["contact", "support", "request-quote", "book-demo", "locations"]
+      },
+      {
+        "id": "legal",
+        "title": { "en": "Legal", "es": "Legal" },
+        "pageIds": ["privacy", "terms", "cookies", "accessibility", "sitemap"]
+      }
+    ],
+    "social": [
+      { "platform": "Facebook", "url": "#", "icon": "facebook" },
+      { "platform": "Twitter", "url": "#", "icon": "twitter" },
+      { "platform": "LinkedIn", "url": "#", "icon": "linkedin" },
+      { "platform": "Instagram", "url": "#", "icon": "instagram" },
+      { "platform": "YouTube", "url": "#", "icon": "youtube" },
+      { "platform": "GitHub", "url": "#", "icon": "github" }
+    ],
+    "contact": {
+      "_note": "Update these values with your actual contact information",
+      "email": "",
+      "phone": "",
+      "address": {
+        "en": "",
+        "es": ""
+      }
+    },
+    "newsletter": {
+      "enabled": true,
+      "title": { "en": "Subscribe to our newsletter", "es": "Suscríbete a nuestro boletín" },
+      "description": { "en": "Get the latest updates and offers", "es": "Recibe las últimas novedades y ofertas" }
+    }
+  },
+  "utility": {
+    "name": { "en": "Utility Navigation", "es": "Navegación de Utilidades" },
+    "location": "header-top",
+    "items": [
+      {
+        "type": "language-switcher",
+        "label": { "en": "Language", "es": "Idioma" }
+      },
+      {
+        "type": "search",
+        "label": { "en": "Search", "es": "Buscar" }
+      },
+      {
+        "type": "account",
+        "label": { "en": "My Account", "es": "Mi Cuenta" },
+        "href": "/account",
+        "_note": "For SaaS or E-commerce sites"
+      },
+      {
+        "type": "cart",
+        "label": { "en": "Cart", "es": "Carrito" },
+        "href": "/cart",
+        "_note": "For E-commerce sites"
+      }
+    ]
+  },
+  "mobile": {
+    "name": { "en": "Mobile Navigation", "es": "Navegación Móvil" },
+    "inheritFrom": "primary",
+    "showCta": true,
+    "showSocial": true,
+    "showSearch": true,
+    "showLanguageSwitcher": true
+  },
+  "breadcrumbs": {
+    "enabled": true,
+    "homeLabel": { "en": "Home", "es": "Inicio" },
+    "separator": "/"
+  }
+}

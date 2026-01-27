@@ -1,0 +1,155 @@
+{
+  "$schema": "./schemas/ai-config.schema.json",
+  "version": "1.0.0",
+  "description": "AI configuration for the website project starter kit",
+  
+  "providers": {
+    "openai": {
+      "name": "OpenAI",
+      "strengths": ["Content generation", "Copywriting", "JSON mode"],
+      "bestFor": ["generate-content", "optimize-headlines", "translate"]
+    },
+    "anthropic": {
+      "name": "Anthropic Claude",
+      "strengths": ["Analysis", "Strategy", "Complex reasoning"],
+      "bestFor": ["analyze-business", "generate-personas", "accessibility"]
+    },
+    "google": {
+      "name": "Google AI",
+      "strengths": ["Speed", "Cost efficiency", "Multimodal"],
+      "bestFor": ["quick-validation", "scoring", "visual-qa"]
+    }
+  },
+  
+  "defaultProvider": "openai",
+  "defaultTier": "standard",
+  
+  "tiers": {
+    "fast": {
+      "description": "Quick, cost-effective tasks",
+      "useCases": ["Scoring", "Validation", "Simple generation"],
+      "models": {
+        "openai": "gpt-3.5-turbo",
+        "anthropic": "claude-3-haiku-20240307",
+        "google": "gemini-1.5-flash"
+      }
+    },
+    "standard": {
+      "description": "Balanced performance and quality",
+      "useCases": ["Content generation", "Analysis", "Most tasks"],
+      "models": {
+        "openai": "gpt-4-turbo-preview",
+        "anthropic": "claude-3-sonnet-20240229",
+        "google": "gemini-1.5-pro"
+      }
+    },
+    "advanced": {
+      "description": "Highest quality for complex tasks",
+      "useCases": ["Strategic analysis", "Complex reasoning", "Critical content"],
+      "models": {
+        "openai": "gpt-4o",
+        "anthropic": "claude-3-opus-20240229",
+        "google": "gemini-1.5-pro"
+      }
+    }
+  },
+  
+  "scripts": {
+    "analyze-business-context": {
+      "description": "Deep business context analysis",
+      "recommendedTier": "advanced",
+      "recommendedProvider": "anthropic"
+    },
+    "generate-personas": {
+      "description": "Generate user personas from context",
+      "recommendedTier": "standard",
+      "recommendedProvider": "anthropic"
+    },
+    "generate-user-flows": {
+      "description": "Generate user flows from personas",
+      "recommendedTier": "standard",
+      "recommendedProvider": "openai"
+    },
+    "generate-section-content": {
+      "description": "Generate website section copy",
+      "recommendedTier": "standard",
+      "recommendedProvider": "openai"
+    },
+    "generate-brand-colors": {
+      "description": "Generate brand color palettes",
+      "recommendedTier": "standard",
+      "recommendedProvider": "openai"
+    },
+    "generate-test-cases": {
+      "description": "Generate QA test cases",
+      "recommendedTier": "standard",
+      "recommendedProvider": "openai"
+    },
+    "optimize-headlines": {
+      "description": "Generate and score headlines",
+      "recommendedTier": "standard",
+      "recommendedProvider": "openai"
+    },
+    "optimize-seo": {
+      "description": "AI-powered SEO analysis",
+      "recommendedTier": "standard",
+      "recommendedProvider": "openai"
+    },
+    "check-accessibility": {
+      "description": "WCAG accessibility audit",
+      "recommendedTier": "standard",
+      "recommendedProvider": "anthropic"
+    },
+    "visual-qa": {
+      "description": "Visual regression testing",
+      "recommendedTier": "standard",
+      "recommendedProvider": "openai"
+    },
+    "translate-content": {
+      "description": "AI translation with cultural adaptation",
+      "recommendedTier": "standard",
+      "recommendedProvider": "openai"
+    }
+  },
+  
+  "settings": {
+    "maxRetries": 3,
+    "retryDelay": 1000,
+    "timeout": 60000,
+    "temperature": 0.7,
+    "maxTokens": 4096
+  },
+  
+  "pipelines": {
+    "discovery": {
+      "description": "Run all discovery phase AI tasks",
+      "steps": ["analyze-business-context", "generate-personas"],
+      "order": "sequential"
+    },
+    "ux": {
+      "description": "Run all UX design AI tasks",
+      "steps": ["generate-user-flows", "generate-test-cases"],
+      "order": "sequential"
+    },
+    "content": {
+      "description": "Run all content generation AI tasks",
+      "steps": ["generate-section-content", "optimize-headlines"],
+      "order": "sequential"
+    },
+    "design": {
+      "description": "Run all design AI tasks",
+      "steps": ["generate-brand-colors"],
+      "order": "parallel"
+    },
+    "qa": {
+      "description": "Run all QA AI tasks",
+      "steps": ["check-accessibility", "visual-qa", "optimize-seo"],
+      "order": "parallel"
+    },
+    "full": {
+      "description": "Run complete AI pipeline",
+      "steps": ["discovery", "ux", "content", "design", "qa"],
+      "order": "sequential"
+    }
+  }
+}

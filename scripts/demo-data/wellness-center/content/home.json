@@ -1,0 +1,130 @@
+{
+  "meta": {
+    "title": "Serenity Wellness Center | Premier Spa in Scottsdale, AZ",
+    "description": "Escape the everyday at Serenity Wellness Center. Expert massage therapy, facials, body treatments, and yoga in a tranquil Scottsdale setting. Book online today.",
+    "keywords": "spa scottsdale, massage therapy, facial treatments, wellness center, yoga classes"
+  },
+  "hero": {
+    "headline": "Restore Your Balance, Renew Your Life",
+    "subheadline": "Escape the everyday stress and discover total relaxation at Scottsdale's premier wellness sanctuary",
+    "cta": {
+      "primary": {
+        "text": "Book Your Escape",
+        "href": "/contact"
+      },
+      "secondary": {
+        "text": "Explore Services",
+        "href": "/services"
+      }
+    },
+    "image": {
+      "src": "/assets/hero-spa.jpg",
+      "alt": "Serene spa treatment room with natural elements"
+    }
+  },
+  "problem": {
+    "headline": "Stress Shouldn't Be Your Normal",
+    "content": "Between demanding careers, family responsibilities, and the constant buzz of technology, finding a moment of peace feels impossible. Your body carries the tension, your mind races at night, and self-care keeps getting pushed to 'someday.'",
+    "stats": [
+      {
+        "value": "77%",
+        "label": "of Americans experience physical symptoms of stress"
+      },
+      {
+        "value": "33%",
+        "label": "report extreme stress levels"
+      }
+    ]
+  },
+  "solution": {
+    "headline": "Your Personal Sanctuary Awaits",
+    "content": "At Serenity Wellness Center, we've created more than a spa—we've built a refuge. From the moment you walk through our doors, the outside world melts away. Our expert therapists don't just perform treatments; they craft personalized experiences that address your unique needs.",
+    "benefits": [
+      {
+        "title": "Expert Care",
+        "description": "15+ years of combined experience and continuous training"
+      },
+      {
+        "title": "Personalized Approach",
+        "description": "Every treatment customized to your body and goals"
+      },
+      {
+        "title": "Tranquil Environment",
+        "description": "A peaceful retreat designed for complete relaxation"
+      }
+    ]
+  },
+  "services": {
+    "headline": "Comprehensive Wellness Services",
+    "subheadline": "From therapeutic massage to rejuvenating facials",
+    "items": [
+      {
+        "title": "Massage Therapy",
+        "description": "Swedish, deep tissue, hot stone, and sports massage from certified therapists",
+        "icon": "massage",
+        "href": "/services#massage"
+      },
+      {
+        "title": "Skincare & Facials",
+        "description": "Advanced treatments for anti-aging, hydration, and skin health",
+        "icon": "facial",
+        "href": "/services#skincare"
+      },
+      {
+        "title": "Body Treatments",
+        "description": "Detoxifying wraps, scrubs, and aromatherapy experiences",
+        "icon": "body",
+        "href": "/services#body"
+      },
+      {
+        "title": "Yoga & Meditation",
+        "description": "Group classes and private sessions for mind-body wellness",
+        "icon": "yoga",
+        "href": "/services#yoga"
+      }
+    ],
+    "cta": {
+      "text": "View All Services & Pricing",
+      "href": "/services"
+    }
+  },
+  "testimonials": {
+    "headline": "What Our Clients Say",
+    "items": [
+      {
+        "quote": "I've tried every spa in Scottsdale, and Serenity is in a league of its own. Sarah and her team truly care about your wellbeing, not just getting you in and out.",
+        "author": "Jennifer M.",
+        "role": "Client since 2020",
+        "rating": 5
+      },
+      {
+        "quote": "As a triathlete, I need therapists who understand sports recovery. Michael has become essential to my training routine. My times have improved and injuries are down.",
+        "author": "David R.",
+        "role": "Marathon Runner",
+        "rating": 5
+      },
+      {
+        "quote": "The best facial I've ever had! Dr. Foster analyzed my skin and created a custom treatment plan. My friends keep asking what my secret is.",
+        "author": "Melissa T.",
+        "role": "Regular Client",
+        "rating": 5
+      }
+    ]
+  },
+  "cta": {
+    "headline": "Ready to Find Your Serenity?",
+    "subheadline": "Book your first visit today and receive 15% off any service",
+    "cta": {
+      "text": "Book Now",
+      "href": "/contact"
+    },
+    "note": "New clients only. Cannot be combined with other offers."
+  },
+  "contact": {
+    "headline": "Visit Us",
+    "address": "7500 E Doubletree Ranch Rd, Suite 100\nScottsdale, AZ 85258",
+    "phone": "(480) 555-CALM",
+    "email": "hello@serenitywellness.com",
+    "hours": "Monday - Saturday: 9am - 8pm\nSunday: 10am - 6pm"
+  }
+}

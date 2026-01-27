@@ -1,0 +1,352 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "design-research-log.schema.json",
+  "title": "Design Research Log Schema",
+  "description": "Schema for documenting design trend research and findings",
+  "type": "object",
+  "required": ["version", "entries"],
+  "properties": {
+    "version": {
+      "type": "string",
+      "description": "Schema version",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "entries": {
+      "type": "array",
+      "description": "Array of research log entries",
+      "items": {
+        "$ref": "#/definitions/researchEntry"
+      }
+    }
+  },
+  "definitions": {
+    "researchEntry": {
+      "type": "object",
+      "required": ["id", "project", "date", "scope", "industry"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for this research entry",
+          "pattern": "^research-\\d{4}-\\d{2}-\\d{2}-\\d{3}$"
+        },
+        "project": {
+          "type": "string",
+          "description": "Project name this research is for"
+        },
+        "date": {
+          "type": "string",
+          "format": "date",
+          "description": "Date research was conducted"
+        },
+        "researcher": {
+          "type": "string",
+          "description": "Name of person who conducted research"
+        },
+        "scope": {
+          "type": "string",
+          "description": "Depth of research conducted",
+          "enum": ["quick", "standard", "comprehensive"]
+        },
+        "industry": {
+          "type": "string",
+          "description": "Industry/vertical for the project"
+        },
+        "parameters": {
+          "type": "object",
+          "description": "Research parameters and context",
+          "properties": {
+            "targetAudience": {
+              "type": "string",
+              "description": "Target audience description"
+            },
+            "brandPersonality": {
+              "type": "string",
+              "description": "Brand personality traits"
+            },
+            "constraints": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Technical or brand constraints"
+            },
+            "competitorUrls": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "uri"
+              },
+              "description": "Competitor website URLs analyzed"
+            },
+            "clientReferences": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Sites the client mentioned liking"
+            }
+          }
+        },
+        "trendsIdentified": {
+          "type": "array",
+          "description": "Design trends discovered during research",
+          "items": {
+            "$ref": "#/definitions/trendItem"
+          }
+        },
+        "competitorInsights": {
+          "type": "array",
+          "description": "Insights from competitor analysis",
+          "items": {
+            "$ref": "#/definitions/competitorInsight"
+          }
+        },
+        "referenceSites": {
+          "type": "array",
+          "description": "Reference sites for inspiration",
+          "items": {
+            "$ref": "#/definitions/referenceSite"
+          }
+        },
+        "sectionResearch": {
+          "type": "array",
+          "description": "Research findings by section type",
+          "items": {
+            "$ref": "#/definitions/sectionResearch"
+          }
+        },
+        "recommendedApproach": {
+          "type": "object",
+          "description": "Overall recommended design approach",
+          "properties": {
+            "visualDirection": {
+              "type": "string",
+              "description": "High-level visual direction"
+            },
+            "keyPatterns": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Key patterns to use"
+            },
+            "avoidPatterns": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Patterns to avoid"
+            },
+            "colorApproach": {
+              "type": "string",
+              "description": "Color strategy recommendation"
+            },
+            "typographyApproach": {
+              "type": "string",
+              "description": "Typography strategy recommendation"
+            },
+            "animationApproach": {
+              "type": "string",
+              "description": "Animation strategy recommendation"
+            }
+          }
+        },
+        "decisionsInfluenced": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "List of design decisions influenced by this research"
+        },
+        "notes": {
+          "type": "string",
+          "description": "Additional notes or observations"
+        }
+      }
+    },
+    "trendItem": {
+      "type": "object",
+      "required": ["trend", "relevance"],
+      "properties": {
+        "trend": {
+          "type": "string",
+          "description": "Name of the trend"
+        },
+        "relevance": {
+          "type": "string",
+          "description": "How relevant this trend is for the project",
+          "enum": ["high", "medium", "low", "not-applicable"]
+        },
+        "application": {
+          "type": "string",
+          "description": "Where/how this trend could be applied"
+        },
+        "examples": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Example sites using this trend"
+        },
+        "implementationNotes": {
+          "type": "string",
+          "description": "Notes on implementing in Elementor"
+        },
+        "longevityAssessment": {
+          "type": "string",
+          "description": "Will this trend age well?",
+          "enum": ["timeless", "long-lasting", "medium-term", "short-term", "fad"]
+        },
+        "audienceFit": {
+          "type": "string",
+          "description": "How well this fits the target audience",
+          "enum": ["excellent", "good", "moderate", "poor"]
+        },
+        "decision": {
+          "type": "string",
+          "description": "Decision on whether to use this trend",
+          "enum": ["use", "consider", "skip", "adapt"]
+        }
+      }
+    },
+    "competitorInsight": {
+      "type": "object",
+      "required": ["competitor", "url"],
+      "properties": {
+        "competitor": {
+          "type": "string",
+          "description": "Competitor name"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "description": "Competitor website URL"
+        },
+        "screenshotPath": {
+          "type": "string",
+          "description": "Path to screenshot in assets"
+        },
+        "visualStyle": {
+          "type": "object",
+          "properties": {
+            "colorPalette": {
+              "type": "string"
+            },
+            "typography": {
+              "type": "string"
+            },
+            "imagery": {
+              "type": "string"
+            },
+            "overallFeel": {
+              "type": "string"
+            }
+          }
+        },
+        "layoutPatterns": {
+          "type": "object",
+          "properties": {
+            "hero": {
+              "type": "string"
+            },
+            "navigation": {
+              "type": "string"
+            },
+            "sections": {
+              "type": "string"
+            },
+            "mobile": {
+              "type": "string"
+            }
+          }
+        },
+        "strengths": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "What they do well"
+        },
+        "weaknesses": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "What could be improved"
+        },
+        "differentiationOpportunity": {
+          "type": "string",
+          "description": "How we can differentiate"
+        }
+      }
+    },
+    "referenceSite": {
+      "type": "object",
+      "required": ["url", "relevance"],
+      "properties": {
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "description": "Reference site URL"
+        },
+        "name": {
+          "type": "string",
+          "description": "Site name"
+        },
+        "relevance": {
+          "type": "string",
+          "description": "What this site is relevant for"
+        },
+        "screenshotPath": {
+          "type": "string",
+          "description": "Path to screenshot"
+        },
+        "elementsOfInterest": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Specific elements worth noting"
+        },
+        "source": {
+          "type": "string",
+          "description": "Where this reference was found",
+          "enum": ["awwwards", "cssdesignawards", "dribbble", "siteinspire", "client-reference", "competitor", "search", "other"]
+        }
+      }
+    },
+    "sectionResearch": {
+      "type": "object",
+      "required": ["sectionType"],
+      "properties": {
+        "sectionType": {
+          "type": "string",
+          "description": "Type of section (Hero, Features, etc.)"
+        },
+        "currentTrends": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Current trends for this section type"
+        },
+        "recommendedPattern": {
+          "type": "string",
+          "description": "Recommended pattern for this project"
+        },
+        "referenceExamples": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uri"
+          },
+          "description": "Example URLs for reference"
+        },
+        "elementorApproach": {
+          "type": "string",
+          "description": "How to implement in Elementor"
+        }
+      }
+    }
+  }
+}

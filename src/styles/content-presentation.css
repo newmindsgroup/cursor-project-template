@@ -1,0 +1,159 @@
+/* Content Presentation Page Styles */
+
+/* Content Cards */
+.content-page-section {
+  @apply bg-white rounded-2xl border border-neutral-200 overflow-hidden shadow-soft;
+}
+
+.content-page-header {
+  @apply px-6 py-4 border-b border-neutral-100 flex items-center justify-between;
+}
+
+.content-page-body {
+  @apply p-6;
+}
+
+/* Content Items */
+.content-item {
+  @apply py-4 border-b border-neutral-100 last:border-0;
+}
+
+.content-item-label {
+  @apply text-xs font-medium text-neutral-500 uppercase tracking-wider mb-1;
+}
+
+.content-item-value {
+  @apply text-neutral-900;
+}
+
+.content-item-value.headline {
+  @apply text-2xl font-bold;
+}
+
+.content-item-value.subheadline {
+  @apply text-lg text-neutral-700;
+}
+
+/* Character Count */
+.char-count {
+  @apply text-xs text-neutral-400 mt-1;
+}
+
+.char-count.warning {
+  @apply text-yellow-600;
+}
+
+.char-count.danger {
+  @apply text-red-600;
+}
+
+/* Status Badge */
+.status-badge {
+  @apply px-2 py-1 text-xs font-medium rounded-full;
+}
+
+.status-badge.draft {
+  @apply bg-yellow-100 text-yellow-700;
+}
+
+.status-badge.review {
+  @apply bg-blue-100 text-blue-700;
+}
+
+.status-badge.approved {
+  @apply bg-green-100 text-green-700;
+}
+
+/* Section Navigation */
+.section-nav-btn {
+  @apply px-3 py-1 text-sm font-medium rounded-lg transition-colors;
+}
+
+.section-nav-btn.active {
+  @apply bg-primary-100 text-primary-700;
+}
+
+.section-nav-btn:not(.active) {
+  @apply text-neutral-600 hover:bg-neutral-100;
+}
+
+/* Compare View */
+.compare-item {
+  @apply p-4 bg-neutral-50 rounded-lg;
+}
+
+.compare-item-label {
+  @apply text-xs font-medium text-neutral-500 uppercase tracking-wider mb-2;
+}
+
+.compare-item-value {
+  @apply text-neutral-900;
+}
+
+/* Feature/Item Tables */
+.content-table {
+  @apply w-full text-sm;
+}
+
+.content-table th {
+  @apply text-left font-semibold text-neutral-700 pb-2 border-b border-neutral-200;
+}
+
+.content-table td {
+  @apply py-3 border-b border-neutral-100;
+}
+
+/* Testimonial Cards */
+.testimonial-card {
+  @apply p-4 bg-neutral-50 rounded-xl;
+}
+
+.testimonial-quote {
+  @apply text-neutral-700 italic mb-3;
+}
+
+.testimonial-author {
+  @apply text-sm font-semibold text-neutral-900;
+}
+
+.testimonial-role {
+  @apply text-xs text-neutral-500;
+}
+
+/* FAQ Items */
+.faq-item {
+  @apply p-4 bg-neutral-50 rounded-xl;
+}
+
+.faq-question {
+  @apply font-semibold text-neutral-900 mb-2;
+}
+
+.faq-answer {
+  @apply text-neutral-600 text-sm;
+}
+
+/* StoryBrand Section */
+.storybrand-element {
+  @apply p-4 bg-primary-50 rounded-xl border border-primary-100;
+}
+
+.storybrand-label {
+  @apply text-xs font-semibold text-primary-600 uppercase tracking-wider mb-2;
+}
+
+.storybrand-value {
+  @apply text-neutral-800;
+}
+
+/* Toast Animation */
+#toast.show {
+  @apply translate-y-0 opacity-100;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .content-page-header {
+    @apply flex-col items-start gap-2;
+  }
+}

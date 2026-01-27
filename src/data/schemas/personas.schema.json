@@ -1,0 +1,110 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "personas.schema.json",
+  "title": "User Personas",
+  "description": "Schema for user personas data file",
+  "type": "object",
+  "required": ["version", "personas"],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "lastUpdated": {
+      "type": "string"
+    },
+    "generatedBy": {
+      "type": "string"
+    },
+    "sources": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "personas": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/persona"
+      }
+    },
+    "template": {
+      "type": "object"
+    }
+  },
+  "definitions": {
+    "persona": {
+      "type": "object",
+      "required": ["id", "name"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^persona-"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "shortName": {
+          "type": "string"
+        },
+        "image": {
+          "type": "string"
+        },
+        "demographics": {
+          "type": "object",
+          "properties": {
+            "age": { "type": "string" },
+            "role": { "type": "string" },
+            "company": { "type": "string" },
+            "techSavviness": { 
+              "type": "string",
+              "enum": ["Basic", "Intermediate", "Advanced"]
+            },
+            "income": { "type": "string" },
+            "location": { "type": "string" }
+          }
+        },
+        "jtbd": {
+          "type": "string",
+          "description": "Jobs-to-be-done statement"
+        },
+        "goals": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "frustrations": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "behaviors": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "quote": {
+          "type": "string"
+        },
+        "scenarios": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "description": { "type": "string" }
+            }
+          }
+        },
+        "influences": {
+          "type": "object",
+          "properties": {
+            "brands": { "type": "array", "items": { "type": "string" } },
+            "sources": { "type": "array", "items": { "type": "string" } },
+            "decisionFactors": { "type": "array", "items": { "type": "string" } }
+          }
+        }
+      }
+    }
+  }
+}

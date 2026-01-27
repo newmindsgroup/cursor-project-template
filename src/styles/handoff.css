@@ -1,0 +1,129 @@
+/* Handoff Portal specific styles */
+
+/* Portal-specific typography */
+.prose {
+  max-width: 65ch;
+}
+
+.prose p {
+  margin-bottom: 1rem;
+}
+
+/* Checklist styles */
+.qa-category {
+  @apply p-4 bg-neutral-50 rounded-xl border border-neutral-200;
+}
+
+.qa-category-title {
+  @apply text-lg font-bold text-neutral-900 mb-4 flex items-center gap-2;
+}
+
+.qa-item {
+  @apply flex items-start gap-3 py-2;
+}
+
+.qa-item label {
+  @apply flex items-start gap-3 cursor-pointer w-full;
+}
+
+.qa-item input[type="checkbox"] {
+  @apply w-5 h-5 rounded border-neutral-300 text-purple-600 focus:ring-purple-500 mt-0.5 flex-shrink-0;
+}
+
+.qa-item input[type="checkbox"]:checked + span {
+  @apply text-neutral-400 line-through;
+}
+
+.qa-item span {
+  @apply text-neutral-700;
+}
+
+/* Page index styles */
+.page-card {
+  @apply p-6 bg-neutral-50 rounded-xl border border-neutral-200;
+}
+
+.page-card-title {
+  @apply text-xl font-bold text-neutral-900 mb-4 flex items-center justify-between;
+}
+
+.page-card-link {
+  @apply text-sm text-purple-600 hover:text-purple-700 font-medium;
+}
+
+.section-list {
+  @apply space-y-3;
+}
+
+.section-item {
+  @apply p-3 bg-white rounded-lg border border-neutral-200 hover:border-purple-300 transition-colors;
+}
+
+.section-item-name {
+  @apply font-semibold text-neutral-900;
+}
+
+.section-item-widgets {
+  @apply text-sm text-neutral-500 mt-1;
+}
+
+.section-item-link {
+  @apply text-xs text-purple-600 hover:text-purple-700;
+}
+
+/* Screenshot gallery styles */
+.screenshot-card {
+  @apply bg-neutral-100 rounded-lg overflow-hidden border border-neutral-200 cursor-pointer hover:border-purple-400 transition-colors;
+}
+
+.screenshot-card img {
+  @apply w-full h-auto;
+}
+
+.screenshot-card-label {
+  @apply p-2 bg-neutral-50 text-xs text-center text-neutral-600 font-medium;
+}
+
+/* Lightbox */
+#lightbox.active {
+  @apply flex;
+}
+
+/* Keyboard indicator styles */
+kbd {
+  @apply px-2 py-1 bg-neutral-100 border border-neutral-300 rounded text-sm font-mono shadow-sm;
+}
+
+code {
+  @apply px-2 py-1 bg-neutral-100 rounded text-sm font-mono;
+}
+
+/* Progress bar */
+.progress-bar {
+  @apply h-2 bg-neutral-200 rounded-full overflow-hidden;
+}
+
+.progress-bar-fill {
+  @apply h-full bg-purple-600 transition-all duration-300;
+}
+
+/* Download cards hover effect */
+.download-card:hover {
+  @apply shadow-medium;
+}
+
+/* Animation for loading states */
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 1.2s ease-in-out infinite;
+  background: linear-gradient(90deg, #f0f0f0 0px, #e0e0e0 40px, #f0f0f0 80px);
+  background-size: 200px 100%;
+}

@@ -13,6 +13,13 @@ Purpose: keep AI + humans aligned, avoid hallucinated requirements, and maintain
 - Prefer small, reviewable changes over large rewrites.
 - Maintain traceability: when scope changes, update `SCOPE.md` and note the decision.
 
+## Non-negotiables
+- Always consult `/docs` first, then consult `/business-context/` and `/resource-library/` as read-only references.
+- Never name or rely on specific filenames from those reference folders.
+- If information is missing or ambiguous, log it to `QUESTIONS.md` instead of guessing.
+- Keep edits small; update `DECISIONS.md` when a direction is chosen.
+- Before any product code changes, ensure `PROJECT.md + SCOPE.md + docs/03-requirements/REQUIREMENTS.md` have minimum viable clarity.
+
 ## Working Checklist (Before Major Output)
 - Review `/docs` for current brief, requirements, and architecture.
 - Scan `DECISIONS.md`, `ASSUMPTIONS.md`, `QUESTIONS.md`, and `SCOPE.md`.

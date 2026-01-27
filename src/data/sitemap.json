@@ -1,0 +1,849 @@
+{
+  "$schema": "./schemas/sitemap.schema.json",
+  "version": "1.1.0",
+  "description": "Serenity Wellness Center - Health & Wellness Website Sitemap",
+  "defaultLanguage": "en",
+  "languages": ["en", "es"],
+  "projectName": "Serenity Wellness Center",
+  "projectType": "business",
+  "_usage": {
+    "agency": "Keep: Home, About, Services, Portfolio, Contact, Legal",
+    "saas": "Keep: Home, About, Products, Pricing, Resources, Contact, Legal",
+    "business": "Keep: Home, About, Services, Contact, Legal",
+    "corporate": "Keep: Home, About (with Careers, News), Services, Resources, Contact, Legal",
+    "ecommerce": "Keep: Home, About, Shop, Products, Cart, Account, Contact, Legal"
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "/",
+      "title": { "en": "Home", "es": "Inicio" },
+      "description": { "en": "Welcome to Serenity Wellness Center - Your sanctuary for relaxation and rejuvenation", "es": "Bienvenido a Serenity Wellness Center - Tu santuario para relajación y rejuvenecimiento" },
+      "template": "homepage",
+      "inPrimaryNav": true,
+      "inSecondaryNav": false,
+      "navOrder": 1,
+      "status": "complete",
+      "deliverables": {
+        "wireframe": { "status": "complete" },
+        "visualDesign": { "status": "complete", "variants": ["calm-spa", "modern-wellness"], "selectedVariant": "calm-spa" },
+        "content": { "status": "complete" },
+        "development": { "status": "complete" }
+      },
+      "children": []
+    },
+    {
+      "id": "about",
+      "slug": "/about",
+      "title": { "en": "About Us", "es": "Nosotros" },
+      "description": { "en": "Discover the Serenity story - Our journey to holistic wellness", "es": "Descubre la historia de Serenity - Nuestro viaje hacia el bienestar holístico" },
+      "template": "about",
+      "inPrimaryNav": true,
+      "inSecondaryNav": true,
+      "navOrder": 2,
+      "status": "complete",
+      "deliverables": {
+        "wireframe": { "status": "complete" },
+        "visualDesign": { "status": "complete", "variants": ["team-focus", "story-driven"], "selectedVariant": "story-driven" },
+        "content": { "status": "complete" },
+        "development": { "status": "complete" }
+      },
+      "children": [
+        {
+          "id": "our-story",
+          "slug": "/about/our-story",
+          "title": { "en": "Our Story", "es": "Nuestra Historia" },
+          "description": { "en": "How we started and where we're going", "es": "Cómo empezamos y hacia dónde vamos" },
+          "template": "minimal",
+          "inPrimaryNav": false,
+          "inSecondaryNav": true,
+          "status": "planned",
+          "children": []
+        },
+        {
+          "id": "team",
+          "slug": "/about/team",
+          "title": { "en": "Our Team", "es": "Nuestro Equipo" },
+          "description": { "en": "Meet the people behind our success", "es": "Conoce a las personas detrás de nuestro éxito" },
+          "template": "minimal",
+          "inPrimaryNav": false,
+          "inSecondaryNav": true,
+          "status": "planned",
+          "children": []
+        },
+        {
+          "id": "values",
+          "slug": "/about/values",
+          "title": { "en": "Our Values", "es": "Nuestros Valores" },
+          "description": { "en": "What we stand for and believe in", "es": "Lo que representamos y creemos" },
+          "template": "minimal",
+          "inPrimaryNav": false,
+          "inSecondaryNav": false,
+          "status": "planned",
+          "children": []
+        },
+        {
+          "id": "careers",
+          "slug": "/about/careers",
+          "title": { "en": "Careers", "es": "Carreras" },
+          "description": { "en": "Join our growing team", "es": "Únete a nuestro equipo" },
+          "template": "minimal",
+          "inPrimaryNav": false,
+          "inSecondaryNav": true,
+          "status": "planned",
+          "children": [
+            {
+              "id": "job-openings",
+              "slug": "/about/careers/openings",
+              "title": { "en": "Job Openings", "es": "Vacantes" },
+              "description": { "en": "Current open positions", "es": "Posiciones abiertas actuales" },
+              "template": "minimal",
+              "inPrimaryNav": false,
+              "inSecondaryNav": false,
+              "status": "planned",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "news",
+          "slug": "/about/news",
+          "title": { "en": "News & Press", "es": "Noticias y Prensa" },
+          "description": { "en": "Latest company news and press releases", "es": "Últimas noticias y comunicados de prensa" },
+          "template": "blog",
+          "inPrimaryNav": false,
+          "inSecondaryNav": true,
+          "status": "planned",
+          "children": []
+        },
+        {
+          "id": "partners",
+          "slug": "/about/partners",
+          "title": { "en": "Partners", "es": "Socios" },
+          "description": { "en": "Our trusted partners and affiliates", "es": "Nuestros socios y afiliados de confianza" },
+          "template": "minimal",
+          "inPrimaryNav": false,
+          "inSecondaryNav": false,
+          "status": "planned",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "services",
+      "slug": "/services",
+      "title": { "en": "Services", "es": "Servicios" },
+      "description": { "en": "Massage therapy, facials, body treatments, yoga classes, and wellness programs", "es": "Terapia de masajes, faciales, tratamientos corporales, clases de yoga y programas de bienestar" },
+      "template": "services",
+      "inPrimaryNav": true,
+      "inSecondaryNav": true,
+      "navOrder": 3,
+      "status": "complete",
+      "deliverables": {
+        "wireframe": { "status": "complete" },
+        "visualDesign": { "status": "complete", "variants": ["grid-layout", "cards-layout"], "selectedVariant": "cards-layout" },
+        "content": { "status": "complete" },
+        "development": { "status": "complete" }
+      },
+      "children": [
+        {
+          "id": "web-design",
+          "slug": "/services/web-design",
+          "title": { "en": "Web Design", "es": "Diseño Web" },
+          "description": { "en": "Custom website design services", "es": "Servicios de diseño web personalizado" },
+          "template": "services-single",
+          "inPrimaryNav": false,
+          "inSecondaryNav": true,
+          "status": "planned",
+          "children": [
+            {
+              "id": "ui-ux-design",
+              "slug": "/services/web-design/ui-ux",
+              "title": { "en": "UI/UX Design", "es": "Diseño UI/UX" },
+              "description": { "en": "User interface and experience design", "es": "Diseño de interfaz y experiencia de usuario" },
+              "template": "services-single",
+              "inPrimaryNav": false,
+              "inSecondaryNav": false,
+              "status": "planned",
+              "children": []
+            },
+            {
+              "id": "responsive-design",
+              "slug": "/services/web-design/responsive",
+              "title": { "en": "Responsive Design", "es": "Diseño Responsivo" },
+              "description": { "en": "Mobile-first responsive websites", "es": "Sitios web responsivos mobile-first" },
+              "template": "services-single",
+              "inPrimaryNav": false,
+              "inSecondaryNav": false,
+              "status": "planned",
+              "children": []
+            },
+            {
+              "id": "landing-pages",
+              "slug": "/services/web-design/landing-pages",
+              "title": { "en": "Landing Pages", "es": "Páginas de Destino" },
+              "description": { "en": "High-converting landing page design", "es": "Diseño de páginas de destino de alta conversión" },
+              "template": "services-single",
+              "inPrimaryNav": false,
+              "inSecondaryNav": false,
+              "status": "planned",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "web-development",
+          "slug": "/services/web-development",
+          "title": { "en": "Web Development", "es": "Desarrollo Web" },
+          "description": { "en": "Full-stack web development", "es": "Desarrollo web full-stack" },
+          "template": "services-single",
+          "inPrimaryNav": false,
+          "inSecondaryNav": true,
+          "status": "planned",
+          "children": [
+            {
+              "id": "wordpress-dev",
+              "slug": "/services/web-development/wordpress",
+              "title": { "en": "WordPress Development", "es": "Desarrollo WordPress" },
+              "description": { "en": "Custom WordPress solutions", "es": "Soluciones WordPress personalizadas" },
+              "template": "services-single",
+              "inPrimaryNav": false,
+              "inSecondaryNav": false,
+              "status": "planned",
+              "children": []
+            },
+            {
+              "id": "ecommerce-dev",
+              "slug": "/services/web-development/ecommerce",
+              "title": { "en": "E-Commerce Development", "es": "Desarrollo E-Commerce" },
+              "description": { "en": "Online store development", "es": "Desarrollo de tiendas en línea" },
+              "template": "services-single",
+              "inPrimaryNav": false,
+              "inSecondaryNav": false,
+              "status": "planned",
+              "children": []
+            },
+            {
+              "id": "custom-dev",
+              "slug": "/services/web-development/custom",
+              "title": { "en": "Custom Development", "es": "Desarrollo Personalizado" },
+              "description": { "en": "Tailored web applications", "es": "Aplicaciones web a medida" },
+              "template": "services-single",
+              "inPrimaryNav": false,
+              "inSecondaryNav": false,
+              "status": "planned",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "digital-marketing",
+          "slug": "/services/digital-marketing",
+          "title": { "en": "Digital Marketing", "es": "Marketing Digital" },
+          "description": { "en": "Grow your online presence", "es": "Haz crecer tu presencia en línea" },
+          "template": "services-single",
+          "inPrimaryNav": false,
+          "inSecondaryNav": true,
+          "status": "planned",
+          "children": [
+            {
+              "id": "seo",
+              "slug": "/services/digital-marketing/seo",
+              "title": { "en": "SEO Services", "es": "Servicios SEO" },
+              "description": { "en": "Search engine optimization", "es": "Optimización para motores de búsqueda" },
+              "template": "services-single",
+              "inPrimaryNav": false,
+              "inSecondaryNav": false,
+              "status": "planned",
+              "children": []
+            },
+            {
+              "id": "ppc",
+              "slug": "/services/digital-marketing/ppc",
+              "title": { "en": "PPC Advertising", "es": "Publicidad PPC" },
+              "description": { "en": "Pay-per-click campaign management", "es": "Gestión de campañas de pago por clic" },
+              "template": "services-single",
+              "inPrimaryNav": false,
+              "inSecondaryNav": false,
+              "status": "planned",
+              "children": []
+            },
+            {
+              "id": "social-media",
+              "slug": "/services/digital-marketing/social-media",
+              "title": { "en": "Social Media Marketing", "es": "Marketing en Redes Sociales" },
+              "description": { "en": "Social media strategy and management", "es": "Estrategia y gestión de redes sociales" },
+              "template": "services-single",
+              "inPrimaryNav": false,
+              "inSecondaryNav": false,
+              "status": "planned",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "branding",
+          "slug": "/services/branding",
+          "title": { "en": "Branding", "es": "Branding" },
+          "description": { "en": "Brand identity and strategy", "es": "Identidad y estrategia de marca" },
+          "template": "services-single",
+          "inPrimaryNav": false,
+          "inSecondaryNav": true,
+          "status": "planned",
+          "children": []
+        },
+        {
+          "id": "consulting",
+          "slug": "/services/consulting",
+          "title": { "en": "Consulting", "es": "Consultoría" },
+          "description": { "en": "Strategic digital consulting", "es": "Consultoría digital estratégica" },
+          "template": "services-single",
+          "inPrimaryNav": false,
+          "inSecondaryNav": false,
+          "status": "planned",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "portfolio",
+      "slug": "/portfolio",
+      "title": { "en": "Portfolio", "es": "Portafolio" },
+      "description": { "en": "Our work and case studies", "es": "Nuestro trabajo y casos de estudio" },
+      "template": "portfolio",
+      "inPrimaryNav": true,
+      "inSecondaryNav": false,
+      "navOrder": 4,
+      "status": "planned",
+      "deliverables": {
+        "wireframe": { "status": "pending" },
+        "visualDesign": { "status": "pending", "variants": [], "selectedVariant": null },
+        "content": { "status": "pending" },
+        "development": { "status": "pending" }
+      },
+      "children": [
+        {
+          "id": "case-study-brand-redesign",
+          "slug": "/portfolio/brand-redesign",
+          "title": { "en": "Brand Redesign Project", "es": "Proyecto de Rediseño de Marca" },
+          "description": { "en": "Complete brand transformation case study", "es": "Caso de estudio de transformación de marca" },
+          "template": "portfolio-single",
+          "inPrimaryNav": false,
+          "inSecondaryNav": false,
+          "status": "planned",
+          "children": []
+        },
+        {
+          "id": "case-study-ecommerce",
+          "slug": "/portfolio/ecommerce-store",
+          "title": { "en": "E-Commerce Success Story", "es": "Historia de Éxito E-Commerce" },
+          "description": { "en": "Online store that increased sales by 200%", "es": "Tienda en línea que aumentó ventas en 200%" },
+          "template": "portfolio-single",
+          "inPrimaryNav": false,
+          "inSecondaryNav": false,
+          "status": "planned",
+          "children": []
+        },
+        {
+          "id": "case-study-saas",
+          "slug": "/portfolio/saas-platform",
+          "title": { "en": "SaaS Platform Launch", "es": "Lanzamiento de Plataforma SaaS" },
+          "description": { "en": "From concept to market-ready product", "es": "Del concepto al producto listo para el mercado" },
+          "template": "portfolio-single",
+          "inPrimaryNav": false,
+          "inSecondaryNav": false,
+          "status": "planned",
+          "children": []
+        },
+        {
+          "id": "case-study-corporate",
+          "slug": "/portfolio/corporate-website",
+          "title": { "en": "Corporate Website Redesign", "es": "Rediseño de Sitio Corporativo" },
+          "description": { "en": "Enterprise-level website transformation", "es": "Transformación de sitio web empresarial" },
+          "template": "portfolio-single",
+          "inPrimaryNav": false,
+          "inSecondaryNav": false,
+          "status": "planned",
+          "children": []
+        },
+        {
+          "id": "industries",
+          "slug": "/portfolio/industries",
+          "title": { "en": "Industries We Serve", "es": "Industrias que Atendemos" },
+          "description": { "en": "Specialized expertise across sectors", "es": "Experiencia especializada en diversos sectores" },
+          "template": "minimal",
+          "inPrimaryNav": false,
+          "inSecondaryNav": false,
+          "status": "planned",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "products",
+      "slug": "/products",
+      "title": { "en": "Products", "es": "Productos" },
+      "description": { "en": "Our software products and solutions", "es": "Nuestros productos de software y soluciones" },
+      "template": "services",
+      "inPrimaryNav": false,
+      "inSecondaryNav": false,
+      "navOrder": 5,
+      "status": "planned",
+      "_note": "For SaaS websites - enable in primary nav as needed",
+      "children": [
+        {
+          "id": "features",
+          "slug": "/products/features",
+          "title": { "en": "Features", "es": "Características" },
+          "description": { "en": "Explore all product features", "es": "Explora todas las características del producto" },
+          "template": "services-single",
+          "inPrimaryNav": false,
+          "inSecondaryNav": false,
+          "status": "planned",
+          "children": []
+        },
+        {
+          "id": "integrations",
+          "slug": "/products/integrations",
+          "title": { "en": "Integrations", "es": "Integraciones" },
+          "description": { "en": "Connect with your favorite tools", "es": "Conecta con tus herramientas favoritas" },
+          "template": "minimal",
+          "inPrimaryNav": false,
+          "inSecondaryNav": false,
+          "status": "planned",
+          "children": []
+        },
+        {
+          "id": "roadmap",
+          "slug": "/products/roadmap",
+          "title": { "en": "Product Roadmap", "es": "Hoja de Ruta del Producto" },
+          "description": { "en": "See what's coming next", "es": "Mira lo que viene" },
+          "template": "minimal",
+          "inPrimaryNav": false,
+          "inSecondaryNav": false,
+          "status": "planned",
+          "children": []
+        },
+        {
+          "id": "changelog",
+          "slug": "/products/changelog",
+          "title": { "en": "Changelog", "es": "Registro de Cambios" },
+          "description": { "en": "Latest updates and improvements", "es": "Últimas actualizaciones y mejoras" },
+          "template": "blog",
+          "inPrimaryNav": false,
+          "inSecondaryNav": false,
+          "status": "planned",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "pricing",
+      "slug": "/pricing",
+      "title": { "en": "Pricing", "es": "Precios" },
+      "description": { "en": "Affordable wellness packages and membership options", "es": "Paquetes de bienestar asequibles y opciones de membresía" },
+      "template": "pricing",
+      "inPrimaryNav": true,
+      "inSecondaryNav": true,
+      "navOrder": 4,
+      "status": "complete",
+      "children": [
+        {
+          "id": "compare-plans",
+          "slug": "/pricing/compare",
+          "title": { "en": "Compare Plans", "es": "Comparar Planes" },
+          "description": { "en": "Detailed plan comparison", "es": "Comparación detallada de planes" },
+          "template": "pricing",
+          "inPrimaryNav": false,
+          "inSecondaryNav": false,
+          "status": "planned",
+          "children": []
+        },
+        {
+          "id": "enterprise",
+          "slug": "/pricing/enterprise",
+          "title": { "en": "Enterprise", "es": "Empresarial" },
+          "description": { "en": "Custom enterprise solutions", "es": "Soluciones empresariales personalizadas" },
+          "template": "minimal",
+          "inPrimaryNav": false,
+          "inSecondaryNav": false,
+          "status": "planned",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "resources",
+      "slug": "/resources",
+      "title": { "en": "Resources", "es": "Recursos" },
+      "description": { "en": "Guides, articles, and helpful resources", "es": "Guías, artículos y recursos útiles" },
+      "template": "blog",
+      "inPrimaryNav": false,
+      "inSecondaryNav": true,
+      "navOrder": 7,
+      "status": "planned",
+      "children": [
+        {
+          "id": "blog",
+          "slug": "/resources/blog",
+          "title": { "en": "Blog", "es": "Blog" },
+          "description": { "en": "Latest articles and insights", "es": "Últimos artículos e ideas" },
+          "template": "blog",
+          "inPrimaryNav": false,
+          "inSecondaryNav": true,
+          "status": "planned",
+          "children": []
+        },
+        {
+          "id": "guides",
+          "slug": "/resources/guides",
+          "title": { "en": "Guides & Tutorials", "es": "Guías y Tutoriales" },
+          "description": { "en": "In-depth guides and how-tos", "es": "Guías detalladas y tutoriales" },
+          "template": "blog",
+          "inPrimaryNav": false,
+          "inSecondaryNav": true,
+          "status": "planned",
+          "children": []
+        },
+        {
+          "id": "faq",
+          "slug": "/resources/faq",
+          "title": { "en": "FAQ", "es": "Preguntas Frecuentes" },
+          "description": { "en": "Frequently asked questions", "es": "Preguntas frecuentes" },
+          "template": "minimal",
+          "inPrimaryNav": false,
+          "inSecondaryNav": true,
+          "status": "planned",
+          "children": []
+        },
+        {
+          "id": "help-center",
+          "slug": "/resources/help",
+          "title": { "en": "Help Center", "es": "Centro de Ayuda" },
+          "description": { "en": "Support documentation and knowledge base", "es": "Documentación de soporte y base de conocimientos" },
+          "template": "minimal",
+          "inPrimaryNav": false,
+          "inSecondaryNav": false,
+          "status": "planned",
+          "children": []
+        },
+        {
+          "id": "downloads",
+          "slug": "/resources/downloads",
+          "title": { "en": "Downloads", "es": "Descargas" },
+          "description": { "en": "Free resources and templates", "es": "Recursos y plantillas gratuitas" },
+          "template": "minimal",
+          "inPrimaryNav": false,
+          "inSecondaryNav": false,
+          "status": "planned",
+          "children": []
+        },
+        {
+          "id": "webinars",
+          "slug": "/resources/webinars",
+          "title": { "en": "Webinars", "es": "Webinars" },
+          "description": { "en": "On-demand webinars and events", "es": "Webinars y eventos bajo demanda" },
+          "template": "blog",
+          "inPrimaryNav": false,
+          "inSecondaryNav": false,
+          "status": "planned",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "shop",
+      "slug": "/shop",
+      "title": { "en": "Shop", "es": "Tienda" },
+      "description": { "en": "Browse our products", "es": "Explora nuestros productos" },
+      "template": "portfolio",
+      "inPrimaryNav": false,
+      "inSecondaryNav": false,
+      "navOrder": 8,
+      "status": "planned",
+      "_note": "For E-commerce websites - enable in primary nav as needed",
+      "children": [
+        {
+          "id": "shop-category-1",
+          "slug": "/shop/category-1",
+          "title": { "en": "Category One", "es": "Categoría Uno" },
+          "description": { "en": "Browse Category One products", "es": "Explora productos de Categoría Uno" },
+          "template": "portfolio",
+          "inPrimaryNav": false,
+          "inSecondaryNav": false,
+          "status": "planned",
+          "children": []
+        },
+        {
+          "id": "shop-category-2",
+          "slug": "/shop/category-2",
+          "title": { "en": "Category Two", "es": "Categoría Dos" },
+          "description": { "en": "Browse Category Two products", "es": "Explora productos de Categoría Dos" },
+          "template": "portfolio",
+          "inPrimaryNav": false,
+          "inSecondaryNav": false,
+          "status": "planned",
+          "children": []
+        },
+        {
+          "id": "shop-sale",
+          "slug": "/shop/sale",
+          "title": { "en": "Sale", "es": "Ofertas" },
+          "description": { "en": "Special offers and discounts", "es": "Ofertas especiales y descuentos" },
+          "template": "portfolio",
+          "inPrimaryNav": false,
+          "inSecondaryNav": false,
+          "status": "planned",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "cart",
+      "slug": "/cart",
+      "title": { "en": "Cart", "es": "Carrito" },
+      "description": { "en": "Your shopping cart", "es": "Tu carrito de compras" },
+      "template": "minimal",
+      "inPrimaryNav": false,
+      "inSecondaryNav": false,
+      "status": "planned",
+      "_note": "E-commerce utility page",
+      "children": []
+    },
+    {
+      "id": "checkout",
+      "slug": "/checkout",
+      "title": { "en": "Checkout", "es": "Pago" },
+      "description": { "en": "Complete your purchase", "es": "Completa tu compra" },
+      "template": "minimal",
+      "inPrimaryNav": false,
+      "inSecondaryNav": false,
+      "status": "planned",
+      "_note": "E-commerce utility page",
+      "children": []
+    },
+    {
+      "id": "account",
+      "slug": "/account",
+      "title": { "en": "My Account", "es": "Mi Cuenta" },
+      "description": { "en": "Manage your account", "es": "Gestiona tu cuenta" },
+      "template": "minimal",
+      "inPrimaryNav": false,
+      "inSecondaryNav": false,
+      "status": "planned",
+      "_note": "User account pages - for SaaS or E-commerce",
+      "children": [
+        {
+          "id": "account-dashboard",
+          "slug": "/account/dashboard",
+          "title": { "en": "Dashboard", "es": "Panel" },
+          "description": { "en": "Account overview", "es": "Resumen de cuenta" },
+          "template": "minimal",
+          "inPrimaryNav": false,
+          "inSecondaryNav": false,
+          "status": "planned",
+          "children": []
+        },
+        {
+          "id": "account-orders",
+          "slug": "/account/orders",
+          "title": { "en": "Orders", "es": "Pedidos" },
+          "description": { "en": "Order history", "es": "Historial de pedidos" },
+          "template": "minimal",
+          "inPrimaryNav": false,
+          "inSecondaryNav": false,
+          "status": "planned",
+          "children": []
+        },
+        {
+          "id": "account-settings",
+          "slug": "/account/settings",
+          "title": { "en": "Settings", "es": "Configuración" },
+          "description": { "en": "Account settings", "es": "Configuración de cuenta" },
+          "template": "minimal",
+          "inPrimaryNav": false,
+          "inSecondaryNav": false,
+          "status": "planned",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "/contact",
+      "title": { "en": "Contact", "es": "Contacto" },
+      "description": { "en": "Book an appointment or ask us anything - We're here to help you find your calm", "es": "Reserva una cita o pregúntanos - Estamos aquí para ayudarte a encontrar tu calma" },
+      "template": "contact",
+      "inPrimaryNav": true,
+      "inSecondaryNav": true,
+      "navOrder": 9,
+      "status": "complete",
+      "deliverables": {
+        "wireframe": { "status": "complete" },
+        "visualDesign": { "status": "complete", "variants": ["map-prominent", "form-focused"], "selectedVariant": "form-focused" },
+        "content": { "status": "complete" },
+        "development": { "status": "complete" }
+      },
+      "children": [
+        {
+          "id": "locations",
+          "slug": "/contact/locations",
+          "title": { "en": "Locations", "es": "Ubicaciones" },
+          "description": { "en": "Our office locations", "es": "Nuestras ubicaciones de oficina" },
+          "template": "minimal",
+          "inPrimaryNav": false,
+          "inSecondaryNav": false,
+          "status": "planned",
+          "children": []
+        },
+        {
+          "id": "support",
+          "slug": "/contact/support",
+          "title": { "en": "Support", "es": "Soporte" },
+          "description": { "en": "Get help with our products", "es": "Obtén ayuda con nuestros productos" },
+          "template": "contact",
+          "inPrimaryNav": false,
+          "inSecondaryNav": false,
+          "status": "planned",
+          "children": []
+        },
+        {
+          "id": "request-quote",
+          "slug": "/contact/quote",
+          "title": { "en": "Request a Quote", "es": "Solicitar Cotización" },
+          "description": { "en": "Get a custom quote for your project", "es": "Obtén una cotización personalizada" },
+          "template": "contact",
+          "inPrimaryNav": false,
+          "inSecondaryNav": false,
+          "status": "planned",
+          "children": []
+        },
+        {
+          "id": "book-demo",
+          "slug": "/contact/demo",
+          "title": { "en": "Book a Demo", "es": "Agendar Demo" },
+          "description": { "en": "Schedule a product demonstration", "es": "Agenda una demostración del producto" },
+          "template": "contact",
+          "inPrimaryNav": false,
+          "inSecondaryNav": false,
+          "status": "planned",
+          "_note": "For SaaS websites",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "privacy",
+      "slug": "/privacy",
+      "title": { "en": "Privacy Policy", "es": "Política de Privacidad" },
+      "description": { "en": "How we handle your data", "es": "Cómo manejamos tus datos" },
+      "template": "minimal",
+      "inPrimaryNav": false,
+      "inSecondaryNav": false,
+      "inFooterNav": true,
+      "footerSection": "legal",
+      "status": "planned",
+      "children": []
+    },
+    {
+      "id": "terms",
+      "slug": "/terms",
+      "title": { "en": "Terms of Service", "es": "Términos de Servicio" },
+      "description": { "en": "Terms and conditions of use", "es": "Términos y condiciones de uso" },
+      "template": "minimal",
+      "inPrimaryNav": false,
+      "inSecondaryNav": false,
+      "inFooterNav": true,
+      "footerSection": "legal",
+      "status": "planned",
+      "children": []
+    },
+    {
+      "id": "cookies",
+      "slug": "/cookies",
+      "title": { "en": "Cookie Policy", "es": "Política de Cookies" },
+      "description": { "en": "How we use cookies", "es": "Cómo usamos las cookies" },
+      "template": "minimal",
+      "inPrimaryNav": false,
+      "inSecondaryNav": false,
+      "inFooterNav": true,
+      "footerSection": "legal",
+      "status": "planned",
+      "children": []
+    },
+    {
+      "id": "accessibility",
+      "slug": "/accessibility",
+      "title": { "en": "Accessibility", "es": "Accesibilidad" },
+      "description": { "en": "Our commitment to accessibility", "es": "Nuestro compromiso con la accesibilidad" },
+      "template": "minimal",
+      "inPrimaryNav": false,
+      "inSecondaryNav": false,
+      "inFooterNav": true,
+      "footerSection": "legal",
+      "status": "planned",
+      "children": []
+    },
+    {
+      "id": "sitemap",
+      "slug": "/sitemap",
+      "title": { "en": "Sitemap", "es": "Mapa del Sitio" },
+      "description": { "en": "Complete site index", "es": "Índice completo del sitio" },
+      "template": "minimal",
+      "inPrimaryNav": false,
+      "inSecondaryNav": false,
+      "inFooterNav": true,
+      "footerSection": "legal",
+      "status": "planned",
+      "children": []
+    },
+    {
+      "id": "thank-you",
+      "slug": "/thank-you",
+      "title": { "en": "Thank You", "es": "Gracias" },
+      "description": { "en": "Thank you for your submission", "es": "Gracias por tu envío" },
+      "template": "minimal",
+      "inPrimaryNav": false,
+      "inSecondaryNav": false,
+      "status": "planned",
+      "_note": "Form submission confirmation page",
+      "children": []
+    },
+    {
+      "id": "404",
+      "slug": "/404",
+      "title": { "en": "Page Not Found", "es": "Página No Encontrada" },
+      "description": { "en": "The page you're looking for doesn't exist", "es": "La página que buscas no existe" },
+      "template": "minimal",
+      "inPrimaryNav": false,
+      "inSecondaryNav": false,
+      "status": "planned",
+      "_note": "Error page",
+      "children": []
+    },
+    {
+      "id": "coming-soon",
+      "slug": "/coming-soon",
+      "title": { "en": "Coming Soon", "es": "Próximamente" },
+      "description": { "en": "Something exciting is on the way", "es": "Algo emocionante está en camino" },
+      "template": "coming-soon",
+      "inPrimaryNav": false,
+      "inSecondaryNav": false,
+      "status": "planned",
+      "_note": "Pre-launch page",
+      "children": []
+    },
+    {
+      "id": "maintenance",
+      "slug": "/maintenance",
+      "title": { "en": "Under Maintenance", "es": "En Mantenimiento" },
+      "description": { "en": "We'll be back shortly", "es": "Regresaremos pronto" },
+      "template": "minimal",
+      "inPrimaryNav": false,
+      "inSecondaryNav": false,
+      "status": "planned",
+      "_note": "Maintenance mode page",
+      "children": []
+    }
+  ]
+}

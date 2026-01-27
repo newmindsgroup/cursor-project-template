@@ -1,0 +1,102 @@
+<!--
+  GRSpacing - Spacing Reference Examples
+  
+  Visual reference for consistent spacing values.
+  Use these as guides when building sections.
+-->
+
+<!-- Spacing Scale Reference -->
+<!--
+  gap-4  = 16px  - Tight, inline elements
+  gap-6  = 24px  - Standard component gap
+  gap-8  = 32px  - Section grid gap (minimum)
+  gap-12 = 48px  - Large section gap (lg:)
+  gap-16 = 64px  - Major section separation
+  
+  p-4    = 16px  - Small padding
+  p-6    = 24px  - Standard padding  
+  p-8    = 32px  - Card padding (minimum)
+  p-10   = 40px  - Large padding
+  p-12   = 48px  - Section padding
+  
+  py-12  = 48px  - Compact section (mobile)
+  py-16  = 64px  - Standard section (mobile)
+  py-20  = 80px  - Large section (mobile)
+  py-24  = 96px  - Standard section (desktop)
+  py-32  = 128px - Hero section (tablet)
+  py-40  = 160px - Hero section (desktop)
+  
+  px-8   = 32px  - Container padding (mobile)
+  px-12  = 48px  - Container padding (tablet)
+  px-16  = 64px  - Container padding (desktop)
+  
+  mb-4   = 16px  - Tight margin
+  mb-6   = 24px  - Standard margin
+  mb-8   = 32px  - Section header to content
+  mb-12  = 48px  - Large margin
+  mb-16  = 64px  - Section header margin
+-->
+
+<!-- Section with proper spacing applied -->
+<section class="py-16 md:py-20 lg:py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-8 md:px-12 lg:px-16">
+    
+    <!-- Header with mb-12/mb-16 for separation from content -->
+    <div class="max-w-3xl mx-auto text-center mb-12 md:mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold text-neutral-900 mb-4">
+        Section Headline
+      </h2>
+      <p class="text-xl text-neutral-600 leading-relaxed">
+        Section description with proper spacing below headline.
+      </p>
+    </div>
+    
+    <!-- Grid with gap-8 (minimum) and lg:gap-12 -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+      
+      <!-- Card with p-8 (minimum) -->
+      <div class="p-8 bg-white rounded-2xl border border-neutral-200">
+        
+        <!-- Icon with mb-6 -->
+        <div class="w-14 h-14 bg-primary-100 rounded-xl flex items-center justify-center mb-6">
+          <span>Icon</span>
+        </div>
+        
+        <!-- Title with mb-3 (tight) -->
+        <h3 class="text-xl font-bold text-neutral-900 mb-3">
+          Card Title
+        </h3>
+        
+        <!-- Description (no bottom margin if last) -->
+        <p class="text-neutral-600 leading-relaxed">
+          Card description text.
+        </p>
+      </div>
+      
+      <!-- More cards... -->
+    </div>
+    
+  </div>
+</section>
+
+<!-- Common Spacing Patterns -->
+<!--
+  SECTION HEADER:
+  - Use mb-12 md:mb-16 below header block
+  - Use mb-4 below headline
+  - Center with max-w-3xl mx-auto text-center
+  
+  GRID CONTENT:
+  - Use gap-8 lg:gap-12 for grid gaps
+  - Cards use p-8 minimum padding
+  
+  CARD INTERNALS:
+  - Icon/image: mb-6
+  - Title: mb-3
+  - Description: mb-6 if followed by button
+  
+  CTA SECTION:
+  - Use mb-6 below headline
+  - Use mb-8 below description
+  - Buttons use gap-4 between them
+-->

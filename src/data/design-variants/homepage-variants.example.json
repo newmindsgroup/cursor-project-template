@@ -1,0 +1,108 @@
+{
+  "$schema": "../../schemas/design-variants.schema.json",
+  "page": "homepage",
+  "generatedDate": "2026-01-26",
+  "pageContext": {
+    "goal": "Lead generation for consulting services",
+    "audience": "Small business owners seeking growth",
+    "keyMessage": "Transform your business without the overwhelm",
+    "desiredAction": "Book a free strategy session"
+  },
+  "variants": [
+    {
+      "id": "v1",
+      "name": "Trust-First Authority",
+      "file": "homepage-v1.html",
+      "approach": "Lead with credibility and social proof to overcome skepticism. Ideal for markets where trust is the primary barrier to conversion.",
+      "mood": "Professional, clean, lots of white space",
+      "heroType": "Testimonial-led with client logos",
+      "conversionStyle": "Soft - build trust, then convert",
+      "sections": [
+        "Header",
+        "Hero (testimonial quote)",
+        "LogoCloud",
+        "Stats",
+        "Features",
+        "Testimonials (carousel)",
+        "FAQ",
+        "CTA (gentle)",
+        "Footer"
+      ],
+      "bestFor": "B2B, professional services, enterprise sales, industries with trust issues",
+      "tradeoffs": "May feel less energetic; slower path to CTA",
+      "uxPrinciples": [
+        "Social Proof: Others' actions validate the choice",
+        "Risk Reduction: Credibility before commitment"
+      ],
+      "selected": false,
+      "clientFeedback": ""
+    },
+    {
+      "id": "v2",
+      "name": "Bold Transformation",
+      "file": "homepage-v2.html",
+      "approach": "Create emotional impact with bold visuals and transformation-focused messaging. For clients who want to stand out.",
+      "mood": "Dark/bold, high contrast, dynamic",
+      "heroType": "Full-bleed video/image with overlay text",
+      "conversionStyle": "Direct - prominent CTAs throughout",
+      "sections": [
+        "Header (transparent)",
+        "Hero (full-screen video)",
+        "Features (benefit-focused)",
+        "Process",
+        "Stats (contrasting)",
+        "Testimonials (video)",
+        "CTA (bold)",
+        "Footer"
+      ],
+      "bestFor": "Creative agencies, disruptors, brands targeting younger audiences",
+      "tradeoffs": "May alienate conservative audiences; less content density",
+      "uxPrinciples": [
+        "Von Restorff Effect: Distinctive design is memorable",
+        "Emotional Engagement: Feelings drive action"
+      ],
+      "selected": false,
+      "clientFeedback": ""
+    },
+    {
+      "id": "v3",
+      "name": "Methodical Educator",
+      "file": "homepage-v3.html",
+      "approach": "Provide comprehensive information for analytical buyers who research thoroughly before deciding.",
+      "mood": "Light, structured, editorial",
+      "heroType": "Problem-agitation headline with supporting context",
+      "conversionStyle": "Progressive - multiple soft CTAs, one strong final CTA",
+      "sections": [
+        "Header",
+        "Hero (problem-focused)",
+        "Story (the problem)",
+        "Features (detailed grid)",
+        "Process (methodology)",
+        "Comparison",
+        "FAQ (comprehensive)",
+        "Testimonials",
+        "Pricing preview",
+        "CTA",
+        "Footer"
+      ],
+      "bestFor": "Technical products, considered purchases, B2B with long sales cycles",
+      "tradeoffs": "Longer page; may lose impulsive buyers; more content to maintain",
+      "uxPrinciples": [
+        "Information Architecture: Satisfies analytical decision-makers",
+        "Authority Building: Demonstrated expertise"
+      ],
+      "selected": false,
+      "clientFeedback": ""
+    }
+  ],
+  "recommendation": {
+    "variantId": "v1",
+    "reason": "Based on the target audience of small business owners, trust and credibility are primary concerns. The Trust-First approach addresses skepticism before asking for commitment, which aligns with the typical decision-making process for consulting services."
+  },
+  "decision": {
+    "selectedVariantId": null,
+    "decidedDate": null,
+    "decidedBy": "",
+    "notes": ""
+  }
+}

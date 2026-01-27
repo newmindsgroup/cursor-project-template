@@ -1,0 +1,62 @@
+{
+  "name": "Startup",
+  "description": "Vibrant, modern theme with bold gradients",
+  "colors": {
+    "primary": {
+      "50": "#fdf4ff",
+      "100": "#fae8ff",
+      "200": "#f5d0fe",
+      "300": "#f0abfc",
+      "400": "#e879f9",
+      "500": "#d946ef",
+      "600": "#c026d3",
+      "700": "#a21caf",
+      "800": "#86198f",
+      "900": "#701a75"
+    },
+    "secondary": {
+      "50": "#ecfeff",
+      "100": "#cffafe",
+      "200": "#a5f3fc",
+      "300": "#67e8f9",
+      "400": "#22d3ee",
+      "500": "#06b6d4",
+      "600": "#0891b2",
+      "700": "#0e7490",
+      "800": "#155e75",
+      "900": "#164e63"
+    },
+    "neutral": {
+      "50": "#fafafa",
+      "100": "#f4f4f5",
+      "200": "#e4e4e7",
+      "300": "#d4d4d8",
+      "400": "#a1a1aa",
+      "500": "#71717a",
+      "600": "#52525b",
+      "700": "#3f3f46",
+      "800": "#27272a",
+      "900": "#18181b"
+    }
+  },
+  "typography": {
+    "fontHeading": "'Poppins', 'Inter', system-ui, sans-serif",
+    "fontBody": "'Inter', system-ui, sans-serif"
+  },
+  "spacing": {
+    "sectionPaddingY": "6rem",
+    "sectionGap": "4rem",
+    "containerPadding": "1.5rem",
+    "elementGap": "2rem"
+  },
+  "effects": {
+    "shadowSoft": "0 4px 20px rgba(217, 70, 239, 0.1)",
+    "shadowMedium": "0 8px 30px rgba(217, 70, 239, 0.15)",
+    "shadowLarge": "0 15px 50px rgba(217, 70, 239, 0.2)",
+    "radiusSm": "0.5rem",
+    "radiusMd": "0.75rem",
+    "radiusLg": "1rem",
+    "radiusXl": "1.5rem",
+    "radius2xl": "2rem"
+  }
+}

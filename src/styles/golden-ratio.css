@@ -1,0 +1,559 @@
+/**
+ * Golden Ratio Design System
+ * ===========================
+ * 
+ * The Golden Ratio (φ ≈ 1.618034) creates naturally harmonious proportions
+ * found throughout nature and classical art/architecture.
+ * 
+ * This file provides Golden Ratio-based design tokens that work alongside
+ * the existing design system. Use the `gr-` prefix to apply these values.
+ * 
+ * Key Ratios:
+ * - φ (phi) = 1.618034
+ * - 1/φ = 0.618034
+ * - φ² = 2.618034
+ * - φ³ = 4.236068
+ * - φ⁴ = 6.854102
+ * - φ⁵ = 11.090170
+ * 
+ * Layout Split:
+ * - Major portion: 61.8%
+ * - Minor portion: 38.2%
+ */
+
+:root {
+  /* ==========================================================================
+     Golden Ratio Constants
+     ========================================================================== */
+  --phi: 1.618034;
+  --phi-inverse: 0.618034;
+  --phi-squared: 2.618034;
+  --phi-cubed: 4.236068;
+  --phi-fourth: 6.854102;
+  --phi-fifth: 11.090170;
+
+  /* ==========================================================================
+     Golden Typography Scale
+     Base: 1rem (16px)
+     Each step multiplies or divides by φ
+     ========================================================================== */
+  
+  /* Smaller than base (dividing by φ) */
+  --gr-text-4xs: 0.146rem;   /* ~2.3px  - 1/φ⁵ */
+  --gr-text-3xs: 0.236rem;   /* ~3.8px  - 1/φ⁴ */
+  --gr-text-2xs: 0.382rem;   /* ~6.1px  - 1/φ³ */
+  --gr-text-xs: 0.618rem;    /* ~9.9px  - 1/φ² */
+  --gr-text-sm: 0.764rem;    /* ~12.2px - 1/φ×1.236 (adjusted for readability) */
+  
+  /* Base */
+  --gr-text-base: 1rem;      /* 16px - base unit */
+  
+  /* Larger than base (multiplying by φ) */
+  --gr-text-lg: 1.236rem;    /* ~19.8px - φ/1.309 (adjusted) */
+  --gr-text-xl: 1.618rem;    /* ~25.9px - φ */
+  --gr-text-2xl: 2.618rem;   /* ~41.9px - φ² */
+  --gr-text-3xl: 4.236rem;   /* ~67.8px - φ³ */
+  --gr-text-4xl: 6.854rem;   /* ~109.7px - φ⁴ */
+  --gr-text-5xl: 11.09rem;   /* ~177.4px - φ⁵ */
+
+  /* ==========================================================================
+     Golden Spacing Scale
+     Base unit: 1rem (16px)
+     Creates harmonious spacing relationships
+     ========================================================================== */
+  
+  /* Micro spacing */
+  --gr-space-4xs: 0.146rem;  /* ~2.3px */
+  --gr-space-3xs: 0.236rem;  /* ~3.8px */
+  --gr-space-2xs: 0.382rem;  /* ~6.1px */
+  --gr-space-xs: 0.618rem;   /* ~9.9px */
+  
+  /* Standard spacing */
+  --gr-space-sm: 0.764rem;   /* ~12.2px */
+  --gr-space-base: 1rem;     /* 16px */
+  --gr-space-md: 1.236rem;   /* ~19.8px */
+  --gr-space-lg: 1.618rem;   /* ~25.9px */
+  
+  /* Large spacing */
+  --gr-space-xl: 2.618rem;   /* ~41.9px */
+  --gr-space-2xl: 4.236rem;  /* ~67.8px */
+  --gr-space-3xl: 6.854rem;  /* ~109.7px */
+  --gr-space-4xl: 11.09rem;  /* ~177.4px */
+  --gr-space-5xl: 17.944rem; /* ~287.1px - φ⁶ */
+
+  /* ==========================================================================
+     Golden Layout Proportions
+     For two-column layouts, content areas, sidebars
+     ========================================================================== */
+  --gr-major: 61.8%;         /* The larger (golden) portion */
+  --gr-minor: 38.2%;         /* The smaller portion */
+  --gr-major-decimal: 0.618;
+  --gr-minor-decimal: 0.382;
+
+  /* Common layout splits */
+  --gr-content-width: 61.8%;
+  --gr-sidebar-width: 38.2%;
+  
+  /* Three-column golden distribution */
+  --gr-third-small: 23.6%;   /* 38.2% × 0.618 */
+  --gr-third-medium: 38.2%;  /* Minor */
+  --gr-third-large: 38.2%;   /* Minor (balanced) */
+
+  /* ==========================================================================
+     Golden Aspect Ratios
+     For images, cards, containers, hero sections
+     ========================================================================== */
+  --gr-aspect-ratio: 1.618;
+  --gr-aspect-ratio-inverse: 0.618;
+  
+  /* CSS aspect-ratio property values */
+  --gr-aspect-landscape: 1.618 / 1;
+  --gr-aspect-portrait: 1 / 1.618;
+  --gr-aspect-wide: 2.618 / 1;      /* φ² for extra wide */
+  --gr-aspect-tall: 1 / 2.618;      /* φ² for extra tall */
+
+  /* ==========================================================================
+     Golden Section Heights (Viewport-based)
+     ========================================================================== */
+  --gr-hero-height: 61.8vh;
+  --gr-hero-height-tall: 76.4vh;    /* 100 - 23.6 */
+  --gr-section-height: 38.2vh;
+  --gr-section-height-sm: 23.6vh;   /* 38.2 × 0.618 */
+
+  /* ==========================================================================
+     Golden Border Radius
+     Proportional rounded corners following the golden scale
+     ========================================================================== */
+  --gr-radius-xs: 0.236rem;  /* ~3.8px */
+  --gr-radius-sm: 0.382rem;  /* ~6.1px */
+  --gr-radius-md: 0.618rem;  /* ~9.9px */
+  --gr-radius-base: 1rem;    /* 16px */
+  --gr-radius-lg: 1.618rem;  /* ~25.9px */
+  --gr-radius-xl: 2.618rem;  /* ~41.9px */
+  --gr-radius-full: 9999px;
+
+  /* ==========================================================================
+     Golden Line Heights
+     Optimized for readability based on φ
+     ========================================================================== */
+  --gr-leading-none: 1;
+  --gr-leading-tight: 1.236;       /* Compact headings */
+  --gr-leading-snug: 1.382;        /* Subheadings */
+  --gr-leading-normal: 1.5;        /* Standard (close to φ inverse + 1) */
+  --gr-leading-relaxed: 1.618;     /* φ itself - ideal for body text */
+  --gr-leading-loose: 2.0;         /* Extra spacing */
+  --gr-leading-extra: 2.618;       /* φ² - very open */
+
+  /* ==========================================================================
+     Golden Shadows
+     Depth following golden proportions
+     ========================================================================== */
+  --gr-shadow-sm: 
+    0 0.236rem 0.618rem rgba(0, 0, 0, 0.04),
+    0 0.146rem 0.382rem rgba(0, 0, 0, 0.02);
+  
+  --gr-shadow-md: 
+    0 0.382rem 1rem rgba(0, 0, 0, 0.06),
+    0 0.236rem 0.618rem rgba(0, 0, 0, 0.04);
+  
+  --gr-shadow-lg: 
+    0 0.618rem 1.618rem rgba(0, 0, 0, 0.08),
+    0 0.382rem 1rem rgba(0, 0, 0, 0.04);
+  
+  --gr-shadow-xl: 
+    0 1rem 2.618rem rgba(0, 0, 0, 0.1),
+    0 0.618rem 1.618rem rgba(0, 0, 0, 0.06);
+
+  /* ==========================================================================
+     Golden Transitions
+     Timing based on golden intervals
+     ========================================================================== */
+  --gr-duration-instant: 100ms;
+  --gr-duration-fast: 162ms;       /* ~100 × φ */
+  --gr-duration-base: 262ms;       /* ~162 × φ */
+  --gr-duration-slow: 424ms;       /* ~262 × φ */
+  --gr-duration-slower: 686ms;     /* ~424 × φ */
+  
+  /* Golden easing - slightly more dramatic than standard */
+  --gr-ease: cubic-bezier(0.382, 0, 0.618, 1);
+  --gr-ease-in: cubic-bezier(0.618, 0, 1, 1);
+  --gr-ease-out: cubic-bezier(0, 0, 0.382, 1);
+  --gr-ease-in-out: cubic-bezier(0.618, 0, 0.382, 1);
+
+  /* ==========================================================================
+     Golden Container Widths
+     ========================================================================== */
+  --gr-container-sm: 38.2rem;      /* ~611px */
+  --gr-container-md: 61.8rem;      /* ~989px */
+  --gr-container-lg: 80rem;        /* ~1280px (standard) */
+  --gr-container-content: 45rem;   /* ~720px - optimal reading width */
+}
+
+/* =============================================================================
+   Golden Ratio Utility Classes
+   ============================================================================= */
+
+/* Layout: Golden Split Grid */
+.gr-split {
+  display: grid;
+  grid-template-columns: var(--gr-minor) var(--gr-major);
+  gap: var(--gr-space-lg);
+}
+
+.gr-split-reverse {
+  display: grid;
+  grid-template-columns: var(--gr-major) var(--gr-minor);
+  gap: var(--gr-space-lg);
+}
+
+/* Responsive golden split */
+@media (max-width: 768px) {
+  .gr-split,
+  .gr-split-reverse {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Layout: Golden Flex */
+.gr-flex-major {
+  flex: 1.618;
+}
+
+.gr-flex-minor {
+  flex: 1;
+}
+
+/* Aspect Ratios */
+.gr-aspect {
+  aspect-ratio: var(--gr-aspect-landscape);
+}
+
+.gr-aspect-portrait {
+  aspect-ratio: var(--gr-aspect-portrait);
+}
+
+.gr-aspect-wide {
+  aspect-ratio: var(--gr-aspect-wide);
+}
+
+.gr-aspect-square {
+  aspect-ratio: 1 / 1;
+}
+
+/* =============================================================================
+   Section Spacing - Responsive
+   
+   Golden Ratio section padding that scales across breakpoints:
+   - Mobile: gr-space-2xl to gr-space-3xl
+   - Tablet (md): gr-space-3xl to gr-space-4xl  
+   - Desktop (lg): gr-space-4xl to gr-space-5xl
+   
+   This ensures proper visual rhythm at every viewport size.
+   ============================================================================= */
+
+/* Base (Mobile) - Smaller padding */
+.gr-section {
+  padding-top: var(--gr-space-2xl);    /* ~67.8px */
+  padding-bottom: var(--gr-space-2xl);
+}
+
+.gr-section-sm {
+  padding-top: var(--gr-space-xl);     /* ~41.9px */
+  padding-bottom: var(--gr-space-xl);
+}
+
+.gr-section-lg {
+  padding-top: var(--gr-space-3xl);    /* ~109.7px */
+  padding-bottom: var(--gr-space-3xl);
+}
+
+/* Tablet (768px+) - Medium padding */
+@media (min-width: 768px) {
+  .gr-section {
+    padding-top: var(--gr-space-3xl);    /* ~109.7px */
+    padding-bottom: var(--gr-space-3xl);
+  }
+
+  .gr-section-sm {
+    padding-top: var(--gr-space-2xl);    /* ~67.8px */
+    padding-bottom: var(--gr-space-2xl);
+  }
+
+  .gr-section-lg {
+    padding-top: var(--gr-space-4xl);    /* ~177.4px */
+    padding-bottom: var(--gr-space-4xl);
+  }
+}
+
+/* Desktop (1024px+) - Full padding */
+@media (min-width: 1024px) {
+  .gr-section {
+    padding-top: var(--gr-space-4xl);    /* ~177.4px */
+    padding-bottom: var(--gr-space-4xl);
+  }
+
+  .gr-section-sm {
+    padding-top: var(--gr-space-3xl);    /* ~109.7px */
+    padding-bottom: var(--gr-space-3xl);
+  }
+
+  .gr-section-lg {
+    padding-top: var(--gr-space-5xl);    /* ~287.1px */
+    padding-bottom: var(--gr-space-5xl);
+  }
+}
+
+/* Hero Heights */
+.gr-hero {
+  min-height: var(--gr-hero-height);
+}
+
+.gr-hero-tall {
+  min-height: var(--gr-hero-height-tall);
+}
+
+/* Typography */
+.gr-text-xs { font-size: var(--gr-text-xs); }
+.gr-text-sm { font-size: var(--gr-text-sm); }
+.gr-text-base { font-size: var(--gr-text-base); }
+.gr-text-lg { font-size: var(--gr-text-lg); }
+.gr-text-xl { font-size: var(--gr-text-xl); }
+.gr-text-2xl { font-size: var(--gr-text-2xl); }
+.gr-text-3xl { font-size: var(--gr-text-3xl); }
+.gr-text-4xl { font-size: var(--gr-text-4xl); }
+
+/* Line Heights */
+.gr-leading-tight { line-height: var(--gr-leading-tight); }
+.gr-leading-snug { line-height: var(--gr-leading-snug); }
+.gr-leading-normal { line-height: var(--gr-leading-normal); }
+.gr-leading-relaxed { line-height: var(--gr-leading-relaxed); }
+.gr-leading-loose { line-height: var(--gr-leading-loose); }
+
+/* Gaps */
+.gr-gap-xs { gap: var(--gr-space-xs); }
+.gr-gap-sm { gap: var(--gr-space-sm); }
+.gr-gap { gap: var(--gr-space-lg); }
+.gr-gap-lg { gap: var(--gr-space-xl); }
+.gr-gap-xl { gap: var(--gr-space-2xl); }
+
+/* Padding */
+.gr-p-xs { padding: var(--gr-space-xs); }
+.gr-p-sm { padding: var(--gr-space-sm); }
+.gr-p { padding: var(--gr-space-lg); }
+.gr-p-lg { padding: var(--gr-space-xl); }
+.gr-p-xl { padding: var(--gr-space-2xl); }
+
+/* Margins */
+.gr-m-xs { margin: var(--gr-space-xs); }
+.gr-m-sm { margin: var(--gr-space-sm); }
+.gr-m { margin: var(--gr-space-lg); }
+.gr-m-lg { margin: var(--gr-space-xl); }
+.gr-m-xl { margin: var(--gr-space-2xl); }
+
+/* Margin bottom (common for vertical rhythm) */
+.gr-mb-xs { margin-bottom: var(--gr-space-xs); }
+.gr-mb-sm { margin-bottom: var(--gr-space-sm); }
+.gr-mb { margin-bottom: var(--gr-space-lg); }
+.gr-mb-lg { margin-bottom: var(--gr-space-xl); }
+.gr-mb-xl { margin-bottom: var(--gr-space-2xl); }
+
+/* Border Radius */
+.gr-rounded-sm { border-radius: var(--gr-radius-sm); }
+.gr-rounded { border-radius: var(--gr-radius-md); }
+.gr-rounded-lg { border-radius: var(--gr-radius-lg); }
+.gr-rounded-xl { border-radius: var(--gr-radius-xl); }
+
+/* Shadows */
+.gr-shadow-sm { box-shadow: var(--gr-shadow-sm); }
+.gr-shadow { box-shadow: var(--gr-shadow-md); }
+.gr-shadow-lg { box-shadow: var(--gr-shadow-lg); }
+.gr-shadow-xl { box-shadow: var(--gr-shadow-xl); }
+
+/* Transitions */
+.gr-transition {
+  transition-duration: var(--gr-duration-base);
+  transition-timing-function: var(--gr-ease);
+}
+
+.gr-transition-fast {
+  transition-duration: var(--gr-duration-fast);
+  transition-timing-function: var(--gr-ease);
+}
+
+.gr-transition-slow {
+  transition-duration: var(--gr-duration-slow);
+  transition-timing-function: var(--gr-ease);
+}
+
+/* =============================================================================
+   Container - Responsive
+   
+   Golden Ratio container with responsive horizontal padding:
+   - Mobile: gr-space-lg (1.618rem / ~26px)
+   - Tablet (md): gr-space-xl (2.618rem / ~42px)
+   - Desktop (lg): gr-space-2xl (4.236rem / ~68px)
+   ============================================================================= */
+
+/* Base (Mobile) */
+.gr-container {
+  max-width: var(--gr-container-lg);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--gr-space-lg);      /* ~26px */
+  padding-right: var(--gr-space-lg);
+}
+
+/* Tablet (768px+) */
+@media (min-width: 768px) {
+  .gr-container {
+    padding-left: var(--gr-space-xl);    /* ~42px */
+    padding-right: var(--gr-space-xl);
+  }
+}
+
+/* Desktop (1024px+) */
+@media (min-width: 1024px) {
+  .gr-container {
+    padding-left: var(--gr-space-2xl);   /* ~68px */
+    padding-right: var(--gr-space-2xl);
+  }
+}
+
+.gr-container-content {
+  max-width: var(--gr-container-content);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Width utilities */
+.gr-w-major { width: var(--gr-major); }
+.gr-w-minor { width: var(--gr-minor); }
+.gr-max-w-major { max-width: var(--gr-major); }
+.gr-max-w-minor { max-width: var(--gr-minor); }
+
+/* =============================================================================
+   Golden Ratio Card Component
+   A pre-styled card using golden proportions
+   ============================================================================= */
+
+.gr-card {
+  padding: var(--gr-space-lg);
+  border-radius: var(--gr-radius-md);
+  box-shadow: var(--gr-shadow-md);
+  transition: 
+    transform var(--gr-duration-base) var(--gr-ease),
+    box-shadow var(--gr-duration-base) var(--gr-ease);
+}
+
+.gr-card:hover {
+  transform: translateY(calc(var(--gr-space-2xs) * -1));
+  box-shadow: var(--gr-shadow-lg);
+}
+
+.gr-card-image {
+  aspect-ratio: var(--gr-aspect-landscape);
+  overflow: hidden;
+  border-radius: var(--gr-radius-sm);
+  margin-bottom: var(--gr-space-md);
+}
+
+.gr-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* =============================================================================
+   Golden Grid System - Responsive
+   
+   Flexible grid with golden-ratio-based gutters that scale across breakpoints.
+   Uses mobile-first approach: single column base that expands on larger screens.
+   
+   Gap scaling:
+   - Mobile: gr-space-lg (1.618rem / ~26px)
+   - Desktop (lg): gr-space-xl (2.618rem / ~42px)
+   ============================================================================= */
+
+/* Base grid with responsive gap */
+.gr-grid {
+  display: grid;
+  gap: var(--gr-space-lg);               /* ~26px on mobile */
+}
+
+@media (min-width: 1024px) {
+  .gr-grid {
+    gap: var(--gr-space-xl);             /* ~42px on desktop */
+  }
+}
+
+/* Mobile-first column layouts */
+.gr-grid-2,
+.gr-grid-3,
+.gr-grid-4 {
+  grid-template-columns: 1fr;            /* Single column on mobile */
+}
+
+/* Tablet (768px+) */
+@media (min-width: 768px) {
+  .gr-grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .gr-grid-3 {
+    grid-template-columns: repeat(2, 1fr);  /* 2 columns on tablet */
+  }
+  
+  .gr-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop (1024px+) */
+@media (min-width: 1024px) {
+  .gr-grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .gr-grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Golden grid - asymmetric with golden proportions */
+/* Mobile: Stacked single column */
+.gr-grid-golden,
+.gr-grid-golden-reverse {
+  grid-template-columns: 1fr;
+}
+
+/* Desktop (1024px+): Show golden ratio split */
+@media (min-width: 1024px) {
+  .gr-grid-golden {
+    grid-template-columns: 1fr 1.618fr;  /* 38.2% / 61.8% */
+  }
+
+  .gr-grid-golden-reverse {
+    grid-template-columns: 1.618fr 1fr;  /* 61.8% / 38.2% */
+  }
+}
+
+/* =============================================================================
+   Responsive Gap Utilities
+   For explicit gap control at different breakpoints
+   ============================================================================= */
+
+.gr-gap-responsive {
+  gap: var(--gr-space-lg);
+}
+
+@media (min-width: 768px) {
+  .gr-gap-responsive {
+    gap: var(--gr-space-xl);
+  }
+}
+
+@media (min-width: 1024px) {
+  .gr-gap-responsive {
+    gap: var(--gr-space-2xl);
+  }
+}

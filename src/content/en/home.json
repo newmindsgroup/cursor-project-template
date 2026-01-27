@@ -1,0 +1,69 @@
+{
+  "$schema": "../schema/page-content.schema.json",
+  "_usage": "This file contains content for the homepage. Run 'npm run wizard' to generate content using AI with StoryBrand methodology.",
+  "meta": {
+    "title": "",
+    "description": "",
+    "language": "en",
+    "status": "draft",
+    "lastUpdated": ""
+  },
+  "storybrand": {
+    "character": {
+      "identity": "",
+      "want": ""
+    },
+    "problem": {
+      "villain": "",
+      "external": "",
+      "internal": "",
+      "philosophical": ""
+    },
+    "guide": {
+      "empathy": "",
+      "authority": ""
+    },
+    "plan": {
+      "steps": []
+    },
+    "callToAction": {
+      "direct": { "text": "", "url": "" },
+      "transitional": { "text": "", "url": "" }
+    },
+    "failure": {
+      "stakes": ""
+    },
+    "success": {
+      "transformation": "",
+      "outcomes": []
+    }
+  },
+  "hero": {
+    "headline": "",
+    "subheadline": "",
+    "primaryCta": { "text": "", "url": "" },
+    "secondaryCta": { "text": "", "url": "" }
+  },
+  "features": {
+    "sectionTitle": "",
+    "sectionSubtitle": "",
+    "items": []
+  },
+  "stats": {
+    "items": []
+  },
+  "testimonials": {
+    "sectionTitle": "",
+    "items": []
+  },
+  "faq": {
+    "sectionTitle": "",
+    "items": []
+  },
+  "cta": {
+    "headline": "",
+    "subheadline": "",
+    "buttonText": "",
+    "buttonUrl": ""
+  }
+}

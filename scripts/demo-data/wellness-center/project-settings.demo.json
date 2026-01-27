@@ -1,0 +1,23 @@
+{
+  "project": {
+    "name": "Serenity Wellness Center Website Redesign",
+    "client": "Serenity Wellness Center",
+    "industry": "healthcare",
+    "description": "Modern, calming website that communicates our spa services and makes booking easy. We need to showcase our massage therapy, skincare, body treatments, wellness programs, and yoga classes.",
+    "contact": "sarah@serenitywellness.com",
+    "targetLaunch": "8 weeks",
+    "targetLanguages": ["en"]
+  },
+  "ai": {
+    "apiKeys": {},
+    "preferences": {
+      "defaultProvider": "auto",
+      "imageProvider": "google"
+    },
+    "settings": {
+      "temperature": 0.7,
+      "maxTokens": 4096,
+      "useCursorFallback": true
+    }
+  }
+}

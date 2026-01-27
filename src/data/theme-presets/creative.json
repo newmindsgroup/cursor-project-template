@@ -1,0 +1,62 @@
+{
+  "name": "Creative",
+  "description": "Bold, playful theme for creative agencies",
+  "colors": {
+    "primary": {
+      "50": "#fff7ed",
+      "100": "#ffedd5",
+      "200": "#fed7aa",
+      "300": "#fdba74",
+      "400": "#fb923c",
+      "500": "#f97316",
+      "600": "#ea580c",
+      "700": "#c2410c",
+      "800": "#9a3412",
+      "900": "#7c2d12"
+    },
+    "secondary": {
+      "50": "#fef2f2",
+      "100": "#fee2e2",
+      "200": "#fecaca",
+      "300": "#fca5a5",
+      "400": "#f87171",
+      "500": "#ef4444",
+      "600": "#dc2626",
+      "700": "#b91c1c",
+      "800": "#991b1b",
+      "900": "#7f1d1d"
+    },
+    "neutral": {
+      "50": "#fafaf9",
+      "100": "#f5f5f4",
+      "200": "#e7e5e4",
+      "300": "#d6d3d1",
+      "400": "#a8a29e",
+      "500": "#78716c",
+      "600": "#57534e",
+      "700": "#44403c",
+      "800": "#292524",
+      "900": "#1c1917"
+    }
+  },
+  "typography": {
+    "fontHeading": "'Space Grotesk', 'Inter', system-ui, sans-serif",
+    "fontBody": "'Inter', system-ui, sans-serif"
+  },
+  "spacing": {
+    "sectionPaddingY": "7rem",
+    "sectionGap": "5rem",
+    "containerPadding": "2rem",
+    "elementGap": "2.5rem"
+  },
+  "effects": {
+    "shadowSoft": "0 4px 20px rgba(249, 115, 22, 0.1)",
+    "shadowMedium": "0 8px 30px rgba(249, 115, 22, 0.15)",
+    "shadowLarge": "0 15px 50px rgba(249, 115, 22, 0.2)",
+    "radiusSm": "0.375rem",
+    "radiusMd": "0.75rem",
+    "radiusLg": "1.25rem",
+    "radiusXl": "1.75rem",
+    "radius2xl": "2.5rem"
+  }
+}

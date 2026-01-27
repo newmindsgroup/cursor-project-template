@@ -1,0 +1,159 @@
+/* Design System / Style Guide Specific Styles */
+
+/* Color Swatches */
+.color-swatch {
+  @apply cursor-pointer transition-transform hover:scale-105;
+}
+
+.swatch-preview {
+  @apply h-16 rounded-lg mb-2;
+}
+
+.swatch-info {
+  @apply text-center;
+}
+
+.swatch-name {
+  @apply block text-sm font-semibold text-neutral-700;
+}
+
+.swatch-value {
+  @apply block text-xs text-neutral-500;
+}
+
+/* Token Values - Copyable */
+.token-value {
+  @apply inline-block px-2 py-1 bg-neutral-100 text-neutral-700 text-sm rounded cursor-pointer transition-colors;
+  @apply hover:bg-primary-100 hover:text-primary-700;
+}
+
+.token-value::before {
+  content: '';
+}
+
+/* Type Samples */
+.type-sample {
+  @apply flex flex-col sm:flex-row sm:items-center sm:justify-between py-4 border-b border-neutral-100 last:border-0;
+}
+
+.type-meta {
+  @apply flex flex-wrap gap-2 mt-2 sm:mt-0;
+}
+
+/* Spacing Demo */
+.spacing-demo {
+  @apply text-center;
+}
+
+/* Section Preview Cards */
+.section-preview-card {
+  @apply bg-white rounded-2xl border border-neutral-200 overflow-hidden shadow-soft transition-all duration-200;
+}
+
+.section-preview-card:hover {
+  @apply shadow-medium border-neutral-300;
+}
+
+.section-preview-header {
+  @apply flex items-center justify-between px-6 py-4 border-b border-neutral-100;
+}
+
+.section-preview-body {
+  @apply p-6;
+}
+
+.section-preview-footer {
+  @apply px-6 py-3 bg-neutral-50 border-t border-neutral-100;
+}
+
+/* Filter Buttons */
+[data-filter] {
+  @apply transition-all duration-200;
+}
+
+[data-filter].active {
+  @apply bg-primary-600 text-white;
+}
+
+[data-filter]:not(.active):hover {
+  @apply bg-neutral-200;
+}
+
+/* Animation Demos */
+.animation-demo {
+  @apply transition-all;
+}
+
+/* Code Blocks */
+pre {
+  @apply bg-neutral-50 rounded-lg p-4 overflow-x-auto;
+}
+
+pre code {
+  @apply text-sm font-mono text-neutral-700;
+}
+
+/* Copy Toast Animation */
+#copy-toast.show {
+  @apply translate-y-0 opacity-100;
+}
+
+/* Scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.6s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.4s ease-out forwards;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 640px) {
+  .type-sample span:first-child {
+    @apply text-3xl;
+  }
+  
+  .color-swatch .swatch-preview {
+    @apply h-12;
+  }
+}

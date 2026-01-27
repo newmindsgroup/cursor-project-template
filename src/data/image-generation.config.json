@@ -1,0 +1,100 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "provider": "google-ai",
+  "enabled": true,
+  "providers": {
+    "google-ai": {
+      "name": "Google AI (Imagen 3)",
+      "endpoint": "https://generativelanguage.googleapis.com/v1beta/models/imagen-3.0-generate-002:predict",
+      "envKey": "GOOGLE_AI_KEY",
+      "costPerImage": 0.02
+    },
+    "nanobanana": {
+      "name": "NanoBanana (Gemini Flash)",
+      "endpoint": "https://api.nanobanana.ai/v1/generate",
+      "envKey": "NANOBANANA_API_KEY",
+      "costPerImage": 0.02
+    }
+  },
+  "defaults": {
+    "format": "png",
+    "quality": 90,
+    "resolution": "1k",
+    "numberOfImages": 1,
+    "safetyFilterLevel": "block_only_high"
+  },
+  "promptEnhancement": {
+    "enabled": true,
+    "prefix": "Professional high-quality image for a modern website. ",
+    "suffix": " High resolution, clean composition, suitable for commercial use, no text overlays.",
+    "styleModifiers": {
+      "background": "Seamless tileable pattern or gradient suitable as website background. ",
+      "portrait": "Professional corporate headshot style, soft studio lighting, neutral background. ",
+      "feature": "Clean minimalist illustration style, modern design aesthetic. ",
+      "product": "Professional product photography, clean white or neutral background, studio lighting. ",
+      "icon": "Flat design icon style, simple shapes, bold colors. ",
+      "thumbnail": "Eye-catching composition, vibrant colors, clear focal point. "
+    }
+  },
+  "styles": {
+    "background": {
+      "description": "Full-width backgrounds for hero sections, CTAs, banners",
+      "resolution": "2k",
+      "aspectRatio": "16:9",
+      "dimensions": { "width": 1920, "height": 1080 }
+    },
+    "portrait": {
+      "description": "Headshots, avatars, team photos",
+      "resolution": "1k",
+      "aspectRatio": "1:1",
+      "dimensions": { "width": 512, "height": 512 }
+    },
+    "feature": {
+      "description": "Feature illustrations, service images",
+      "resolution": "1k",
+      "aspectRatio": "4:3",
+      "dimensions": { "width": 800, "height": 600 }
+    },
+    "product": {
+      "description": "Product shots, screenshots, detailed images",
+      "resolution": "2k",
+      "aspectRatio": "4:3",
+      "dimensions": { "width": 1600, "height": 1200 }
+    },
+    "icon": {
+      "description": "Small icons, symbols (consider SVG for simple icons)",
+      "resolution": "512",
+      "aspectRatio": "1:1",
+      "dimensions": { "width": 256, "height": 256 }
+    },
+    "thumbnail": {
+      "description": "Blog thumbnails, gallery items, cards",
+      "resolution": "1k",
+      "aspectRatio": "3:2",
+      "dimensions": { "width": 600, "height": 400 }
+    }
+  },
+  "retry": {
+    "maxAttempts": 3,
+    "delayMs": 1000,
+    "backoffMultiplier": 2
+  },
+  "rateLimit": {
+    "requestsPerMinute": 10,
+    "delayBetweenRequestsMs": 500
+  },
+  "cache": {
+    "enabled": true,
+    "directory": ".image-cache",
+    "ttlDays": 30
+  },
+  "output": {
+    "directory": "src/assets/generated",
+    "manifestFile": "manifest.json"
+  },
+  "fallbacks": {
+    "enabled": true,
+    "directory": "src/assets/placeholders",
+    "useOnError": true
+  }
+}

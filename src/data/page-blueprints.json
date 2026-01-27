@@ -1,0 +1,87 @@
+{
+  "$schema": "./schemas/page-blueprints.schema.json",
+  "version": "1.0.0",
+  "description": "Pre-defined page structures for rapid page assembly",
+  "blueprints": {
+    "homepage": {
+      "name": "Homepage",
+      "description": "Main landing page with hero, features, social proof, and CTA",
+      "sections": ["Header", "Hero", "LogoCloud", "Features", "Stats", "Testimonials", "FAQ", "CTA", "Footer"],
+      "recommended": true
+    },
+    "about": {
+      "name": "About Page",
+      "description": "Company story, team, values, and timeline",
+      "sections": ["Header", "HeroAbout", "Story", "Timeline", "Team", "Values", "CTA", "Footer"],
+      "recommended": true
+    },
+    "services": {
+      "name": "Services Page",
+      "description": "Service offerings with process and FAQ",
+      "sections": ["Header", "HeroServices", "ServicesGrid", "Process", "Features", "FAQ", "CTA", "Footer"],
+      "recommended": true
+    },
+    "services-single": {
+      "name": "Single Service Page",
+      "description": "Detailed page for individual service",
+      "sections": ["Header", "HeroServices", "Features", "Process", "Testimonials", "FAQ", "CTA", "Footer"],
+      "recommended": false
+    },
+    "contact": {
+      "name": "Contact Page",
+      "description": "Contact form with info",
+      "sections": ["Header", "HeroContact", "Contact", "Footer"],
+      "recommended": true
+    },
+    "pricing": {
+      "name": "Pricing Page",
+      "description": "Pricing plans with comparison and FAQ",
+      "sections": ["Header", "HeroPricing", "Pricing", "Comparison", "FAQ", "CTA", "Footer"],
+      "recommended": true
+    },
+    "portfolio": {
+      "name": "Portfolio Page",
+      "description": "Work showcase with filtering",
+      "sections": ["Header", "HeroPortfolio", "Portfolio", "Testimonials", "CTA", "Footer"],
+      "recommended": true
+    },
+    "portfolio-single": {
+      "name": "Portfolio Case Study",
+      "description": "Individual project case study",
+      "sections": ["Header", "HeroProject", "Story", "Features", "Testimonials", "CTA", "Footer"],
+      "recommended": false
+    },
+    "blog": {
+      "name": "Blog Index",
+      "description": "Blog listing page",
+      "sections": ["Header", "HeroBlog", "Blog", "Newsletter", "Footer"],
+      "recommended": true
+    },
+    "landing": {
+      "name": "Landing Page",
+      "description": "High-conversion landing page for campaigns",
+      "sections": ["Header", "Hero", "LogoCloud", "Features", "Video", "Testimonials", "Pricing", "FAQ", "CTA", "Footer"],
+      "recommended": true
+    },
+    "minimal": {
+      "name": "Minimal Page",
+      "description": "Simple page with header, content area, and footer",
+      "sections": ["Header", "HeroSimple", "Features", "CTA", "Footer"],
+      "recommended": false
+    },
+    "coming-soon": {
+      "name": "Coming Soon",
+      "description": "Pre-launch page with newsletter signup",
+      "sections": ["Hero", "Newsletter"],
+      "recommended": false
+    }
+  },
+  "sectionCategories": {
+    "heroes": ["Hero", "HeroAbout", "HeroServices", "HeroContact", "HeroPricing", "HeroPortfolio", "HeroBlog", "HeroProject", "HeroSimple"],
+    "content": ["Features", "Stats", "Story", "Process", "Timeline", "Values", "ServicesGrid"],
+    "social-proof": ["Testimonials", "LogoCloud", "Portfolio"],
+    "conversion": ["CTA", "Pricing", "Comparison", "Newsletter", "Contact"],
+    "media": ["Video", "Blog"],
+    "navigation": ["Header", "Footer", "FAQ"]
+  }
+}

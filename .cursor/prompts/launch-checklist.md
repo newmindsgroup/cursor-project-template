@@ -4,7 +4,7 @@
 Create a launch checklist with ownership and rollback steps.
 
 ## Inputs to review
-- `/docs/07-qa/QA_PLAN.md`
+- `/docs/07-qa/qa-plan.md`
 - `/docs/08-launch/LAUNCH_PLAN.md`
 - `SECURITY.md`
 

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Theme Builder - Project Setup Wizard</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="description" content="Customize your website's colors, typography, and design tokens" />
+    <link rel="stylesheet" href="../../../styles/tokens.css" />
+    <link rel="stylesheet" href="../../../styles/base.css" />
+    <link rel="stylesheet" href="../../../styles/wizard.css" />
+    <script type="module" src="../../../scripts/theme-builder.ts"></script>
+  </head>
+  <body class="bg-neutral-50 min-h-screen">
+    <!-- Header -->
+    <header class="bg-white border-b border-neutral-200 py-4">
+      <div class="container-custom">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-gradient-to-br from-primary-600 to-secondary-600 rounded-xl flex items-center justify-center">
+              <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+              </svg>
+            </div>
+            <div>
+              <h1 class="text-xl font-bold text-neutral-900">Theme Builder</h1>
+              <p class="text-sm text-neutral-500">Customize colors, typography, and design tokens</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-4">
+            <a href="../" class="text-sm text-neutral-600 hover:text-neutral-900">Back to Wizard</a>
+            <button id="export-theme" class="px-4 py-2 bg-primary-600 text-white text-sm font-medium rounded-lg hover:bg-primary-700 transition-colors">
+              Export Theme
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="py-8">
+      <div class="container-custom">
+        <div class="grid lg:grid-cols-3 gap-8">
+          <!-- Controls Panel -->
+          <div class="lg:col-span-1 space-y-6">
+            <!-- Color Palette -->
+            <div class="theme-panel">
+              <h2 class="theme-panel-title">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+                </svg>
+                Colors
+              </h2>
+              
+              <div class="theme-section">
+                <h3 class="theme-section-title">Primary Color</h3>
+                <div class="theme-color-picker">
+                  <input type="color" id="primary-color" value="#3b82f6" class="theme-color-input" />
+                  <input type="text" id="primary-color-hex" value="#3b82f6" class="theme-color-hex" />
+                </div>
+                <div class="theme-palette" id="primary-palette">
+                  <!-- Generated palette swatches -->
+                </div>
+              </div>
+              
+              <div class="theme-section">
+                <h3 class="theme-section-title">Secondary Color</h3>
+                <div class="theme-color-picker">
+                  <input type="color" id="secondary-color" value="#8b5cf6" class="theme-color-input" />
+                  <input type="text" id="secondary-color-hex" value="#8b5cf6" class="theme-color-hex" />
+                </div>
+                <div class="theme-palette" id="secondary-palette">
+                  <!-- Generated palette swatches -->
+                </div>
+              </div>
+              
+              <div class="theme-section">
+                <h3 class="theme-section-title">Accent Color</h3>
+                <div class="theme-color-picker">
+                  <input type="color" id="accent-color" value="#f59e0b" class="theme-color-input" />
+                  <input type="text" id="accent-color-hex" value="#f59e0b" class="theme-color-hex" />
+                </div>
+              </div>
+              
+              <div class="theme-section">
+                <h3 class="theme-section-title">Quick Presets</h3>
+                <div class="theme-presets-grid">
+                  <button class="theme-preset-btn" data-preset="blue-violet">
+                    <span class="theme-preset-preview" style="background: linear-gradient(135deg, #3b82f6, #8b5cf6)"></span>
+                    <span>Blue Violet</span>
+                  </button>
+                  <button class="theme-preset-btn" data-preset="green-teal">
+                    <span class="theme-preset-preview" style="background: linear-gradient(135deg, #10b981, #14b8a6)"></span>
+                    <span>Green Teal</span>
+                  </button>
+                  <button class="theme-preset-btn" data-preset="orange-red">
+                    <span class="theme-preset-preview" style="background: linear-gradient(135deg, #f97316, #ef4444)"></span>
+                    <span>Orange Red</span>
+                  </button>
+                  <button class="theme-preset-btn" data-preset="pink-purple">
+                    <span class="theme-preset-preview" style="background: linear-gradient(135deg, #ec4899, #a855f7)"></span>
+                    <span>Pink Purple</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Typography -->
+            <div class="theme-panel">
+              <h2 class="theme-panel-title">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+                </svg>
+                Typography
+              </h2>
+              
+              <div class="theme-section">
+                <h3 class="theme-section-title">Heading Font</h3>
+                <select id="heading-font" class="theme-select">
+                  <option value="Inter">Inter</option>
+                  <option value="Plus Jakarta Sans">Plus Jakarta Sans</option>
+                  <option value="DM Sans">DM Sans</option>
+                  <option value="Montserrat">Montserrat</option>
+                  <option value="Poppins">Poppins</option>
+                  <option value="Raleway">Raleway</option>
+                  <option value="Playfair Display">Playfair Display</option>
+                  <option value="Merriweather">Merriweather</option>
+                </select>
+              </div>
+              
+              <div class="theme-section">
+                <h3 class="theme-section-title">Body Font</h3>
+                <select id="body-font" class="theme-select">
+                  <option value="Inter">Inter</option>
+                  <option value="Plus Jakarta Sans">Plus Jakarta Sans</option>
+                  <option value="DM Sans">DM Sans</option>
+                  <option value="Open Sans">Open Sans</option>
+                  <option value="Lato">Lato</option>
+                  <option value="Source Sans Pro">Source Sans Pro</option>
+                  <option value="Nunito">Nunito</option>
+                  <option value="Roboto">Roboto</option>
+                </select>
+              </div>
+              
+              <div class="theme-section">
+                <h3 class="theme-section-title">Base Size</h3>
+                <div class="flex items-center gap-3">
+                  <input type="range" id="base-size" min="14" max="20" value="16" class="theme-range" />
+                  <span id="base-size-value" class="text-sm font-mono text-neutral-600">16px</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Spacing & Radius -->
+            <div class="theme-panel">
+              <h2 class="theme-panel-title">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
+                </svg>
+                Layout
+              </h2>
+              
+              <div class="theme-section">
+                <h3 class="theme-section-title">Border Radius</h3>
+                <div class="flex items-center gap-3">
+                  <input type="range" id="border-radius" min="0" max="24" value="8" class="theme-range" />
+                  <span id="border-radius-value" class="text-sm font-mono text-neutral-600">8px</span>
+                </div>
+              </div>
+              
+              <div class="theme-section">
+                <h3 class="theme-section-title">Spacing Scale</h3>
+                <select id="spacing-scale" class="theme-select">
+                  <option value="compact">Compact</option>
+                  <option value="default" selected>Default</option>
+                  <option value="relaxed">Relaxed</option>
+                  <option value="spacious">Spacious</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Live Preview -->
+          <div class="lg:col-span-2">
+            <div class="theme-preview-container">
+              <div class="theme-preview-header">
+                <h2 class="text-lg font-semibold text-neutral-900">Live Preview</h2>
+                <div class="flex items-center gap-2">
+                  <button class="theme-preview-mode active" data-mode="light">Light</button>
+                  <button class="theme-preview-mode" data-mode="dark">Dark</button>
+                </div>
+              </div>
+              
+              <div class="theme-preview" id="theme-preview">
+                <!-- Hero Preview -->
+                <div class="preview-hero">
+                  <h1 class="preview-heading">Transform Your Business</h1>
+                  <p class="preview-body">We help companies grow by creating beautiful, effective digital experiences that convert visitors into customers.</p>
+                  <div class="preview-buttons">
+                    <button class="preview-btn-primary">Get Started</button>
+                    <button class="preview-btn-secondary">Learn More</button>
+                  </div>
+                </div>
+                
+                <!-- Cards Preview -->
+                <div class="preview-cards">
+                  <div class="preview-card">
+                    <div class="preview-card-icon" style="background: var(--preview-primary-100);">
+                      <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="color: var(--preview-primary-600);">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                      </svg>
+                    </div>
+                    <h3 class="preview-card-title">Fast Performance</h3>
+                    <p class="preview-card-desc">Lightning-fast load times that keep your visitors engaged.</p>
+                  </div>
+                  <div class="preview-card">
+                    <div class="preview-card-icon" style="background: var(--preview-secondary-100);">
+                      <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="color: var(--preview-secondary-600);">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                      </svg>
+                    </div>
+                    <h3 class="preview-card-title">Secure by Default</h3>
+                    <p class="preview-card-desc">Enterprise-grade security to protect your data.</p>
+                  </div>
+                  <div class="preview-card">
+                    <div class="preview-card-icon" style="background: var(--preview-accent-100);">
+                      <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="color: var(--preview-accent-600);">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                      </svg>
+                    </div>
+                    <h3 class="preview-card-title">Made with Love</h3>
+                    <p class="preview-card-desc">Crafted with attention to every detail.</p>
+                  </div>
+                </div>
+                
+                <!-- Text Sample Preview -->
+                <div class="preview-text-sample">
+                  <span class="preview-badge">Featured</span>
+                  <span class="preview-badge secondary">Popular</span>
+                  <span class="preview-badge accent">New</span>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Export Code Preview -->
+            <div class="theme-code-preview mt-6">
+              <div class="theme-code-header">
+                <span>Generated CSS Variables</span>
+                <button id="copy-css" class="theme-copy-btn">
+                  <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                  </svg>
+                  Copy
+                </button>
+              </div>
+              <pre class="theme-code" id="css-output"><code>/* Generated Theme Variables */
+:root {
+  /* Primary */
+  --color-primary-50: #eff6ff;
+  --color-primary-500: #3b82f6;
+  --color-primary-600: #2563eb;
+  
+  /* Secondary */
+  --color-secondary-50: #f5f3ff;
+  --color-secondary-500: #8b5cf6;
+  --color-secondary-600: #7c3aed;
+  
+  /* Typography */
+  --font-heading: 'Inter', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --text-base: 16px;
+  
+  /* Radius */
+  --radius-default: 8px;
+}</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Toast -->
+    <div id="toast" class="fixed bottom-4 right-4 bg-neutral-900 text-white px-4 py-2 rounded-lg shadow-large transform translate-y-full opacity-0 transition-all duration-300 z-50">
+      Action completed
+    </div>
+  </body>
+</html>

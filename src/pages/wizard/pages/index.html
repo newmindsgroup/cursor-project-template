@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page Designer - Design Your Website Pages</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="description" content="Design and track progress on each website page" />
+    <link rel="stylesheet" href="../../../styles/tokens.css" />
+    <link rel="stylesheet" href="../../../styles/base.css" />
+    <link rel="stylesheet" href="../../../styles/wizard.css" />
+  </head>
+  <body class="bg-neutral-50 min-h-screen">
+    <!-- Header -->
+    <header class="bg-white border-b border-neutral-200 py-4">
+      <div class="container-custom">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <a href="../" class="text-neutral-400 hover:text-neutral-600">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+              </svg>
+            </a>
+            <div class="w-10 h-10 bg-gradient-to-br from-purple-600 to-pink-600 rounded-xl flex items-center justify-center">
+              <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
+              </svg>
+            </div>
+            <div>
+              <h1 class="text-xl font-bold text-neutral-900">Page Designer</h1>
+              <p class="text-sm text-neutral-500">Design and track each page</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-4">
+            <a href="../context/" class="text-sm text-neutral-600 hover:text-neutral-900">Add Context</a>
+            <a href="../status/" class="text-sm text-neutral-600 hover:text-neutral-900">Status Dashboard</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="py-8">
+      <div class="container-custom">
+        <!-- Page List View -->
+        <section id="page-list-view">
+          <div class="flex items-center justify-between mb-6">
+            <h2 class="text-2xl font-bold text-neutral-900">Website Pages</h2>
+            <div class="flex items-center gap-4">
+              <span id="page-progress-summary" class="text-sm text-neutral-600">0 of 0 complete</span>
+              <button type="button" id="add-page-btn" class="wizard-btn wizard-btn-secondary wizard-btn-sm">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                </svg>
+                Add Page
+              </button>
+            </div>
+          </div>
+
+          <div class="wizard-page-list" id="page-list">
+            <!-- Pages will be populated by JavaScript -->
+            <div class="wizard-page-list-loading">
+              <div class="animate-pulse space-y-4">
+                <div class="h-24 bg-neutral-200 rounded-xl"></div>
+                <div class="h-24 bg-neutral-200 rounded-xl"></div>
+                <div class="h-24 bg-neutral-200 rounded-xl"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Page Detail View (Hidden by default) -->
+        <section id="page-detail-view" class="hidden">
+          <div class="flex items-center gap-4 mb-6">
+            <button type="button" id="back-to-list" class="text-neutral-400 hover:text-neutral-600">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <div>
+              <h2 class="text-2xl font-bold text-neutral-900" id="detail-page-title">Page Title</h2>
+              <p class="text-sm text-neutral-500" id="detail-page-path">/pages/index.html</p>
+            </div>
+            <div class="ml-auto flex items-center gap-3">
+              <span class="wizard-page-status" id="detail-page-status">Not Started</span>
+              <a href="#" id="detail-preview-link" target="_blank" class="wizard-btn wizard-btn-secondary wizard-btn-sm">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+                Preview
+              </a>
+            </div>
+          </div>
+
+          <!-- Progress Checklist -->
+          <div class="wizard-detail-checklist mb-8">
+            <h3 class="wizard-section-title">Completion Checklist</h3>
+            <div class="wizard-checklist-grid">
+              <label class="wizard-checklist-item">
+                <input type="checkbox" id="check-content" />
+                <div class="wizard-checklist-item-content">
+                  <span class="wizard-checklist-item-title">Content JSON</span>
+                  <span class="wizard-checklist-item-desc">StoryBrand content generated</span>
+                </div>
+              </label>
+              <label class="wizard-checklist-item">
+                <input type="checkbox" id="check-wireframe" />
+                <div class="wizard-checklist-item-content">
+                  <span class="wizard-checklist-item-title">Wireframe</span>
+                  <span class="wizard-checklist-item-desc">Layout structure defined</span>
+                </div>
+              </label>
+              <label class="wizard-checklist-item">
+                <input type="checkbox" id="check-design" />
+                <div class="wizard-checklist-item-content">
+                  <span class="wizard-checklist-item-title">Visual Design</span>
+                  <span class="wizard-checklist-item-desc">Final design complete</span>
+                </div>
+              </label>
+              <label class="wizard-checklist-item">
+                <input type="checkbox" id="check-images" />
+                <div class="wizard-checklist-item-content">
+                  <span class="wizard-checklist-item-title">Images</span>
+                  <span class="wizard-checklist-item-desc">All images generated</span>
+                </div>
+              </label>
+              <label class="wizard-checklist-item">
+                <input type="checkbox" id="check-validation" />
+                <div class="wizard-checklist-item-content">
+                  <span class="wizard-checklist-item-title">Validation</span>
+                  <span class="wizard-checklist-item-desc">No errors or warnings</span>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Tabbed Content -->
+          <nav class="wizard-tabs mb-6">
+            <button class="wizard-tab active" data-tab="content">Content</button>
+            <button class="wizard-tab" data-tab="sections">Sections</button>
+            <button class="wizard-tab" data-tab="images">Images</button>
+            <button class="wizard-tab" data-tab="preview">Preview</button>
+          </nav>
+
+          <!-- Tab: Content -->
+          <div class="wizard-tab-panel active" data-panel="content">
+            <div class="wizard-container">
+              <div class="wizard-panel-header">
+                <h3 class="wizard-panel-title">Page Content</h3>
+                <div class="flex gap-2">
+                  <button type="button" id="regen-content-btn" class="wizard-btn wizard-btn-secondary wizard-btn-sm">
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                    </svg>
+                    Regenerate
+                  </button>
+                  <button type="button" id="save-content-btn" class="wizard-btn wizard-btn-primary wizard-btn-sm">
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    Save
+                  </button>
+                </div>
+              </div>
+              <div class="wizard-panel-content">
+                <div id="content-editor" class="wizard-content-editor">
+                  <!-- Content editor sections will be populated by JS -->
+                  <div class="wizard-content-section">
+                    <h4 class="wizard-content-section-title">Meta</h4>
+                    <div class="wizard-form-grid">
+                      <div class="wizard-field">
+                        <label class="wizard-label">Page Title</label>
+                        <input type="text" class="wizard-input" data-content="meta.title" />
+                      </div>
+                      <div class="wizard-field">
+                        <label class="wizard-label">Meta Description</label>
+                        <input type="text" class="wizard-input" data-content="meta.description" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="wizard-content-section">
+                    <h4 class="wizard-content-section-title">Hero Section</h4>
+                    <div class="wizard-form-grid">
+                      <div class="wizard-field col-span-2">
+                        <label class="wizard-label">Headline</label>
+                        <input type="text" class="wizard-input" data-content="hero.headline" />
+                      </div>
+                      <div class="wizard-field col-span-2">
+                        <label class="wizard-label">Subheadline</label>
+                        <textarea class="wizard-textarea" rows="2" data-content="hero.subheadline"></textarea>
+                      </div>
+                      <div class="wizard-field">
+                        <label class="wizard-label">Primary CTA</label>
+                        <input type="text" class="wizard-input" data-content="hero.primaryCta" />
+                      </div>
+                      <div class="wizard-field">
+                        <label class="wizard-label">Secondary CTA</label>
+                        <input type="text" class="wizard-input" data-content="hero.secondaryCta" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab: Sections -->
+          <div class="wizard-tab-panel" data-panel="sections">
+            <div class="wizard-container">
+              <div class="wizard-panel-header">
+                <h3 class="wizard-panel-title">Page Sections</h3>
+                <button type="button" id="add-section-btn" class="wizard-btn wizard-btn-secondary wizard-btn-sm">
+                  <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                  </svg>
+                  Add Section
+                </button>
+              </div>
+              <div class="wizard-panel-content">
+                <div id="sections-list" class="wizard-sections-list">
+                  <!-- Sections will be populated by JS -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab: Images -->
+          <div class="wizard-tab-panel" data-panel="images">
+            <div class="wizard-container">
+              <div class="wizard-panel-header">
+                <h3 class="wizard-panel-title">Page Images</h3>
+                <button type="button" id="regen-images-btn" class="wizard-btn wizard-btn-secondary wizard-btn-sm">
+                  <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                  </svg>
+                  Regenerate All
+                </button>
+              </div>
+              <div class="wizard-panel-content">
+                <div id="images-grid" class="wizard-images-grid">
+                  <!-- Images will be populated by JS -->
+                  <p class="text-neutral-500 col-span-full text-center py-8">No images for this page yet</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab: Preview -->
+          <div class="wizard-tab-panel" data-panel="preview">
+            <div class="wizard-container">
+              <div class="wizard-panel-header">
+                <h3 class="wizard-panel-title">Page Preview</h3>
+                <div class="wizard-preview-controls">
+                  <button type="button" class="wizard-preview-btn active" data-viewport="desktop">
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                  </button>
+                  <button type="button" class="wizard-preview-btn" data-viewport="tablet">
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                    </svg>
+                  </button>
+                  <button type="button" class="wizard-preview-btn" data-viewport="mobile">
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                    </svg>
+                  </button>
+                  <div class="wizard-preview-toggle">
+                    <label class="flex items-center gap-2 text-sm text-neutral-600">
+                      <input type="checkbox" id="wireframe-toggle" class="rounded" />
+                      Wireframe Mode
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="wizard-panel-content">
+                <div id="preview-frame-container" class="wizard-preview-frame-container">
+                  <iframe id="preview-frame" class="wizard-preview-frame" src=""></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Actions -->
+          <div class="wizard-detail-actions mt-8">
+            <button type="button" id="mark-complete-btn" class="wizard-btn wizard-btn-primary">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              Mark as Complete
+            </button>
+            <button type="button" id="run-validation-btn" class="wizard-btn wizard-btn-secondary">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              Run Validation
+            </button>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Add Section Modal -->
+    <div id="add-section-modal" class="wizard-modal hidden">
+      <div class="wizard-modal-backdrop"></div>
+      <div class="wizard-modal-content wizard-modal-lg">
+        <h3 class="wizard-modal-title">Add Section</h3>
+        <p class="wizard-modal-desc">Choose a section template to add to this page</p>
+        <div id="section-templates" class="wizard-section-templates">
+          <!-- Section templates will be populated by JS -->
+        </div>
+        <div class="wizard-modal-actions">
+          <button type="button" class="wizard-btn wizard-btn-ghost wizard-modal-close">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="../../../scripts/wizard-pages.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Progress - Client Dashboard</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="description" content="Track project progress and deliverables" />
+    <link rel="stylesheet" href="../../styles/tokens.css" />
+    <link rel="stylesheet" href="../../styles/base.css" />
+    <link rel="stylesheet" href="../../styles/project-portal.css" />
+  </head>
+  <body class="bg-neutral-50">
+    <!-- Header -->
+    <header class="bg-white border-b border-neutral-200 py-6">
+      <div class="container-custom">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-4">
+            <div class="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center">
+              <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+              </svg>
+            </div>
+            <div>
+              <h1 class="text-2xl font-bold text-neutral-900">Project Dashboard</h1>
+              <p class="text-neutral-500 text-sm">Track progress and deliverables</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-4">
+            <a href="../index.html" class="text-primary-600 hover:text-primary-700 text-sm font-medium">
+              ← View Website
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="portal-container">
+      <!-- Portal Header -->
+      <div class="portal-header">
+        <h2 class="portal-title">Project Progress</h2>
+        <p class="portal-subtitle">
+          Welcome to your project dashboard. Here you can track the progress of your website project and review deliverables.
+        </p>
+      </div>
+
+      <!-- Navigation Tabs -->
+      <nav class="portal-tabs">
+        <a href="./" class="portal-tab active">Progress</a>
+        <a href="./ux/" class="portal-tab">UX Assets</a>
+        <a href="./wireframes/" class="portal-tab">Wireframes</a>
+      </nav>
+
+      <!-- Progress Overview -->
+      <section class="portal-section">
+        <h3 class="portal-section-title">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+          </svg>
+          Overview
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+          <div class="md:col-span-1">
+            <div id="progress-ring" class="progress-ring-container bg-white rounded-2xl border border-neutral-200">
+              <!-- Progress ring rendered by JS -->
+              <div class="skeleton skeleton-avatar"></div>
+            </div>
+          </div>
+          <div class="md:col-span-3">
+            <div id="progress-overview" class="progress-overview">
+              <!-- Stats rendered by JS -->
+              <div class="progress-stat-card skeleton"><div class="skeleton-title"></div></div>
+              <div class="progress-stat-card skeleton"><div class="skeleton-title"></div></div>
+              <div class="progress-stat-card skeleton"><div class="skeleton-title"></div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Phase Timeline -->
+      <section class="portal-section">
+        <h3 class="portal-section-title">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+          Project Phases
+        </h3>
+        <div class="bg-white rounded-2xl border border-neutral-200 p-8">
+          <div id="phase-timeline">
+            <!-- Timeline rendered by JS -->
+            <div class="flex justify-between">
+              <div class="skeleton w-20 h-20"></div>
+              <div class="skeleton w-20 h-20"></div>
+              <div class="skeleton w-20 h-20"></div>
+              <div class="skeleton w-20 h-20"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Deliverables -->
+      <section class="portal-section">
+        <h3 class="portal-section-title">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+          </svg>
+          Deliverables
+        </h3>
+        <div id="deliverables-grid" class="deliverables-grid">
+          <!-- Deliverables rendered by JS -->
+          <div class="deliverable-card skeleton"><div class="h-24"></div></div>
+          <div class="deliverable-card skeleton"><div class="h-24"></div></div>
+          <div class="deliverable-card skeleton"><div class="h-24"></div></div>
+        </div>
+      </section>
+
+      <!-- Quick Links -->
+      <section class="portal-section">
+        <h3 class="portal-section-title">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+          </svg>
+          Quick Access
+        </h3>
+        <div id="quick-links" class="quick-links">
+          <!-- Quick links rendered by JS -->
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section class="portal-section">
+        <div class="bg-gradient-to-r from-primary-600 to-secondary-600 rounded-2xl p-8 text-white text-center">
+          <h3 class="text-2xl font-bold mb-4">Have Questions?</h3>
+          <p class="text-white/80 mb-6 max-w-2xl mx-auto">
+            If you have any questions about the project progress or deliverables, please don't hesitate to reach out.
+          </p>
+          <a href="mailto:project@example.com" class="inline-flex items-center gap-2 px-6 py-3 bg-white text-primary-600 font-semibold rounded-lg hover:bg-neutral-100 transition-colors">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            Contact Us
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-neutral-200 py-8 mt-12">
+      <div class="container-custom text-center">
+        <p class="text-sm text-neutral-500">Project Dashboard - Your website project at a glance</p>
+        <p class="text-xs text-neutral-400 mt-2" id="last-updated">Last updated: Loading...</p>
+      </div>
+    </footer>
+
+    <!-- Embedded data fallback -->
+    <script type="application/json" id="project-status-data">
+      {}
+    </script>
+
+    <script type="module" src="../../scripts/project-portal.ts"></script>
+  </body>
+</html>

@@ -4,7 +4,7 @@
 Define a feature spec with phased delivery.
 
 ## Inputs to review
-- `/docs/01-brief/PROJECT_BRIEF.md`
+- `/docs/01-brief/brief.md`
 - `/docs/03-requirements/REQUIREMENTS.md`
 - `DECISIONS.md`, `ASSUMPTIONS.md`, `QUESTIONS.md`
 - `business-context/` and `resource-library/` (read-only)

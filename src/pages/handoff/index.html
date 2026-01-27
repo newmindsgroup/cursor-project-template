@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Handoff Portal - Implementation Guide</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="description" content="Implementation handoff portal for Elementor developers" />
+    <link rel="stylesheet" href="../../styles/tokens.css" />
+    <link rel="stylesheet" href="../../styles/base.css" />
+    <link rel="stylesheet" href="../../styles/handoff.css" />
+  </head>
+  <body class="bg-neutral-50">
+    <!-- Handoff Portal Header -->
+    <header class="bg-neutral-900 text-white py-6 border-b-4 border-purple-600">
+      <div class="container-custom">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-4">
+            <div class="w-10 h-10 bg-purple-600 rounded-lg flex items-center justify-center">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+            </div>
+            <div>
+              <h1 class="text-2xl font-bold">Handoff Portal</h1>
+              <p class="text-neutral-400 text-sm">Implementation Guide for Elementor</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-4">
+            <span class="text-sm text-neutral-400">For implementers only</span>
+            <a href="../index.html" class="text-purple-400 hover:text-purple-300 text-sm font-medium">
+              ← View Prototype
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="py-12">
+      <div class="container-custom">
+        <!-- Quick Navigation -->
+        <nav class="mb-12 p-4 bg-white rounded-xl border border-neutral-200 shadow-soft">
+          <div class="flex flex-wrap items-center gap-4 text-sm">
+            <span class="font-semibold text-neutral-700">Jump to:</span>
+            <a href="#start-here" class="text-purple-600 hover:text-purple-700">Start Here</a>
+            <a href="#overlay-usage" class="text-purple-600 hover:text-purple-700">Overlay Mode</a>
+            <a href="#downloads" class="text-purple-600 hover:text-purple-700">Downloads</a>
+            <a href="#page-index" class="text-purple-600 hover:text-purple-700">Page Index</a>
+            <a href="#qa-checklist" class="text-purple-600 hover:text-purple-700">QA Checklist</a>
+            <a href="../styleguide/" class="text-purple-600 hover:text-purple-700 font-semibold">Design System</a>
+            <a href="../content/" class="text-purple-600 hover:text-purple-700">Content Review</a>
+            <a href="#screenshots" class="text-purple-600 hover:text-purple-700">Screenshots</a>
+          </div>
+        </nav>
+
+        <!-- Section 1: Start Here -->
+        <section id="start-here" class="mb-12">
+          <div class="bg-white rounded-2xl border border-neutral-200 shadow-soft overflow-hidden">
+            <div class="bg-purple-600 px-8 py-6">
+              <h2 class="text-2xl font-bold text-white flex items-center gap-3">
+                <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+                Start Here
+              </h2>
+            </div>
+            <div class="p-8">
+              <div class="prose max-w-none">
+                <p class="text-lg text-neutral-700 mb-6">
+                  Welcome to the Handoff Portal. This is your complete guide to rebuilding the approved prototype in Elementor Pro.
+                </p>
+                
+                <div class="grid md:grid-cols-3 gap-6 mb-8">
+                  <div class="p-6 bg-neutral-50 rounded-xl border border-neutral-200">
+                    <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                      <span class="text-purple-600 font-bold text-lg">1</span>
+                    </div>
+                    <h3 class="font-bold text-neutral-900 mb-2">Review the Prototype</h3>
+                    <p class="text-neutral-600 text-sm">Browse each page, enable Overlay Mode to see specs, and understand the design.</p>
+                  </div>
+                  <div class="p-6 bg-neutral-50 rounded-xl border border-neutral-200">
+                    <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                      <span class="text-purple-600 font-bold text-lg">2</span>
+                    </div>
+                    <h3 class="font-bold text-neutral-900 mb-2">Download the Build Pack</h3>
+                    <p class="text-neutral-600 text-sm">Get all files you need: specs, tokens, assets, and mapping guides.</p>
+                  </div>
+                  <div class="p-6 bg-neutral-50 rounded-xl border border-neutral-200">
+                    <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                      <span class="text-purple-600 font-bold text-lg">3</span>
+                    </div>
+                    <h3 class="font-bold text-neutral-900 mb-2">Build in Elementor</h3>
+                    <p class="text-neutral-600 text-sm">Work section-by-section, use the QA checklist, and validate against the prototype.</p>
+                  </div>
+                </div>
+
+                <div class="p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+                  <div class="flex items-start gap-3">
+                    <svg class="w-5 h-5 text-yellow-600 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+                    </svg>
+                    <div>
+                      <p class="font-semibold text-yellow-800">Important</p>
+                      <p class="text-yellow-700 text-sm">This portal is for implementation teams only. Do not share this URL with clients. They should only see the main prototype pages.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 2: Overlay Usage -->
+        <section id="overlay-usage" class="mb-12">
+          <div class="bg-white rounded-2xl border border-neutral-200 shadow-soft overflow-hidden">
+            <div class="bg-neutral-800 px-8 py-6">
+              <h2 class="text-2xl font-bold text-white flex items-center gap-3">
+                <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                </svg>
+                Overlay Mode (Spec View)
+              </h2>
+            </div>
+            <div class="p-8">
+              <p class="text-neutral-700 mb-6">
+                The prototype includes an interactive overlay that shows section boundaries, spacing tokens, typography specs, and widget suggestions.
+              </p>
+              
+              <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <div>
+                  <h3 class="font-bold text-neutral-900 mb-4">How to Enable</h3>
+                  <ul class="space-y-3">
+                    <li class="flex items-start gap-3">
+                      <span class="w-6 h-6 bg-purple-100 rounded-full flex items-center justify-center text-purple-600 font-bold text-sm flex-shrink-0">1</span>
+                      <span class="text-neutral-700">Click the <strong>"Show Overlay"</strong> button (bottom-right corner)</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                      <span class="w-6 h-6 bg-purple-100 rounded-full flex items-center justify-center text-purple-600 font-bold text-sm flex-shrink-0">2</span>
+                      <span class="text-neutral-700">Or press <kbd class="px-2 py-1 bg-neutral-100 border border-neutral-300 rounded text-sm font-mono">Cmd/Ctrl + Shift + H</kbd></span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                      <span class="w-6 h-6 bg-purple-100 rounded-full flex items-center justify-center text-purple-600 font-bold text-sm flex-shrink-0">3</span>
+                      <span class="text-neutral-700">Or add <code class="px-2 py-1 bg-neutral-100 rounded text-sm">?spec=1</code> to any page URL</span>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 class="font-bold text-neutral-900 mb-4">What You'll See</h3>
+                  <ul class="space-y-2 text-neutral-700">
+                    <li class="flex items-center gap-2">
+                      <svg class="w-5 h-5 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                      </svg>
+                      Purple outlines around each section
+                    </li>
+                    <li class="flex items-center gap-2">
+                      <svg class="w-5 h-5 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                      </svg>
+                      Section name labels
+                    </li>
+                    <li class="flex items-center gap-2">
+                      <svg class="w-5 h-5 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                      </svg>
+                      Hover to see layout specs
+                    </li>
+                    <li class="flex items-center gap-2">
+                      <svg class="w-5 h-5 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                      </svg>
+                      Copy section specs to clipboard
+                    </li>
+                    <li class="flex items-center gap-2">
+                      <svg class="w-5 h-5 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                      </svg>
+                      Download individual section specs
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="flex flex-wrap gap-4">
+                <a href="../index.html?spec=1" class="inline-flex items-center gap-2 px-6 py-3 bg-purple-600 text-white font-semibold rounded-lg hover:bg-purple-700 transition-colors">
+                  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                  </svg>
+                  Open Home Page with Overlay
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 3: Downloads -->
+        <section id="downloads" class="mb-12">
+          <div class="bg-white rounded-2xl border border-neutral-200 shadow-soft overflow-hidden">
+            <div class="bg-green-600 px-8 py-6">
+              <h2 class="text-2xl font-bold text-white flex items-center gap-3">
+                <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                </svg>
+                Downloads
+              </h2>
+            </div>
+            <div class="p-8">
+              <p class="text-neutral-700 mb-6">
+                Download everything you need to implement this prototype in Elementor.
+              </p>
+              
+              <div class="grid md:grid-cols-3 gap-6">
+                <!-- Build Pack -->
+                <div class="p-6 border-2 border-green-200 rounded-xl bg-green-50 hover:border-green-400 transition-colors">
+                  <div class="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                  </div>
+                  <h3 class="font-bold text-neutral-900 mb-2">Elementor Build Pack</h3>
+                  <p class="text-neutral-600 text-sm mb-4">Section specs, design tokens, widget mappings, and QA checklist.</p>
+                  <a href="downloads/elementor-build-pack.zip" class="inline-flex items-center gap-2 text-green-700 font-semibold hover:text-green-800" download>
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                    </svg>
+                    Download ZIP
+                  </a>
+                </div>
+
+                <!-- Assets -->
+                <div class="p-6 border-2 border-blue-200 rounded-xl bg-blue-50 hover:border-blue-400 transition-colors">
+                  <div class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                  </div>
+                  <h3 class="font-bold text-neutral-900 mb-2">Assets Package</h3>
+                  <p class="text-neutral-600 text-sm mb-4">All images, icons, fonts, and media files used in the prototype.</p>
+                  <a href="downloads/assets.zip" class="inline-flex items-center gap-2 text-blue-700 font-semibold hover:text-blue-800" download>
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                    </svg>
+                    Download ZIP
+                  </a>
+                </div>
+
+                <!-- Full Prototype -->
+                <div class="p-6 border-2 border-neutral-200 rounded-xl bg-neutral-50 hover:border-neutral-400 transition-colors">
+                  <div class="w-12 h-12 bg-neutral-700 rounded-xl flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+                    </svg>
+                  </div>
+                  <h3 class="font-bold text-neutral-900 mb-2">Full Prototype</h3>
+                  <p class="text-neutral-600 text-sm mb-4">Complete static build for offline reference and comparison.</p>
+                  <a href="downloads/prototype-dist.zip" class="inline-flex items-center gap-2 text-neutral-700 font-semibold hover:text-neutral-800" download>
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                    </svg>
+                    Download ZIP
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 4: Page Index -->
+        <section id="page-index" class="mb-12">
+          <div class="bg-white rounded-2xl border border-neutral-200 shadow-soft overflow-hidden">
+            <div class="bg-blue-600 px-8 py-6">
+              <h2 class="text-2xl font-bold text-white flex items-center gap-3">
+                <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
+                </svg>
+                Page & Section Index
+              </h2>
+            </div>
+            <div class="p-8">
+              <p class="text-neutral-700 mb-6">
+                All pages and their sections. Click any section to view it with the overlay enabled.
+              </p>
+              
+              <!-- Page index will be populated by JavaScript -->
+              <div id="page-index-content" class="space-y-6">
+                <div class="animate-pulse">
+                  <div class="h-4 bg-neutral-200 rounded w-1/4 mb-4"></div>
+                  <div class="space-y-2">
+                    <div class="h-3 bg-neutral-100 rounded w-3/4"></div>
+                    <div class="h-3 bg-neutral-100 rounded w-2/3"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 5: QA Checklist -->
+        <section id="qa-checklist" class="mb-12">
+          <div class="bg-white rounded-2xl border border-neutral-200 shadow-soft overflow-hidden">
+            <div class="bg-orange-500 px-8 py-6">
+              <h2 class="text-2xl font-bold text-white flex items-center gap-3">
+                <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+                </svg>
+                QA Checklist
+              </h2>
+            </div>
+            <div class="p-8">
+              <div class="flex items-center justify-between mb-6">
+                <p class="text-neutral-700">
+                  Track your implementation progress. Your checklist state is saved locally.
+                </p>
+                <div class="flex items-center gap-4">
+                  <span id="qa-progress" class="text-sm font-semibold text-neutral-600">0/0 complete</span>
+                  <button id="qa-export-btn" class="text-sm text-purple-600 hover:text-purple-700 font-medium">Export</button>
+                  <button id="qa-reset-btn" class="text-sm text-neutral-500 hover:text-neutral-700">Reset</button>
+                </div>
+              </div>
+              
+              <!-- QA checklist will be populated by JavaScript -->
+              <div id="qa-checklist-content" class="space-y-6">
+                <!-- Checklist items will be rendered here -->
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 6: Screenshots -->
+        <section id="screenshots" class="mb-12">
+          <div class="bg-white rounded-2xl border border-neutral-200 shadow-soft overflow-hidden">
+            <div class="bg-indigo-600 px-8 py-6">
+              <h2 class="text-2xl font-bold text-white flex items-center gap-3">
+                <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                Visual Reference (Screenshots)
+              </h2>
+            </div>
+            <div class="p-8">
+              <p class="text-neutral-700 mb-6">
+                Reference screenshots at all breakpoints. Click to enlarge.
+              </p>
+              
+              <!-- Screenshot gallery will be populated by JavaScript -->
+              <div id="screenshots-gallery" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div class="animate-pulse">
+                  <div class="aspect-video bg-neutral-200 rounded-lg"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 7: Additional Notes -->
+        <section id="notes" class="mb-12">
+          <div class="bg-white rounded-2xl border border-neutral-200 shadow-soft overflow-hidden">
+            <div class="bg-neutral-700 px-8 py-6">
+              <h2 class="text-2xl font-bold text-white flex items-center gap-3">
+                <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                Implementation Notes
+              </h2>
+            </div>
+            <div class="p-8">
+              <div class="space-y-6">
+                <div>
+                  <h3 class="font-bold text-neutral-900 mb-2">Elementor Setup</h3>
+                  <ul class="list-disc list-inside text-neutral-700 space-y-1">
+                    <li>Enable <strong>Flexbox Containers</strong> in Elementor settings</li>
+                    <li>Set up <strong>Global Colors</strong> from the design tokens before building</li>
+                    <li>Set up <strong>Global Typography</strong> styles matching the token scale</li>
+                    <li>Work <strong>section-by-section</strong> from top to bottom</li>
+                  </ul>
+                </div>
+                
+                <div>
+                  <h3 class="font-bold text-neutral-900 mb-2">Responsive Approach</h3>
+                  <ul class="list-disc list-inside text-neutral-700 space-y-1">
+                    <li>Desktop first, then adjust tablet (768px) and mobile (375px)</li>
+                    <li>Use the overlay on each device size to verify spacing</li>
+                    <li>Check screenshots gallery for quick visual reference</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h3 class="font-bold text-neutral-900 mb-2">Common Issues</h3>
+                  <ul class="list-disc list-inside text-neutral-700 space-y-1">
+                    <li>Spacing mismatch: Always use px values, check responsive settings separately</li>
+                    <li>Typography differs: Verify Global Typography is set correctly</li>
+                    <li>Colors off: Use Global Colors, don't hardcode hex values</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-900 text-neutral-400 py-8">
+      <div class="container-custom text-center">
+        <p class="text-sm">Handoff Portal - Generated automatically from prototype build</p>
+        <p class="text-xs mt-2">For implementation teams only. Do not share with clients.</p>
+      </div>
+    </footer>
+
+    <!-- Lightbox for screenshots -->
+    <div id="lightbox" class="fixed inset-0 z-50 bg-black/90 hidden items-center justify-center p-8">
+      <button id="lightbox-close" class="absolute top-4 right-4 text-white hover:text-neutral-300">
+        <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+      <img id="lightbox-img" src="" alt="" class="max-w-full max-h-full object-contain" />
+    </div>
+
+    <script type="module" src="../../scripts/handoff-portal.ts"></script>
+  </body>
+</html>

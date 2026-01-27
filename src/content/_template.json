@@ -1,0 +1,89 @@
+{
+  "$schema": "./schema/page-content.schema.json",
+  "meta": {
+    "title": "",
+    "description": "",
+    "language": "en",
+    "status": "draft",
+    "lastUpdated": ""
+  },
+  "storybrand": {
+    "character": {
+      "identity": "",
+      "want": ""
+    },
+    "problem": {
+      "villain": "",
+      "external": "",
+      "internal": "",
+      "philosophical": ""
+    },
+    "guide": {
+      "empathy": "",
+      "authority": ""
+    },
+    "plan": {
+      "steps": [
+        { "number": 1, "title": "", "description": "" },
+        { "number": 2, "title": "", "description": "" },
+        { "number": 3, "title": "", "description": "" }
+      ]
+    },
+    "callToAction": {
+      "direct": { "text": "", "url": "" },
+      "transitional": { "text": "", "url": "" }
+    },
+    "failure": {
+      "stakes": ""
+    },
+    "success": {
+      "transformation": "",
+      "outcomes": []
+    }
+  },
+  "hero": {
+    "headline": "",
+    "subheadline": "",
+    "primaryCta": { "text": "", "url": "" },
+    "secondaryCta": { "text": "", "url": "" }
+  },
+  "features": {
+    "sectionTitle": "",
+    "sectionSubtitle": "",
+    "items": []
+  },
+  "stats": {
+    "items": []
+  },
+  "testimonials": {
+    "sectionTitle": "",
+    "items": []
+  },
+  "faq": {
+    "sectionTitle": "",
+    "items": []
+  },
+  "cta": {
+    "headline": "",
+    "subheadline": "",
+    "buttonText": "",
+    "buttonUrl": ""
+  },
+  "contact": {
+    "sectionTitle": "",
+    "sectionSubtitle": "",
+    "formLabels": {
+      "name": "",
+      "email": "",
+      "phone": "",
+      "message": "",
+      "submit": ""
+    },
+    "contactInfo": []
+  },
+  "footer": {
+    "tagline": "",
+    "copyright": "",
+    "links": []
+  }
+}

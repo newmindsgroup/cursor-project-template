@@ -1,0 +1,155 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "project-status.schema.json",
+  "title": "Project Status",
+  "description": "Schema for project progress tracking",
+  "type": "object",
+  "required": ["projectName", "phases"],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "projectName": {
+      "type": "string",
+      "minLength": 1
+    },
+    "lastUpdated": {
+      "type": "string"
+    },
+    "lastScanned": {
+      "type": "string"
+    },
+    "overallProgress": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "currentPhase": {
+      "type": "string"
+    },
+    "phases": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/phase"
+      },
+      "minItems": 1
+    },
+    "overrides": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": ["not_started", "in_progress", "review", "complete"]
+          },
+          "progress": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 100
+          }
+        }
+      }
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "date": { "type": "string" },
+          "author": { "type": "string" },
+          "content": { "type": "string" }
+        }
+      }
+    },
+    "risks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "description": { "type": "string" },
+          "severity": { 
+            "type": "string",
+            "enum": ["low", "medium", "high"]
+          },
+          "mitigation": { "type": "string" },
+          "status": { "type": "string" }
+        }
+      }
+    },
+    "blockers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "description": { "type": "string" },
+          "assignee": { "type": "string" },
+          "status": { "type": "string" }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "phase": {
+      "type": "object",
+      "required": ["id", "name", "deliverables"],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "type": "string",
+          "enum": ["not_started", "in_progress", "review", "complete"]
+        },
+        "progress": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "docsFolder": {
+          "type": "string"
+        },
+        "deliverables": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/deliverable"
+          }
+        }
+      }
+    },
+    "deliverable": {
+      "type": "object",
+      "required": ["id", "name"],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "file": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["not_started", "in_progress", "review", "complete"]
+        },
+        "progress": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "clientVisible": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

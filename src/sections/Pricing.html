@@ -1,0 +1,168 @@
+<section
+  class="section bg-neutral-50"
+  data-section="Pricing"
+  data-elementor-widget-suggestion="Container, Heading, Price Table, Toggle, Button"
+  data-notes="Elementor: Container > Heading + Toggle switch + 3-column grid of Price Table widgets"
+  data-tokens='{"padding": "96px 24px", "gap": "2rem", "columns": "3"}'
+>
+  <div class="container-custom">
+    <!-- Header -->
+    <div class="max-w-3xl mx-auto text-center mb-12" data-animate="fade-up">
+      <h2 class="mb-4 text-4xl md:text-5xl font-bold text-neutral-900">Simple, Transparent Pricing</h2>
+      <p class="text-xl text-neutral-600 mb-8">
+        Choose the plan that fits your needs. No hidden fees, no surprises.
+      </p>
+      
+      <!-- Billing Toggle -->
+      <div class="inline-flex items-center gap-4 p-1 bg-neutral-200 rounded-full">
+        <button class="pricing-toggle px-6 py-2 rounded-full text-sm font-semibold transition-all bg-white text-neutral-900 shadow-soft" data-period="monthly">
+          Monthly
+        </button>
+        <button class="pricing-toggle px-6 py-2 rounded-full text-sm font-semibold transition-all text-neutral-600 hover:text-neutral-900" data-period="yearly">
+          Yearly <span class="text-primary-600">(Save 20%)</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Pricing Cards -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <!-- Starter Plan -->
+      <div
+        class="relative p-8 bg-white rounded-2xl border border-neutral-200 transition-all duration-300 hover:shadow-large"
+        data-animate="fade-up"
+        data-animate-delay="100"
+      >
+        <div class="mb-6">
+          <h3 class="text-xl font-bold text-neutral-900 mb-2">Starter</h3>
+          <p class="text-neutral-600">Perfect for small projects</p>
+        </div>
+        <div class="mb-6">
+          <span class="text-5xl font-bold text-neutral-900" data-monthly="$29" data-yearly="$23">$29</span>
+          <span class="text-neutral-500">/month</span>
+        </div>
+        <ul class="space-y-4 mb-8">
+          <li class="flex items-center gap-3">
+            <svg class="w-5 h-5 text-primary-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="text-neutral-700">Up to 5 pages</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <svg class="w-5 h-5 text-primary-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="text-neutral-700">Basic analytics</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <svg class="w-5 h-5 text-primary-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="text-neutral-700">Email support</span>
+          </li>
+          <li class="flex items-center gap-3 opacity-50">
+            <svg class="w-5 h-5 text-neutral-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+            <span class="text-neutral-500">Priority support</span>
+          </li>
+        </ul>
+        <a href="#" class="block w-full py-3 text-center font-semibold text-primary-600 bg-primary-50 rounded-lg transition-colors hover:bg-primary-100">
+          Get Started
+        </a>
+      </div>
+
+      <!-- Professional Plan (Featured) -->
+      <div
+        class="relative p-8 bg-primary-600 rounded-2xl shadow-large transform lg:-translate-y-4"
+        data-animate="fade-up"
+        data-animate-delay="200"
+      >
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 px-4 py-1 bg-secondary-500 text-white text-sm font-semibold rounded-full">
+          Most Popular
+        </div>
+        <div class="mb-6">
+          <h3 class="text-xl font-bold text-white mb-2">Professional</h3>
+          <p class="text-primary-200">For growing businesses</p>
+        </div>
+        <div class="mb-6">
+          <span class="text-5xl font-bold text-white" data-monthly="$79" data-yearly="$63">$79</span>
+          <span class="text-primary-200">/month</span>
+        </div>
+        <ul class="space-y-4 mb-8">
+          <li class="flex items-center gap-3">
+            <svg class="w-5 h-5 text-primary-200 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="text-white">Unlimited pages</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <svg class="w-5 h-5 text-primary-200 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="text-white">Advanced analytics</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <svg class="w-5 h-5 text-primary-200 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="text-white">Priority support</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <svg class="w-5 h-5 text-primary-200 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="text-white">Custom integrations</span>
+          </li>
+        </ul>
+        <a href="#" class="block w-full py-3 text-center font-semibold text-primary-600 bg-white rounded-lg transition-colors hover:bg-neutral-100">
+          Get Started
+        </a>
+      </div>
+
+      <!-- Enterprise Plan -->
+      <div
+        class="relative p-8 bg-white rounded-2xl border border-neutral-200 transition-all duration-300 hover:shadow-large"
+        data-animate="fade-up"
+        data-animate-delay="300"
+      >
+        <div class="mb-6">
+          <h3 class="text-xl font-bold text-neutral-900 mb-2">Enterprise</h3>
+          <p class="text-neutral-600">For large organizations</p>
+        </div>
+        <div class="mb-6">
+          <span class="text-5xl font-bold text-neutral-900" data-monthly="$199" data-yearly="$159">$199</span>
+          <span class="text-neutral-500">/month</span>
+        </div>
+        <ul class="space-y-4 mb-8">
+          <li class="flex items-center gap-3">
+            <svg class="w-5 h-5 text-primary-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="text-neutral-700">Everything in Professional</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <svg class="w-5 h-5 text-primary-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="text-neutral-700">Dedicated account manager</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <svg class="w-5 h-5 text-primary-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="text-neutral-700">SLA guarantee</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <svg class="w-5 h-5 text-primary-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="text-neutral-700">Custom training</span>
+          </li>
+        </ul>
+        <a href="#" class="block w-full py-3 text-center font-semibold text-primary-600 bg-primary-50 rounded-lg transition-colors hover:bg-primary-100">
+          Contact Sales
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

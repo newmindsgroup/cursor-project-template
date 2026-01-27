@@ -1,0 +1,226 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "sitemap.schema.json",
+  "title": "Sitemap",
+  "description": "Schema for website sitemap and information architecture with deliverables tracking",
+  "type": "object",
+  "required": ["version", "pages"],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "description": {
+      "type": "string"
+    },
+    "defaultLanguage": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 5
+    },
+    "languages": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 2,
+        "maxLength": 5
+      },
+      "minItems": 1
+    },
+    "pages": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/page"
+      }
+    }
+  },
+  "definitions": {
+    "localizedString": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "deliverableStatus": {
+      "type": "string",
+      "description": "Status of a deliverable phase",
+      "enum": ["pending", "in-progress", "review", "complete", "skipped"]
+    },
+    "deliverables": {
+      "type": "object",
+      "description": "Tracking for page deliverables across design phases",
+      "properties": {
+        "wireframe": {
+          "type": "object",
+          "description": "Wireframe/layout deliverable",
+          "properties": {
+            "status": {
+              "$ref": "#/definitions/deliverableStatus"
+            },
+            "file": {
+              "type": "string",
+              "description": "Path to wireframe file"
+            },
+            "notes": {
+              "type": "string",
+              "description": "Notes about the wireframe"
+            }
+          }
+        },
+        "visualDesign": {
+          "type": "object",
+          "description": "Visual design deliverable with variant support",
+          "properties": {
+            "status": {
+              "$ref": "#/definitions/deliverableStatus"
+            },
+            "file": {
+              "type": "string",
+              "description": "Path to final visual design file"
+            },
+            "variants": {
+              "type": "array",
+              "description": "Design variant identifiers (e.g., ['v1', 'v2', 'v3'])",
+              "items": {
+                "type": "string"
+              }
+            },
+            "selectedVariant": {
+              "type": ["string", "null"],
+              "description": "Selected variant ID after client decision"
+            },
+            "notes": {
+              "type": "string",
+              "description": "Notes about the visual design"
+            }
+          }
+        },
+        "content": {
+          "type": "object",
+          "description": "Content/copy deliverable",
+          "properties": {
+            "status": {
+              "$ref": "#/definitions/deliverableStatus"
+            },
+            "file": {
+              "type": "string",
+              "description": "Path to content JSON file"
+            },
+            "notes": {
+              "type": "string",
+              "description": "Notes about the content"
+            }
+          }
+        },
+        "development": {
+          "type": "object",
+          "description": "Development/implementation deliverable",
+          "properties": {
+            "status": {
+              "$ref": "#/definitions/deliverableStatus"
+            },
+            "file": {
+              "type": "string",
+              "description": "Path to implemented page file"
+            },
+            "notes": {
+              "type": "string",
+              "description": "Notes about development"
+            }
+          }
+        }
+      }
+    },
+    "page": {
+      "type": "object",
+      "required": ["id", "slug", "title"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9-]+$",
+          "description": "Unique identifier for the page"
+        },
+        "slug": {
+          "type": "string",
+          "description": "URL path for the page"
+        },
+        "title": {
+          "$ref": "#/definitions/localizedString",
+          "description": "Page title in each language"
+        },
+        "description": {
+          "$ref": "#/definitions/localizedString",
+          "description": "Page description in each language"
+        },
+        "seoTitle": {
+          "$ref": "#/definitions/localizedString",
+          "description": "SEO title in each language"
+        },
+        "template": {
+          "type": "string",
+          "description": "Page template type",
+          "enum": [
+            "homepage",
+            "about",
+            "services",
+            "services-single",
+            "portfolio",
+            "portfolio-single",
+            "blog",
+            "blog-single",
+            "pricing",
+            "contact",
+            "minimal",
+            "landing",
+            "coming-soon"
+          ]
+        },
+        "inPrimaryNav": {
+          "type": "boolean",
+          "description": "Include in primary navigation"
+        },
+        "inSecondaryNav": {
+          "type": "boolean",
+          "description": "Include in secondary navigation"
+        },
+        "inFooterNav": {
+          "type": "boolean",
+          "description": "Include in footer navigation"
+        },
+        "footerSection": {
+          "type": "string",
+          "description": "Footer section grouping",
+          "enum": ["main", "legal", "support", "social"]
+        },
+        "navOrder": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Navigation display order"
+        },
+        "status": {
+          "type": "string",
+          "description": "Overall page status",
+          "enum": ["planned", "in-progress", "review", "complete", "archived"]
+        },
+        "deliverables": {
+          "$ref": "#/definitions/deliverables",
+          "description": "Detailed tracking for page deliverables"
+        },
+        "children": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/page"
+          },
+          "description": "Child/sub pages"
+        },
+        "_note": {
+          "type": "string",
+          "description": "Internal notes (not for production)"
+        }
+      }
+    }
+  }
+}

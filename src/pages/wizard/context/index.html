@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Context Manager - Add Business Context</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="description" content="Add and manage business context files for your project" />
+    <link rel="stylesheet" href="../../../styles/tokens.css" />
+    <link rel="stylesheet" href="../../../styles/base.css" />
+    <link rel="stylesheet" href="../../../styles/wizard.css" />
+  </head>
+  <body class="bg-neutral-50 min-h-screen">
+    <!-- Header -->
+    <header class="bg-white border-b border-neutral-200 py-4">
+      <div class="container-custom">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <a href="../" class="text-neutral-400 hover:text-neutral-600">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+              </svg>
+            </a>
+            <div class="w-10 h-10 bg-gradient-to-br from-blue-600 to-cyan-600 rounded-xl flex items-center justify-center">
+              <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+            </div>
+            <div>
+              <h1 class="text-xl font-bold text-neutral-900">Context Manager</h1>
+              <p class="text-sm text-neutral-500">Add and manage business context</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-4">
+            <a href="../status/" class="text-sm text-neutral-600 hover:text-neutral-900">Status Dashboard</a>
+            <a href="../pages/" class="text-sm text-neutral-600 hover:text-neutral-900">Design Pages</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="py-8">
+      <div class="container-custom max-w-5xl">
+        <!-- Navigation Tabs -->
+        <nav class="wizard-tabs mb-8">
+          <button class="wizard-tab active" data-tab="upload">Upload Files</button>
+          <button class="wizard-tab" data-tab="extracted">Extracted Content</button>
+          <button class="wizard-tab" data-tab="project">Project Info</button>
+          <button class="wizard-tab" data-tab="regenerate">Regenerate</button>
+        </nav>
+
+        <!-- Tab: Upload Files -->
+        <section class="wizard-tab-panel active" data-panel="upload">
+          <div class="wizard-container">
+            <div class="wizard-panel-header">
+              <h2 class="wizard-panel-title">Upload Additional Context</h2>
+              <p class="wizard-panel-subtitle">Add more business documents, assets, or reference materials</p>
+            </div>
+            <div class="wizard-panel-content">
+              <div class="wizard-upload-zone" id="upload-zone">
+                <div class="wizard-upload-zone-content">
+                  <svg class="w-12 h-12 text-neutral-400 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                  </svg>
+                  <p class="text-lg font-medium text-neutral-700 mb-2">Drop files here or click to browse</p>
+                  <p class="text-sm text-neutral-500">Supports PDF, Word, Excel, CSV, images, and text files</p>
+                  <input type="file" id="file-input" multiple accept=".pdf,.doc,.docx,.xls,.xlsx,.csv,.txt,.md,.png,.jpg,.jpeg,.webp" class="hidden" />
+                </div>
+              </div>
+
+              <div id="uploaded-files" class="wizard-file-list mt-6">
+                <h3 class="wizard-section-title">Existing Files in business-context/</h3>
+                <div id="existing-files-content" class="space-y-2">
+                  <p class="text-sm text-neutral-500">Loading...</p>
+                </div>
+              </div>
+
+              <div class="wizard-actions mt-6">
+                <button type="button" id="process-files-btn" class="wizard-btn wizard-btn-primary">
+                  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                  </svg>
+                  Re-process All Files
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Tab: Extracted Content -->
+        <section class="wizard-tab-panel" data-panel="extracted">
+          <div class="wizard-container">
+            <div class="wizard-panel-header">
+              <h2 class="wizard-panel-title">Extracted Content</h2>
+              <p class="wizard-panel-subtitle">Review what has been extracted from your context files</p>
+            </div>
+            <div class="wizard-panel-content">
+              <div id="extracted-content" class="space-y-6">
+                <div class="wizard-extract-section">
+                  <h3 class="wizard-section-title">Business Summary</h3>
+                  <div id="extract-summary" class="wizard-extract-content">
+                    <p class="text-neutral-500 italic">No content extracted yet. Upload files and process them.</p>
+                  </div>
+                </div>
+                <div class="wizard-extract-section">
+                  <h3 class="wizard-section-title">Target Audience</h3>
+                  <div id="extract-audience" class="wizard-extract-content">
+                    <p class="text-neutral-500 italic">No audience data extracted.</p>
+                  </div>
+                </div>
+                <div class="wizard-extract-section">
+                  <h3 class="wizard-section-title">Services/Products</h3>
+                  <div id="extract-services" class="wizard-extract-content">
+                    <p class="text-neutral-500 italic">No services/products data extracted.</p>
+                  </div>
+                </div>
+                <div class="wizard-extract-section">
+                  <h3 class="wizard-section-title">Brand Voice & Tone</h3>
+                  <div id="extract-brand" class="wizard-extract-content">
+                    <p class="text-neutral-500 italic">No brand information extracted.</p>
+                  </div>
+                </div>
+                <div class="wizard-extract-section">
+                  <h3 class="wizard-section-title">Key Data Points</h3>
+                  <div id="extract-data" class="wizard-extract-content">
+                    <p class="text-neutral-500 italic">No structured data extracted.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Tab: Project Info -->
+        <section class="wizard-tab-panel" data-panel="project">
+          <div class="wizard-container">
+            <div class="wizard-panel-header">
+              <h2 class="wizard-panel-title">Edit Project Information</h2>
+              <p class="wizard-panel-subtitle">Update PROJECT.md and core project details</p>
+            </div>
+            <div class="wizard-panel-content">
+              <form id="project-info-form" class="space-y-6">
+                <div class="wizard-form-grid">
+                  <div class="wizard-field">
+                    <label for="edit-project-name" class="wizard-label">Project Name</label>
+                    <input type="text" id="edit-project-name" name="projectName" class="wizard-input" />
+                  </div>
+                  <div class="wizard-field">
+                    <label for="edit-client-name" class="wizard-label">Client Name</label>
+                    <input type="text" id="edit-client-name" name="clientName" class="wizard-input" />
+                  </div>
+                  <div class="wizard-field">
+                    <label for="edit-industry" class="wizard-label">Industry</label>
+                    <select id="edit-industry" name="industry" class="wizard-select">
+                      <option value="">Select industry...</option>
+                      <option value="technology">Technology</option>
+                      <option value="healthcare">Healthcare</option>
+                      <option value="finance">Finance</option>
+                      <option value="ecommerce">E-commerce</option>
+                      <option value="education">Education</option>
+                      <option value="agency">Creative/Agency</option>
+                      <option value="professional">Professional Services</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
+                  <div class="wizard-field">
+                    <label for="edit-contact" class="wizard-label">Contact Email</label>
+                    <input type="email" id="edit-contact" name="contactEmail" class="wizard-input" />
+                  </div>
+                  <div class="wizard-field col-span-2">
+                    <label for="edit-description" class="wizard-label">Project Description</label>
+                    <textarea id="edit-description" name="description" class="wizard-textarea" rows="3"></textarea>
+                  </div>
+                  <div class="wizard-field col-span-2">
+                    <label for="edit-goals" class="wizard-label">Project Goals</label>
+                    <textarea id="edit-goals" name="goals" class="wizard-textarea" rows="3" placeholder="One goal per line..."></textarea>
+                  </div>
+                </div>
+                <div class="wizard-actions">
+                  <button type="submit" class="wizard-btn wizard-btn-primary">
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    Save Changes
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
+
+        <!-- Tab: Regenerate -->
+        <section class="wizard-tab-panel" data-panel="regenerate">
+          <div class="wizard-container">
+            <div class="wizard-panel-header">
+              <h2 class="wizard-panel-title">Regenerate Content</h2>
+              <p class="wizard-panel-subtitle">Selectively re-run AI generation for specific sections</p>
+            </div>
+            <div class="wizard-panel-content">
+              <div class="wizard-regen-grid">
+                <div class="wizard-regen-card">
+                  <div class="wizard-regen-card-icon bg-blue-100">
+                    <svg class="w-6 h-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                    </svg>
+                  </div>
+                  <h3 class="wizard-regen-card-title">Re-analyze Business Context</h3>
+                  <p class="wizard-regen-card-desc">Process uploaded files and update extracted insights</p>
+                  <button type="button" class="wizard-btn wizard-btn-secondary wizard-btn-sm" data-regen="analyze">
+                    Run Analysis
+                  </button>
+                </div>
+
+                <div class="wizard-regen-card">
+                  <div class="wizard-regen-card-icon bg-purple-100">
+                    <svg class="w-6 h-6 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                  </div>
+                  <h3 class="wizard-regen-card-title">Regenerate Personas</h3>
+                  <p class="wizard-regen-card-desc">Create new user personas from updated context</p>
+                  <button type="button" class="wizard-btn wizard-btn-secondary wizard-btn-sm" data-regen="personas">
+                    Generate Personas
+                  </button>
+                </div>
+
+                <div class="wizard-regen-card">
+                  <div class="wizard-regen-card-icon bg-green-100">
+                    <svg class="w-6 h-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                    </svg>
+                  </div>
+                  <h3 class="wizard-regen-card-title">Regenerate All Content</h3>
+                  <p class="wizard-regen-card-desc">Regenerate StoryBrand content for all pages</p>
+                  <button type="button" class="wizard-btn wizard-btn-secondary wizard-btn-sm" data-regen="content">
+                    Generate Content
+                  </button>
+                </div>
+
+                <div class="wizard-regen-card">
+                  <div class="wizard-regen-card-icon bg-orange-100">
+                    <svg class="w-6 h-6 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                  </div>
+                  <h3 class="wizard-regen-card-title">Regenerate All Images</h3>
+                  <p class="wizard-regen-card-desc">Force regenerate all AI-generated images</p>
+                  <button type="button" class="wizard-btn wizard-btn-secondary wizard-btn-sm" data-regen="images">
+                    Generate Images
+                  </button>
+                </div>
+              </div>
+
+              <div class="wizard-regen-page-section mt-8">
+                <h3 class="wizard-section-title">Regenerate Content for Specific Page</h3>
+                <div class="wizard-field">
+                  <label for="regen-page-select" class="wizard-label">Select Page</label>
+                  <div class="flex gap-4">
+                    <select id="regen-page-select" class="wizard-select flex-1">
+                      <option value="">Select a page...</option>
+                      <option value="home">Homepage</option>
+                      <option value="about">About</option>
+                      <option value="services">Services</option>
+                      <option value="contact">Contact</option>
+                      <option value="pricing">Pricing</option>
+                      <option value="portfolio">Portfolio</option>
+                      <option value="blog">Blog</option>
+                    </select>
+                    <button type="button" id="regen-page-btn" class="wizard-btn wizard-btn-primary">
+                      Regenerate Page
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Progress -->
+              <div class="wizard-regen-progress hidden mt-8" id="regen-progress">
+                <div class="wizard-generation-progress-bar">
+                  <div class="wizard-generation-progress-fill" id="regen-progress-fill"></div>
+                </div>
+                <p class="wizard-generation-status" id="regen-status">Processing...</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script type="module" src="../../../scripts/wizard-context.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+{
+  "$schema": "./schemas/personas.schema.json",
+  "_usage": "This file contains user personas. Run 'npm run wizard' to generate personas using AI based on your business context. The template structure below shows the expected format.",
+  "version": "1.0.0",
+  "lastUpdated": "",
+  "personas": [],
+  "template": {
+    "_note": "Use this template structure when generating new personas",
+    "id": "persona-template",
+    "name": "[Role/Title]",
+    "shortName": "[First Name]",
+    "image": "",
+    "demographics": {
+      "age": "[Age Range]",
+      "role": "[Job Title]",
+      "company": "[Company Type/Size]",
+      "techSavviness": "[Basic/Intermediate/Advanced]"
+    },
+    "jtbd": "When [situation], I want to [action], so I can [outcome].",
+    "goals": [
+      "[Goal 1]",
+      "[Goal 2]",
+      "[Goal 3]"
+    ],
+    "frustrations": [
+      "[Pain point 1]",
+      "[Pain point 2]",
+      "[Pain point 3]"
+    ],
+    "behaviors": [
+      "[Behavior 1]",
+      "[Behavior 2]",
+      "[Behavior 3]"
+    ],
+    "quote": "[Representative quote that captures their perspective]",
+    "scenarios": [
+      {
+        "name": "[Scenario Name]",
+        "description": "[Brief description of the use case]"
+      }
+    ]
+  }
+}

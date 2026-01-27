@@ -1,0 +1,100 @@
+{
+  "meta": {
+    "title": "About Us | Serenity Wellness Center - Scottsdale, AZ",
+    "description": "Learn about Serenity Wellness Center's story, our passionate team of wellness experts, and our commitment to helping you achieve total mind-body balance.",
+    "keywords": "about serenity wellness, spa scottsdale story, wellness team, spa philosophy"
+  },
+  "hero": {
+    "headline": "Our Story of Wellness",
+    "subheadline": "Founded on the belief that everyone deserves a sanctuary for self-care and renewal",
+    "image": {
+      "src": "/assets/about-hero.jpg",
+      "alt": "Serenity Wellness Center interior with natural lighting"
+    }
+  },
+  "story": {
+    "headline": "From Vision to Sanctuary",
+    "content": [
+      "Serenity Wellness Center was born from a simple observation: in our fast-paced world, people desperately need a place to pause, breathe, and reconnect with themselves.",
+      "Founded in 2015 by Dr. Maya Chen, a former stress researcher, and massage therapist Elena Rodriguez, our center combines evidence-based wellness practices with the ancient wisdom of holistic healing.",
+      "What started as a small studio with two treatment rooms has grown into Scottsdale's premier wellness destination—but our intimate, personalized approach remains unchanged."
+    ],
+    "image": {
+      "src": "/assets/founders.jpg",
+      "alt": "Our founders Dr. Maya Chen and Elena Rodriguez"
+    }
+  },
+  "mission": {
+    "headline": "Our Mission",
+    "statement": "To provide a sanctuary where stressed individuals can restore their natural balance, discover sustainable wellness practices, and return to their lives renewed and empowered.",
+    "values": [
+      {
+        "title": "Holistic Care",
+        "description": "We treat the whole person—body, mind, and spirit—not just symptoms."
+      },
+      {
+        "title": "Personalization",
+        "description": "Every treatment is customized because no two bodies are alike."
+      },
+      {
+        "title": "Education",
+        "description": "We empower you with knowledge to maintain wellness beyond our doors."
+      },
+      {
+        "title": "Sustainability",
+        "description": "We use eco-friendly products and practices that are kind to you and the planet."
+      }
+    ]
+  },
+  "team": {
+    "headline": "Meet Our Wellness Experts",
+    "subheadline": "Passionate professionals dedicated to your wellbeing",
+    "members": [
+      {
+        "name": "Dr. Maya Chen",
+        "title": "Co-Founder & Wellness Director",
+        "bio": "With a PhD in stress physiology and 20 years of wellness practice, Maya brings a unique science-backed approach to holistic health.",
+        "image": "/assets/team/maya.jpg",
+        "specialties": ["Stress Management", "Wellness Programs", "Mind-Body Connection"]
+      },
+      {
+        "name": "Elena Rodriguez",
+        "title": "Co-Founder & Lead Massage Therapist",
+        "bio": "Licensed in 8 massage modalities with 18 years of experience, Elena's intuitive touch has helped thousands find relief.",
+        "image": "/assets/team/elena.jpg",
+        "specialties": ["Deep Tissue", "Hot Stone", "Prenatal Massage"]
+      },
+      {
+        "name": "Sarah Kim",
+        "title": "Senior Esthetician",
+        "bio": "A master esthetician trained in both Eastern and Western skincare traditions, Sarah creates transformative facial experiences.",
+        "image": "/assets/team/sarah.jpg",
+        "specialties": ["Anti-Aging Facials", "Organic Treatments", "Facial Massage"]
+      },
+      {
+        "name": "David Okonkwo",
+        "title": "Yoga & Meditation Instructor",
+        "bio": "Certified in multiple yoga traditions with training in India, David guides gentle yet powerful sessions for all levels.",
+        "image": "/assets/team/david.jpg",
+        "specialties": ["Restorative Yoga", "Meditation", "Breathwork"]
+      }
+    ]
+  },
+  "certifications": {
+    "headline": "Our Credentials",
+    "items": [
+      "Arizona Board of Massage Therapy Licensed",
+      "International Spa Association Member",
+      "Green Spa Network Certified",
+      "Aveda Concept Spa Partner"
+    ]
+  },
+  "cta": {
+    "headline": "Experience the Serenity Difference",
+    "subheadline": "Book your first visit and discover why our guests keep returning",
+    "button": {
+      "text": "Schedule Your Visit",
+      "href": "/contact"
+    }
+  }
+}

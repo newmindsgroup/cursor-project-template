@@ -1,0 +1,182 @@
+<section
+  class="section bg-white"
+  data-section="FAQ"
+  data-elementor-widget-suggestion="Container, Accordion, Heading"
+  data-notes="Elementor: Container > 2-column layout (heading left, accordions right), gap-12"
+  data-tokens='{"padding": "96px 24px", "gap": "3rem"}'
+>
+  <div class="container-custom">
+    <div class="grid lg:grid-cols-2 gap-12 items-start">
+      <!-- Left: Heading -->
+      <div class="lg:sticky lg:top-32" data-animate="fade-up">
+        <h2 class="mb-4 text-4xl md:text-5xl font-bold text-neutral-900">
+          Frequently Asked Questions
+        </h2>
+        <p class="text-xl text-neutral-600">
+          Everything you need to know about the prototype kit. Can't find the answer you're looking
+          for? Reach out to our support team.
+        </p>
+      </div>
+
+      <!-- Right: Accordion -->
+      <div class="space-y-4">
+        <!-- FAQ Item 1 -->
+        <div
+          class="faq-item border border-neutral-200 rounded-xl overflow-hidden"
+          data-animate="fade-up"
+          data-animate-delay="100"
+        >
+          <button
+            class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between bg-white hover:bg-neutral-50 transition-colors"
+            aria-expanded="false"
+          >
+            <span class="text-lg font-semibold text-neutral-900">
+              How does the Elementor handoff work?
+            </span>
+            <svg
+              class="w-6 h-6 text-neutral-400 transition-transform duration-300"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="faq-content overflow-hidden" style="max-height: 0">
+            <div class="px-6 pb-5 text-neutral-600 leading-relaxed">
+              After building your prototype, run the export command to generate a complete handoff
+              package. This includes a markdown guide with step-by-step instructions, JSON data with
+              computed styles at all breakpoints, and exported assets. Your team uses the overlay to
+              verify spacing and typography as they rebuild in Elementor.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Item 2 -->
+        <div
+          class="faq-item border border-neutral-200 rounded-xl overflow-hidden"
+          data-animate="fade-up"
+          data-animate-delay="200"
+        >
+          <button
+            class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between bg-white hover:bg-neutral-50 transition-colors"
+            aria-expanded="false"
+          >
+            <span class="text-lg font-semibold text-neutral-900">
+              Do I need to know React or Vue?
+            </span>
+            <svg
+              class="w-6 h-6 text-neutral-400 transition-transform duration-300"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="faq-content overflow-hidden" style="max-height: 0">
+            <div class="px-6 pb-5 text-neutral-600 leading-relaxed">
+              No! This kit uses vanilla HTML, CSS (Tailwind), and TypeScript. It's intentionally
+              framework-free to keep complexity low and handoff simple. If you can write HTML, you can
+              use this kit.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Item 3 -->
+        <div
+          class="faq-item border border-neutral-200 rounded-xl overflow-hidden"
+          data-animate="fade-up"
+          data-animate-delay="300"
+        >
+          <button
+            class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between bg-white hover:bg-neutral-50 transition-colors"
+            aria-expanded="false"
+          >
+            <span class="text-lg font-semibold text-neutral-900">
+              Can I customize the design tokens?
+            </span>
+            <svg
+              class="w-6 h-6 text-neutral-400 transition-transform duration-300"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="faq-content overflow-hidden" style="max-height: 0">
+            <div class="px-6 pb-5 text-neutral-600 leading-relaxed">
+              Absolutely! All design tokens (colors, typography, spacing, shadows, radii) are defined
+              in tailwind.config.ts. Update them once and they propagate throughout your prototype and
+              export to the handoff package automatically.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Item 4 -->
+        <div
+          class="faq-item border border-neutral-200 rounded-xl overflow-hidden"
+          data-animate="fade-up"
+          data-animate-delay="400"
+        >
+          <button
+            class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between bg-white hover:bg-neutral-50 transition-colors"
+            aria-expanded="false"
+          >
+            <span class="text-lg font-semibold text-neutral-900">
+              How do I share prototypes with clients?
+            </span>
+            <svg
+              class="w-6 h-6 text-neutral-400 transition-transform duration-300"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="faq-content overflow-hidden" style="max-height: 0">
+            <div class="px-6 pb-5 text-neutral-600 leading-relaxed">
+              Run `npm run build` to generate a static site in the /dist folder. You can zip and send
+              it (client opens index.html), or deploy to any static host (Netlify, Vercel, Cloudflare
+              Pages) and share the live URL.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Item 5 -->
+        <div
+          class="faq-item border border-neutral-200 rounded-xl overflow-hidden"
+          data-animate="fade-up"
+          data-animate-delay="500"
+        >
+          <button
+            class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between bg-white hover:bg-neutral-50 transition-colors"
+            aria-expanded="false"
+          >
+            <span class="text-lg font-semibold text-neutral-900">
+              Is it accessible and performant?
+            </span>
+            <svg
+              class="w-6 h-6 text-neutral-400 transition-transform duration-300"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="faq-content overflow-hidden" style="max-height: 0">
+            <div class="px-6 pb-5 text-neutral-600 leading-relaxed">
+              Yes! The kit includes semantic HTML, ARIA labels, focus states, keyboard navigation, and
+              reduced motion support. It's built with Lighthouse-minded defaults and targets WCAG AA
+              compliance. Performance is optimized with lazy loading, deferred scripts, and efficient
+              animations.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
