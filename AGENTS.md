@@ -1,11 +1,15 @@
 # AGENTS.md — Agent Instructions
 
 <!--
-  Cross-tool agent instructions using the AGENTS.md open standard (https://agents.md/) —
-  read natively by Claude Code, Codex, Cursor, and Antigravity. Replace {{PLACEHOLDERS}}
-  and delete what doesn't apply. Repo-specific governance lives in `.cursorrules`,
-  `.cursor/rules.md`, and `/docs`; the Working Style spine below is the shared operating
-  standard carried across every project and tool.
+  Cross-tool agent instructions using the AGENTS.md open standard (https://agents.md/),
+  read natively by Codex, Cursor, and Antigravity.
+
+  Claude Code reads `CLAUDE.md` rather than this file. The `CLAUDE.md` beside it imports
+  this one with `@AGENTS.md`, so both tools follow one source. Keep both files in place.
+
+  Replace {{PLACEHOLDERS}} and delete what doesn't apply. Repo-specific governance lives
+  in `.cursorrules`, `.cursor/rules.md`, and `/docs`; the Working Style spine below is the
+  shared operating standard carried across every project and tool.
 -->
 
 ## Project
